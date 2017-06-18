@@ -1,0 +1,112 @@
+{
+  "name": "dyna-ts-react-module-boilerplate",
+  "version": "1.0.0",
+  "description": "About",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/aneldev/dyna-ts-react-module-boilerplate"
+  },
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "scripts": {
+    "//help": "https://webpack.github.io/docs/webpack-dev-server.html#webpack-dev-server-cli",
+    "clear": "rimraf build temp",
+    "start": "npm run dev",
+    "dev": "webpack-dev-server --config webpack.dev.config.js --port 8027 --devtool eval --progress --hot --content-base dev/public --host 0.0.0.0",
+    "build": "rimraf build && webpack --config webpack.build.config.js",
+    "release": "npm run dist",
+    "dist": "rimraf ./dist/ && npm run .install-tsc && npm run .build-index.d.ts && npm run .build-dist",
+    ".install-tsc": "if ! which tsc; then npm install -g typescript; fi",
+    ".build-index.d.ts": "tsc && rm ./dist/index.js && rm ./dist/index.js.map",
+    ".build-dist": "rimraf dist && set NODE_ENV=production && webpack --config webpack.dist.config.js",
+    "test": "jest --coverage --no-cache",
+    "test-watch": "jest --watch --verbose",
+    "reinstall": "rm package-lock.json && rm -rf node_modules/ && npm install"
+  },
+  "keywords": [],
+  "author": "Anel dev",
+  "license": "MIT",
+  "dependencies": {
+    "babel-polyfill": "^6.9.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "dyna-cache": "^1.0.0",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
+  },
+  "devDependencies": {
+    "@types/jest": "^19.2.2",
+    "@types/node": "^7.0.14",
+    "@types/react": "^15.0.27",
+    "@types/react-dom": "^15.5.0",
+    "autoprefixer": "^7.1.1",
+    "awesome-typescript-loader": "^3.1.3",
+    "babel-core": "6.11.4",
+    "babel-jest": "^20.0.3",
+    "babel-loader": "6.0.0",
+    "babel-plugin-add-module-exports": "0.1.2",
+    "babel-plugin-react-transform": "^2.0.2",
+    "babel-preset-es2015": "6.9.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-runtime": "6.11.6",
+    "concurrently": "^3.4.0",
+    "css-loader": "^0.28.4",
+    "enzyme": "^2.8.2",
+    "enzyme-to-json": "^1.5.1",
+    "file-loader": "^0.9.0",
+    "font-awesome": "4.6.3",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^20.0.4",
+    "jest-cli": "^20.0.4",
+    "jest-junit": "^1.5.1",
+    "jest-serializer-enzyme": "^1.0.0",
+    "json-loader": "^0.5.4",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.4",
+    "node-sass": "^4.5.3",
+    "postcss-cli": "^4.1.0",
+    "postcss-loader": "^2.0.6",
+    "raw-loader": "^0.5.1",
+    "react-addons-test-utils": "^15.4.2",
+    "react-test-renderer": "^15.6.1",
+    "rimraf": "^2.6.1",
+    "sass-loader": "^6.0.5",
+    "source-map-loader": "0.1.5",
+    "style-loader": "^0.18.2",
+    "ts-jest": "^20.0.6",
+    "typescript": "^2.3.2",
+    "typings": "^2.1.1",
+    "url-loader": "^0.5.9",
+    "webpack": "^2.6.1",
+    "webpack-dev-middleware": "^1.10.2",
+    "webpack-dev-server": "^2.4.5"
+  },
+  "jest": {
+    "automock": false,
+    "collectCoverage": true,
+    "testEnvironment": "node",
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/*\\.(test|spec))\\.(ts|tsx|js|jsx)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx"
+    ],
+    "moduleNameMapper": {
+      "\\.(css|less|scss|jpg|png|svg|gif)$": "identity-obj-proxy"
+    },
+    "coverageDirectory": "coverage",
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx,js,jsx}",
+      "!src/**/*.d.ts"
+    ],
+    "snapshotSerializers": [
+      "<rootDir>/node_modules/jest-serializer-enzyme"
+    ]
+  },
+  "jest-junit": {
+    "output": "./coverage/junit.xml"
+  }
+}

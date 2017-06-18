@@ -1,0 +1,44 @@
+.plainButton {
+  font-family: sans-serif;
+  display: inline;
+  padding: 20px;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+
+  transition: color ease 500ms;
+
+  &:active {
+    position: relative;
+    top: 1px;
+    left: 1px;
+  }
+
+  &:focus {
+    outline: none; // remove the outer glow of Chrome on focus
+  }
+}
+
+.ok {
+  color: white;
+  background-color: dodgerblue;
+  &:hover {
+    color: lightgrey;
+  }
+}
+
+.cancel {
+  color: white;
+  background-color: tomato;
+  &:hover {
+    color: lightgrey;
+  }
+}
+
+.other {
+  color: black;
+  background-color: whitesmoke;
+  &:hover {
+    color: darkgray;
+  }
+}
