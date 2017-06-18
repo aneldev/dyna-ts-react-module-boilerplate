@@ -29,7 +29,6 @@
   "dependencies": {
     "babel-polyfill": "^6.9.1",
     "babel-preset-stage-2": "^6.24.1",
-    "dyna-cache": "^1.0.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   },
