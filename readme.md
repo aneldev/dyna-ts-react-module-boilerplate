@@ -34,7 +34,7 @@ Call `npm start`.
 
 ## Write tests
 
-For tests is used the (Jest)[https://facebook.github.io/jest/] also check the documentation.
+For tests is used the [Jest](https://facebook.github.io/jest/) also check the documentation.
 
 Test files can be anywhere but they should have a name *.(test|spec).(ts|tsx|js|jsx) . There is a `tests/` folder if you want to use but this is not a limitation.
 
