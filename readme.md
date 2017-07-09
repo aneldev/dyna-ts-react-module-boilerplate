@@ -66,7 +66,7 @@ The output of your package is what it is extracted only from your `src/index.jsx
 
 Feel free to clone and fork.
 
-# Interesting for typescript only module?
+# Interesting for typescript module?
 
 If you are interesting for **typescript module**, with other words if you want to implement everything like we do here but not exporting directly a react component, check this [dyna-ts-module-boilerplate](https://github.com/aneldev/dyna-ts-module-boilerplate) repo.
 
