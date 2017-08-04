@@ -23,6 +23,7 @@
     ".build-index.d.ts-clear": "cd dist/ && find . -name \\*.js -delete && cd ..",
     ".build-dist": "set NODE_ENV=production && webpack --config webpack.dist.config.js",
     "test": "npm run dist && jest --coverage --no-cache",
+    "test-only": "jest --coverage --no-cache",
     "test-watch": "jest --watch --verbose",
     "publish-push": "npm version patch && npm publish && git push",
     "tpp": "npm run test-publish-push",
@@ -92,7 +93,7 @@
     "transform": {
       ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
-    "testRegex": "(/*\\.(test|spec))\\.(ts|tsx|js|jsx)$",
+    "testRegex": "(src|tests)/.*\\.(test|spec)\\.(ts|tsx|js|jsx)$",
     "moduleFileExtensions": [
       "ts",
       "tsx",
