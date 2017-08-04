@@ -39,10 +39,12 @@ For tests is used the [Jest](https://facebook.github.io/jest/) also check the do
 Test files can be anywhere but they should have a name *.(test|spec).(ts|tsx|js|jsx) . There is a `tests/` folder if you want to use but this is not a limitation.
 
 ## Run tests
+ 
+Call `npm run test` to run your tests and coverage. This test also build your application, ts errors can be shown here.
 
-Call `npm run test` to run your tests.
-
-Call `npm run test-watch` to run your tests on changing of your script.
+Call `npm run test-only` to run your tests only including coverage, no build no ts errors.
+ 
+Call `npm run test-watch` to run your tests on any changes, no build, no ts errors, no coverage.
 
 # Dist / release
 
