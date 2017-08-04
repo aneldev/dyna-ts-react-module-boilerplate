@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { MouseEventHandler } from "@types/react";
+import { MouseEventHandler } from "react";
 export declare enum EButtonType {
     OK = 0,
     CANCEL = 1,

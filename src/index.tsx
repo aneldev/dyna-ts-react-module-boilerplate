@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import {MouseEventHandler} from "@types/react";
+import {MouseEventHandler} from "react";
 
 let  stylesFromLess: any = require("./index.less");
 let  stylesFromScss: any = require("./index.scss");

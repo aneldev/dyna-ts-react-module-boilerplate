@@ -2,11 +2,11 @@
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();
 	else if(typeof define === 'function' && define.amd)
-		define("dyna-ts-react-component-boilerplate", [], factory);
+		define("dyna-ts-react-module-boilerplate", [], factory);
 	else if(typeof exports === 'object')
-		exports["dyna-ts-react-component-boilerplate"] = factory();
+		exports["dyna-ts-react-module-boilerplate"] = factory();
 	else
-		root["dyna-ts-react-component-boilerplate"] = factory();
+		root["dyna-ts-react-module-boilerplate"] = factory();
 })(this, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -5163,14 +5163,14 @@ exports = module.exports = __webpack_require__(11)(undefined);
 
 
 // module
-exports.push([module.i, ".less-index---plainButton---3Z6tc {\n  font-family: sans-serif;\n  display: inline;\n  padding: 20px;\n  color: white;\n  font-size: 1.5rem;\n  cursor: pointer;\n  -webkit-transition: color ease 500ms;\n  transition: color ease 500ms;\n}\n.less-index---plainButton---3Z6tc:active {\n  position: relative;\n  top: 1px;\n  left: 1px;\n}\n.less-index---plainButton---3Z6tc:focus {\n  outline: none;\n}\n.less-index---ok---U1kGY {\n  color: white;\n  background-color: dodgerblue;\n}\n.less-index---ok---U1kGY:hover {\n  color: lightgrey;\n}\n.less-index---cancel---wtpKY {\n  color: white;\n  background-color: tomato;\n}\n.less-index---cancel---wtpKY:hover {\n  color: lightgrey;\n}\n.less-index---other---1u2yu {\n  color: black;\n  background-color: whitesmoke;\n}\n.less-index---other---1u2yu:hover {\n  color: darkgray;\n}\n", ""]);
+exports.push([module.i, ".less-index---plainButton---z_Up0 {\n  font-family: sans-serif;\n  display: inline;\n  padding: 20px;\n  color: white;\n  font-size: 1.5rem;\n  cursor: pointer;\n  -webkit-transition: color ease 500ms;\n  transition: color ease 500ms;\n}\n.less-index---plainButton---z_Up0:active {\n  position: relative;\n  top: 1px;\n  left: 1px;\n}\n.less-index---plainButton---z_Up0:focus {\n  outline: none;\n}\n.less-index---ok---389KL {\n  color: white;\n  background-color: dodgerblue;\n}\n.less-index---ok---389KL:hover {\n  color: lightgrey;\n}\n.less-index---cancel---28shg {\n  color: white;\n  background-color: tomato;\n}\n.less-index---cancel---28shg:hover {\n  color: lightgrey;\n}\n.less-index---other---ysh-m {\n  color: black;\n  background-color: whitesmoke;\n}\n.less-index---other---ysh-m:hover {\n  color: darkgray;\n}\n", ""]);
 
 // exports
 exports.locals = {
-	"plainButton": "less-index---plainButton---3Z6tc",
-	"ok": "less-index---ok---U1kGY",
-	"cancel": "less-index---cancel---wtpKY",
-	"other": "less-index---other---1u2yu"
+	"plainButton": "less-index---plainButton---z_Up0",
+	"ok": "less-index---ok---389KL",
+	"cancel": "less-index---cancel---28shg",
+	"other": "less-index---other---ysh-m"
 };
 
 /***/ }),
@@ -5182,11 +5182,11 @@ exports = module.exports = __webpack_require__(11)(undefined);
 
 
 // module
-exports.push([module.i, ".scss-index---plainButton---2r9Db {\n  border: 1px solid lightgray; }\n", ""]);
+exports.push([module.i, ".scss-index---plainButton---18sT7 {\n  border: 1px solid lightgray; }\n", ""]);
 
 // exports
 exports.locals = {
-	"plainButton": "scss-index---plainButton---2r9Db"
+	"plainButton": "scss-index---plainButton---18sT7"
 };
 
 /***/ }),
@@ -5210,8 +5210,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../node_modules/css-loader/index.js?modules&localIdentName=less-[name]---[local]---[hash:base64:5]!../node_modules/postcss-loader/lib/index.js??ref--2-2!../node_modules/less-loader/dist/index.js!./index.less", function() {
-			var newContent = require("!!../node_modules/css-loader/index.js?modules&localIdentName=less-[name]---[local]---[hash:base64:5]!../node_modules/postcss-loader/lib/index.js??ref--2-2!../node_modules/less-loader/dist/index.js!./index.less");
+		module.hot.accept("!!../node_modules/css-loader/index.js?modules&localIdentName=less-[name]---[local]---[hash:base64:5]!../node_modules/postcss-loader/lib/index.js??ref--2-2!../node_modules/less-loader/dist/cjs.js!./index.less", function() {
+			var newContent = require("!!../node_modules/css-loader/index.js?modules&localIdentName=less-[name]---[local]---[hash:base64:5]!../node_modules/postcss-loader/lib/index.js??ref--2-2!../node_modules/less-loader/dist/cjs.js!./index.less");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
