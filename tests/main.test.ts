@@ -1,6 +1,6 @@
 declare let window: any;
 declare let global: any, jasmine: any, describe: any, clearTest: any, it: any, expect: any;
-jasmine.getEnv().defaultTimeoutInterval  = 5000;
+if (typeof jasmine !== 'undefined') jasmine.getEnv().defaultTimeoutInterval  = 5000;
 
 import Button from '../src/index';
 
