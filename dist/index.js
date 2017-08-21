@@ -360,43 +360,45 @@ var emptyFunction = __webpack_require__(8);
 var warning = emptyFunction;
 
 if (process.env.NODE_ENV !== 'production') {
-  var printWarning = function printWarning(format) {
-    for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-      args[_key - 1] = arguments[_key];
-    }
-
-    var argIndex = 0;
-    var message = 'Warning: ' + format.replace(/%s/g, function () {
-      return args[argIndex++];
-    });
-    if (typeof console !== 'undefined') {
-      console.error(message);
-    }
-    try {
-      // --- Welcome to debugging React ---
-      // This error was thrown as a convenience so that you can use this stack
-      // to find the callsite that caused this warning to fire.
-      throw new Error(message);
-    } catch (x) {}
-  };
-
-  warning = function warning(condition, format) {
-    if (format === undefined) {
-      throw new Error('`warning(condition, format, ...args)` requires a warning ' + 'message argument');
-    }
-
-    if (format.indexOf('Failed Composite propType: ') === 0) {
-      return; // Ignore CompositeComponent proptype check.
-    }
-
-    if (!condition) {
-      for (var _len2 = arguments.length, args = Array(_len2 > 2 ? _len2 - 2 : 0), _key2 = 2; _key2 < _len2; _key2++) {
-        args[_key2 - 2] = arguments[_key2];
+  (function () {
+    var printWarning = function printWarning(format) {
+      for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+        args[_key - 1] = arguments[_key];
       }
 
-      printWarning.apply(undefined, [format].concat(args));
-    }
-  };
+      var argIndex = 0;
+      var message = 'Warning: ' + format.replace(/%s/g, function () {
+        return args[argIndex++];
+      });
+      if (typeof console !== 'undefined') {
+        console.error(message);
+      }
+      try {
+        // --- Welcome to debugging React ---
+        // This error was thrown as a convenience so that you can use this stack
+        // to find the callsite that caused this warning to fire.
+        throw new Error(message);
+      } catch (x) {}
+    };
+
+    warning = function warning(condition, format) {
+      if (format === undefined) {
+        throw new Error('`warning(condition, format, ...args)` requires a warning ' + 'message argument');
+      }
+
+      if (format.indexOf('Failed Composite propType: ') === 0) {
+        return; // Ignore CompositeComponent proptype check.
+      }
+
+      if (!condition) {
+        for (var _len2 = arguments.length, args = Array(_len2 > 2 ? _len2 - 2 : 0), _key2 = 2; _key2 < _len2; _key2++) {
+          args[_key2 - 2] = arguments[_key2];
+        }
+
+        printWarning.apply(undefined, [format].concat(args));
+      }
+    };
+  })();
 }
 
 module.exports = warning;
@@ -5161,14 +5163,14 @@ exports = module.exports = __webpack_require__(11)(undefined);
 
 
 // module
-exports.push([module.i, ".less-index---plainButton---z_Up0 {\n  font-family: sans-serif;\n  display: inline;\n  padding: 20px;\n  color: white;\n  font-size: 1.5rem;\n  cursor: pointer;\n  -webkit-transition: color ease 500ms;\n  transition: color ease 500ms;\n}\n.less-index---plainButton---z_Up0:active {\n  position: relative;\n  top: 1px;\n  left: 1px;\n}\n.less-index---plainButton---z_Up0:focus {\n  outline: none;\n}\n.less-index---ok---389KL {\n  color: white;\n  background-color: dodgerblue;\n}\n.less-index---ok---389KL:hover {\n  color: lightgrey;\n}\n.less-index---cancel---28shg {\n  color: white;\n  background-color: tomato;\n}\n.less-index---cancel---28shg:hover {\n  color: lightgrey;\n}\n.less-index---other---ysh-m {\n  color: black;\n  background-color: whitesmoke;\n}\n.less-index---other---ysh-m:hover {\n  color: darkgray;\n}\n", ""]);
+exports.push([module.i, ".less-index---plainButton---3Z6tc {\n  font-family: sans-serif;\n  display: inline;\n  padding: 20px;\n  color: white;\n  font-size: 1.5rem;\n  cursor: pointer;\n  -webkit-transition: color ease 500ms;\n  transition: color ease 500ms;\n}\n.less-index---plainButton---3Z6tc:active {\n  position: relative;\n  top: 1px;\n  left: 1px;\n}\n.less-index---plainButton---3Z6tc:focus {\n  outline: none;\n}\n.less-index---ok---U1kGY {\n  color: white;\n  background-color: dodgerblue;\n}\n.less-index---ok---U1kGY:hover {\n  color: lightgrey;\n}\n.less-index---cancel---wtpKY {\n  color: white;\n  background-color: tomato;\n}\n.less-index---cancel---wtpKY:hover {\n  color: lightgrey;\n}\n.less-index---other---1u2yu {\n  color: black;\n  background-color: whitesmoke;\n}\n.less-index---other---1u2yu:hover {\n  color: darkgray;\n}\n", ""]);
 
 // exports
 exports.locals = {
-	"plainButton": "less-index---plainButton---z_Up0",
-	"ok": "less-index---ok---389KL",
-	"cancel": "less-index---cancel---28shg",
-	"other": "less-index---other---ysh-m"
+	"plainButton": "less-index---plainButton---3Z6tc",
+	"ok": "less-index---ok---U1kGY",
+	"cancel": "less-index---cancel---wtpKY",
+	"other": "less-index---other---1u2yu"
 };
 
 /***/ }),
@@ -5180,11 +5182,11 @@ exports = module.exports = __webpack_require__(11)(undefined);
 
 
 // module
-exports.push([module.i, ".scss-index---plainButton---18sT7 {\n  border: 1px solid lightgray; }\n", ""]);
+exports.push([module.i, ".scss-index---plainButton---2r9Db {\n  border: 1px solid lightgray; }\n", ""]);
 
 // exports
 exports.locals = {
-	"plainButton": "scss-index---plainButton---18sT7"
+	"plainButton": "scss-index---plainButton---2r9Db"
 };
 
 /***/ }),
@@ -5208,8 +5210,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../node_modules/css-loader/index.js?modules&localIdentName=less-[name]---[local]---[hash:base64:5]!../node_modules/postcss-loader/lib/index.js??ref--2-2!../node_modules/less-loader/dist/cjs.js!./index.less", function() {
-			var newContent = require("!!../node_modules/css-loader/index.js?modules&localIdentName=less-[name]---[local]---[hash:base64:5]!../node_modules/postcss-loader/lib/index.js??ref--2-2!../node_modules/less-loader/dist/cjs.js!./index.less");
+		module.hot.accept("!!../node_modules/css-loader/index.js?modules&localIdentName=less-[name]---[local]---[hash:base64:5]!../node_modules/postcss-loader/lib/index.js??ref--2-2!../node_modules/less-loader/dist/index.js!./index.less", function() {
+			var newContent = require("!!../node_modules/css-loader/index.js?modules&localIdentName=less-[name]---[local]---[hash:base64:5]!../node_modules/postcss-loader/lib/index.js??ref--2-2!../node_modules/less-loader/dist/index.js!./index.less");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
