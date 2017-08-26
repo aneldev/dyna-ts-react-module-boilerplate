@@ -4,6 +4,12 @@ Webpack configuration for ES5/ES6 React components written in Typescript to be u
 
 Develop, debug, test and distribute react component(s) easy.
 
+# Why not `create-react-app`?
+
+`create-react-app` is awesome boilerplate and I recommend to use it! `create-react-app-typescript` is forking the `create-react-app` and supports also Typescript. Simple awesome!
+
+`dyna-ts-react-module-boilerplate` is for different use, is a lightweight boilerplate to create modules that will be used to `create-react-app`.
+
 # Develop
 
 ## Implement
