@@ -4,8 +4,9 @@ const fs = require('fs');
 const path = require('path');
 const webpack = require('webpack');
 
-const package = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
+const package_ = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
 const loaders = require('./webpack.loaders');
+const plugins = require('./webpack.plugins');
 
 const config = {
   entry: [
@@ -16,7 +17,7 @@ const config = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'index.js',
     publicPath: '/dist/',
-    library: package.name,
+    library: package_.name,
     libraryTarget: 'umd',
     umdNamedDefine: true
   },
@@ -27,7 +28,7 @@ const config = {
   module: {
     loaders: loaders
   },
-  plugins: [
+  plugins: plugins.concat([
     // todo: UglifyJsPlugin is not compatible at the moment with ES6 (Array.find && Object.assign are supported from ES6)
     // new webpack.optimize.UglifyJsPlugin({
     //   compress: {
@@ -35,7 +36,7 @@ const config = {
     //   },
     //   sourceMap: true
     // })
-  ]
+  ]),
 
 };
 
