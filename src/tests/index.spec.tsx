@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as enzyme from 'enzyme';
 
-import ComponentToTest from './index';
+import ComponentToTest from './..';
 
 describe('Home', () => {
   let wrapper;
