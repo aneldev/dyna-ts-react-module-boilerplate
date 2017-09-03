@@ -2,6 +2,7 @@
 // help: https://webpack.github.io/docs/webpack-dev-server.html#webpack-dev-server-cli
 const path = require('path');
 const webpack = require('webpack');
+const nodeExternals = require('webpack-node-externals');
 
 const loaders = require('./webpack.loaders');
 const plugins = require('./webpack.plugins');
@@ -16,6 +17,7 @@ const config = {
     // the entry application code
     path.resolve(__dirname, 'dev/scripts/index.tsx')
   ],
+  externals: [nodeExternals()], // in order to ignore all modules in node_modules folder
   output: {
     path: path.resolve(__dirname, 'dev/public'),
     filename: 'bundle.js'
