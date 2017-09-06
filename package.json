@@ -9,8 +9,8 @@
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
   "scripts": {
-    "preinstall": "npm install -g typescript && npm run create",
-    "create": "echo Creation started... && rm -rf .git && rm -rf package-lock.json && mv README.md README.boilerplate.md && echo # readme > README.md && npm run .creation-done",
+    "preinstall": "npm install -g typescript",
+    "create": "echo Creation started... && rm -rf .git && rm -rf package-lock.json && mv README.md README.boilerplate.md && echo # readme > README.md && npm install && npm run .creation-done",
     ".creation-done": "node _boilerplate.js && echo --- module created",
     "clear": "rimraf build temp",
     "start": "npm run dev",
@@ -83,8 +83,7 @@
     "url-loader": "^0.5.9",
     "webpack": "^2.6.1",
     "webpack-dev-middleware": "^1.10.2",
-    "webpack-dev-server": "^2.4.5",
-    "webpack-node-externals": "^1.6.0"
+    "webpack-dev-server": "^2.4.5"
   },
   "jest": {
     "automock": false,

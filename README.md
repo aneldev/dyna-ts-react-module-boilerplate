@@ -8,7 +8,7 @@ Develop, debug, test and distribute react component(s) easy.
 ```
 git clone http://github.com/aneldev/dyna-ts-react-module-boilerplate my-awesome-react-component
 cd my-awesome-react-component
-npm install
+npm run create
 ```
 That's it. 
 
