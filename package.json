@@ -8,11 +8,10 @@
   },
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
-  "preinstall": {
-    ".install-tsc": "npm install -g typescript"
-  },
   "scripts": {
-    "//help": "https://webpack.github.io/docs/webpack-dev-server.html#webpack-dev-server-cli",
+    "preinstall":"npm install -g typescript && npm run create",
+    "create": "echo Creation started... && rm -rf .git && rm -rf package-lock.json && mv README.md README.boilerplate.md && echo # readme > README.md && npm run .creation-done",
+    ".creation-done": "node _boilerplate.js && echo --- module created",
     "clear": "rimraf build temp",
     "start": "npm run dev",
     "dev": "webpack-dev-server --config webpack.dev.config.js --port 8027 --devtool eval --progress --hot --content-base dev/public --host 0.0.0.0",
@@ -28,7 +27,8 @@
     "publish-push": "npm version patch && npm publish && git push",
     "tpp": "npm run test-publish-push",
     "test-publish-push": "npm test && npm version patch && npm publish && git push",
-    "reinstall": "rm package-lock.json && rm -rf node_modules/ && npm install"
+    "reinstall": "rm -rf node_modules/ && npm install",
+    "reinstall-hard": "rm package-lock.json && rm -rf node_modules/ && npm install"
   },
   "keywords": [],
   "author": "Anel dev",
@@ -80,7 +80,6 @@
     "style-loader": "^0.18.2",
     "ts-jest": "^20.0.6",
     "typescript": "^2.3.2",
-    "typings": "^2.1.1",
     "url-loader": "^0.5.9",
     "webpack": "^2.6.1",
     "webpack-dev-middleware": "^1.10.2",
