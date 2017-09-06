@@ -16,8 +16,14 @@ const config = {
     // the entry application code
     path.resolve(__dirname, 'dev/scripts/index.tsx')
   ],
+  devServer: {
+    hot: true,
+    port: 3200,
+    publicPath: '/static',
+    historyApiFallback: true
+  },
   output: {
-    path: path.resolve(__dirname, 'dev/public'),
+    path: path.resolve(__dirname, 'dev/public/static'),
     filename: 'bundle.js'
   },
   resolve: {
