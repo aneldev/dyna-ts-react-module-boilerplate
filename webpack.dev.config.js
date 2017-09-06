@@ -7,13 +7,13 @@ const nodeExternals = require('webpack-node-externals');
 const loaders = require('./webpack.loaders');
 const plugins = require('./webpack.plugins');
 
-console.log('To debug open address: http://localhost:8027 on any browser');
+console.log('To debug open address: http://localhost:3200 on any browser');
 console.log('');
 
 const config = {
   entry: [
     // inject some code in order to enable the auto refresh of the browse in case of a file's change
-    'webpack-dev-server/client?http://localhost:8027',
+    'webpack-dev-server/client?http://localhost:3200',
     // the entry application code
     path.resolve(__dirname, 'dev/scripts/index.tsx')
   ],

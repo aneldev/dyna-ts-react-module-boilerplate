@@ -14,7 +14,7 @@
     ".creation-done": "node _boilerplate.js && echo --- module created",
     "clear": "rimraf build temp",
     "start": "npm run dev",
-    "dev": "webpack-dev-server --config webpack.dev.config.js --port 8027 --devtool eval --progress --hot --content-base dev/public --host 0.0.0.0",
+    "dev": "webpack-dev-server --config webpack.dev.config.js --port 3200 --devtool eval --progress --hot --content-base dev/public --host 0.0.0.0",
     "build": "rimraf build && webpack --config webpack.build.config.js",
     "release": "npm run dist",
     "dist": "rimraf ./dist/ && npm run .build-index.d.ts && npm run .build-dist",

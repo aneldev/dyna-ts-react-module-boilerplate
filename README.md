@@ -40,7 +40,7 @@ Implement the usage of your components(s) under `dev/script/`;
 
 Call `npm start`.
 
-Open in any browser http://localhost:8027 to **preview**, **dev** or **debug**.
+Open in any browser http://localhost:3200 to **preview**, **dev** or **debug**.
 
 # Preview
 
