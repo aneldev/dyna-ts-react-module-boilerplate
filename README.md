@@ -101,11 +101,11 @@ By default all `.less` and `.scss` files can be used only as [css-modules](https
 
 # Known issues
 
-- HMR is working always
+- HMR is not working always
 
 # Next improvements
 
-- Support cssModules and plain css together
+- Support `cssModules` and plain css together
 
 # Have fun
 
