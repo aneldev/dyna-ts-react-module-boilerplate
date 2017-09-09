@@ -1,7 +1,7 @@
 import * as React from "react";
 import PlainButton, {EButtonType} from "../../src/";
 
-import "./start.less";
+const styles = require('./start.less');
 
 export default
 class LoadMore extends React.Component<any, any> {
