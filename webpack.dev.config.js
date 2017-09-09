@@ -11,13 +11,18 @@ console.log('');
 
 const config = {
   entry: [
-    // inject some code in order to enable the auto refresh of the browse in case of a file's change
     'webpack-dev-server/client?http://localhost:3200',
-    // the entry application code
+    // todo: tttt -> 'webpack/hot/dev-server',
     path.resolve(__dirname, 'dev/scripts/index.tsx')
   ],
+  devServer: {
+    hot: true,
+    port: 3200,
+    publicPath: '/static',
+    historyApiFallback: true
+  },
   output: {
-    path: path.resolve(__dirname, 'dev/public'),
+    path: path.resolve(__dirname, 'dev/public/static'),
     filename: 'bundle.js'
   },
   resolve: {
@@ -27,7 +32,9 @@ const config = {
   module: {
     loaders: loaders
   },
-  plugins: plugins,
+  plugins: [
+    // todo: tttt -> new webpack.HotModuleReplacementPlugin()
+  ].concat(plugins),
 };
 
 module.exports = config;

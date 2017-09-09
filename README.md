@@ -4,6 +4,19 @@ Webpack configuration for ES5/ES6 React components written in Typescript to be u
 
 Develop, debug, test and distribute react component(s) easy.
 
+# Features
+
+- Write in Typescript, .tsx, .ts, but also .jsx & .js are supported
+- Ready for react-router, dev server serves deep links
+- Load inline images
+- Configured font loader
+- Load Fonts Awesome
+- Supports CSS, SCSS & LESS on the same time
+- cssModules (optional), works both SCSS & LESS
+- Test with Jest, with snapshots
+- Distribute as module with TypeScript Definitions (ready to import)
+- Distributed version works in Javascript and Typescript applications
+
 # Installation
 ```
 git clone http://github.com/aneldev/dyna-ts-react-module-boilerplate my-awesome-react-component
@@ -79,6 +92,20 @@ The output of your package is what it is extracted only from your `src/index.jsx
 **Tip 2:** You can link this module with your main application using the `npm link` for more reading https://docs.npmjs.com/cli/link.
 
 **Tip 2.1:** With npm > 5.0.0 the above link can be made defining the "file:xxx" instead of the version number, for more reading https://docs.npmjs.com/cli/link.
+
+# Features (tips)
+
+## Disable the `cssModules`
+
+By default all `.less` and `.scss` files can be used only as [css-modules](https://github.com/css-modules/css-modules). If you don't prefer the cssModule way edit the `/webpack.loaders.js` and set the const `USE_CSSMODULES` to `false`.
+
+# Known issues
+
+- HMR is working always
+
+# Next improvements
+
+- Support cssModules and plain css together
 
 # Have fun
 

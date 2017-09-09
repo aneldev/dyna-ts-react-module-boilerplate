@@ -2,8 +2,13 @@ import * as React from 'react';
 
 import {MouseEventHandler} from "react";
 
-let  stylesFromLess: any = require("./index.less");
-let  stylesFromScss: any = require("./index.scss");
+// Load font-awesome
+import "./font-awesome.less";
+import "font-awesome/css/font-awesome.css";
+
+// Load the styles
+let stylesFromLess: any = require("./index.less");
+let stylesFromScss: any = require("./index.scss");
 
 export enum EButtonType {
   OK, CANCEL, OTHER
@@ -42,6 +47,7 @@ class PlainButton extends React.Component<IPlainButtonProps, IPlainButtonState> 
     let className:string = `${stylesFromLess.plainButton} ${stylesFromScss.plainButton} ${this.getTypeClassName}`;
     return (
       <button className={className} onClick={this.props.onClick}>
+        <i className={`fa fa-check-circle ${stylesFromLess.icon}`} aria-hidden="true" />
         {this.props.caption}
       </button>
     );
