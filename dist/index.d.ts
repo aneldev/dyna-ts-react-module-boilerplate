@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { MouseEventHandler } from "react";
 import "./font-awesome.less";
+import "./font-awesome.scss";
 import "font-awesome/css/font-awesome.css";
 export declare enum EButtonType {
     OK = 0,

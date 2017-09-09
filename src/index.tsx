@@ -4,6 +4,7 @@ import {MouseEventHandler} from "react";
 
 // Load font-awesome
 import "./font-awesome.less";
+import "./font-awesome.scss";
 import "font-awesome/css/font-awesome.css";
 
 // Load the styles
