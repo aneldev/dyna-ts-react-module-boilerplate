@@ -1,5 +1,5 @@
 // help: http://webpack.github.io/docs/tutorials/getting-started/
-const path = require('path');
+const USE_CSSMODULES = true;
 
 module.exports = [
   {
@@ -25,11 +25,15 @@ module.exports = [
       ]
     }
   },
+  {	// css loader
+    test: /\.css$/,
+    loader: "style-loader!css-loader",
+  },
   {
     test: /\.less$/,
     use: [
       'style-loader',
-      'css-loader?modules&localIdentName=less-[name]---[local]---[hash:base64:5]',
+      USE_CSSMODULES && 'css-loader?modules&localIdentName=less-[name]---[local]---[hash:base64:5]' || 'css-loader',
       {
         loader: 'postcss-loader',
         options: {
@@ -47,7 +51,7 @@ module.exports = [
     test: /\.scss$/,
     use: [
       'style-loader',
-      'css-loader?modules&localIdentName=scss-[name]---[local]---[hash:base64:5]',
+      USE_CSSMODULES && 'css-loader?modules&localIdentName=scss-[name]---[local]---[hash:base64:5]' || 'css-loader',
       {
         loader: 'postcss-loader',
         options: {
@@ -66,22 +70,32 @@ module.exports = [
     // help: https://christianalfoni.github.io/react-webpack-cookbook/Inlining-images.html
     test: /\.(png|jpg|gif)$/,
     loader: 'url?limit=100000'
-  }, {
-    // load the woff fonts
-    // help: https://christianalfoni.github.io/react-webpack-cookbook/Inlining-fonts.html
-    test: /\.woff$/,
-    loader: 'url?limit=100000'
   },
   {
-    // load the woff fonts
-    test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-    loader: "url-loader?limit=10000&mimetype=application/font-woff"
+    test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
+    loader: 'url-loader',
+    options: {
+      limit: 50000,
+      mimetype: 'application/font-woff',
+      publicPath: '/static/',
+    },
   },
   {
-    // load the woff fonts
     test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-    loader: "file-loader"
+    loader: 'url-loader',
+    options: {
+      limit: 50000,
+      publicPath: '/static/',
   },
+  },
+  // Alternative way to load fonts, always as links
+  // {
+  //   test: /\.(ttf|eot|svg|woff|woff2)$/,
+  //   loader: 'file-loader',
+  //   options: {
+  //     publicPath: '/static/',
+  //   },
+  // },
   {	// json loader
     test: /\.json$/, loader: "json-loader"
   },
@@ -90,5 +104,3 @@ module.exports = [
     test: /\.js$/, loader: "source-map-loader"
   }
 ];
-
-// export default loaders;
