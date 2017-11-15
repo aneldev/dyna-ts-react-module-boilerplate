@@ -28,6 +28,7 @@
     "publish-push": "npm version patch && npm publish && git push && git push --tags",
     "tpp": "npm run test-publish-push",
     "test-publish-push": "npm test && npm version patch && npm publish && git push && git push --tags",
+    "sync-externals": "node syncExternals.js",
     "reinstall": "rm -rf node_modules/ && npm install",
     "reinstall-hard": "rm package-lock.json && rm -rf node_modules/ && npm install"
   },
@@ -68,6 +69,7 @@
     "json-loader": "^0.5.4",
     "less": "^2.7.2",
     "less-loader": "^4.0.4",
+    "nodemon": "^1.12.1",
     "node-sass": "^4.5.3",
     "postcss-cli": "^4.1.0",
     "postcss-loader": "^2.0.6",
