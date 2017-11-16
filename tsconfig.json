@@ -9,6 +9,7 @@
     "target": "es6",
     "jsx": "react",
     "allowJs": false,
+    "noErrorTruncation": true,
     "types" : [ "node" ]
   },
   "files": [
