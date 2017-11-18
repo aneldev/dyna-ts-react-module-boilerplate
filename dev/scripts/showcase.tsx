@@ -1,7 +1,6 @@
 import * as React from 'react';
 import PlainButton, {EButtonType} from "../../src/";
 
-import {Link} from "react-router-dom";
 import {faIcon, IShowcase} from "dyna-showcase";
 import {Logo} from "./Logo";
 
@@ -94,8 +93,8 @@ export default {
         <div style={{textAlign: 'center'}}>
           <h1>The end</h1>
           <div style={{fontSize: '20px'}}>
-            <p><Link to="https://github.com/aneldev/dyna-ts-react-module-boilerplate">{faIcon('github')} Github</Link></p>
-            <p><Link to="https://www.npmjs.com/package/dyna-ts-react-module-boilerplate">{faIcon('square')} npm</Link></p>
+            <p><a href="https://github.com/aneldev/dyna-ts-react-module-boilerplate">{faIcon('github')} Github</a></p>
+            <p><a href="https://www.npmjs.com/package/dyna-ts-react-module-boilerplate">{faIcon('square')} npm</a></p>
           </div>
         </div>
       ),

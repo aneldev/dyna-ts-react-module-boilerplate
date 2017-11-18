@@ -45,19 +45,14 @@ Under the `dev/scripts/` folder there is a small web application that uses this 
 
 Under the `dev/public/` folder is the http folder of the application, you should not do anything there because this is not distributed.
 
-## Develop / Debug
+## Develop / Debug / Preview
 
-Implement your component(s) under `src/`.
+This boilerplate uses the [dyna-showcase](https://github.com/aneldev/dyna-showcase) to show how your module is rendered under different props. The concept is the same as the StoryBook but it is much lighter and without styles. 
 
-Implement the usage of your components(s) under `dev/script/`;
-
-Call `npm start`.
-
-Open in any browser http://localhost:3200 to **preview**, **dev** or **debug**.
-
-# Preview
-
-Call `npm start`.
+- Implement your component(s) under `src/`
+- Implement the usage of your components(s) in `dev/scripts/showcase.tsx`
+- Call `npm start`
+- Open in any browser [http://localhost:3200](http://localhost:3200) to **develop**, **debug** or **preview**.
 
 # Test
 
