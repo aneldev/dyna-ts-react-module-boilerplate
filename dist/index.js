@@ -2575,9 +2575,7 @@ class PlainButton extends React.Component {
     render() {
         // ReactDOM;
         let className = `${stylesFromLess.plainButton} ${stylesFromScss.plainButton} ${this.getTypeClassName}`;
-        return (React.createElement("button", { className: className, onClick: this.props.onClick },
-            React.createElement("i", { className: `fa fa-check-circle ${stylesFromLess.icon}`, "aria-hidden": "true" }),
-            this.props.caption));
+        return (React.createElement("button", { className: className, onClick: this.props.onClick }, this.props.caption));
     }
 }
 PlainButton.defaultProps = {

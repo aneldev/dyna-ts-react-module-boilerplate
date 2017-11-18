@@ -16,7 +16,7 @@ export enum EButtonType {
 }
 
 export interface IPlainButtonProps {
-  caption: string;
+  caption: string | JSX.Element;
   buttonType?: EButtonType;
   onClick?: MouseEventHandler<any>;
 }
@@ -48,7 +48,6 @@ class PlainButton extends React.Component<IPlainButtonProps, IPlainButtonState> 
     let className:string = `${stylesFromLess.plainButton} ${stylesFromScss.plainButton} ${this.getTypeClassName}`;
     return (
       <button className={className} onClick={this.props.onClick}>
-        <i className={`fa fa-check-circle ${stylesFromLess.icon}`} aria-hidden="true" />
         {this.props.caption}
       </button>
     );

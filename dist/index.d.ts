@@ -9,7 +9,7 @@ export declare enum EButtonType {
     OTHER = 2,
 }
 export interface IPlainButtonProps {
-    caption: string;
+    caption: string | JSX.Element;
     buttonType?: EButtonType;
     onClick?: MouseEventHandler<any>;
 }

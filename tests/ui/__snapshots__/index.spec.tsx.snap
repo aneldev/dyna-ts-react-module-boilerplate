@@ -5,10 +5,6 @@ exports[`Home has expected content with deep render 1`] = `
   className="plainButton plainButton other"
   onClick={[Function]}
 >
-  <i
-    aria-hidden="true"
-    className="fa fa-check-circle icon"
-  />
   ok
 </button>
 `;
