@@ -9,9 +9,7 @@
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
   "scripts": {
-    "preinstall": "sudo npm install -g typescript",
-    "create": "echo Creation started... && rm -rf .git && rm -rf package-lock.json && mv README.md README.boilerplate.md && echo # readme > README.md && npm install && npm run .creation-done",
-    ".creation-done": "node _boilerplate.js && echo --- module created",
+    "create": "echo Creation started... && rm -rf .git && rm -rf package-lock.json && mv README.md README.boilerplate.md && echo \\# readme > README.md && npm install && node _boilerplate.js && echo --- module created",
     "clear": "rimraf build temp",
     "start": "webpack-dev-server --config webpack.dev.config.js --port 3200 --devtool eval --progress --inline --hot --content-base dev/public --open --host 127.0.0.1",
     "build": "rimraf build && webpack --config webpack.build.config.js",
@@ -61,6 +59,7 @@
     "enzyme": "^2.8.2",
     "enzyme-to-json": "^1.5.1",
     "file-loader": "^0.9.0",
+    "font-awesome": "^4.7.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^20.0.4",
     "jest-cli": "^20.0.4",
