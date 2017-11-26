@@ -54,6 +54,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "babel-runtime": "6.11.6",
+    "chokidar": "^1.7.0",
     "css-loader": "^0.28.4",
     "dyna-showcase": "^0.4.3",
     "enzyme": "^2.8.2",
