@@ -1047,43 +1047,59 @@ module.exports = __webpack_require__(15);
 
 "use strict";
 
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 Object.defineProperty(exports, "__esModule", { value: true });
-const React = __webpack_require__(16);
+var React = __webpack_require__(16);
 // Load font-awesome
 __webpack_require__(21);
 __webpack_require__(24);
 __webpack_require__(26);
 // Load the styles
-let stylesFromLess = __webpack_require__(28);
-let stylesFromScss = __webpack_require__(30);
+var stylesFromLess = __webpack_require__(28);
+var stylesFromScss = __webpack_require__(30);
 var EButtonType;
 (function (EButtonType) {
     EButtonType[EButtonType["OK"] = 0] = "OK";
     EButtonType[EButtonType["CANCEL"] = 1] = "CANCEL";
     EButtonType[EButtonType["OTHER"] = 2] = "OTHER";
 })(EButtonType = exports.EButtonType || (exports.EButtonType = {}));
-class PlainButton extends React.Component {
-    constructor(props, context) {
-        super(props, context);
+var PlainButton = /** @class */ (function (_super) {
+    __extends(PlainButton, _super);
+    function PlainButton(props, context) {
+        return _super.call(this, props, context) || this;
     }
-    get getTypeClassName() {
-        switch (this.props.buttonType) {
-            case EButtonType.OK: return stylesFromLess.ok;
-            case EButtonType.CANCEL: return stylesFromLess.cancel;
-            case EButtonType.OTHER: return stylesFromLess.other;
-        }
-    }
-    render() {
+    Object.defineProperty(PlainButton.prototype, "getTypeClassName", {
+        get: function () {
+            switch (this.props.buttonType) {
+                case EButtonType.OK: return stylesFromLess.ok;
+                case EButtonType.CANCEL: return stylesFromLess.cancel;
+                case EButtonType.OTHER: return stylesFromLess.other;
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    PlainButton.prototype.render = function () {
         // ReactDOM;
-        let className = `${stylesFromLess.plainButton} ${stylesFromScss.plainButton} ${this.getTypeClassName}`;
+        var className = stylesFromLess.plainButton + " " + stylesFromScss.plainButton + " " + this.getTypeClassName;
         return (React.createElement("button", { className: className, onClick: this.props.onClick }, this.props.caption));
-    }
-}
-PlainButton.defaultProps = {
-    caption: '',
-    buttonType: EButtonType.OTHER,
-    onClick: () => undefined,
-};
+    };
+    PlainButton.defaultProps = {
+        caption: '',
+        buttonType: EButtonType.OTHER,
+        onClick: function () { return undefined; },
+    };
+    return PlainButton;
+}(React.Component));
 exports.default = PlainButton;
 
 
