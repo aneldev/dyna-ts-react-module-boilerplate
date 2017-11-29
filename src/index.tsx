@@ -8,8 +8,8 @@ import "./font-awesome.scss";
 import "font-awesome/css/font-awesome.css";
 
 // Load the styles
-let stylesFromLess: any = require("./index.less");
-let stylesFromScss: any = require("./index.scss");
+let stylesFromLess: any = require("./index.module.less");
+let stylesFromScss: any = require("./index.module.scss");
 
 export enum EButtonType {
   OK, CANCEL, OTHER
