@@ -24,8 +24,7 @@
     "tpp": "npm run test-publish-push",
     "test-publish-push": "npm test && npm version patch && npm publish && git push && git push --tags",
     "sync-externals": "node syncExternals.js",
-    "reinstall": "rm -rf node_modules/ && npm install",
-    "reinstall-hard": "rm package-lock.json && rm -rf node_modules/ && npm install"
+    "reinstall": "rm package-lock.json; rm -rf node_modules/ ; npm install"
   },
   "keywords": [],
   "author": "Anel dev",
