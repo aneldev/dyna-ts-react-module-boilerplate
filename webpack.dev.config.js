@@ -11,6 +11,7 @@ console.log('');
 
 const config = {
   entry: [
+    'babel-polyfill',
     'webpack-dev-server/client?http://localhost:3200',
     // todo: tttt -> 'webpack/hot/dev-server',
     path.resolve(__dirname, 'dev/scripts/index.tsx')

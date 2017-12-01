@@ -64,7 +64,7 @@ Test files can be anywhere but they should have a name *.(test|spec).(ts|tsx|js|
 
 ## Run tests
  
-Call `npm run test` to run your tests and coverage. This test also build your application, ts errors can be shown here.
+Call `npm run test` to run your tests and coverage. This test also builds your application, ts errors can be shown here.
 
 Call `npm run test-only` to run your tests only including coverage, no build no ts errors.
  

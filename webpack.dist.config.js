@@ -10,6 +10,7 @@ const plugins = require('./webpack.plugins');
 
 const config = {
   entry: [
+    // do not user babel-polyfill here, the application should load polyfills!
     // the entry application code
     path.resolve(__dirname, 'src/index.tsx')
   ],
