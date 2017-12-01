@@ -10,9 +10,7 @@
   "typings": "./dist/index.d.ts",
   "scripts": {
     "create": "echo Creation started... && rm -rf .git && rm -rf package-lock.json && mv README.md README.boilerplate.md && echo \\# readme > README.md && npm install && node _boilerplate.js && echo --- module created",
-    "clear": "rimraf build temp",
     "start": "webpack-dev-server --config webpack.dev.config.js --port 3200 --devtool eval --progress --inline --hot --content-base dev/public --open --host 127.0.0.1",
-    "build": "rimraf build && webpack --config webpack.build.config.js",
     "release": "npm run dist",
     "dist": "rimraf ./dist/ && npm run .build-index.d.ts && npm run .build-dist",
     ".build-index.d.ts": "tsc && rm ./dist/index.js && npm run .build-index.d.ts-clear",
