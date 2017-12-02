@@ -1,8 +1,8 @@
 import * as React from 'react';
-import PlainButton, {EButtonType} from "../../src/";
+import PlainButton, {EButtonType} from "../../src";
 
 import {faIcon, IShowcase} from "dyna-showcase";
-import {Logo} from "./Logo";
+import {Logo} from "../logo";
 
 require('./showcase.less');
 

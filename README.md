@@ -41,16 +41,16 @@ The source code of your project is under the src/ folder only. What will be dist
 
 There are loaders for various files, like: `.less`, `.scss`, `.svg`, `.jpg`, `etc.`. Loaders *are loaded* in `webpack.loaders.js`, where you can add your own loaders that will be used from all tasks (npm scripts).
 
-Under the `dev/scripts/` folder there is a small web application that uses this component with one or more ways. By this way you can develop, debug and make a showcase of how your component(s) can be used.
+Under the `dev/app/` folder there is a small web application that uses this component with one or more ways. By this way you can develop, debug and make a showcase of how your component(s) can be used.
 
 Under the `dev/public/` folder is the http folder of the application, you should not do anything there because this is not distributed.
 
 ## Develop / Debug / Preview
 
-This boilerplate uses the [dyna-showcase](https://github.com/aneldev/dyna-showcase) to show how your module is rendered under different props. The concept is the same as the StoryBook but it is much lighter and without styles. 
+This boilerplate uses the [dyna-showcase](https://github.com/aneldev/dyna-showcase) to show how your module is rendered under different props. The concept is the same as the StoryBook but it is much lighter and without styles and some tools that helps on developemennt. 
 
 - Implement your component(s) under `src/`
-- Implement the usage of your components(s) in `dev/scripts/showcase.tsx`
+- Implement the usage of your components(s) in `dev/showcase/showcase.tsx`
 - Call `npm start`
 - Open in any browser [http://localhost:3200](http://localhost:3200) to **develop**, **debug** or **preview**.
 

@@ -1,7 +1,7 @@
 import * as React from "react";
 import {DynaShowcase} from "dyna-showcase";
 
-import showcase from './showcase';
+import showcase from '../showcase/showcase';
 const menuStyle = require('dyna-showcase/styles/menu-style-white.module.less');
 
 import "./font-awesome.less";
