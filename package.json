@@ -25,7 +25,7 @@
     "test-publish-push": "npm test && npm version patch && npm publish && git push && git push --tags",
     "sync-externals": "node syncExternals.js",
     "clear-npm-cache": "npm cache clear --force",
-    "reinstall": "rm ./package-lock.json; rm -r ./node_modules; npm install"
+    "reinstall": "rm ./package-lock.json; rm -rf ./node_modules; npm install"
   },
   "keywords": [],
   "author": "Anel dev",
