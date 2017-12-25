@@ -1,0 +1,144 @@
+.dyna-button {
+	outline: none;
+
+	&.dnbtn- {
+
+		&style- {
+
+			&ROUNDED {
+				font-size: 0;
+
+				button {
+					outline: none;
+					border-style: solid;
+					cursor: pointer;
+					transition: background-color 200ms ease-out;
+				}
+
+				&.dnbtn-size- {
+					&SMALL {
+						button {
+							padding: 2px 8px;
+							font-size: 8px;
+							line-height: 10px;
+							border-width: 1px;
+							border-radius: 8px;
+							font-weight: bold;
+							&:active {
+								position: relative;
+								top: 1px;
+								left: 1px;
+							}
+						}
+					}
+					&MEDIUM {
+						// line-height: 8px;
+						button {
+							padding: 4px 16px;
+							font-size: 14px;
+							line-height: 22px;
+							border-width: 1px;
+							border-radius: 16px;
+							font-weight: bold;
+							&:active {
+								position: relative;
+								top: 1px;
+								left: 1px;
+							}
+						}
+					}
+					&LARGE {
+						button {
+							padding: 8px 32px;
+							font-size: 26px;
+							line-height: 46px;
+							border-width: 1px;
+							border-radius: 32px;
+							font-weight: bold;
+							&:active {
+								position: relative;
+								top: 2px;
+								left: 2px;
+							}
+						}
+					}
+					&XLARGE {
+						button {
+							padding: 16px 64px;
+							font-size: 40px;
+							line-height: 92px;
+							border-width: 2px;
+							border-radius: 64px;
+							font-weight: bold;
+							&:active {
+								position: relative;
+								top: 2px;
+								left: 2px;
+							}
+						}
+					}
+				}
+			}
+
+		}
+
+		&color- {
+			&WHITE_BLACK {
+				button {
+					border-color: black;
+					background: white;
+					color: black;
+					&:hover{
+						background-color: #e6e6e6;
+					}
+					&:active{
+						background-color: #d1d1d1;
+					}
+				}
+			}
+			&WHITE_RED {
+				button {
+					border-color: red;
+					background: white;
+					color: red;
+					&:hover{
+						background-color: #e6e6e6;
+					}
+					&:active{
+						background-color: #d1d1d1;
+					}
+				}
+			}
+			&BLACK_WHITE {
+				button {
+					border-color: black;
+					background: black;
+					color: white;
+					&:hover{
+						background-color: #333333;
+					}
+					&:active{
+						background-color: #525252;
+					}
+				}
+			}
+			&TRANSPARENT_WHITE {
+				button {
+					border-color: white;
+					background: transparent;
+					color: white;
+					&:hover{
+						border-color: #e6e6e6;
+						color: #e6e6e6;
+					}
+					&:active{
+						border-color: #d1d1d1;
+						color: #d1d1d1;
+					}
+				}
+			}
+
+		}
+
+	}
+}

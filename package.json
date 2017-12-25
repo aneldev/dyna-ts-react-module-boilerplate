@@ -11,20 +11,16 @@
   "scripts": {
     "create": "echo Creation started... && rm -rf .git && rm -rf package-lock.json && mv README.md README.boilerplate.md && echo \\# readme > README.md && npm install && node _boilerplate.js && echo --- module created",
     "start": "webpack-dev-server --config webpack.dev.config.js --port 3200 --devtool eval --progress --inline --hot --content-base dev/public --open --host 127.0.0.1",
-    "release": "npm run dist",
-    "dist": "rimraf ./dist/ && npm run .build-index.d.ts && npm run .build-dist",
+    "build": "rimraf ./dist/ && npm run .build-index.d.ts && npm run .build-dist",
     ".build-index.d.ts": "tsc && rm ./dist/index.js && npm run .build-index.d.ts-clear",
     ".build-index.d.ts-clear": "cd dist/ && find . -name \\*.js -delete && cd ..",
     ".build-dist": "set NODE_ENV=production && webpack --config webpack.dist.config.js",
-    "test": "npm run dist && jest --coverage --no-cache --runInBand",
-    "test-only": "jest --coverage --no-cache --runInBand",
-    "test-watch": "jest --watch --verbose --runInBand",
+    "release": "npm run build && npm run publish-push",
     "commit": "git add -u && git add -A && git commit -m",
-    "pp": "npm run publish-push",
     "publish-push": "git add -u && git add -A && git commit -m --amend --no-edit; npm version patch && npm publish && git push && git push --tags",
-    "tpp": "npm run test-publish-push",
-    "test-publish-push": "npm test && npm version patch && npm publish && git push && git push --tags",
     "sync-externals": "node syncExternals.js",
+    "test": "jest --coverage --no-cache --runInBand",
+    "test-watch": "jest --watch --verbose --runInBand",
     "clear-npm-cache": "npm cache clear --force",
     "reinstall": "rm ./package-lock.json; rm -rf ./node_modules; npm install"
   },
@@ -33,8 +29,7 @@
   "license": "MIT",
   "dependencies": {
     "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "font-awesome": "^4.7.0"
+    "react-dom": "^16.0.0"
   },
   "devDependencies": {
     "@types/enzyme": "^3.1.5",

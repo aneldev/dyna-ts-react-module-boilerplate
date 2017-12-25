@@ -1,5 +1,5 @@
 import * as React from 'react';
-import PlainButton, {EButtonType} from "../../src";
+import {DynaButton, EColor, ESize, EStyle, IDynaButtonProps} from "../../src";
 
 import {faIcon, IShowcase} from "dyna-showcase";
 import {Logo} from "../logo";
@@ -16,73 +16,123 @@ export default {
       center: true,
       component: (
         <div>
-          <h3>dyna ts</h3>
-          <h4>react module boilerplate</h4>
-          <p>An easy way to develop react modules / components in typescript.</p>
+          <h3>dyna-ts-react-module-boilerplate</h3>
+          <h4>demonstrates the <strong>dyna button</strong> implementation</h4>
+          <p>This is the showcase of the boilerplate, as a nice demo this boilerplate has the implementation of the <code>dyna button</code>.</p>
+          <p>To start and work with the boilerplate:</p>
+          <p><ul>
+            <li>Implement your component under <code>/src</code> folder</li>
+            <li>Update the <code>/dev/showcase/showcase.tsx</code> respectively</li>
+            <li>Run <code>npm start</code></li>
+          </ul></p>
         </div>
       ),
     },
     {
-      slug: 'plain-button',
+      slug: 'sizes',
       faIconName: 'flask',
-      title: 'plain button',
-      description: 'The use plain button',
+      title: 'rounded - white/black - sizes',
       center: true,
       component: (
-        <PlainButton
-          buttonType={EButtonType.OTHER}
-          caption="plain"
-          onClick={() => console.log('plain button pressed')}
-        />
+        <DynaButton
+          onClick={() => console.log('button pressed')}
+        >dyna button</DynaButton>
       ),
+      wrapperStyle:{
+        fontSize: "0px",
+      },
       props: [
         {
-          slug: 'pain',
-          title: 'plain button',
+          slug: 'small',
+          title: 'small',
+          props: {
+            style: EStyle.ROUNDED,
+            color: EColor.WHITE_BLACK,
+            size: ESize.SMALL,
+          } as IDynaButtonProps
         },
         {
-          slug: 'prev',
-          title: 'previous button',
+          slug: 'medium',
+          title: 'medium',
           props: {
-            caption: <span>{faIcon('chevron-circle-left')} previous</span>
-          }
+            style: EStyle.ROUNDED,
+            color: EColor.WHITE_BLACK,
+            size: ESize.MEDIUM,
+          } as IDynaButtonProps
         },
         {
-          slug: 'next',
-          title: 'next button',
+          slug: 'large',
+          title: 'large',
           props: {
-            caption: <span>next {faIcon('chevron-circle-right')}</span>
-          }
+            style: EStyle.ROUNDED,
+            color: EColor.WHITE_BLACK,
+            size: ESize.LARGE,
+          } as IDynaButtonProps
+        },
+        {
+          slug: 'x-large',
+          title: 'x-large',
+          props: {
+            style: EStyle.ROUNDED,
+            color: EColor.WHITE_BLACK,
+            size: ESize.XLARGE,
+          } as IDynaButtonProps
         },
       ]
     },
     {
-      slug: 'ok-button',
+      slug: 'colours',
       faIconName: 'flask',
-      title: 'ok button',
-      description: 'The use of plain button as Ok button',
+      title: 'rounded - colours',
       center: true,
       component: (
-        <PlainButton
-          buttonType={EButtonType.OK}
-          caption="Ok"
-          onClick={() => console.log('ok button pressed')}
-        />
+        <DynaButton
+          onClick={() => console.log('button pressed')}
+        >dyna button</DynaButton>
       ),
-    },
-    {
-      slug: 'cancel-button',
-      faIconName: 'flask',
-      title: 'cancel button',
-      description: 'The use of plain button as Cancel button',
-      center: true,
-      component: (
-        <PlainButton
-          buttonType={EButtonType.CANCEL}
-          caption="Cancel"
-          onClick={() => console.log('cancel button pressed')}
-        />
-      ),
+      wrapperStyle:{
+        fontSize: "0px",
+        padding: "45px",
+        backgroundColor: "grey",
+      },
+      props: [
+        {
+          slug: 'white-black',
+          title: 'white-black',
+          props: {
+            style: EStyle.ROUNDED,
+            color: EColor.WHITE_BLACK,
+            size: ESize.MEDIUM,
+          } as IDynaButtonProps
+        },
+        {
+          slug: 'black-white',
+          title: 'black-white',
+          props: {
+            style: EStyle.ROUNDED,
+            color: EColor.BLACK_WHITE,
+            size: ESize.MEDIUM,
+          } as IDynaButtonProps
+        },
+        {
+          slug: 'transparent-white',
+          title: 'transparent-white',
+          props: {
+            style: EStyle.ROUNDED,
+            color: EColor.TRANSPARENT_WHITE,
+            size: ESize.MEDIUM,
+          } as IDynaButtonProps
+        },
+        {
+          slug: 'white-red',
+          title: 'white-red',
+          props: {
+            style: EStyle.ROUNDED,
+            color: EColor.WHITE_RED,
+            size: ESize.MEDIUM,
+          } as IDynaButtonProps
+        },
+      ]
     },
     {
       slug: 'the-end',
@@ -93,8 +143,8 @@ export default {
         <div style={{textAlign: 'center'}}>
           <h1>The end</h1>
           <div style={{fontSize: '20px'}}>
-            <p><a href="https://github.com/aneldev/dyna-ts-react-module-boilerplate">{faIcon('github')} Github</a></p>
-            <p><a href="https://www.npmjs.com/package/dyna-ts-react-module-boilerplate">{faIcon('square')} npm</a></p>
+            <p><a href="https://github.com/aneldev/dyna-ui-button">{faIcon('github')} Github</a></p>
+            <p><a href="https://www.npmjs.com/package/dyna-ui-button">{faIcon('square')} npm</a></p>
           </div>
         </div>
       ),

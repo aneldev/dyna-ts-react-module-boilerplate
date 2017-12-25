@@ -1,10 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Home has expected content with deep render 1`] = `
-<button
-  className="plainButton plainButton other"
+<a
+  className="dyna-button dnbtn-style-ROUNDED dnbtn-color-WHITE_BLACK dnbtn-size-MEDIUM"
+  href={null}
   onClick={[Function]}
 >
-  ok
-</button>
+  <button>
+    My button
+  </button>
+</a>
 `;

@@ -12,7 +12,7 @@ Develop, debug, test and distribute react component(s) easy.
 - Configured font loader
 - Load Fonts Awesome
 - Supports CSS, SCSS & LESS on the same time
-- cssModules (optional), works both SCSS & LESS
+- cssModules (with *.module.less/scss filename pattern)
 - Test with Jest, with snapshots
 - Distribute as module with TypeScript Definitions (ready to import)
 - Distributed version works in Javascript and Typescript applications
@@ -31,13 +31,13 @@ That's it.
 
 `dyna-ts-react-module-boilerplate` creates modules, it creates react components that will be used in react applications.
 
-Instead of `create-react-app` use the `create-react-app-typescript` where is forking the `create-react-app` and supports Typescript.
+Tip: Instead of `create-react-app` use the `create-react-app-typescript` where forks the `create-react-app` and supports Typescript.
 
 # Develop
 
 ## Implement
 
-The source code of your project is under the src/ folder only. What will be distributed is what it is exported from the `src/index.tsc`.
+The source code of your project is under the `src/` folder only. What will be distributed is what it is exported from the `src/index.tsc`.
 
 There are loaders for various files, like: `.less`, `.scss`, `.svg`, `.jpg`, `etc.`. Loaders *are loaded* in `webpack.loaders.js`, where you can add your own loaders that will be used from all tasks (npm scripts).
 
@@ -45,9 +45,11 @@ Under the `dev/app/` folder there is a small web application that uses this comp
 
 Under the `dev/public/` folder is the http folder of the application, you should not do anything there because this is not distributed.
 
+Create your showcase updating the file `dev/showcase/showcase.tsx`. The [https://github.com/aneldev/dyna-showcase](documentation) to create your showcase in easy enough.
+
 ## Develop / Debug / Preview
 
-This boilerplate uses the [dyna-showcase](https://github.com/aneldev/dyna-showcase) to show how your module is rendered under different props. The concept is the same as the StoryBook but it is much lighter and without styles and some tools that helps on developemennt. 
+This boilerplate uses the [dyna-showcase](https://github.com/aneldev/dyna-showcase) to show how your module is rendered under different props. The concept is the same as the StoryBook but it is much lighter and without styles and some tools that helps the debugging and development. 
 
 - Implement your component(s) under `src/`
 - Implement the usage of your components(s) in `dev/showcase/showcase.tsx`
@@ -70,11 +72,18 @@ Call `npm run test-only` to run your tests only including coverage, no build no 
  
 Call `npm run test-watch` to run your tests on any changes, no build, no ts errors, no coverage.
 
-# Dist / release
+# Build
 
-Call `npm run dist` or `npm run release`
-to create a distributable version of your project
-under the `dist/` folder.
+**There is no need to build.** `npm run build` script exists and builds a distribution version under the `/dist` folder but this version is not intended for `execution` but is intended to `import` is in other components or applications. 
+
+# Release
+
+Call `npm run release` to:
+
+- to create a distributable version of your project under the `dist/` folder
+- bump patch versions
+- publish to npm
+- push to your repo
 
 The package configuration exports the `dist/` folder so you have call `npm run dist` every time you want to publish this package. The typescript declarations are there out of the box.
 
@@ -86,16 +95,13 @@ The output of your package is what it is extracted only from your `src/index.jsx
 
 **Tip 2:** You can link this module with your main application using the `npm link` for more reading https://docs.npmjs.com/cli/link.
 
-**Tip 2.1:** With npm > 5.0.0 the above link can be made defining the "file:xxx" instead of the version number, for more reading https://docs.npmjs.com/cli/link.
+**Tip 3:** With npm > 5.0.0 the above link can be made defining the "file:xxx" instead of the version number, for more reading https://docs.npmjs.com/cli/link.
+
+**Tip 4:** `npm link` uses the system's integrated folder mirror mechanism. In some case this quite problematic this boilerplate come with a solution for this problem, read next at "Link your modules easily".
 
 # Features (tips)
 
-## Disable the `cssModules`
-
-By default all `.less` and `.scss` files can be used only as [css-modules](https://github.com/css-modules/css-modules). If you don't prefer the cssModule way edit the `/webpack.loaders.js` and set the const `USE_CSSMODULES` to `false`.
-
-
-## Link your modules easily (with node.js)
+## Link your modules easily
 
 In case that npm link doesn't work correctly this boilerplate offer a ready sync mechanism for such as cases.
 
@@ -109,18 +115,17 @@ By default all node_modules are excluded from the builder. This means that are n
 
 For debugging reasons... you might want to include them.
 
-In order to include them, edit the webpack.xxx.config.js and comment the `externals: [nodeExternals()]` line.
+In order to include them, edit the `/webpack.dist.config.js` and comment the `externals: [nodeExternals()]` line.
 
 If you want to exclude specific modules _while are not so clean like `pg`, `helmet`, `express`_, exclude them like this: `externals: ['helmet', 'pg', 'express']`. 
 
 # Known issues
 
-- HMR is not working always
+- HMR is not working
 
 # Missing features
 
-- Support `cssModules` and plain css together
-- Add types for `cssModules`
+- Types for `cssModules`
 
 _Forks are welcome!_
 
@@ -128,7 +133,7 @@ _Forks are welcome!_
 
 Feel free to clone and fork.
 
-# Interesting for typescript module?
+# Interesting for typescript module (without react component)?
 
 If you are interesting for **typescript module**, with other words if you want to implement everything like we do here but not exporting directly a react component, check this [dyna-ts-module-boilerplate](https://github.com/aneldev/dyna-ts-module-boilerplate) repo.
 
