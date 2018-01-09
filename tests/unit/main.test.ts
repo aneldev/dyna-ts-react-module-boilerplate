@@ -6,8 +6,8 @@ import {DynaButton} from '../../src/index';
 
 // help: https://facebook.github.io/jest/docs/expect.html
 
-describe('Button simple etst', () => {
-	it('should load the button', () => {
+describe('Simple unit test', () => {
+  it('should import the component', () => {
 		expect(DynaButton).not.toBe(undefined);
 	});
 });

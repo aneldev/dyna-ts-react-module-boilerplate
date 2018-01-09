@@ -85,9 +85,10 @@
     "webpack-dev-server": "^2.7.1"
   },
   "jest": {
+    "setupTestFrameworkScriptFile": "./tests/setup/testsetup.js",
     "automock": false,
     "collectCoverage": false,
-    "testEnvironment": "node",
+    "testEnvironment": "jsdom",
     "transform": {
       ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
