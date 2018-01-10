@@ -17,6 +17,7 @@
     ".build-dist": "set NODE_ENV=production && webpack --config webpack.dist.config.js",
     "release": "npm run build && npm run publish-push",
     "commit": "git add -u && git add -A && git commit -m",
+    "commit-amend": "git add -u && git add -A && git commit --amend --no-edit",
     "publish-push": "git add -u && git add -A && git commit -m --amend --no-edit; npm version patch && npm publish && git push && git push --tags",
     "sync-externals": "node syncExternals.js",
     "test": "jest --coverage --no-cache --runInBand",
