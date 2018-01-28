@@ -86,7 +86,7 @@
     "webpack-dev-server": "^2.7.1"
   },
   "jest": {
-    "setupTestFrameworkScriptFile": "./tests/setup/testsetup.js",
+    "setupTestFrameworkScriptFile": "./tests/setup/testSetup.js",
     "automock": false,
     "collectCoverage": false,
     "testEnvironment": "jsdom",
