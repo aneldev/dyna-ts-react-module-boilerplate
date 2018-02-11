@@ -1,5 +1,4 @@
 // help: http://webpack.github.io/docs/tutorials/getting-started/
-const USE_CSSMODULES = true;
 
 module.exports = [
   {
