@@ -3,6 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 const webpack = require('webpack');
+const nodeExternals = require('webpack-node-externals');
 
 const package_ = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
 const loaders = require('./webpack.loaders');
@@ -14,6 +15,7 @@ const config = {
     // the entry application code
     path.resolve(__dirname, 'src/index.tsx')
   ],
+  externals: [nodeExternals()], // in order to ignore all modules in node_modules folder
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'index.js',
