@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory();
+		module.exports = factory(require("react"));
 	else if(typeof define === 'function' && define.amd)
-		define("dyna-ts-react-module-boilerplate", [], factory);
+		define("dyna-ts-react-module-boilerplate", ["react"], factory);
 	else if(typeof exports === 'object')
-		exports["dyna-ts-react-module-boilerplate"] = factory();
+		exports["dyna-ts-react-module-boilerplate"] = factory(require("react"));
 	else
-		root["dyna-ts-react-module-boilerplate"] = factory();
-})(typeof self !== 'undefined' ? self : this, function() {
+		root["dyna-ts-react-module-boilerplate"] = factory(root["react"]);
+})(typeof self !== 'undefined' ? self : this, function(__WEBPACK_EXTERNAL_MODULE_3__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -164,7 +164,7 @@ exports.DynaButton = DynaButton;
 /* 3 */
 /***/ (function(module, exports) {
 
-module.exports = require("react");
+module.exports = __WEBPACK_EXTERNAL_MODULE_3__;
 
 /***/ }),
 /* 4 */
