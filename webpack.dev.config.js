@@ -2,7 +2,6 @@
 // help: https://webpack.github.io/docs/webpack-dev-server.html#webpack-dev-server-cli
 const path = require('path');
 const webpack = require('webpack');
-const nodeExternals = require('webpack-node-externals');
 
 const loaders = require('./webpack.loaders');
 const plugins = require('./webpack.plugins');
@@ -17,7 +16,6 @@ const config = {
     // todo: tttt -> 'webpack/hot/dev-server',
     path.resolve(__dirname, 'dev/app/index.tsx')
   ],
-  externals: [nodeExternals()], // in order to ignore all modules in node_modules folder
   devServer: {
     hot: true,
     port: 3200,
