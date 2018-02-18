@@ -23,6 +23,7 @@
     "test": "jest --coverage --no-cache --runInBand",
     "test-watch": "jest --watch --verbose --runInBand",
     "clear-npm-cache": "npm cache clear --force",
+    "update-release": "npm update && git add -u && git add -A && git commit -m \"update\" && npm run release",
     "reinstall": "rm ./package-lock.json; rm -rf ./node_modules; npm install"
   },
   "keywords": [],
