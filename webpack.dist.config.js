@@ -2,7 +2,6 @@
 // help: https://webpack.github.io/docs/webpack-dev-server.html#webpack-dev-server-cli
 const fs = require('fs');
 const path = require('path');
-const webpack = require('webpack');
 
 const package_ = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
 const loaders = require('./webpack.loaders');

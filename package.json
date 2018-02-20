@@ -11,6 +11,7 @@
   "scripts": {
     "create": "echo Creation started... && rm -rf .git && rm -rf package-lock.json && mv README.md README.boilerplate.md && echo \\# readme > README.md && npm install && node _boilerplate.js && echo --- module created",
     "start": "webpack-dev-server --config webpack.dev.config.js --port 3200 --devtool eval --progress --inline --hot --content-base dev/public --open --host 127.0.0.1",
+    "build-analyze": "set NODE_ENV=production && webpack --config webpack.dist.analyze.config.js",
     "build": "rimraf ./dist/ && npm run .build-index.d.ts && npm run .build-dist",
     ".build-index.d.ts": "tsc && rm ./dist/index.js && npm run .build-index.d.ts-clear",
     ".build-index.d.ts-clear": "cd dist/ && find . -name \\*.js -delete && cd ..",
@@ -83,6 +84,7 @@
     "typescript": "^2.7.1",
     "url-loader": "^0.5.9",
     "webpack": "^3.11.0",
+    "webpack-bundle-analyzer": "^2.10.0",
     "webpack-dev-middleware": "^1.12.0",
     "webpack-dev-server": "^2.11.1"
   },
