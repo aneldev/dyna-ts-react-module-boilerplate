@@ -4,7 +4,7 @@ import {DynaButton, EColor, ESize, EStyle, IDynaButtonProps} from "../../src";
 import {faIcon, IShowcase} from "dyna-showcase";
 import {Logo} from "../logo";
 
-require('./showcase.less');
+import "./showcase.less";
 
 export default {
   logo: <Logo />,
@@ -39,7 +39,6 @@ export default {
         >dyna button</DynaButton>
       ),
       wrapperStyle:{
-        fontSize: "0px",
       },
       props: [
         {
@@ -91,9 +90,6 @@ export default {
         >dyna button</DynaButton>
       ),
       wrapperStyle:{
-        fontSize: "0px",
-        padding: "45px",
-        backgroundColor: "grey",
       },
       props: [
         {
