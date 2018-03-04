@@ -16,7 +16,14 @@ chokidar.watch('.', {ignored: /node_modules|(^|[\/\\])\../}).on('all', (event, p
 const createSyncScript = folder => `rsync -av --progress ./* ${folder} --exclude node_modules`;
 
 function syncFolders() {
-  syncExternalsList.forEach(syncFolder);
+  syncExternalsList
+    .map(path => {
+      if (path.indexOf('*tus*') === 0) {
+        path = '/mnt/' + path[5].toLowerCase() + path.substr(7).replace(/\\/g, '/')
+      }
+      return path;
+    })
+    .forEach(syncFolder);
 }
 
 function syncFolder(folder) {

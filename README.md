@@ -17,7 +17,21 @@ Develop, debug, test and distribute react component(s) easy.
 - Distribute as module with TypeScript Definitions (ready to import)
 - Distributed version works in Javascript and Typescript applications
 
+# Environment
+
+This boilerplate runs only under Linux.
+
+Scripts of this package are not designed for windows command line!
+
+For windows users there are multiple ways: 
+- [Git bash](https://git-scm.com/downloads) (probably you have this already installed on your machine)
+- [Win10 Ubuntu shell](https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/) _recommended for windows users_
+- [Cygwin terminal](http://www.cygwin.com/)
+- Any other bash command line
+
 # Installation
+
+Replace the `my-awesome-react-component` with the name of you new module. A new folder will be created with this name from the point you will call it. 
 ```
 git clone http://github.com/aneldev/dyna-ts-react-module-boilerplate my-awesome-react-component
 cd my-awesome-react-component
@@ -103,11 +117,14 @@ The output of your package is what it is extracted only from your `src/index.jsx
 
 ## Link your modules easily
 
-In case that npm link doesn't work correctly this boilerplate offer a ready sync mechanism for such as cases.
+In case that npm link doesn't work correctly this boilerplate offers a ready sync mechanism for such as cases.
 
 0. Copy `./syncExternalsList.sample.js` to `./syncExternalsList.js` once only. 
 1. Update the `./syncExternalsList.js` list with external apps you want to keep sync.
 2. Call `npm run sync-externals`
+
+If you use the Ubuntu shell of Win10, in the `./syncExternalsList.js` you can assign windows path prefixing them with the test `*tus*` _where stands for `to ubuntu shell`_.
+Example, check the 1st line of `./syncExternalsList.sample.js`. 
 
 ## Bundle node_modules
 
