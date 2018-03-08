@@ -6,19 +6,21 @@ const webpack = require('webpack');
 const loaders = require('./webpack.loaders');
 const plugins = require('./webpack.plugins');
 
-console.log('To debug open address: http://localhost:3200 on any browser');
+const serverPort = Number(process.argv[process.argv.length - 1]);
+
+console.log('To debug open address: http://localhost:' + serverPort + ' on any browser');
 console.log('');
 
 const config = {
   entry: [
     'babel-polyfill',
-    'webpack-dev-server/client?http://localhost:3200',
+    'webpack-dev-server/client?http://localhost:'+serverPort,
     // todo: tttt -> 'webpack/hot/dev-server',
     path.resolve(__dirname, 'dev/index.tsx')
   ],
   devServer: {
     hot: true,
-    port: 3200,
+    port: serverPort,
     publicPath: '/static',
     historyApiFallback: true
   },
