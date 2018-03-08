@@ -14,7 +14,7 @@ const config = {
     'babel-polyfill',
     'webpack-dev-server/client?http://localhost:3200',
     // todo: tttt -> 'webpack/hot/dev-server',
-    path.resolve(__dirname, 'dev/app/index.tsx')
+    path.resolve(__dirname, 'dev/index.tsx')
   ],
   devServer: {
     hot: true,
