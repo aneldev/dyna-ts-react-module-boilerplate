@@ -13,10 +13,7 @@ const config = {
     // the entry application code
     path.resolve(__dirname, 'src/index.tsx')
   ],
-  externals: [
-    "react",
-    "react-dom"
-  ],
+  externals: Object.keys(package_.dependencies), // exclude all dependencies from the bundle
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'index.js',
