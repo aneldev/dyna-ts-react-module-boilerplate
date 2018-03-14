@@ -1,5 +1,5 @@
+import "jest";
 declare let window: any;
-declare let global: any, jasmine: any, describe: any, clearTest: any, it: any, expect: any;
 if (typeof jasmine !== 'undefined') jasmine.DEFAULT_TIMEOUT_INTERVAL = 5000;
 
 import {DynaButton} from '../../src/index';
