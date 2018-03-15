@@ -1,21 +1,45 @@
 # About
 
-Webpack configuration for ES5/ES6 React components written in Typescript to be used as a module in other apps.
+This is Webpack configuration for ES5/ES6 React components written in Typescript to be used as a module in other apps or modules.
 
 Develop, debug, test and distribute react component(s) easy.
+
+# Usage
+
+Replace the `my-awesome-react-component` with the name of you new module. A new folder will be created with this name from the point you will call it. 
+```
+git clone http://github.com/aneldev/dyna-ts-react-module-boilerplate my-awesome-react-component
+cd my-awesome-react-component
+npm run create
+```
+That's it. 
+
+# Why is `create-react-app` different?
+
+It is different because `create-react-app` creates react applications and includes everything an application needs.
+
+The `dyna-ts-react-module-boilerplate` creates modules, it creates react components that will be used in react applications or in other modules.
+
+Tip: Instead of `create-react-app` use the `create-react-app-typescript` where forks the `create-react-app` and supports Typescript.
+
+# Compatibility
+
+- React 16
+
+For React 15 use the tag v4.1.5 of this repo.
 
 # Features
 
 - Write in Typescript, .tsx, .ts, but also .jsx & .js are supported
-- Ready for react-router, dev server serves deep links
+- Ready for react-router, dev server serves deep links and multiple ports
 - Load inline images
 - Configured font loader
 - Load Fonts Awesome
 - Supports CSS, SCSS & LESS on the same time
-- cssModules (with *.module.less/scss filename pattern)
-- Test with Jest, with snapshots
+- cssModules (with `*.module.less/scss` filename pattern)
+- Test with Jest, snapshots are also supported
 - Distribute as module with TypeScript Definitions (ready to import)
-- Distributed version works in Javascript and Typescript applications
+- Distributed versions works in Javascript and Typescript projects
 
 # Environment
 
@@ -29,132 +53,118 @@ For windows users there are multiple ways:
 - [Cygwin terminal](http://www.cygwin.com/)
 - Any other bash command line
 
-# Installation
+# Folder structure
 
-Replace the `my-awesome-react-component` with the name of you new module. A new folder will be created with this name from the point you will call it. 
-```
-git clone http://github.com/aneldev/dyna-ts-react-module-boilerplate my-awesome-react-component
-cd my-awesome-react-component
-npm run create
-```
-That's it. 
+The source code of your project is under the `/src/` folder only. What will be distributed is what it is exported from the `/src/index.tsc`.
 
-# What is the difference with the `create-react-app`?
+There are loaders for various files, like: `.less`, `.scss`, `.svg`, `.jpg`, `etc.`. Loaders *are loaded* in `/webpack.loaders.js`, where you can add your own loaders that will be used for all tasks (npm scripts).
 
-`create-react-app` creates react applications, includes whatever an application needs.
+Under the `/dev/app/` folder there is a small web application that uses this component in different ways. This way you can develop, debug and make a showcase to demonstrate of how your component(s) can be used.
 
-`dyna-ts-react-module-boilerplate` creates modules, it creates react components that will be used in react applications.
-
-Tip: Instead of `create-react-app` use the `create-react-app-typescript` where forks the `create-react-app` and supports Typescript.
+Under the `/dev/public/` folder is the http folder of the application, you should not do anything there because this is not distributed.
 
 # Develop
 
-## Implement
+## Start the Demo
 
-The source code of your project is under the `src/` folder only. What will be distributed is what it is exported from the `src/index.tsc`.
+`npm start`
 
-There are loaders for various files, like: `.less`, `.scss`, `.svg`, `.jpg`, `etc.`. Loaders *are loaded* in `webpack.loaders.js`, where you can add your own loaders that will be used from all tasks (npm scripts).
+or, if you want to start it to different port
 
-Under the `dev/app/` folder there is a small web application that uses this component with one or more ways. By this way you can develop, debug and make a showcase of how your component(s) can be used.
+`npm run start-to -- 3232`
 
-Under the `dev/public/` folder is the http folder of the application, you should not do anything there because this is not distributed.
+to start in port 3232.
 
-Create your showcase updating the file `dev/showcase/showcase.tsx`. The [https://github.com/aneldev/dyna-showcase](documentation) to create your showcase in easy enough.
+This is useful if you want to run other Component Demos at the same time.
 
-## Develop / Debug / Preview
+The app is always exposed to `127.0.0.1` by default. 
 
-This boilerplate uses the [dyna-showcase](https://github.com/aneldev/dyna-showcase) to show how your module is rendered under different props. The concept is the same as the StoryBook but it is much lighter and without styles and some tools that helps the debugging and development. 
+## Develop with the Showcase as Demo
+
+This boilerplate uses the [dyna-showcase](https://github.com/aneldev/dyna-showcase) to show how your module is rendered under different props. The concept is the same as the StoryBook but it is much lighter and without styles and some tools that help the debugging and development. 
 
 - Implement your component(s) under `src/`
 - Implement the usage of your components(s) in `dev/showcase/showcase.tsx`
 - Call `npm start`
 - Open in any browser [http://localhost:3200](http://localhost:3200) to **develop**, **debug** or **preview**.
 
+## Develop with you custom Demo
+
+If you don't want to use the `dyna-showcase` for any reason you should do this:
+- remove the `dyna-showcase`, with `npm uninstall --save-dev dyna-showcase`
+- delete all the files under the `./dev`, except the `./dev/index.tsx`
+- develop your demo app under the `./dev` folder
+- load your demo from the `./dev/index.tsx`
+
+The `npm start` will launch your app. 
+
 # Test
 
 ## Write tests
 
-For tests is used the [Jest](https://facebook.github.io/jest/) also check the documentation.
+For tests this boilerplate uses the [Jest](https://facebook.github.io/jest/).
 
-Test files can be anywhere but they should have a name *.(test|spec).(ts|tsx|js|jsx) . There is a `tests/` folder if you want to use but this is not a limitation.
+Test files can be anywhere but they should have a name `*.(test|spec).(ts|tsx|js|jsx)`. There is a `tests/` folder if you want to use it but this is not mandatory.
 
 ## Run tests
  
-Call `npm run test` to run your tests and coverage. This test also builds your application, ts errors can be shown here.
+Call `npm run test` to run your tests and coverage.
 
-Call `npm run test-only` to run your tests only including coverage, no build no ts errors.
- 
-Call `npm run test-watch` to run your tests on any changes, no build, no ts errors, no coverage.
+Call `npm run test-watch` to run your tests after any change, with no coverage.
 
 # Build
 
-**There is no need to build.** `npm run build` script exists and builds a distribution version under the `/dist` folder but this version is not intended for `execution` but is intended to `import` is in other components or applications. 
+`npm run build`
+
+Build creates your distributable version of your component under `./dist`. Typescripts declaration will be created there too.
+
+You don't really need to use the `build`, since the `release` script is calling the `build`.
+
+You will need this is if you have linked this package with another local package (like npm link or so).
 
 # Release
 
-Call `npm run release` to:
+`npm run release`
 
-- to create a distributable version of your project under the `dist/` folder
-- bump patch versions
-- publish to npm
-- push to your repo
+- builds the component
+- bumps the patch version
+- publishes to npm _and_
+- is pushes the changes to your repo
 
-The package configuration exports the `dist/` folder so you have call `npm run dist` every time you want to publish this package. The typescript declarations are there out of the box.
+The output is not compressed, while it is intended to be used in other apps where it will be bundled and compressed. This also makes your component debuggable.
 
-The output is not compressed, while it is intended to be used in other apps where there will be bundled and compressed there.
+**For private packages**, where you don't want to expose them to `npm`, remove the `npm pulish` call from the `publish-push` script.
 
-The output of your package is what it is extracted only from your `src/index.jsx`.
+# Exclude dependencies from the output bundle
 
-**Tip 1:** During development, there is no need to call the `dist` on any code change, you can import the `src/` folder of this module like this: `import MyReactComponentModule from 'my-module/src';` instead of `import MyReactComponentModule from 'my-module';`.
-
-**Tip 2:** You can link this module with your main application using the `npm link` for more reading https://docs.npmjs.com/cli/link.
-
-**Tip 3:** With npm > 5.0.0 the above link can be made defining the "file:xxx" instead of the version number, for more reading https://docs.npmjs.com/cli/link.
-
-**Tip 4:** `npm link` uses the system's integrated folder mirror mechanism. In some case this quite problematic this boilerplate come with a solution for this problem, read next at "Link your modules easily".
+You can exclude dependencies from the distributed bundle by declaring them in the `/webpack.dist.config.hs`. By default, all dependencies are declared there. 
 
 # Features (tips)
 
 ## Link your modules easily
 
-In case that npm link doesn't work correctly this boilerplate offers a ready sync mechanism for such as cases.
+In case that the `npm link` doesn't work correctly this boilerplate offers a ready sync unidirectional mechanism.
 
 0. Copy `./syncExternalsList.sample.js` to `./syncExternalsList.js` once only. 
-1. Update the `./syncExternalsList.js` list with external apps you want to keep sync.
+1. Update the `./syncExternalsList.js` list with external apps you want to keep them sync.
 2. Call `npm run sync-externals`
 
-If you use the Ubuntu shell of Win10, in the `./syncExternalsList.js` you can assign windows path prefixing them with the test `*tus*` _where stands for `to ubuntu shell`_.
-Example, check the 1st line of `./syncExternalsList.sample.js`. 
+If you use the Ubuntu shell of Win10, in the `./syncExternalsList.js` you can add a windows path prefixing it with the `*tus*`, _which stands for `to ubuntu shell`_.
 
-## Bundle node_modules
+Example, check the 2nd line of `./syncExternalsList.sample.js`.
 
-By default all node_modules are excluded from the builder. This means that are not in the bundle. 
-
-For debugging reasons... you might want to include them.
-
-In order to include them, edit the `/webpack.dist.config.js` and comment the `externals: [nodeExternals()]` line.
-
-If you want to exclude specific modules _while are not so clean like `pg`, `helmet`, `express`_, exclude them like this: `externals: ['helmet', 'pg', 'express']`. 
+**Note:** the `./syncExternalsList.js` is git ignored! 
 
 # Known issues
 
 - HMR is not working
 
-# Missing features
-
-- Types for `cssModules`
-
 _Forks are welcome!_
-
-# Have fun
-
-Feel free to clone and fork.
 
 # Interesting for typescript module (without react component)?
 
-If you are interesting for **typescript module**, with other words if you want to implement everything like we do here but not exporting directly a react component, check this [dyna-ts-module-boilerplate](https://github.com/aneldev/dyna-ts-module-boilerplate) repo.
+If you are interested in a **typescript module**, with other words if you want to implement everything like we do here but without any react components, check this out this [dyna-ts-module-boilerplate](https://github.com/aneldev/dyna-ts-module-boilerplate) repo.
 
 # References
 
 [Webpack configuration](https://webpack.github.io/docs/webpack-dev-server.html#webpack-dev-server-cli)
- 
