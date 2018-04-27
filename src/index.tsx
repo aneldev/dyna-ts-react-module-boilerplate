@@ -1,5 +1,5 @@
 export {
-	DynaButton, IDynaButtonProps,
+	Button, IButtonProps,
 	EStyle, EColor, ESize,
-} from "./DynaButton";
+} from "./Button";
 

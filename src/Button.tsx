@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import "./DynaButton.less";
+import "./Button.less";
 
 export enum EStyle {
 	ROUNDED = "ROUNDED",
@@ -20,7 +20,7 @@ export enum ESize {
 	XLARGE = "XLARGE",
 }
 
-export interface IDynaButtonProps {
+export interface IButtonProps {
 	children: any;
 	style?: EStyle;
 	color?: EColor;
@@ -29,8 +29,8 @@ export interface IDynaButtonProps {
 	onClick?: () => void;
 }
 
-export class DynaButton extends React.Component<IDynaButtonProps> {
-	static defaultProps: IDynaButtonProps = {
+export class Button extends React.Component<IButtonProps> {
+	static defaultProps: IButtonProps = {
 		children: null,
 		style: EStyle.ROUNDED,
 		color: EColor.WHITE_BLACK,
@@ -39,7 +39,7 @@ export class DynaButton extends React.Component<IDynaButtonProps> {
 		onClick: () => undefined,
 	};
 
-	private readonly baseClassName: string = "dyna-button";
+	private readonly baseClassName: string = "my-button";
 	private readonly className = (subClassName: string = "", active: boolean = true): string => active ? `${this.baseClassName}${subClassName}` : "";
 
 	public render(): JSX.Element {

@@ -88,7 +88,7 @@ module.exports = __webpack_require__(1);
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var DynaButton_1 = __webpack_require__(2);
-exports.DynaButton = DynaButton_1.DynaButton;
+exports.Button = DynaButton_1.DynaButton;
 exports.EStyle = DynaButton_1.EStyle;
 exports.EColor = DynaButton_1.EColor;
 exports.ESize = DynaButton_1.ESize;
@@ -157,7 +157,7 @@ var DynaButton = /** @class */ (function (_super) {
     };
     return DynaButton;
 }(React.Component));
-exports.DynaButton = DynaButton;
+exports.Button = DynaButton;
 
 
 /***/ }),

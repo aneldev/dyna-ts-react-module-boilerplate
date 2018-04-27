@@ -7,7 +7,7 @@ configure({ adapter: new Adapter() });
 import * as React from 'react';
 import * as enzyme from 'enzyme';
 
-import {DynaButton} from '../../src';
+import {Button} from '../../src';
 
 describe('Home', () => {
   let wrapper;
@@ -15,7 +15,7 @@ describe('Home', () => {
   it('has expected content with deep render', () => {
     wrapper = enzyme.shallow(
       (
-        <DynaButton onClick={() => console.log('I am clicked')}>My button</DynaButton>
+        <Button onClick={() => console.log('I am clicked')}>My button</Button>
       ),
       {}
     );

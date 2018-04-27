@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {DynaButton, EColor, ESize, EStyle, IDynaButtonProps} from "../../src";
+import {Button, EColor, ESize, EStyle, IButtonProps} from "../../src";
 
 import {faIcon, IShowcase} from "dyna-showcase";
 import {Logo} from "../logo";
@@ -35,9 +35,9 @@ export default {
       title: 'rounded - white/black - sizes',
       center: true,
       component: (
-        <DynaButton
+        <Button
           onClick={() => console.log('button pressed')}
-        >dyna button</DynaButton>
+        >dyna button</Button>
       ),
       wrapperStyle:{
       },
@@ -49,7 +49,7 @@ export default {
             style: EStyle.ROUNDED,
             color: EColor.WHITE_BLACK,
             size: ESize.SMALL,
-          } as IDynaButtonProps
+          } as IButtonProps
         },
         {
           slug: 'medium',
@@ -58,7 +58,7 @@ export default {
             style: EStyle.ROUNDED,
             color: EColor.WHITE_BLACK,
             size: ESize.MEDIUM,
-          } as IDynaButtonProps
+          } as IButtonProps
         },
         {
           slug: 'large',
@@ -67,7 +67,7 @@ export default {
             style: EStyle.ROUNDED,
             color: EColor.WHITE_BLACK,
             size: ESize.LARGE,
-          } as IDynaButtonProps
+          } as IButtonProps
         },
         {
           slug: 'x-large',
@@ -76,7 +76,7 @@ export default {
             style: EStyle.ROUNDED,
             color: EColor.WHITE_BLACK,
             size: ESize.XLARGE,
-          } as IDynaButtonProps
+          } as IButtonProps
         },
       ]
     },
@@ -86,9 +86,9 @@ export default {
 	    title: 'style color and size',
       center: true,
       component: (
-        <DynaButton
+        <Button
           onClick={() => console.log('button pressed')}
-        >dyna button</DynaButton>
+        >dyna button</Button>
       ),
       wrapperStyle:{
       },
@@ -105,7 +105,7 @@ export default {
 						      style,
                   size,
                   color,
-                } as IDynaButtonProps,
+                } as IButtonProps,
 					    }as IShowcaseViewProps)
 				    });
 			    });
