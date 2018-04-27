@@ -87,11 +87,11 @@ module.exports = __webpack_require__(1);
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var DynaButton_1 = __webpack_require__(2);
-exports.Button = DynaButton_1.DynaButton;
-exports.EStyle = DynaButton_1.EStyle;
-exports.EColor = DynaButton_1.EColor;
-exports.ESize = DynaButton_1.ESize;
+var Button_1 = __webpack_require__(2);
+exports.Button = Button_1.Button;
+exports.EStyle = Button_1.EStyle;
+exports.EColor = Button_1.EColor;
+exports.ESize = Button_1.ESize;
 
 
 /***/ }),
@@ -131,23 +131,30 @@ var ESize;
     ESize["LARGE"] = "LARGE";
     ESize["XLARGE"] = "XLARGE";
 })(ESize = exports.ESize || (exports.ESize = {}));
-var DynaButton = /** @class */ (function (_super) {
-    __extends(DynaButton, _super);
-    function DynaButton() {
-        return _super !== null && _super.apply(this, arguments) || this;
+var Button = /** @class */ (function (_super) {
+    __extends(Button, _super);
+    function Button() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.baseClassName = "my-button";
+        _this.className = function (subClassName, active) {
+            if (subClassName === void 0) { subClassName = ""; }
+            if (active === void 0) { active = true; }
+            return active ? "" + _this.baseClassName + subClassName : "";
+        };
+        return _this;
     }
-    DynaButton.prototype.render = function () {
+    Button.prototype.render = function () {
         var _a = this.props, children = _a.children, style = _a.style, color = _a.color, size = _a.size, href = _a.href, onClick = _a.onClick;
         var className = [
-            'dyna-button',
-            "dnbtn-style-" + style,
-            "dnbtn-color-" + color,
-            "dnbtn-size-" + size,
+            this.className(),
+            this.className("--style-" + style),
+            this.className("--color-" + color),
+            this.className("--size-" + size),
         ].join(' ').trim();
         return (React.createElement("a", { className: className, href: href, onClick: onClick },
             React.createElement("button", null, children)));
     };
-    DynaButton.defaultProps = {
+    Button.defaultProps = {
         children: null,
         style: EStyle.ROUNDED,
         color: EColor.WHITE_BLACK,
@@ -155,9 +162,9 @@ var DynaButton = /** @class */ (function (_super) {
         href: null,
         onClick: function () { return undefined; },
     };
-    return DynaButton;
+    return Button;
 }(React.Component));
-exports.Button = DynaButton;
+exports.Button = Button;
 
 
 /***/ }),
@@ -187,8 +194,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/postcss-loader/lib/index.js??ref--4-2!../node_modules/less-loader/dist/cjs.js!./dyna-button.less", function() {
-			var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/postcss-loader/lib/index.js??ref--4-2!../node_modules/less-loader/dist/cjs.js!./dyna-button.less");
+		module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/postcss-loader/lib/index.js??ref--4-2!../node_modules/less-loader/dist/cjs.js!./Button.less", function() {
+			var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/postcss-loader/lib/index.js??ref--4-2!../node_modules/less-loader/dist/cjs.js!./Button.less");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -206,7 +213,7 @@ exports = module.exports = __webpack_require__(6)(false);
 
 
 // module
-exports.push([module.i, ".dyna-button {\n  outline: none;\n}\n.dyna-button.dnbtn-style-ROUNDED {\n  font-size: 0;\n}\n.dyna-button.dnbtn-style-ROUNDED button {\n  outline: none;\n  border-style: solid;\n  cursor: pointer;\n  -webkit-transition: background-color 200ms ease-out;\n  transition: background-color 200ms ease-out;\n}\n.dyna-button.dnbtn-style-ROUNDED.dnbtn-size-SMALL button {\n  padding: 2px 8px;\n  font-size: 8px;\n  line-height: 10px;\n  border-width: 1px;\n  border-radius: 8px;\n  font-weight: bold;\n}\n.dyna-button.dnbtn-style-ROUNDED.dnbtn-size-SMALL button:active {\n  position: relative;\n  top: 1px;\n  left: 1px;\n}\n.dyna-button.dnbtn-style-ROUNDED.dnbtn-size-MEDIUM button {\n  padding: 4px 16px;\n  font-size: 14px;\n  line-height: 22px;\n  border-width: 1px;\n  border-radius: 16px;\n  font-weight: bold;\n}\n.dyna-button.dnbtn-style-ROUNDED.dnbtn-size-MEDIUM button:active {\n  position: relative;\n  top: 1px;\n  left: 1px;\n}\n.dyna-button.dnbtn-style-ROUNDED.dnbtn-size-LARGE button {\n  padding: 8px 32px;\n  font-size: 26px;\n  line-height: 46px;\n  border-width: 1px;\n  border-radius: 32px;\n  font-weight: bold;\n}\n.dyna-button.dnbtn-style-ROUNDED.dnbtn-size-LARGE button:active {\n  position: relative;\n  top: 2px;\n  left: 2px;\n}\n.dyna-button.dnbtn-style-ROUNDED.dnbtn-size-XLARGE button {\n  padding: 16px 64px;\n  font-size: 40px;\n  line-height: 92px;\n  border-width: 2px;\n  border-radius: 64px;\n  font-weight: bold;\n}\n.dyna-button.dnbtn-style-ROUNDED.dnbtn-size-XLARGE button:active {\n  position: relative;\n  top: 2px;\n  left: 2px;\n}\n.dyna-button.dnbtn-color-WHITE_BLACK button {\n  border-color: black;\n  background: white;\n  color: black;\n}\n.dyna-button.dnbtn-color-WHITE_BLACK button:hover {\n  background-color: #e6e6e6;\n}\n.dyna-button.dnbtn-color-WHITE_BLACK button:active {\n  background-color: #d1d1d1;\n}\n.dyna-button.dnbtn-color-WHITE_RED button {\n  border-color: red;\n  background: white;\n  color: red;\n}\n.dyna-button.dnbtn-color-WHITE_RED button:hover {\n  background-color: #e6e6e6;\n}\n.dyna-button.dnbtn-color-WHITE_RED button:active {\n  background-color: #d1d1d1;\n}\n.dyna-button.dnbtn-color-BLACK_WHITE button {\n  border-color: black;\n  background: black;\n  color: white;\n}\n.dyna-button.dnbtn-color-BLACK_WHITE button:hover {\n  background-color: #333333;\n}\n.dyna-button.dnbtn-color-BLACK_WHITE button:active {\n  background-color: #525252;\n}\n.dyna-button.dnbtn-color-TRANSPARENT_WHITE button {\n  border-color: white;\n  background: transparent;\n  color: white;\n}\n.dyna-button.dnbtn-color-TRANSPARENT_WHITE button:hover {\n  border-color: #e6e6e6;\n  color: #e6e6e6;\n}\n.dyna-button.dnbtn-color-TRANSPARENT_WHITE button:active {\n  border-color: #d1d1d1;\n  color: #d1d1d1;\n}\n", ""]);
+exports.push([module.i, ".my-button {\n  outline: none;\n}\n.my-button--style-ROUNDED {\n  font-size: 0;\n}\n.my-button--style-ROUNDED button {\n  outline: none;\n  border-style: solid;\n  cursor: pointer;\n  -webkit-transition: background-color 200ms ease-out;\n  transition: background-color 200ms ease-out;\n}\n.my-button--style-ROUNDED.my-button--size-SMALL button {\n  padding: 2px 8px;\n  font-size: 8px;\n  line-height: 10px;\n  border-width: 1px;\n  border-radius: 8px;\n  font-weight: bold;\n}\n.my-button--style-ROUNDED.my-button--size-SMALL button:active {\n  position: relative;\n  top: 1px;\n  left: 1px;\n}\n.my-button--style-ROUNDED.my-button--size-MEDIUM button {\n  padding: 4px 16px;\n  font-size: 14px;\n  line-height: 22px;\n  border-width: 1px;\n  border-radius: 16px;\n  font-weight: bold;\n}\n.my-button--style-ROUNDED.my-button--size-MEDIUM button:active {\n  position: relative;\n  top: 1px;\n  left: 1px;\n}\n.my-button--style-ROUNDED.my-button--size-LARGE button {\n  padding: 8px 32px;\n  font-size: 26px;\n  line-height: 46px;\n  border-width: 1px;\n  border-radius: 32px;\n  font-weight: bold;\n}\n.my-button--style-ROUNDED.my-button--size-LARGE button:active {\n  position: relative;\n  top: 2px;\n  left: 2px;\n}\n.my-button--style-ROUNDED.my-button--size-XLARGE button {\n  padding: 16px 64px;\n  font-size: 40px;\n  line-height: 92px;\n  border-width: 2px;\n  border-radius: 64px;\n  font-weight: bold;\n}\n.my-button--style-ROUNDED.my-button--size-XLARGE button:active {\n  position: relative;\n  top: 2px;\n  left: 2px;\n}\n.my-button--color-WHITE_BLACK button {\n  border-color: black;\n  background: white;\n  color: black;\n}\n.my-button--color-WHITE_BLACK button:hover {\n  background-color: #e6e6e6;\n}\n.my-button--color-WHITE_BLACK button:active {\n  background-color: #d1d1d1;\n}\n.my-button--color-WHITE_RED button {\n  border-color: red;\n  background: white;\n  color: red;\n}\n.my-button--color-WHITE_RED button:hover {\n  background-color: #e6e6e6;\n}\n.my-button--color-WHITE_RED button:active {\n  background-color: #d1d1d1;\n}\n.my-button--color-BLACK_WHITE button {\n  border-color: black;\n  background: black;\n  color: white;\n}\n.my-button--color-BLACK_WHITE button:hover {\n  background-color: #333333;\n}\n.my-button--color-BLACK_WHITE button:active {\n  background-color: #525252;\n}\n.my-button--color-TRANSPARENT_WHITE button {\n  border-color: white;\n  background: transparent;\n  color: white;\n}\n.my-button--color-TRANSPARENT_WHITE button:hover {\n  border-color: #e6e6e6;\n  color: #e6e6e6;\n}\n.my-button--color-TRANSPARENT_WHITE button:active {\n  border-color: #d1d1d1;\n  color: #d1d1d1;\n}\n", ""]);
 
 // exports
 
