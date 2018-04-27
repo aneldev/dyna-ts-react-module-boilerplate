@@ -5,6 +5,7 @@ import {faIcon, IShowcase} from "dyna-showcase";
 import {Logo} from "../logo";
 
 import "./showcase.less";
+import {IShowcaseViewProps} from "dyna-showcase/dist/interfaces";
 
 export default {
   logo: <Logo />,
@@ -80,9 +81,9 @@ export default {
       ]
     },
     {
-      slug: 'colours',
+	    slug: 'all-together',
       faIconName: 'flask',
-      title: 'rounded - colours',
+	    title: 'style color and size',
       center: true,
       component: (
         <DynaButton
@@ -91,44 +92,26 @@ export default {
       ),
       wrapperStyle:{
       },
-      props: [
-        {
-          slug: 'white-black',
-          title: 'white-black',
-          props: {
-            style: EStyle.ROUNDED,
-            color: EColor.WHITE_BLACK,
-            size: ESize.MEDIUM,
-          } as IDynaButtonProps
-        },
-        {
-          slug: 'black-white',
-          title: 'black-white',
-          props: {
-            style: EStyle.ROUNDED,
-            color: EColor.BLACK_WHITE,
-            size: ESize.MEDIUM,
-          } as IDynaButtonProps
-        },
-        {
-          slug: 'transparent-white',
-          title: 'transparent-white',
-          props: {
-            style: EStyle.ROUNDED,
-            color: EColor.TRANSPARENT_WHITE,
-            size: ESize.MEDIUM,
-          } as IDynaButtonProps
-        },
-        {
-          slug: 'white-red',
-          title: 'white-red',
-          props: {
-            style: EStyle.ROUNDED,
-            color: EColor.WHITE_RED,
-            size: ESize.MEDIUM,
-          } as IDynaButtonProps
-        },
-      ]
+	    props: (() => {
+		    const props: IShowcaseViewProps[] = [];
+
+		    Object.keys(EStyle).forEach((style: EStyle) => {
+			    Object.keys(ESize).forEach((size: ESize) => {
+				    Object.keys(EColor).forEach((color: EColor) => {
+					    props.push({
+						    slug: `style-${style}-size-${size}-color-${color}`,
+						    title: `${style.toLocaleLowerCase()} ${size.toLocaleLowerCase()} ${color.toLocaleLowerCase()}`,
+                props: {
+						      style,
+                  size,
+                  color,
+                } as IDynaButtonProps,
+					    }as IShowcaseViewProps)
+				    });
+			    });
+		    });
+		    return props;
+	    })()
     },
     {
       slug: 'the-end',
