@@ -2,7 +2,7 @@
 
 exports[`Home has expected content with deep render 1`] = `
 <a
-  className="dyna-button dnbtn-style-ROUNDED dnbtn-color-WHITE_BLACK dnbtn-size-MEDIUM"
+  className="my-button my-button--style-ROUNDED my-button--color-WHITE_BLACK my-button--size-MEDIUM"
   href={null}
   onClick={[Function]}
 >

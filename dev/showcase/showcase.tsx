@@ -81,38 +81,92 @@ export default {
       ]
     },
     {
-	    slug: 'all-together',
-      faIconName: 'flask',
-	    title: 'style color and size',
-      center: true,
-      component: (
-        <Button
-          onClick={() => console.log('button pressed')}
-        >dyna button</Button>
-      ),
-      wrapperStyle:{
-      },
-	    props: (() => {
-		    const props: IShowcaseViewProps[] = [];
+	    slug: 'interactive',
+	    faIconName: 'flask',
+	    title: 'interactive test',
+	    center: true,
+	    component: (() => {
+		    interface IMyAppProps {
+			    size?: ESize;
+		    }
 
-		    Object.keys(EStyle).forEach((style: EStyle) => {
-			    Object.keys(ESize).forEach((size: ESize) => {
-				    Object.keys(EColor).forEach((color: EColor) => {
-					    props.push({
-						    slug: `style-${style}-size-${size}-color-${color}`,
-						    title: `${style.toLocaleLowerCase()} ${size.toLocaleLowerCase()} ${color.toLocaleLowerCase()}`,
-                props: {
-						      style,
-                  size,
-                  color,
-                } as IButtonProps,
-					    }as IShowcaseViewProps)
-				    });
-			    });
-		    });
-		    return props;
-	    })()
+		    interface IMyAppState {
+			    clickCounter?: number;
+		    }
+
+		    class MyApp extends React.Component<IMyAppProps, IMyAppState> {
+			    constructor(props: IMyAppProps) {
+				    super(props);
+				    this.state = {
+					    clickCounter: 0,
+				    };
+			    }
+
+			    public render(): JSX.Element {
+			    	const {size} = this.props;
+				    const {clickCounter} = this.state;
+				    return (
+					    <Button
+						    size={size}
+						    onClick={() => this.setState({clickCounter: clickCounter + 1})}
+					    >Clicks {clickCounter}</Button>
+				    )
+			    }
+		    }
+
+		    return <MyApp/>
+	    })(),
+	    props: [
+		    {
+			    slug: 'medium',
+			    title: 'medium',
+			    props: {
+				    size: ESize.MEDIUM,
+			    } as IButtonProps
+		    },
+		    {
+			    slug: 'large',
+			    title: 'large',
+			    props: {
+				    style: EStyle.ROUNDED,
+				    color: EColor.WHITE_BLACK,
+				    size: ESize.LARGE,
+			    } as IButtonProps
+		    },
+	    ],
     },
+	  {
+		  slug: 'all-together',
+		  faIconName: 'flask',
+		  title: 'style color and size',
+		  center: true,
+		  component: (
+			  <Button
+				  onClick={() => console.log('button pressed')}
+			  >dyna button</Button>
+		  ),
+		  wrapperStyle: {},
+		  props: (() => {
+			  const props: IShowcaseViewProps[] = [];
+
+			  Object.keys(EStyle).forEach((style: EStyle) => {
+				  Object.keys(ESize).forEach((size: ESize) => {
+					  Object.keys(EColor).forEach((color: EColor) => {
+						  props.push({
+							  slug: `style-${style}-size-${size}-color-${color}`,
+							  title: `${style.toLocaleLowerCase()} ${size.toLocaleLowerCase()} ${color.toLocaleLowerCase()}`,
+							  props: {
+								  style,
+								  size,
+								  color,
+							  } as IButtonProps,
+						  }as IShowcaseViewProps)
+					  });
+				  });
+			  });
+			  return props;
+		  })()
+	  },
     {
       slug: 'the-end',
       title: 'the end',
