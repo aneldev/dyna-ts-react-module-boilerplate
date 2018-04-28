@@ -1,11 +1,10 @@
 import * as React from 'react';
-import {Button, EColor, ESize, EStyle, IButtonProps} from "../../src";
-
-import {faIcon, IShowcase} from "dyna-showcase";
+import {faIcon, IShowcase, IShowcaseViewProps} from "dyna-showcase";
 import {Logo} from "../logo";
 
+import {Button, EColor, ESize, EStyle, IButtonProps} from "../../src";
+
 import "./showcase.less";
-import {IShowcaseViewProps} from "dyna-showcase/dist/interfaces";
 
 export default {
   logo: <Logo />,
