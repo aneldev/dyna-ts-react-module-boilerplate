@@ -136,10 +136,12 @@ var Button = /** @class */ (function (_super) {
     function Button() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.baseClassName = "my-button";
-        _this.className = function (subClassName, active) {
-            if (subClassName === void 0) { subClassName = ""; }
+        _this.className = function (subClassNames, active) {
+            if (subClassNames === void 0) { subClassNames = ""; }
             if (active === void 0) { active = true; }
-            return active ? "" + _this.baseClassName + subClassName : "";
+            return active
+                ? subClassNames.split(" ").map(function (subClassName) { return "" + _this.baseClassName + subClassName; }).join(" ")
+                : "";
         };
         return _this;
     }
