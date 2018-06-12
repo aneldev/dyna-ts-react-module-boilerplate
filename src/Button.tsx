@@ -40,7 +40,10 @@ export class Button extends React.Component<IButtonProps> {
 	};
 
 	private readonly baseClassName: string = "my-button";
-	private readonly className = (subClassName: string = "", active: boolean = true): string => active ? `${this.baseClassName}${subClassName}` : "";
+	private readonly className = (subClassNames: string = "", active: boolean = true): string =>
+		active
+			? subClassNames.split(" ").map((subClassName: string) => `${this.baseClassName}${subClassName}`).join(" ")
+			: "";
 
 	public render(): JSX.Element {
 		const {
