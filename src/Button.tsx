@@ -1,6 +1,7 @@
 import * as React from "react";
 
 import "./Button.less";
+import {dynaClassName} from "./utils/dynaClassName";
 
 export enum EStyle {
 	ROUNDED = "ROUNDED",
@@ -39,11 +40,7 @@ export class Button extends React.Component<IButtonProps> {
 		onClick: () => undefined,
 	};
 
-	private readonly baseClassName: string = "my-button";
-	private readonly className = (subClassNames: string = "", active: boolean = true): string =>
-		active
-			? subClassNames.split(" ").map((subClassName: string) => `${this.baseClassName}${subClassName}`).join(" ")
-			: "";
+	private readonly className = dynaClassName("my-button");
 
 	public render(): JSX.Element {
 		const {
