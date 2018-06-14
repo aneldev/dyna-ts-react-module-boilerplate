@@ -25,7 +25,6 @@ export interface IButtonProps {
 }
 export declare class Button extends React.Component<IButtonProps> {
     static defaultProps: IButtonProps;
-    private readonly baseClassName;
     private readonly className;
     render(): JSX.Element;
 }

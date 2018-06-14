@@ -113,6 +113,7 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(3);
 __webpack_require__(4);
+var dynaClassName_1 = __webpack_require__(9);
 var EStyle;
 (function (EStyle) {
     EStyle["ROUNDED"] = "ROUNDED";
@@ -135,14 +136,7 @@ var Button = /** @class */ (function (_super) {
     __extends(Button, _super);
     function Button() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.baseClassName = "my-button";
-        _this.className = function (subClassNames, active) {
-            if (subClassNames === void 0) { subClassNames = ""; }
-            if (active === void 0) { active = true; }
-            return active
-                ? subClassNames.split(" ").map(function (subClassName) { return "" + _this.baseClassName + subClassName; }).join(" ")
-                : "";
-        };
+        _this.className = dynaClassName_1.dynaClassName("my-button");
         return _this;
     }
     Button.prototype.render = function () {
@@ -755,6 +749,25 @@ module.exports = function (css) {
 	// send back the fixed css
 	return fixedCss;
 };
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.dynaClassName = function (baseClassName) {
+    return function (className, active) {
+        if (className === void 0) { className = ""; }
+        if (active === void 0) { active = true; }
+        return active
+            ? className.split(" ")
+                .map(function (subClassName) { return "" + baseClassName + subClassName; }).join(" ")
+            : "";
+    };
+};
+
 
 /***/ })
 /******/ ]);
