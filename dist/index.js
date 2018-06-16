@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("react"));
+		module.exports = factory(require("react"), require("dyna-class-name"));
 	else if(typeof define === 'function' && define.amd)
-		define("dyna-ts-react-module-boilerplate", ["react"], factory);
+		define("dyna-ts-react-module-boilerplate", ["react", "dyna-class-name"], factory);
 	else if(typeof exports === 'object')
-		exports["dyna-ts-react-module-boilerplate"] = factory(require("react"));
+		exports["dyna-ts-react-module-boilerplate"] = factory(require("react"), require("dyna-class-name"));
 	else
-		root["dyna-ts-react-module-boilerplate"] = factory(root["react"]);
-})(typeof self !== 'undefined' ? self : this, function(__WEBPACK_EXTERNAL_MODULE_3__) {
+		root["dyna-ts-react-module-boilerplate"] = factory(root["react"], root["dyna-class-name"]);
+})(typeof self !== 'undefined' ? self : this, function(__WEBPACK_EXTERNAL_MODULE_3__, __WEBPACK_EXTERNAL_MODULE_4__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -112,8 +112,8 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(3);
-__webpack_require__(4);
-var dynaClassName_1 = __webpack_require__(9);
+var dyna_class_name_1 = __webpack_require__(4);
+__webpack_require__(5);
 var EStyle;
 (function (EStyle) {
     EStyle["ROUNDED"] = "ROUNDED";
@@ -136,13 +136,13 @@ var Button = /** @class */ (function (_super) {
     __extends(Button, _super);
     function Button() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.className = dynaClassName_1.dynaClassName("my-button");
+        _this.className = dyna_class_name_1.dynaClassName("my-button");
         return _this;
     }
     Button.prototype.render = function () {
         var _a = this.props, children = _a.children, style = _a.style, color = _a.color, size = _a.size, href = _a.href, onClick = _a.onClick;
         var className = [
-            this.className(),
+            this.className(""),
             this.className("--style-" + style),
             this.className("--color-" + color),
             this.className("--size-" + size),
@@ -171,12 +171,18 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_3__;
 
 /***/ }),
 /* 4 */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_4__;
+
+/***/ }),
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(5);
+var content = __webpack_require__(6);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -184,7 +190,7 @@ var transform;
 var options = {}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(7)(content, options);
+var update = __webpack_require__(8)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -201,10 +207,10 @@ if(false) {
 }
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(6)(false);
+exports = module.exports = __webpack_require__(7)(false);
 // imports
 
 
@@ -215,7 +221,7 @@ exports.push([module.i, ".my-button {\n  outline: none;\n}\n.my-button--style-RO
 
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -297,7 +303,7 @@ function toComment(sourceMap) {
 }
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -343,7 +349,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(8);
+var	fixUrls = __webpack_require__(9);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -656,7 +662,7 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -749,25 +755,6 @@ module.exports = function (css) {
 	// send back the fixed css
 	return fixedCss;
 };
-
-/***/ }),
-/* 9 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.dynaClassName = function (baseClassName) {
-    return function (className, active) {
-        if (className === void 0) { className = ""; }
-        if (active === void 0) { active = true; }
-        return active
-            ? className.split(" ")
-                .map(function (subClassName) { return "" + baseClassName + subClassName; }).join(" ")
-            : "";
-    };
-};
-
 
 /***/ })
 /******/ ]);
