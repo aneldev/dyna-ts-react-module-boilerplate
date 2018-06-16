@@ -141,12 +141,7 @@ var Button = /** @class */ (function (_super) {
     }
     Button.prototype.render = function () {
         var _a = this.props, children = _a.children, style = _a.style, color = _a.color, size = _a.size, href = _a.href, onClick = _a.onClick;
-        var className = [
-            this.className(""),
-            this.className("--style-" + style),
-            this.className("--color-" + color),
-            this.className("--size-" + size),
-        ].join(' ').trim();
+        var className = this.className(" --style-" + style + " --color-" + color + " --size-" + size);
         return (React.createElement("a", { className: className, href: href, onClick: onClick },
             React.createElement("button", null, children)));
     };
