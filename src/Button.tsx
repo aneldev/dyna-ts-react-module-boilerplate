@@ -1,7 +1,7 @@
 import * as React from "react";
+import {dynaClassName} from "dyna-class-name";
 
 import "./Button.less";
-import {dynaClassName} from "./utils/dynaClassName";
 
 export enum EStyle {
 	ROUNDED = "ROUNDED",
@@ -48,7 +48,7 @@ export class Button extends React.Component<IButtonProps> {
 		} = this.props;
 
 		const className: string = [
-			this.className(),
+			this.className(""),
 			this.className(`--style-${style}`),
 			this.className(`--color-${color}`),
 			this.className(`--size-${size}`),
