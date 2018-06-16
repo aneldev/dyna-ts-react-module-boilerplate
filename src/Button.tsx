@@ -47,12 +47,7 @@ export class Button extends React.Component<IButtonProps> {
 			children, style, color, size, href, onClick
 		} = this.props;
 
-		const className: string = [
-			this.className(""),
-			this.className(`--style-${style}`),
-			this.className(`--color-${color}`),
-			this.className(`--size-${size}`),
-		].join(' ').trim();
+		const className: string = this.className(` --style-${style} --color-${color} --size-${size}`);
 
 		return (
 			<a className={className} href={href} onClick={onClick}>
