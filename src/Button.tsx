@@ -40,17 +40,17 @@ export class Button extends React.Component<IButtonProps> {
 		onClick: () => undefined,
 	};
 
-	private readonly className = dynaClassName("my-button");
+	private readonly cn = dynaClassName("my-button");
 
 	public render(): JSX.Element {
 		const {
 			children, style, color, size, href, onClick
 		} = this.props;
 
-		const className: string = this.className(` --style-${style} --color-${color} --size-${size}`);
+		const className: string = `--style-${style} --color-${color} --size-${size}`;
 
 		return (
-			<a className={className} href={href} onClick={onClick}>
+			<a className={this.cn.root(this.props, className)} href={href} onClick={onClick}>
 				<button>{children}</button>
 			</a>
 		);
