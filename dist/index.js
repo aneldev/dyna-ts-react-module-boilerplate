@@ -136,13 +136,13 @@ var Button = /** @class */ (function (_super) {
     __extends(Button, _super);
     function Button() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.className = dyna_class_name_1.dynaClassName("my-button");
+        _this.cn = dyna_class_name_1.dynaClassName("my-button");
         return _this;
     }
     Button.prototype.render = function () {
         var _a = this.props, children = _a.children, style = _a.style, color = _a.color, size = _a.size, href = _a.href, onClick = _a.onClick;
-        var className = this.className(" --style-" + style + " --color-" + color + " --size-" + size);
-        return (React.createElement("a", { className: className, href: href, onClick: onClick },
+        var className = "--style-" + style + " --color-" + color + " --size-" + size;
+        return (React.createElement("a", { className: this.cn.root(this.props, className), href: href, onClick: onClick },
             React.createElement("button", null, children)));
     };
     Button.defaultProps = {
