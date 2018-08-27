@@ -104,7 +104,7 @@ module.exports = [
     // inline images load (loads the url() defined in the css)
     // help: https://christianalfoni.github.io/react-webpack-cookbook/Inlining-images.html
     test: /\.(png|jpg|gif)$/,
-    loader: 'url?limit=100000'
+    loader: 'url-loader?limit=100000'
   },
   {
     test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
