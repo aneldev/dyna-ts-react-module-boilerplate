@@ -8,12 +8,17 @@ const loaders = require('./webpack.loaders');
 const plugins = require('./webpack.plugins');
 
 const config = {
+  mode: "development",    // distribute it without minification
   entry: [
     // do not load babel-polyfill here, the application should load the polyfills!
     // the entry application code
     path.resolve(__dirname, 'src/index.tsx')
   ],
   externals: Object.keys(package_.dependencies), // exclude all dependencies from the bundle
+  optimization: {
+    // help: https://webpack.js.org/guides/tree-shaking/
+    usedExports: true, // true to remove the dead code,
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'index.js',
@@ -27,7 +32,7 @@ const config = {
     extensions: [".webpack.js", ".web.js", ".ts", ".tsx", ".js", ".jsx"]
   },
   module: {
-    loaders: loaders
+    rules: loaders
   },
   plugins: plugins.concat([]),
 };

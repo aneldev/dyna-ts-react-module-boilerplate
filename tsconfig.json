@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "lib": ["es2016", "es6", "dom"],
+    "lib": ["es2015", "es2016", "es6", "dom"],
     "outDir": "./dist/",
     "declaration": true,
     "declarationDir": "./dist/",
