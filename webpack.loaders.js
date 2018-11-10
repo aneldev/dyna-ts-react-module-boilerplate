@@ -125,6 +125,9 @@ module.exports = [
     test: /\.js$/, loader: "source-map-loader"
   },
   {
+    test: /\.ts$/, loader: "source-map-loader"
+  },
+  {
     test: /\.svg$/, loader: 'svg-inline-loader'
   },
 ];

@@ -53,7 +53,7 @@
     "awesome-typescript-loader": "^5.2.1",
     "babel-jest": "20.0.3",
     "babel-loader": "^8.0.4",
-    "babel-preset-react-app": "latest",
+    "babel-preset-react-app": "^6.1.0",
     "chokidar": "^1.7.0",
     "circular-dependency-plugin": "^4.0.0",
     "css-loader": "^1.0.1",
