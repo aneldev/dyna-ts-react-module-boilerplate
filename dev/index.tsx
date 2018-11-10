@@ -9,4 +9,3 @@ appElement.id = appWrapperID;
 document.body.appendChild(appElement);
 
 ReactDOM.render(<StartApp />, appElement);
-
