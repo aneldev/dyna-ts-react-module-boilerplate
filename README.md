@@ -40,6 +40,7 @@ For React 15 use the tag v4.1.5 of this repo.
 - Test with Jest, snapshots are also supported
 - Distribute as module with TypeScript Definitions (ready to import)
 - Distributed versions works in Javascript and Typescript projects
+- Detect circular dependencies (where leads to import `undefined` or `null` values)
 
 # Environment
 
