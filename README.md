@@ -1,6 +1,6 @@
 # About
 
-This is Webpack configuration for ES5/ES6 React components written in Typescript to be used as a module in other apps or modules.
+This is Webpack 4 configuration for ES5/ES6 React components written in Typescript to be used as a module in other apps or modules.
 
 Develop, debug, test and distribute react component(s) easy.
 
