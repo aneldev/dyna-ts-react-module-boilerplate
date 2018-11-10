@@ -31,6 +31,12 @@ const config = {
     alias: {},
     extensions: [".webpack.js", ".web.js", ".ts", ".tsx", ".js", ".jsx"]
   },
+  node: {
+    // universal app? place here your conditional imports for node env
+    fs: "empty",
+    path: "empty",
+    child_process: "empty",
+  },
   module: {
     rules: loaders
   },
