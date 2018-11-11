@@ -28,7 +28,8 @@
     "test-watch": "jest --watch --verbose --runInBand",
     "clear-npm-cache": "npm cache clear --force",
     "update-release": "npm update && git add -u && git add -A && git commit -m \"last minute update-release changes\"; npm run release",
-    "reinstall": "rm ./package-lock.json; rm -rf ./node_modules; npm install"
+    "reinstall": "rm ./package-lock.json; rm -rf ./node_modules; npm install",
+    "reinstall-dyna": "rm ./package-lock.json; rm -rf ./node_modules/dyna-*; npm install"
   },
   "keywords": [],
   "author": "Anel dev",

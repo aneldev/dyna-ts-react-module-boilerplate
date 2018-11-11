@@ -1,9 +1,9 @@
-// help: http://webpack.github.io/docs/tutorials/getting-started/
-
 module.exports = [
   {
     test: /\.js$/,
-    use: ['babel-loader', 'source-map-loader'],
+    use: [
+      'babel-loader',
+    ],
   },
   {
     // typescript loader
@@ -120,12 +120,6 @@ module.exports = [
   //     publicPath: '/static/',
   //   },
   // },
-  {
-    test: /\.js$/, loader: "source-map-loader"
-  },
-  {
-    test: /\.ts$/, loader: "source-map-loader"
-  },
   {
     test: /\.svg$/, loader: 'svg-inline-loader'
   },

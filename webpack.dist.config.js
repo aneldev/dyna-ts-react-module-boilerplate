@@ -17,8 +17,9 @@ const config = {
   externals: Object.keys(package_.dependencies), // exclude all dependencies from the bundle
   optimization: {
     // help: https://webpack.js.org/guides/tree-shaking/
-    usedExports: true, // true to remove the dead code,
+    usedExports: true,  // true to remove the dead code,
   },
+  devtool: "source-map",     // help: https://webpack.js.org/configuration/devtool/
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'index.js',
@@ -40,7 +41,9 @@ const config = {
   module: {
     rules: loaders
   },
-  plugins: plugins.concat([]),
+  plugins: [
+    new webpack.NamedModulesPlugin(), // prints more readable module names in the browser console on HMR updates
+  ].concat(plugins),
 };
 
 module.exports = config;
