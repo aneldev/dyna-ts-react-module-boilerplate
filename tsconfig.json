@@ -1,6 +1,12 @@
 {
   "compilerOptions": {
-    "lib": ["es2015", "es2016", "es6", "dom"],
+    "lib": [
+      "es2015",
+      "es2015.promise",
+      "es2016",
+      "es6",
+      "dom"
+    ],
     "outDir": "./dist/",
     "declaration": true,
     "declarationDir": "./dist/",
@@ -12,7 +18,9 @@
     "allowJs": false,
     "noErrorTruncation": true,
     "skipLibCheck": true,
-    "types" : [ "node" ]
+    "types": [
+      "node"
+    ]
   },
   "files": [
     "src/index.tsx"
