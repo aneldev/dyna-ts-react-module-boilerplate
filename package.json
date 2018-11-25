@@ -10,7 +10,7 @@
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
   "scripts": {
-    "create": "echo Creation started... && rm -rf .git && git init && rm -rf package-lock.json && mv README.md README.boilerplate.md && echo \\# readme > README.md && yarn install && node _boilerplate.js && echo --- module created",
+    "create": "echo Creation started... && rm -rf .git && git init && rm -rf yarn.lock; mv README.md README.boilerplate.md && echo \\# readme > README.md && yarn install && node _boilerplate.js && echo --- module created",
     "start": "webpack-dev-server --config webpack.dev.config.js --devtool eval --progress --inline --hot --content-base dev/public --open --host 127.0.0.1 --port 3200 ",
     "start-at": "webpack-dev-server --config webpack.dev.config.js --devtool eval --progress --inline --hot --content-base dev/public --open --host 127.0.0.1 --port",
     "lint": "tslint './src/**/*.ts*' --format stylish --force",
@@ -27,16 +27,16 @@
     "test": "jest --coverage --no-cache --runInBand",
     "test-watch": "jest --watch --verbose --runInBand",
     "update-release": "yarn upgrade && git add -u && git add -A && git commit -m \"last minute update-release changes\"; yarn run release",
-    "reinstall": "rm ./package-lock.json; rm -rf ./node_modules; yarn install",
-    "reinstall-dyna": "rm ./package-lock.json; rm -rf ./node_modules/dyna-*; yarn install"
+    "reinstall": "rm ./yarn.lock; rm -rf ./node_modules; yarn install",
+    "reinstall-dyna": "rm ./yarn.lock; rm -rf ./node_modules/dyna-*; yarn install"
   },
   "keywords": [],
   "author": "Anel dev",
   "license": "MIT",
   "dependencies": {
     "dyna-class-name": "^2.3.1",
-    "react": "^16.6.1",
-    "react-dom": "^16.6.1"
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.2",
