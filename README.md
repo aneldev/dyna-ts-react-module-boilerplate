@@ -10,7 +10,7 @@ Replace the `my-awesome-react-component` with the name of you new module. A new 
 ```
 git clone http://github.com/aneldev/dyna-ts-react-module-boilerplate my-awesome-react-component
 cd my-awesome-react-component
-npm run create
+yarn run create
 ```
 That's it. 
 
@@ -68,11 +68,11 @@ Under the `/dev/public/` folder is the http folder of the application, you shoul
 
 ## Start the Demo
 
-`npm start`
+`yarn start`
 
 or, if you want to start it to different port
 
-`npm run start-to -- 3232`
+`yarn start-to -- 3232`
 
 to start in port 3232.
 
@@ -86,18 +86,18 @@ This boilerplate uses the [dyna-showcase](https://github.com/aneldev/dyna-showca
 
 - Implement your component(s) under `src/`
 - Implement the usage of your components(s) in `dev/showcase/showcase.tsx`
-- Call `npm start`
+- Call `yarn start`
 - Open in any browser [http://localhost:3200](http://localhost:3200) to **develop**, **debug** or **preview**.
 
 ## Develop with you custom Demo
 
 If you don't want to use the `dyna-showcase` for any reason you should do this:
-- remove the `dyna-showcase`, with `npm uninstall --save-dev dyna-showcase`
+- remove the `dyna-showcase`, with `yarn remove --dev dyna-showcase`
 - delete all the files under the `./dev`, except the `./dev/index.tsx`
 - develop your demo app under the `./dev` folder
 - load your demo from the `./dev/index.tsx`
 
-The `npm start` will launch your app. 
+The `yarn start` will launch your app. 
 
 # Test
 
@@ -109,23 +109,23 @@ Test files can be anywhere but they should have a name `*.(test|spec).(ts|tsx|js
 
 ## Run tests
  
-Call `npm run test` to run your tests and coverage.
+Call `yarn test` to run your tests and coverage.
 
-Call `npm run test-watch` to run your tests after any change, with no coverage.
+Call `yarn test-watch` to run your tests after any change, with no coverage.
 
 # Build
 
-`npm run build`
+`yarn build`
 
 Build creates your distributable version of your component under `./dist`. Typescripts declaration will be created there too.
 
 You don't really need to use the `build`, since the `release` script is calling the `build`.
 
-You will need this is if you have linked this package with another local package (like npm link or so).
+You will need this is if you have linked this package with another local package (like yarn link or so).
 
 # Release
 
-`npm run release`
+`yarn release`
 
 - builds the component
 - bumps the patch version
@@ -134,7 +134,7 @@ You will need this is if you have linked this package with another local package
 
 The output is not compressed, while it is intended to be used in other apps where it will be bundled and compressed. This also makes your component debuggable.
 
-**For private packages**, where you don't want to expose them to `npm`, remove the `npm pulish` call from the `publish-push` script.
+**For private packages**, where you don't want to expose them to `yarn`, remove the `yarn pulish` call from the `publish-push` script.
 
 # Exclude dependencies from the output bundle
 
@@ -144,11 +144,11 @@ You can exclude dependencies from the distributed bundle by declaring them in th
 
 ## Link your modules easily
 
-In case that the `npm link` doesn't work correctly this boilerplate offers a ready sync unidirectional mechanism.
+In case that the `yarn link` doesn't work correctly this boilerplate offers a ready sync unidirectional mechanism.
 
 0. Copy `./syncExternalsList.sample.js` to `./syncExternalsList.js` once only. 
 1. Update the `./syncExternalsList.js` list with external apps you want to keep them sync.
-2. Call `npm run sync-externals`
+2. Call `yarn sync-externals`
 
 If you use the Ubuntu shell of Win10, in the `./syncExternalsList.js` you can add a windows path prefixing it with the `*tus*`, _which stands for `to ubuntu shell`_.
 
