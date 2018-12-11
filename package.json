@@ -71,7 +71,7 @@
     "jest-junit": "^1.5.1",
     "jsdom": "11.5.1",
     "jsdom-global": "3.0.2",
-    "less": "^2.7.2",
+    "less": "^3.9.0",
     "less-loader": "^4.1.0",
     "node-sass": "^4.10.0",
     "postcss-cli": "^4.1.0",
