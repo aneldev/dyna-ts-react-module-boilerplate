@@ -78,6 +78,7 @@
     "postcss-loader": "^2.1.6",
     "raw-loader": "^0.5.1",
     "react-addons-test-utils": "^15.6.2",
+    "react-app-polyfill": "^0.1.3",
     "react-hot-loader": "^4.3.12",
     "react-test-renderer": "^16.6.1",
     "rimraf": "^2.6.1",
@@ -98,11 +99,15 @@
     "webpack-merge": "^4.1.4"
   },
   "jest": {
-    "setupTestFrameworkScriptFile": "./tests/setup/testSetup.js",
+    "setupFiles": [
+      "react-app-polyfill/jsdom",
+      "<rootDir>/tests/setup/testSetup.js"
+    ],
     "automock": false,
     "collectCoverage": false,
     "testEnvironment": "jsdom",
     "transform": {
+      "^.+\\.(js|jsx|mjs)$": "<rootDir>/node_modules/babel-jest",
       ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
     "testRegex": "(src|tests)/.*\\.(test|spec)\\.(ts|tsx|js|jsx)$",

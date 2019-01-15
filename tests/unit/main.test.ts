@@ -1,5 +1,4 @@
 import "jest";
-declare let window: any;
 if (typeof jasmine !== 'undefined') jasmine.DEFAULT_TIMEOUT_INTERVAL = 5000;
 
 import {Button} from '../../src';
