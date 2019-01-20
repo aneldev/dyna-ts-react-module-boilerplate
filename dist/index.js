@@ -215,8 +215,8 @@ function toComment(sourceMap) {
 "use strict";
 
 
-function _interopDefault(t) {
-  return t && "object" == typeof t && "default" in t ? t.default : t;
+function _interopDefault(e) {
+  return e && "object" == typeof e && "default" in e ? e.default : e;
 }
 
 Object.defineProperty(exports, "__esModule", {
@@ -224,47 +224,48 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 var React = _interopDefault(__webpack_require__(/*! react */ "react")),
-    classCallCheck = function (t, e) {
-  if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function");
+    classCallCheck = function (e, t) {
+  if (!(e instanceof t)) throw new TypeError("Cannot call a class as a function");
 },
-    inherits = function (t, e) {
-  if ("function" != typeof e && null !== e) throw new TypeError("Super expression must either be null or a function, not " + typeof e);
-  t.prototype = Object.create(e && e.prototype, {
+    inherits = function (e, t) {
+  if ("function" != typeof t && null !== t) throw new TypeError("Super expression must either be null or a function, not " + typeof t);
+  e.prototype = Object.create(t && t.prototype, {
     constructor: {
-      value: t,
+      value: e,
       enumerable: !1,
       writable: !0,
       configurable: !0
     }
-  }), e && (Object.setPrototypeOf ? Object.setPrototypeOf(t, e) : t.__proto__ = e);
+  }), t && (Object.setPrototypeOf ? Object.setPrototypeOf(e, t) : e.__proto__ = t);
 },
-    possibleConstructorReturn = function (t, e) {
-  if (!t) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-  return !e || "object" != typeof e && "function" != typeof e ? t : e;
+    possibleConstructorReturn = function (e, t) {
+  if (!e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  return !t || "object" != typeof t && "function" != typeof t ? e : t;
 },
-    AppContainer = function (t) {
-  function e() {
-    return classCallCheck(this, e), possibleConstructorReturn(this, t.apply(this, arguments));
+    AppContainer = function (e) {
+  function t() {
+    return classCallCheck(this, t), possibleConstructorReturn(this, e.apply(this, arguments));
   }
 
-  return inherits(e, t), e.prototype.render = function () {
+  return inherits(t, e), t.prototype.render = function () {
     return React.Children.only(this.props.children);
-  }, e;
+  }, t;
 }(React.Component),
     hot_prod = function () {
-  return function (t) {
-    return t;
+  return function (e) {
+    return e;
   };
 },
-    areComponentsEqual = function (t, e) {
-  return t === e;
+    areComponentsEqual = function (e, t) {
+  return e === t;
 },
     setConfig = function () {},
-    cold = function (t) {
-  return t;
-};
+    cold = function (e) {
+  return e;
+},
+    configureComponent = function () {};
 
-exports.AppContainer = AppContainer, exports.hot = hot_prod, exports.areComponentsEqual = areComponentsEqual, exports.setConfig = setConfig, exports.cold = cold;
+exports.AppContainer = AppContainer, exports.hot = hot_prod, exports.areComponentsEqual = areComponentsEqual, exports.setConfig = setConfig, exports.cold = cold, exports.configureComponent = configureComponent;
 
 /***/ }),
 
@@ -978,7 +979,7 @@ function (_super) {
     style: EStyle.ROUNDED,
     color: EColor.WHITE_BLACK,
     size: ESize.MEDIUM,
-    href: null,
+    href: undefined,
     onClick: function onClick() {
       return undefined;
     }
