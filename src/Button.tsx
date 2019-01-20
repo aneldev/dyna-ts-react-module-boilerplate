@@ -36,7 +36,7 @@ export class Button extends React.Component<IButtonProps> {
     style: EStyle.ROUNDED,
     color: EColor.WHITE_BLACK,
     size: ESize.MEDIUM,
-    href: null,
+    href: undefined,
     onClick: () => undefined,
   };
 

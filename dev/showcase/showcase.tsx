@@ -89,7 +89,7 @@ export default {
         }
 
         interface IMyAppState {
-          clickCounter?: number;
+          clickCounter: number;
         }
 
         class MyApp extends React.Component<IMyAppProps, IMyAppState> {
@@ -108,11 +108,11 @@ export default {
                 size={size}
                 onClick={() => this.setState({clickCounter: clickCounter + 1})}
               >Clicks {clickCounter}</Button>
-            )
+            );
           }
         }
 
-        return <MyApp/>
+        return <MyApp/>;
       })(),
       props: [
         {
@@ -158,7 +158,7 @@ export default {
                   size,
                   color,
                 } as IButtonProps,
-              }as IShowcaseViewProps)
+              } as IShowcaseViewProps);
             });
           });
         });
