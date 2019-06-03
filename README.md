@@ -85,7 +85,7 @@ The app is always exposed to `127.0.0.1` by default.
 This boilerplate uses the [dyna-showcase](https://github.com/aneldev/dyna-showcase) to show how your module is rendered under different props. The concept is the same as the StoryBook but it is much lighter and without styles and some tools that help the debugging and development. 
 
 - Implement your component(s) under `src/`
-- Implement the usage of your components(s) in `dev/showcase/showcase.tsx`
+- Implement the usage of your components(s) in `dev/showcase/index.tsx`
 - Call `yarn start`
 - Open in any browser [http://localhost:3200](http://localhost:3200) to **develop**, **debug** or **preview**.
 

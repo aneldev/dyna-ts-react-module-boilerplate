@@ -1,7 +1,7 @@
 import * as React from "react";
 import {DynaShowcase} from "dyna-showcase";
 
-import showcase from '../showcase/showcase';
+import showcase from '../showcase';
 const menuStyle = require('dyna-showcase/styles/menu-style-white.module.less');
 
 import "./font-awesome.less";
@@ -27,7 +27,7 @@ export default class StartApp extends React.Component<any, any> {
 
 if (module.hot) {
   // todo: fix me
-  module.hot.accept('./../showcase/showcase.tsx', function () {
+  module.hot.accept('./../showcase/index.tsx', function () {
     console.log('Accepting the updated module under dev');
     forceUpdate();
   });
