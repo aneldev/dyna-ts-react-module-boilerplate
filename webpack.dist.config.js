@@ -39,11 +39,11 @@ const config = {
     child_process: "empty",
   },
   module: {
-    rules: loaders
+    rules: loaders.module.rules,
   },
   plugins: [
     new webpack.NamedModulesPlugin(), // prints more readable module names in the browser console on HMR updates
-  ].concat(plugins),
+  ].concat(plugins.plugins),
 };
 
 module.exports = config;

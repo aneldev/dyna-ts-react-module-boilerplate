@@ -38,7 +38,7 @@ const config = {
     extensions: [".webpack.js", ".web.js", ".ts", ".tsx", ".js", ".jsx"]
   },
   module: {
-    rules: loaders,
+    rules: loaders.module.rules,
   },
   node: {
     // universal app? place here your conditional imports for node env
@@ -49,7 +49,7 @@ const config = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),     // enable HMR globally
     new webpack.NamedModulesPlugin(),             // prints more readable module names in the browser console on HMR updates
-  ].concat(plugins),
+  ].concat(plugins.plugins),
 };
 
 module.exports = config;
