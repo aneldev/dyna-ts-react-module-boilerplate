@@ -1,3 +1,5 @@
+const autoprefixer = require('autoprefixer');
+
 module.exports = [
   {
     test: /\.js$/,
@@ -20,20 +22,40 @@ module.exports = [
   {
     test: /\.module.less$/,
     use: [
-      'style-loader',
-      'css-loader?modules&localIdentName=less-[name]---[local]---[hash:base64:5]',
+      require.resolve('style-loader'),
       {
-        loader: 'postcss-loader',
+        loader: require.resolve('typings-for-css-modules-loader'),
         options: {
-          plugins: function () {
-            return [
-              require('autoprefixer')
-            ];
-          }
-        }
+          importLoaders: 1,
+          modules: true,
+          localIdentName: "[name]-[local]--[hash:base64:12]",
+          namedExport: true,
+        },
       },
-      'less-loader'
-    ]
+      {
+        loader: require.resolve('postcss-loader'),
+        options: {
+          // Necessary for external CSS imports to work
+          // https://github.com/facebookincubator/create-react-app/issues/2677
+          ident: 'postcss',
+          plugins: () => [
+            require('postcss-flexbugs-fixes'),
+            autoprefixer({
+              browsers: [
+                '>1%',
+                'last 4 versions',
+                'Firefox ESR',
+                'not ie < 9', // React doesn't support IE8 anyway
+              ],
+              flexbox: 'no-2009',
+            }),
+          ],
+        },
+      },
+      {
+        loader: require.resolve('less-loader'),
+      },
+    ],
   },
   {
     test: /^((?!\.module).)*less$/,
@@ -56,20 +78,40 @@ module.exports = [
   {
     test: /\.module.scss$/,
     use: [
-      'style-loader',
-      'css-loader?modules&localIdentName=scss-[name]---[local]---[hash:base64:5]',
+      require.resolve('style-loader'),
       {
-        loader: 'postcss-loader',
+        loader: require.resolve('typings-for-css-modules-loader'),
         options: {
-          plugins: function () {
-            return [
-              require('autoprefixer')
-            ];
-          }
-        }
+          importLoaders: 1,
+          modules: true,
+          localIdentName: "[name]-[local]--[hash:base64:12]",
+          namedExport: true,
+        },
       },
-      'sass-loader'
-    ]
+      {
+        loader: require.resolve('postcss-loader'),
+        options: {
+          // Necessary for external CSS imports to work
+          // https://github.com/facebookincubator/create-react-app/issues/2677
+          ident: 'postcss',
+          plugins: () => [
+            require('postcss-flexbugs-fixes'),
+            autoprefixer({
+              browsers: [
+                '>1%',
+                'last 4 versions',
+                'Firefox ESR',
+                'not ie < 9', // React doesn't support IE8 anyway
+              ],
+              flexbox: 'no-2009',
+            }),
+          ],
+        },
+      },
+      {
+        loader: require.resolve('sass-loader'),
+      },
+    ],
   },
   {
     test: /^((?!\.module).)*scss$/,

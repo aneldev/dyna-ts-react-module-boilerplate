@@ -6,6 +6,7 @@ import {intro} from "./views/intro";
 import {sizes} from "./views/sizes";
 import {interactive} from "./views/interactive";
 import {allTogether} from "./views/all-together";
+import {cssLoaders} from "./views/css-loaders";
 
 import "./style.less";
 import {theEnd} from "./views/the-end";
@@ -17,6 +18,7 @@ export default {
     sizes,
     interactive,
     allTogether,
+    cssLoaders,
     theEnd,
   ]
 }as IShowcase;
