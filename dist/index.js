@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("react"), require("dyna-class-name"));
+		module.exports = factory(require("dyna-class-name"), require("react"));
 	else if(typeof define === 'function' && define.amd)
-		define("dyna-ts-react-module-boilerplate", ["react", "dyna-class-name"], factory);
+		define("dyna-ts-react-module-boilerplate", ["dyna-class-name", "react"], factory);
 	else if(typeof exports === 'object')
-		exports["dyna-ts-react-module-boilerplate"] = factory(require("react"), require("dyna-class-name"));
+		exports["dyna-ts-react-module-boilerplate"] = factory(require("dyna-class-name"), require("react"));
 	else
-		root["dyna-ts-react-module-boilerplate"] = factory(root["react"], root["dyna-class-name"]);
-})(window, function(__WEBPACK_EXTERNAL_MODULE_react__, __WEBPACK_EXTERNAL_MODULE_dyna_class_name__) {
+		root["dyna-ts-react-module-boilerplate"] = factory(root["dyna-class-name"], root["react"]);
+})(window, function(__WEBPACK_EXTERNAL_MODULE_dyna_class_name__, __WEBPACK_EXTERNAL_MODULE_react__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
