@@ -1,6 +1,6 @@
 {
   "name": "dyna-ts-react-module-boilerplate",
-  "version": "5.7.2",
+  "version": "5.7.3",
   "description": "About",
   "repository": {
     "type": "git",
@@ -26,15 +26,12 @@
     "sync-externals": "node syncExternals.js",
     "test": "jest --coverage --no-cache --runInBand",
     "test-watch": "jest --watch --verbose --runInBand",
-    "update-release": "yarn upgrade && git add -u && git add -A && git commit -m \"update-release changes\"; yarn run release",
-    "reinstall": "rm ./yarn.lock; rm -rf ./node_modules; yarn install",
-    "reinstall-dyna": "rm ./yarn.lock; rm -rf ./node_modules/dyna-*; yarn install"
+    "update-release": "yarn upgrade && git add -u && git add -A && git commit -m \"Upgrade/Release\"; yarn run release"
   },
   "keywords": [],
   "author": "Anel dev",
   "license": "MIT",
   "dependencies": {
-    "dyna-class-name": "^2.3.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
   },
