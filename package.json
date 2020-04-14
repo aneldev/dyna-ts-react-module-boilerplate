@@ -26,7 +26,7 @@
     "sync-externals": "node syncExternals.js",
     "test": "jest --coverage --no-cache --runInBand",
     "test-watch": "jest --watch --verbose --runInBand",
-    "update-release": "node dyna/bumpPatchVersion.js && yarn upgrade && git add -u && git add -A && git commit -m \"Upgrade/Release\" && yarn run release"
+    "upgrade-release": "node dyna/bumpPatchVersion.js && yarn upgrade && git add -u && git add -A && git commit -m \"Upgrade/Release\" && yarn run release"
   },
   "keywords": [],
   "author": "Anel dev",
