@@ -1,5 +1,4 @@
 import * as React      from "react";
-import {dynaClassName} from "dyna-class-name";
 
 import "./Button.less";
 
@@ -40,17 +39,16 @@ export class Button extends React.Component<IButtonProps> {
     onClick: () => undefined,
   };
 
-  private readonly cn = dynaClassName("my-button");
 
   public render(): JSX.Element {
     const {
       children, style, color, size, href, onClick
     } = this.props;
 
-    const className: string = `--style-${style} --color-${color} --size-${size}`;
+    const classNameXXXX: string = `--style-${style} --color-${color} --size-${size}`;
 
     return (
-      <a className={this.cn.root(this.props, className)} href={href} onClick={onClick}>
+      <a className={className} href={href} onClick={onClick}>
         <button>{children}</button>
       </a>
     );

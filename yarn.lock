@@ -3295,15 +3295,22 @@ duplexify@^3.4.2, duplexify@^3.6.0:
     readable-stream "^2.0.0"
     stream-shift "^1.0.0"
 
-dyna-class-name@^2.3.1:
-  version "2.3.2"
-  resolved "https://registry.yarnpkg.com/dyna-class-name/-/dyna-class-name-2.3.2.tgz#fd34cd126c91ddaca6ee4456f8c54a21bc2eb1e5"
-  integrity sha512-kh/lPga7oifiRAO0LZWcVpoQMM9VDgERQcRX/RsUnGf76TOBTJgt7J4de85N850A7VvcmNvxqFG96ol7OQP/kQ==
-
 dyna-guid@^1.0.5:
   version "1.0.10"
   resolved "https://registry.yarnpkg.com/dyna-guid/-/dyna-guid-1.0.10.tgz#0aab519f22ef399ef43aed44f9bf905d609b4bc8"
   integrity sha512-3dzl1B2+9VUM1zaPXiMaVCSH+oS6JYHp/0iwI25qbj0NpHFHagLgDWkkDGSXTT+vMQFHb8CPIDrDjRMFnFwMuQ==
+
+dyna-interfaces@^4.0.0:
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/dyna-interfaces/-/dyna-interfaces-4.2.2.tgz#3d5b7c0eb582d7fdd905c12b33df0fddcaaeaa4a"
+  integrity sha512-7r0R8RlpBlEF4fvvHhUuUie+2lkKQH/OHrEP7lwI5AVfUItbOx/oMljinxMKhmF/zk2bhzFhx8ROxLIRCceEPQ==
+
+dyna-node-fs@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/dyna-node-fs/-/dyna-node-fs-1.0.4.tgz#553f43577049c4e8d5fb49c6b80bb6b0269ac4ff"
+  integrity sha512-kQRlMQTn42GK5i9znkNicn/ZrWXzP3DnSZM6ZL6kfnbNdNAddfqZZOUw0YPDxfL/B8pp0lE7u23mOR4753s+xw==
+  dependencies:
+    dyna-interfaces "^4.0.0"
 
 dyna-showcase@^1.1.3:
   version "1.1.4"
