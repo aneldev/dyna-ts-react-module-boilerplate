@@ -1,6 +1,6 @@
 {
   "name": "dyna-ts-react-module-boilerplate",
-  "version": "5.7.3",
+  "version": "5.8.0",
   "description": "About",
   "repository": {
     "type": "git",
@@ -19,7 +19,7 @@
     ".build-index.d.ts": "tsc && rm ./dist/index.js && yarn run .build-index.d.ts-clear",
     ".build-index.d.ts-clear": "cd dist/ && find . -name \\*.js -delete && cd ..",
     ".build-dist": "set NODE_ENV=production && webpack --config webpack.dist.config.js",
-    "release": "yarn run build && git add -u && git add -A && git commit -m \"Build\"; yarn run publish-push",
+    "release": "yarn run build && git add -u && git add -A && git commit -m \"Build\" && yarn run publish-push",
     "commit": "git add -u && git add -A && git commit -m",
     "commit-amend": "git add -u && git add -A && git commit --amend --no-edit",
     "publish-push": "yarn version --patch && yarn publish --non-interactive && git push && git push --tags",
