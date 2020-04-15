@@ -204,99 +204,6 @@ function toComment(sourceMap) {
 
 /***/ }),
 
-/***/ "./node_modules/react-hot-loader/dist/react-hot-loader.production.min.js":
-/*!*******************************************************************************!*\
-  !*** ./node_modules/react-hot-loader/dist/react-hot-loader.production.min.js ***!
-  \*******************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-function _interopDefault(t) {
-  return t && "object" == typeof t && "default" in t ? t.default : t;
-}
-
-Object.defineProperty(exports, "__esModule", {
-  value: !0
-});
-
-var React = _interopDefault(__webpack_require__(/*! react */ "react")),
-    classCallCheck = function (t, e) {
-  if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function");
-},
-    inherits = function (t, e) {
-  if ("function" != typeof e && null !== e) throw new TypeError("Super expression must either be null or a function, not " + typeof e);
-  t.prototype = Object.create(e && e.prototype, {
-    constructor: {
-      value: t,
-      enumerable: !1,
-      writable: !0,
-      configurable: !0
-    }
-  }), e && (Object.setPrototypeOf ? Object.setPrototypeOf(t, e) : t.__proto__ = e);
-},
-    possibleConstructorReturn = function (t, e) {
-  if (!t) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-  return !e || "object" != typeof e && "function" != typeof e ? t : e;
-},
-    AppContainer = function (t) {
-  function e() {
-    return classCallCheck(this, e), possibleConstructorReturn(this, t.apply(this, arguments));
-  }
-
-  return inherits(e, t), e.prototype.render = function () {
-    return React.Children.only(this.props.children);
-  }, e;
-}(React.Component),
-    hot_prod = function () {
-  return function (t) {
-    return t;
-  };
-},
-    areComponentsEqual = function (t, e) {
-  return t === e;
-},
-    setConfig = function () {},
-    cold = function (t) {
-  return t;
-};
-
-exports.AppContainer = AppContainer, exports.hot = hot_prod, exports.areComponentsEqual = areComponentsEqual, exports.setConfig = setConfig, exports.cold = cold;
-
-/***/ }),
-
-/***/ "./node_modules/react-hot-loader/index.js":
-/*!************************************************!*\
-  !*** ./node_modules/react-hot-loader/index.js ***!
-  \************************************************/
-/*! no static exports found */
-/*! all exports used */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var evalAllowed = false;
-
-try {
-  eval('evalAllowed = true');
-} catch (e) {} // eval not allowed due to CSP
-// RHL needs setPrototypeOf to operate Component inheritance, and eval to patch methods
-
-
-var platformSupported = !!Object.setPrototypeOf && evalAllowed;
-
-if (true) {
-  if (false) {}
-
-  module.exports = __webpack_require__(/*! ./dist/react-hot-loader.production.min.js */ "./node_modules/react-hot-loader/dist/react-hot-loader.production.min.js");
-} else {}
-
-/***/ }),
-
 /***/ "./node_modules/style-loader/lib/addStyles.js":
 /*!****************************************************!*\
   !*** ./node_modules/style-loader/lib/addStyles.js ***!
@@ -880,10 +787,13 @@ if(false) {}
 /* WEBPACK VAR INJECTION */(function(module) {
 
 (function () {
-  var enterModule = __webpack_require__(/*! react-hot-loader */ "./node_modules/react-hot-loader/index.js").enterModule;
-
+  var enterModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.enterModule : undefined;
   enterModule && enterModule(module);
 })();
+
+var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal["default"].signature : function (a) {
+  return a;
+};
 
 var __extends = this && this.__extends || function () {
   var _extendStatics = function extendStatics(d, b) {
@@ -985,9 +895,7 @@ exports.Button = Button;
 ;
 
 (function () {
-  var reactHotLoader = __webpack_require__(/*! react-hot-loader */ "./node_modules/react-hot-loader/index.js").default;
-
-  var leaveModule = __webpack_require__(/*! react-hot-loader */ "./node_modules/react-hot-loader/index.js").leaveModule;
+  var reactHotLoader = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.default : undefined;
 
   if (!reactHotLoader) {
     return;
@@ -998,10 +906,14 @@ exports.Button = Button;
   reactHotLoader.register(EColor, "EColor", "/Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/Button.tsx");
   reactHotLoader.register(ESize, "ESize", "/Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/Button.tsx");
   reactHotLoader.register(Button, "Button", "/Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/Button.tsx");
-  leaveModule(module);
 })();
 
 ;
+
+(function () {
+  var leaveModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.leaveModule : undefined;
+  leaveModule && leaveModule(module);
+})();
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node_modules/webpack/buildin/module.js */ "./node_modules/webpack/buildin/module.js")(module)))
 
 /***/ }),
@@ -1016,6 +928,10 @@ exports.Button = Button;
 
 "use strict";
 
+
+var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal["default"].signature : function (a) {
+  return a;
+};
 
 Object.defineProperty(exports, "__esModule", {
   value: true
