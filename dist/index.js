@@ -960,7 +960,7 @@ function (_super) {
         size = _a.size,
         href = _a.href,
         onClick = _a.onClick;
-    var className = "--style-" + style + " --color-" + color + " --size-" + size;
+    var className = "my-button my-button--style-" + style + " my-button--color-" + color + " my-button--size-" + size;
     return React.createElement("a", {
       className: className,
       href: href,
