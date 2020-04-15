@@ -1,13 +1,9 @@
 const dynaNodeFs = require('dyna-node-fs');
+const guid = require('dyna-guid').guid;
 
 (async () => {
   const package_ = await dynaNodeFs.loadJSON('./package.json');
-  const versionParts = package_.version.split('.').map(Number);
-  versionParts[2]++;
-  package_.version = versionParts.join('.');
+  package_.dyna = { changeId: guid() };
   await dynaNodeFs.saveJSON('./package.json', package_, true);
-  console.log('Bumped to', package_.version);
+  console.log('changeId', package_.dyna.changeId);
 })()
-
-
-
