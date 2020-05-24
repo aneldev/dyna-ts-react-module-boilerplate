@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("dyna-class-name"), require("react"));
+		module.exports = factory(require("react"));
 	else if(typeof define === 'function' && define.amd)
-		define("dyna-ts-react-module-boilerplate", ["dyna-class-name", "react"], factory);
+		define("dyna-ts-react-module-boilerplate", ["react"], factory);
 	else if(typeof exports === 'object')
-		exports["dyna-ts-react-module-boilerplate"] = factory(require("dyna-class-name"), require("react"));
+		exports["dyna-ts-react-module-boilerplate"] = factory(require("react"));
 	else
-		root["dyna-ts-react-module-boilerplate"] = factory(root["dyna-class-name"], root["react"]);
-})(window, function(__WEBPACK_EXTERNAL_MODULE_dyna_class_name__, __WEBPACK_EXTERNAL_MODULE_react__) {
+		root["dyna-ts-react-module-boilerplate"] = factory(root["react"]);
+})(window, function(__WEBPACK_EXTERNAL_MODULE_react__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -201,99 +201,6 @@ function toComment(sourceMap) {
   var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
   return '/*# ' + data + ' */';
 }
-
-/***/ }),
-
-/***/ "./node_modules/react-hot-loader/dist/react-hot-loader.production.min.js":
-/*!*******************************************************************************!*\
-  !*** ./node_modules/react-hot-loader/dist/react-hot-loader.production.min.js ***!
-  \*******************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-function _interopDefault(t) {
-  return t && "object" == typeof t && "default" in t ? t.default : t;
-}
-
-Object.defineProperty(exports, "__esModule", {
-  value: !0
-});
-
-var React = _interopDefault(__webpack_require__(/*! react */ "react")),
-    classCallCheck = function (t, e) {
-  if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function");
-},
-    inherits = function (t, e) {
-  if ("function" != typeof e && null !== e) throw new TypeError("Super expression must either be null or a function, not " + typeof e);
-  t.prototype = Object.create(e && e.prototype, {
-    constructor: {
-      value: t,
-      enumerable: !1,
-      writable: !0,
-      configurable: !0
-    }
-  }), e && (Object.setPrototypeOf ? Object.setPrototypeOf(t, e) : t.__proto__ = e);
-},
-    possibleConstructorReturn = function (t, e) {
-  if (!t) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-  return !e || "object" != typeof e && "function" != typeof e ? t : e;
-},
-    AppContainer = function (t) {
-  function e() {
-    return classCallCheck(this, e), possibleConstructorReturn(this, t.apply(this, arguments));
-  }
-
-  return inherits(e, t), e.prototype.render = function () {
-    return React.Children.only(this.props.children);
-  }, e;
-}(React.Component),
-    hot_prod = function () {
-  return function (t) {
-    return t;
-  };
-},
-    areComponentsEqual = function (t, e) {
-  return t === e;
-},
-    setConfig = function () {},
-    cold = function (t) {
-  return t;
-};
-
-exports.AppContainer = AppContainer, exports.hot = hot_prod, exports.areComponentsEqual = areComponentsEqual, exports.setConfig = setConfig, exports.cold = cold;
-
-/***/ }),
-
-/***/ "./node_modules/react-hot-loader/index.js":
-/*!************************************************!*\
-  !*** ./node_modules/react-hot-loader/index.js ***!
-  \************************************************/
-/*! no static exports found */
-/*! all exports used */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var evalAllowed = false;
-
-try {
-  eval('evalAllowed = true');
-} catch (e) {} // eval not allowed due to CSP
-// RHL needs setPrototypeOf to operate Component inheritance, and eval to patch methods
-
-
-var platformSupported = !!Object.setPrototypeOf && evalAllowed;
-
-if (true) {
-  if (false) {}
-
-  module.exports = __webpack_require__(/*! ./dist/react-hot-loader.production.min.js */ "./node_modules/react-hot-loader/dist/react-hot-loader.production.min.js");
-} else {}
 
 /***/ }),
 
@@ -880,10 +787,13 @@ if(false) {}
 /* WEBPACK VAR INJECTION */(function(module) {
 
 (function () {
-  var enterModule = __webpack_require__(/*! react-hot-loader */ "./node_modules/react-hot-loader/index.js").enterModule;
-
+  var enterModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.enterModule : undefined;
   enterModule && enterModule(module);
 })();
+
+var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal["default"].signature : function (a) {
+  return a;
+};
 
 var __extends = this && this.__extends || function () {
   var _extendStatics = function extendStatics(d, b) {
@@ -917,8 +827,6 @@ Object.defineProperty(exports, "__esModule", {
 
 var React = __webpack_require__(/*! react */ "react");
 
-var dyna_class_name_1 = __webpack_require__(/*! dyna-class-name */ "dyna-class-name");
-
 __webpack_require__(/*! ./Button.less */ "./src/Button.less");
 
 var EStyle;
@@ -951,10 +859,7 @@ function (_super) {
   __extends(Button, _super);
 
   function Button() {
-    var _this = _super !== null && _super.apply(this, arguments) || this;
-
-    _this.cn = dyna_class_name_1.dynaClassName("my-button");
-    return _this;
+    return _super !== null && _super.apply(this, arguments) || this;
   }
 
   Button.prototype.render = function () {
@@ -965,9 +870,9 @@ function (_super) {
         size = _a.size,
         href = _a.href,
         onClick = _a.onClick;
-    var className = "--style-" + style + " --color-" + color + " --size-" + size;
+    var className = "my-button my-button--style-" + style + " my-button--color-" + color + " my-button--size-" + size;
     return React.createElement("a", {
-      className: this.cn.root(this.props, className),
+      className: className,
       href: href,
       onClick: onClick
     }, React.createElement("button", null, children));
@@ -990,23 +895,25 @@ exports.Button = Button;
 ;
 
 (function () {
-  var reactHotLoader = __webpack_require__(/*! react-hot-loader */ "./node_modules/react-hot-loader/index.js").default;
-
-  var leaveModule = __webpack_require__(/*! react-hot-loader */ "./node_modules/react-hot-loader/index.js").leaveModule;
+  var reactHotLoader = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.default : undefined;
 
   if (!reactHotLoader) {
     return;
   }
 
-  reactHotLoader.register(__extends, "__extends", "/Users/dennis/dev/dyna/dyna-ts-react-module-boilerplate/src/Button.tsx");
-  reactHotLoader.register(EStyle, "EStyle", "/Users/dennis/dev/dyna/dyna-ts-react-module-boilerplate/src/Button.tsx");
-  reactHotLoader.register(EColor, "EColor", "/Users/dennis/dev/dyna/dyna-ts-react-module-boilerplate/src/Button.tsx");
-  reactHotLoader.register(ESize, "ESize", "/Users/dennis/dev/dyna/dyna-ts-react-module-boilerplate/src/Button.tsx");
-  reactHotLoader.register(Button, "Button", "/Users/dennis/dev/dyna/dyna-ts-react-module-boilerplate/src/Button.tsx");
-  leaveModule(module);
+  reactHotLoader.register(__extends, "__extends", "/Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/Button.tsx");
+  reactHotLoader.register(EStyle, "EStyle", "/Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/Button.tsx");
+  reactHotLoader.register(EColor, "EColor", "/Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/Button.tsx");
+  reactHotLoader.register(ESize, "ESize", "/Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/Button.tsx");
+  reactHotLoader.register(Button, "Button", "/Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/Button.tsx");
 })();
 
 ;
+
+(function () {
+  var leaveModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.leaveModule : undefined;
+  leaveModule && leaveModule(module);
+})();
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node_modules/webpack/buildin/module.js */ "./node_modules/webpack/buildin/module.js")(module)))
 
 /***/ }),
@@ -1021,6 +928,10 @@ exports.Button = Button;
 
 "use strict";
 
+
+var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal["default"].signature : function (a) {
+  return a;
+};
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -1043,20 +954,8 @@ exports.ESize = Button_1.ESize;
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/dennis/dev/dyna/dyna-ts-react-module-boilerplate/src/index.tsx */"./src/index.tsx");
+module.exports = __webpack_require__(/*! /Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/index.tsx */"./src/index.tsx");
 
-
-/***/ }),
-
-/***/ "dyna-class-name":
-/*!**********************************!*\
-  !*** external "dyna-class-name" ***!
-  \**********************************/
-/*! no static exports found */
-/*! all exports used */
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE_dyna_class_name__;
 
 /***/ }),
 

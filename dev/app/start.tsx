@@ -4,7 +4,6 @@ import {DynaShowcase} from "dyna-showcase";
 import showcase from '../showcase';
 const menuStyle = require('dyna-showcase/styles/menu-style-white.module.less');
 
-import "./font-awesome.less";
 import "./start.less";
 
 declare const module: any;

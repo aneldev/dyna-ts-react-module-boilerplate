@@ -149,7 +149,7 @@ module.exports = {
         },
       },
       {
-        test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        test: /\.(ttf|eot)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         loader: 'url-loader',
         options: {
           limit: 50000,
