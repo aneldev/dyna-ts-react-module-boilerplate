@@ -6,6 +6,7 @@
     "type": "git",
     "url": "http://github.com/aneldev/dyna-ts-react-module-boilerplate"
   },
+  "private": false,
   "sideEffects": false,
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
