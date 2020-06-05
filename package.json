@@ -11,7 +11,7 @@
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
   "scripts": {
-    "create": "echo Creation started... && rm -rf .git && rm -rf yarn.lock; mv README.md README.boilerplate.md && echo \\# readme > README.md && yarn install && node _boilerplate.js && echo --- module created",
+    "create": "echo Creation started... && rm -rf .git && rm -rf yarn.lock; mv README.md README.boilerplate.md && echo \\# readme > README.md && yarn install && node _boilerplateCreateModule.js && echo --- module created",
     "start": "webpack-dev-server --config webpack.dev.config.js --devtool eval --progress --inline --hot --content-base dev/public --open --host 127.0.0.1 --port 3200 ",
     "start-at": "webpack-dev-server --config webpack.dev.config.js --devtool eval --progress --inline --hot --content-base dev/public --open --host 127.0.0.1 --port",
     "lint": "tslint './src/**/*.ts*' --format stylish --force",

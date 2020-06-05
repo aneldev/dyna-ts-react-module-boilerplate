@@ -11,7 +11,7 @@ package_.author = '';
 package_.repository.url = '';
 fs.writeFileSync('./package.json', JSON.stringify(package_, null, 2));
 
-fs.unlinkSync('./_boilerplate.js');
+fs.unlinkSync('./_boilerplateCreateModule.js');
 
 console.log('        vv');
 console.log('       vv');
