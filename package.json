@@ -17,6 +17,7 @@
     "lint": "tslint './src/**/*.ts*' --format stylish --force",
     "build-analyze": "set NODE_ENV=production && webpack --config webpack.dist.analyze.config.js",
     "build": "rimraf ./dist/ && yarn run .build-index.d.ts && yarn run .build-dist",
+    "build-watch": "webpack --watch --config webpack.dist.config.js",
     ".build-index.d.ts": "tsc && rm ./dist/index.js && yarn run .build-index.d.ts-clear",
     ".build-index.d.ts-clear": "cd dist/ && find . -name \\*.js -delete && cd ..",
     ".build-dist": "set NODE_ENV=production && webpack --config webpack.dist.config.js",
