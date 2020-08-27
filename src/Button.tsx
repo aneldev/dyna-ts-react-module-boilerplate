@@ -21,11 +21,12 @@ export enum ESize {
 }
 
 export interface IButtonProps {
-  children: any;
+  className?: string;
   style?: EStyle;
   color?: EColor;
   size?: ESize;
   href?: string;
+  children: any;
   onClick?: () => void;
 }
 
@@ -42,10 +43,21 @@ export class Button extends React.Component<IButtonProps> {
 
   public render(): JSX.Element {
     const {
-      children, style, color, size, href, onClick,
+      className: userClassName,
+      style,
+      color,
+      size,
+      href,
+      children = null,
+      onClick,
     } = this.props;
 
-    const className: string = `my-button my-button--style-${style} my-button--color-${color} my-button--size-${size}`;
+    const className: string = [
+      userClassName,
+      `my-button my-button--style-${style}`,
+      `my-button--color-${color}`,
+      `my-button--size-${size}`,
+    ].filter(Boolean).join(' ');
 
     return (
       <a className={className} href={href} onClick={onClick}>
