@@ -4,10 +4,25 @@ import {Button, EColor} from '../src';
 
 import {select} from '@storybook/addon-knobs';
 
-export default {
-  title: 'Buttons/Simple/My Button',
-  notes: 'Examples of the Button component',
+import {Meta} from '@storybook/react/types-6-0';
+
+const meta: Meta = {
+  title: 'Forms/Text Area',
+  component: Button,
+  argTypes: {
+  },
+  decorators: [
+    (Component: any) => (
+      <div
+        style={{background: 'linear-gradient(141deg, gray, lightgray)', width: 'calc(100% - 16px)', height: '400px', padding: '8px'}}
+      >
+        <Component />
+      </div>
+    ),
+  ],
 };
+
+export default meta;
 
 export const Basic = () => {
   const color = select(
@@ -20,7 +35,6 @@ export const Basic = () => {
     ],
     EColor.WHITE_BLACK,
   );
-  console.debug('color', color);
   return (
     <Button
       color={color}
