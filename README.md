@@ -28,14 +28,15 @@ For React 15 use the tag v4.1.5 of this repo.
 
 # Features
 
-- Write in Typescript, .tsx, .ts, but also .jsx & .js are supported
+- Write in Typescript, .tsx, .ts, but also .jsx & .js are supported`
 - Ready for react-router, dev server serves deep links and multiple ports
 - Load inline images
 - Configured font loader
-- Load Fonts Awesome
+- Lint
 - Supports CSS, SCSS & LESS at the same time
 - CSS modules (with `*.module.less/scss` filename pattern)
-- Test with Jest, snapshots are also supported
+- Test with Jest, snapshots
+- Analyse dependencies with Webpack Analyser
 - Distribute as a module with TypeScript Definitions (ready to import)
 - Distributed versions work in Javascript and Typescript projects
 - Detect circular dependencies (where leads to import `undefined` or `null` values)
@@ -70,6 +71,8 @@ Stories are all files with extension `.stories.tsx`. There is already a `stories
 
 `yarn storybook`
 
+Or `yarn storybook-at <custom port>` to open Storybook on custom port. 
+
 ## Start an app
 
 If you don't want to use the Storybook, you can create your app.
@@ -80,6 +83,16 @@ This way, you can develop, debug, and create a demo of your component.
 `yarn start`
 
 or, if you want to start it to a different port `yarn start-to -- 3232` to start in port 3232.
+
+## Lint
+
+`yarn lint`
+
+Update the `tslint.json` with your own preferences.
+
+## Analyse dependencies
+
+Run `yarn build-analyze` and check which dependencies will be delivered in your module. 
 
 # Test
 
@@ -126,7 +139,7 @@ You can exclude dependencies from the distributed bundle by declaring them in th
 
 ## Link your modules easily
 
-In case that the `yarn link` doesn't work for any reason, this boilerplate offers a ready a unidirectional sync mechanism.
+In case that the `yarn link` doesn't work for any reason, this boilerplate offers a unidirectional sync mechanism. It updates other modules (npm packages) that depend on it.
 
 0. Copy `./syncExternalsList.sample.js` to `./syncExternalsList.js` once only. 
 1. Update the `./syncExternalsList.js` list with external apps you want to keep them sync.

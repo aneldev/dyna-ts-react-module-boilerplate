@@ -16,11 +16,12 @@ export declare enum ESize {
     XLARGE = "XLARGE"
 }
 export interface IButtonProps {
-    children: any;
+    className?: string;
     style?: EStyle;
     color?: EColor;
     size?: ESize;
     href?: string;
+    children: any;
     onClick?: () => void;
 }
 export declare class Button extends React.Component<IButtonProps> {
