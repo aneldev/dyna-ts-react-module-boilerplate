@@ -22,6 +22,7 @@
     ".build-index.d.ts-clear": "cd dist/ && find . -name \\*.js -delete && cd ..",
     ".build-dist": "set NODE_ENV=production && webpack --config webpack.dist.config.js",
     "storybook": "start-storybook -p 9200",
+    "storybook-at": "start-storybook -p",
     "commit": "git add -u && git add -A && git commit -m",
     "commit-amend": "git add -u && git add -A && git commit --amend --no-edit",
     "publish-push": "yarn publish --non-interactive && git push && git push --tags",
