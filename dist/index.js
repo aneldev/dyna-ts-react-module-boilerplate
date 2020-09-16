@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("react"));
+		module.exports = factory();
 	else if(typeof define === 'function' && define.amd)
-		define("dyna-ts-react-module-boilerplate", ["react"], factory);
+		define("dyna-ts-react-module-boilerplate", [], factory);
 	else if(typeof exports === 'object')
-		exports["dyna-ts-react-module-boilerplate"] = factory(require("react"));
+		exports["dyna-ts-react-module-boilerplate"] = factory();
 	else
-		root["dyna-ts-react-module-boilerplate"] = factory(root["react"]);
-})(window, function(__WEBPACK_EXTERNAL_MODULE_react__) {
+		root["dyna-ts-react-module-boilerplate"] = factory();
+})(window, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -864,13 +864,15 @@ function (_super) {
 
   Button.prototype.render = function () {
     var _a = this.props,
-        children = _a.children,
+        userClassName = _a.className,
         style = _a.style,
         color = _a.color,
         size = _a.size,
         href = _a.href,
+        _b = _a.children,
+        children = _b === void 0 ? null : _b,
         onClick = _a.onClick;
-    var className = "my-button my-button--style-" + style + " my-button--color-" + color + " my-button--size-" + size;
+    var className = [userClassName, "my-button my-button--style-" + style, "my-button--color-" + color, "my-button--size-" + size].filter(Boolean).join(' ');
     return React.createElement("a", {
       className: className,
       href: href,
@@ -901,11 +903,11 @@ exports.Button = Button;
     return;
   }
 
-  reactHotLoader.register(__extends, "__extends", "/Users/dennis/dev/dyna/dyna-ts-react-module-boilerplate/src/Button.tsx");
-  reactHotLoader.register(EStyle, "EStyle", "/Users/dennis/dev/dyna/dyna-ts-react-module-boilerplate/src/Button.tsx");
-  reactHotLoader.register(EColor, "EColor", "/Users/dennis/dev/dyna/dyna-ts-react-module-boilerplate/src/Button.tsx");
-  reactHotLoader.register(ESize, "ESize", "/Users/dennis/dev/dyna/dyna-ts-react-module-boilerplate/src/Button.tsx");
-  reactHotLoader.register(Button, "Button", "/Users/dennis/dev/dyna/dyna-ts-react-module-boilerplate/src/Button.tsx");
+  reactHotLoader.register(__extends, "__extends", "/Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/Button.tsx");
+  reactHotLoader.register(EStyle, "EStyle", "/Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/Button.tsx");
+  reactHotLoader.register(EColor, "EColor", "/Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/Button.tsx");
+  reactHotLoader.register(ESize, "ESize", "/Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/Button.tsx");
+  reactHotLoader.register(Button, "Button", "/Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/Button.tsx");
 })();
 
 ;
@@ -954,7 +956,7 @@ exports.ESize = Button_1.ESize;
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/dennis/dev/dyna/dyna-ts-react-module-boilerplate/src/index.tsx */"./src/index.tsx");
+module.exports = __webpack_require__(/*! /Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/index.tsx */"./src/index.tsx");
 
 
 /***/ }),
@@ -967,7 +969,7 @@ module.exports = __webpack_require__(/*! /Users/dennis/dev/dyna/dyna-ts-react-mo
 /*! all exports used */
 /***/ (function(module, exports) {
 
-module.exports = __WEBPACK_EXTERNAL_MODULE_react__;
+module.exports = require("react");
 
 /***/ })
 
