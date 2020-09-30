@@ -73,7 +73,7 @@
     "image-webpack-loader": "^4.5.0",
     "jest": "^23.6.0",
     "jest-cli": "^23.6.0",
-    "jest-junit": "^1.5.1",
+    "jest-junit": "^11.1.0",
     "jsdom": "11.5.1",
     "jsdom-global": "3.0.2",
     "less": "^3.9.0",
