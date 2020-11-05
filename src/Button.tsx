@@ -1,4 +1,4 @@
-import * as React      from "react";
+import * as React from "react";
 
 import "./Button.less";
 
@@ -54,7 +54,7 @@ export class Button extends React.Component<IButtonProps> {
 
     const className: string = [
       userClassName,
-      `my-button my-button--style-${style}`,
+      `my-button my-button--style-${style} `,
       `my-button--color-${color}`,
       `my-button--size-${size}`,
     ].filter(Boolean).join(' ');

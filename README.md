@@ -84,6 +84,12 @@ This way, you can develop, debug, and create a demo of your component.
 
 or, if you want to start it to a different port `yarn start-to -- 3232` to start in port 3232.
 
+Like an App, this boilerplate uses the `dyna-showcase` where it is a very light StoryBook like solution. 
+One of the benefits is that it is speedy compared with StoraBook, and you can see the actual edges of the components (for high fidelity dev).
+It is ideal for development, but you can easily replace it with yours, `yarn remove dyna-showcase`, and write your app under the `/dev` folder.
+
+_StoryBook is still available!_
+
 ## Lint
 
 `yarn lint`
