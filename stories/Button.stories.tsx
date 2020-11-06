@@ -7,7 +7,7 @@ import {select} from '@storybook/addon-knobs';
 import {Meta} from '@storybook/react/types-6-0';
 
 const meta: Meta = {
-  title: 'Forms/Text Area',
+  title: 'Controls/Buttons',
   component: Button,
   argTypes: {
   },
@@ -24,7 +24,7 @@ const meta: Meta = {
 
 export default meta;
 
-export const Basic = () => {
+export const BasicButton = () => {
   const color = select(
     'Color style',
     [
