@@ -824,6 +824,7 @@ var __extends = this && this.__extends || function () {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.Button = exports.ESize = exports.EColor = exports.EStyle = void 0;
 
 var React = __webpack_require__(/*! react */ "react");
 
@@ -941,10 +942,30 @@ Object.defineProperty(exports, "__esModule", {
 
 var Button_1 = __webpack_require__(/*! ./Button */ "./src/Button.tsx");
 
-exports.Button = Button_1.Button;
-exports.EStyle = Button_1.EStyle;
-exports.EColor = Button_1.EColor;
-exports.ESize = Button_1.ESize;
+Object.defineProperty(exports, "Button", {
+  enumerable: true,
+  get: function get() {
+    return Button_1.Button;
+  }
+});
+Object.defineProperty(exports, "EStyle", {
+  enumerable: true,
+  get: function get() {
+    return Button_1.EStyle;
+  }
+});
+Object.defineProperty(exports, "EColor", {
+  enumerable: true,
+  get: function get() {
+    return Button_1.EColor;
+  }
+});
+Object.defineProperty(exports, "ESize", {
+  enumerable: true,
+  get: function get() {
+    return Button_1.ESize;
+  }
+});
 
 /***/ }),
 
