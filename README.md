@@ -20,11 +20,13 @@ It is different because `create-react-app` creates React applications and includ
 
 The `dyna-ts-react-module-boilerplate` creates React modules (reusable components). It creates React components that will be used in React applications or other modules.
 
-# Compatibility
+# Supported React versions
 
-- React 16
-
-For React 15 use the tag v4.1.5 of this repo.
+|React version|Git entity|Name|
+|:---:|---|---|
+|15|tag|v4.1.5|
+|16|branch|master|
+|17|branch|react-v17|
 
 # Features
 
