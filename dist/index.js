@@ -872,7 +872,7 @@ function (_super) {
         _b = _a.children,
         children = _b === void 0 ? null : _b,
         onClick = _a.onClick;
-    var className = [userClassName, "my-button my-button--style-" + style, "my-button--color-" + color, "my-button--size-" + size].filter(Boolean).join(' ');
+    var className = [userClassName, "my-button my-button--style-" + style + " ", "my-button--color-" + color, "my-button--size-" + size].filter(Boolean).join(' ');
     return React.createElement("a", {
       className: className,
       href: href,
