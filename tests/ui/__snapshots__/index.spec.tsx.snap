@@ -2,7 +2,7 @@
 
 exports[`Home has expected content with deep render 1`] = `
 <a
-  className="my-button my-button--style-ROUNDED my-button--color-WHITE_BLACK my-button--size-MEDIUM"
+  className="my-button my-button--style-ROUNDED  my-button--color-WHITE_BLACK my-button--size-MEDIUM"
   onClick={[Function]}
 >
   <button>
