@@ -14,7 +14,7 @@
     "create": "echo Creation started... && rm -rf .git && rm -rf yarn.lock; mv README.md README.boilerplate.md && echo \\# readme > README.md && yarn install && node _boilerplateCreateModule.js && echo --- module created",
     "check-deps": "yarn install --check-files",
     "start": "webpack-dev-server --config webpack.dev.config.js --devtool eval --progress --inline --hot --content-base dev/public --open --host 127.0.0.1 --port 3200 ",
-    "start-at": "webpack-dev-server --config webpack.dev.config.js --devtool eval --progress --inline --hot --content-base dev/public --open --host 127.0.0.1 --port",
+    "start-at": "webpack-dev-serven check-depsr --config webpack.dev.config.js --devtool eval --progress --inline --hot --content-base dev/public --open --host 127.0.0.1 --port",
     "lint": "tslint './src/**/*.ts*' --format stylish --force",
     "build-analyze": "set NODE_ENV=production && webpack --config webpack.dist.analyze.config.js",
     "build": "rimraf ./dist/ && yarn run .build-index.d.ts && yarn run .build-dist",
