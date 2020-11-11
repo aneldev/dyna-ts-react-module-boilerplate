@@ -25,9 +25,19 @@ const config = {
   devtool: "source-map",     // help: https://webpack.js.org/configuration/devtool/
   devServer: {
     hot: true,
+    host: 'localhost',
     port: serverPort,
     publicPath: '/static',
-    historyApiFallback: true,
+    historyApiFallback: {
+      index: 'index.html',
+      disableDotRule: true,
+    },
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3222',
+        secure: false
+      },
+    },
   },
   output: {
     path: path.resolve(__dirname, 'dev/public/static'),
