@@ -803,7 +803,7 @@ var __extends = this && this.__extends || function () {
       d.__proto__ = b;
     } || function (d, b) {
       for (var p in b) {
-        if (b.hasOwnProperty(p)) d[p] = b[p];
+        if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p];
       }
     };
 
@@ -939,6 +939,7 @@ var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoader
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.ESize = exports.EColor = exports.EStyle = exports.Button = void 0;
 
 var Button_1 = __webpack_require__(/*! ./Button */ "./src/Button.tsx");
 
