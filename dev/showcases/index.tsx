@@ -2,14 +2,14 @@ import * as React from 'react';
 import {IShowcase} from "dyna-showcase";
 import {Logo} from "../logo";
 
-import {intro} from "./views/intro";
-import {sizes} from "./views/sizes";
-import {interactive} from "./views/interactive";
-import {allTogether} from "./views/all-together";
-import {cssLoaders} from "./views/css-loaders";
+import {intro} from "./intro/intro";
+import {sizes} from "./sizes/sizes";
+import {interactive} from "./interactive/interactive";
+import {allTogether} from "./all-together/all-together";
+import {cssLoaders} from "./css-loaders/css-loaders";
 
 import "./style.less";
-import {theEnd} from "./views/the-end";
+import {theEnd} from "./the-end/the-end";
 
 export default {
   logo: <Logo/>,
