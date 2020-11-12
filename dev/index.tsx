@@ -20,7 +20,7 @@ const Start = (): JSX.Element => {
 
 ReactDOM.render(<Start/>, appElement);
 
-// Todo: fixme: callback are not called, only refresh is taking place.
+// Todo: fixme: callbacks are not called, only page refresh is taking place.
 if (module.hot) {
   module.hot.accept('./app/App', function () {
     console.log('Accepting the updated module under dev');
