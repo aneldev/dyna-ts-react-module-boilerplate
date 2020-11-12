@@ -8,7 +8,7 @@ export const intro: IShowcaseView = {
   center: true,
   component: (
     <div>
-      <h3>dyna-ts-react-module-boilerplate ! 15</h3>
+      <h3>dyna-ts-react-module-boilerplate</h3>
       <h4>demonstrates the <strong>my button</strong> implementation</h4>
       <p>This is the showcase of the boilerplate, as a nice demo this boilerplate has the implementation of the <code>my
         button</code>.</p>
