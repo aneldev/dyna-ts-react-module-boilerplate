@@ -1,6 +1,6 @@
 # About
 
-This is a Webpack boilerplate for Typescript React Components to use as a module in other apps or other modules.
+Webpack boilerplate for Typescript React Components to use as a module in other apps or other modules.
 
 Develop, debug, test, Storybook, and distribute React component(s).
 
@@ -12,7 +12,8 @@ git clone http://github.com/aneldev/dyna-ts-react-module-boilerplate my-componen
 cd my-component
 yarn run create
 ```
-That's it. 
+
+That's all. 
 
 # Why is `create-react-app` different?
 
@@ -57,7 +58,7 @@ For windows users there are multiple ways:
 
 # Folder structure
 
-The source code of your project is under the `/src/` folder only. The distributed module is what exported from the `/src/index.tsc` only.
+The source code of your project is under the `/src/` folder only. The distributed module is what is exported from the `/src/index.tsc` only.
 
 There are loaders for various files, like: `.less`, `.scss`, `.svg`, `.jpg`, `etc.`. Loaders *are loaded* in `/webpack.loaders.js`, where you can add your own loaders that will be used for all tasks (npm scripts).
 
@@ -79,7 +80,7 @@ Or `yarn storybook-at <custom port>` to open Storybook on custom port.
 
 If you don't want to use the Storybook, you can create your app.
 
-Under the `/dev/app/` folder, there is a small web application that can use your module component in different ways. 
+Under the `/dev/app/` folder, a small web application can use your module component in different ways. 
 This way, you can develop, debug, and create a demo of your component.
 
 `yarn start`
@@ -145,23 +146,36 @@ You can exclude dependencies from the distributed bundle by declaring them in th
 
 # Features (tips)
 
-## Link your modules easily
+## Link with `sync-usages-watch`
 
-In case that the `yarn link` doesn't work for any reason, this boilerplate offers a unidirectional sync mechanism. It updates other modules (npm packages) that depend on it.
+### About
 
-0. Copy `./syncExternalsList.sample.js` to `./syncExternalsList.js` once only. 
-1. Update the `./syncExternalsList.js` list with external apps you want to keep them sync.
-2. Call `yarn sync-externals`
+Link your modules easily with the `sync-usages-watch` watcher script.
 
-If you use the Ubuntu shell of Win10, in the `./syncExternalsList.js` you can add a windows path prefixing it with the `*tus*`, _which stands for `to ubuntu shell`_.
+In case that the `yarn link` doesn't work for any reason, this boilerplate offers a "copy" approach to update the packages.
 
-For example, check the 2nd line of `./syncExternalsList.sample.js`.
+This script is doing:
 
-**Note:** the `./syncExternalsList.js` is git ignored! 
+- Scans deeply for usages of this package in all siblings folders
+- Updates all usages with the content of this package, excluding the `node_modules` of this package
+- Before the copy clears the target `src` && `dist` folders
+
+### Run
+
+- Call `yarn sync-usages-watch`
+
+### Prerequisite
+
+You have to install the `rsync` on your system.
+- For Mac you don't need to do anything, it is already there.
+- For Linux [follow this guide](https://www.hostinger.com/tutorials/how-to-use-rsync)
+- For Windows's _not a clear guid ahs been found, feel free to fork this doc._ 
 
 # Known issues
 
-- HMR is not implemented, fork me!
+## HMR performs only full refresh
+
+The callbaks are not called, only the page is refreshed. Forks are welcome.
 
 # Typescript module without React?
 

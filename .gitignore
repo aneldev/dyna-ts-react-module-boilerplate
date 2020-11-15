@@ -5,5 +5,4 @@ node_modules/
 temp/
 npm-debug.log
 bash.exe.stackdump
-syncExternalsList.js
 /yarn-error.log
