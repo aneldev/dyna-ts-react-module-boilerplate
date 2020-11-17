@@ -4,7 +4,8 @@ const CircularDependencyPlugin = require('circular-dependency-plugin')
 module.exports = {
   plugins: [
 
-    // new webpack.IgnorePlugin(/\/something$/),
+    // new webpack.IgnorePlugin(/\/something$/),            // Ignore something
+    // new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/), // Ignore Moment's locale
 
     new CircularDependencyPlugin({
       // `onStart` is called before the cycle detection starts
