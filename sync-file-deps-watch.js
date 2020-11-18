@@ -2,27 +2,33 @@ const fs = require('fs');
 const cp = require('child_process');
 const chokidar = require('chokidar');
 
-const package_ = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
+const UPDATE_PACKAGE_DEPENDENCIES = false;
+
+// core utils
 const hasPathSlash = folder => folder.split('/').reverse()[0] === '';
+const loadJson = filename => JSON.parse(fs.readFileSync(filename, 'utf8'));
+const saveJson = (filename, data) => fs.writeFileSync(filename, JSON.stringify(data, null, 2), 'utf8');
+
+const package_ = loadJson('./package.json');
 
 console.log('Scanning file dependencies ...');
 
 const syncDeps =
   []
     .concat(
-      Object.keys(package_.dependencies || {}).map(dep => ({packageName: dep, resource: package_.dependencies[dep]})),
-      Object.keys(package_.devDependencies || {}).map(dep => ({packageName: dep, resource: package_.devDependencies[dep]})),
+      Object.keys(package_.dependencies || {}).map(dep => ({dependencyName: dep, resourceFolder: package_.dependencies[dep]})),
+      Object.keys(package_.devDependencies || {}).map(dep => ({dependencyName: dep, resourceFolder: package_.devDependencies[dep]})),
     )
-    .filter(dep => dep.resource.indexOf('file:') === 0)
+    .filter(dep => dep.resourceFolder.indexOf('file:') === 0)
     .map(dep => {
-      dep.resource = dep.resource.substr(5); // remove the "file:"
-      if (!hasPathSlash(dep.resource)) dep.resource += '/';
+      dep.resourceFolder = dep.resourceFolder.substr(5); // remove the "file:"
+      if (!hasPathSlash(dep.resourceFolder)) dep.resourceFolder += '/';
       return dep;
     })
 
 if (syncDeps.length) {
   console.log('Scanning file dependencies');
-  syncDeps.forEach(d => console.log(' ', d.packageName));
+  syncDeps.forEach(d => console.log(' ', d.dependencyName));
 } else {
   console.error('No file dependencies found, exit');
   process.exit(100);
@@ -30,11 +36,11 @@ if (syncDeps.length) {
 
 syncDeps
   .forEach(dep => {
-    console.log(`Watching changes for ${dep.packageName}`, `../${dep.packageName}/*`);
+    console.log(`Watching changes for ${dep.dependencyName}`, `../${dep.dependencyName}/*`);
     let bounceTimer = null;
     chokidar
       .watch(
-        `../${dep.packageName}`,
+        `../${dep.dependencyName}`,
         {
           ignored: path => path.includes('node_modules'),
         },
@@ -43,7 +49,7 @@ syncDeps
       .on(
         'all',
         (event, path) => {
-          // console.log('Changed dependency', dep.packageName, event, path);
+          // console.log('Changed dependency', dep.dependencyName, event, path);
           if (bounceTimer) clearTimeout(bounceTimer);
           bounceTimer = setTimeout(() => {
             bounceTimer = null;
@@ -56,11 +62,12 @@ syncDeps
 const syncDependency = dep => {
   const updateScript =
     [
-      `rm -rf ./node_modules/${dep.packageName}`,
-      `mkdir ./node_modules/${dep.packageName}`,
-      `rsync -av --progress ${dep.resource} ./node_modules/${dep.packageName} --exclude node_modules`,
+      `rm -rf ./node_modules/${dep.dependencyName}`,
+      `mkdir ./node_modules/${dep.dependencyName}`,
+      `rsync -av --progress ${dep.resourceFolder} ./node_modules/${dep.dependencyName} --exclude node_modules`,
     ].join('; ');
-  execScript(`Syncing dependency ${dep.packageName}`, updateScript).catch(() => undefined);
+  execScript(`Syncing dependency ${dep.dependencyName}`, updateScript).catch(() => undefined);
+  updateDeps(dep.dependencyName);
 };
 
 const execScript = (description, cli) =>
@@ -83,3 +90,18 @@ const execScript = (description, cli) =>
         resolve();
       });
   });
+
+const updateDeps = dependencyName => {
+  if (!UPDATE_PACKAGE_DEPENDENCIES) return;
+  const dependencyPackage = loadJson(`../${dependencyName}/package.json`);
+  let changed = false;
+  Object.keys(dependencyPackage.dependencies)
+    .forEach(dep => {
+      if (package_.dependencies[dep] === undefined) {
+        changed = true;
+        package_.dependencies[dep] = dependencyPackage.dependencies[dep];
+      }
+    });
+  if (changed) saveJson('./package.json', package_);
+};
+
