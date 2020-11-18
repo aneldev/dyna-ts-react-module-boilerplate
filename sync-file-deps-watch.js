@@ -10,8 +10,8 @@ console.log('Scanning file dependencies ...');
 const syncDeps =
   []
     .concat(
-      Object.keys(package_.dependencies).map(dep => ({packageName: dep, resource: package_.dependencies[dep]})),
-      Object.keys(package_.devDependencies).map(dep => ({packageName: dep, resource: package_.devDependencies[dep]})),
+      Object.keys(package_.dependencies || {}).map(dep => ({packageName: dep, resource: package_.dependencies[dep]})),
+      Object.keys(package_.devDependencies || {}).map(dep => ({packageName: dep, resource: package_.devDependencies[dep]})),
     )
     .filter(dep => dep.resource.indexOf('file:') === 0)
     .map(dep => {
