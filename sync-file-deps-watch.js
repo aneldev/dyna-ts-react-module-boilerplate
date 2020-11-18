@@ -3,6 +3,7 @@ const cp = require('child_process');
 const chokidar = require('chokidar');
 
 const UPDATE_PACKAGE_DEPENDENCIES = false;
+const UPDATE_PACKAGE_DEV_DEPENDENCIES = false;
 
 // core utils
 const hasPathSlash = folder => folder.split('/').reverse()[0] === '';
@@ -92,16 +93,31 @@ const execScript = (description, cli) =>
   });
 
 const updateDeps = dependencyName => {
-  if (!UPDATE_PACKAGE_DEPENDENCIES) return;
   const dependencyPackage = loadJson(`../${dependencyName}/package.json`);
   let changed = false;
-  Object.keys(dependencyPackage.dependencies)
-    .forEach(dep => {
-      if (package_.dependencies[dep] === undefined) {
-        changed = true;
-        package_.dependencies[dep] = dependencyPackage.dependencies[dep];
-      }
-    });
+
+  if (UPDATE_PACKAGE_DEPENDENCIES) {
+    if (!package_.dependencies) package_.dependencies = {};
+    Object.keys(dependencyPackage.dependencies)
+      .forEach(dep => {
+        if (package_.dependencies[dep] === undefined) {
+          changed = true;
+          package_.dependencies[dep] = dependencyPackage.dependencies[dep];
+        }
+      });
+  }
+
+  if (UPDATE_PACKAGE_DEV_DEPENDENCIES) {
+    if (!package_.devDependencies) package_.devDependencies = {};
+    Object.keys(dependencyPackage.devDependencies)
+      .forEach(dep => {
+        if (package_.devDependencies[dep] === undefined) {
+          changed = true;
+          package_.devDependencies[dep] = dependencyPackage.devDependencies[dep];
+        }
+      });
+  }
+
   if (changed) saveJson('./package.json', package_);
 };
 
