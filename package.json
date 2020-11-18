@@ -29,6 +29,7 @@
     "publish-push": "yarn publish --non-interactive && git push && git push --tags",
     "test": "jest --coverage --no-cache --runInBand",
     "test-watch": "jest --watch --verbose --runInBand",
+    "sync-file-deps-watch": "node sync-file-deps-watch.js",
     "sync-usages": "node sync-usages-watch.js",
     "release": "yarn test && yarn run build && node dyna/updateChangeId.js && git add -u && git add -A && git commit -m \"Build\" && yarn version --patch && yarn run publish-push",
     "upgrade-release": "yarn upgrade && yarn run release"

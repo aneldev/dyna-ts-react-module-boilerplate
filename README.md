@@ -144,7 +144,7 @@ The output is not compressed, while it is intended to be used in other apps wher
 
 You can exclude dependencies from the distributed bundle by declaring them in the `/webpack.dist.config.js`. By default, all dependencies are declared there. 
 
-# Features (tips)
+# Features
 
 ## Link with `sync-usages-watch`
 
@@ -154,7 +154,7 @@ Link your modules easily with the `sync-usages-watch` watcher script.
 
 In case that the `yarn link` doesn't work for any reason, this boilerplate offers a "copy" approach to update the packages.
 
-This script is doing:
+The script performs:
 
 - Scans deeply for usages of this package in all siblings folders
 - Updates all usages with the content of this package, excluding the `node_modules` of this package
@@ -165,6 +165,32 @@ This script is doing:
 - Call `yarn sync-usages-watch`
 
 ### Prerequisite
+
+For all except Mac desktops, y>ou have to install the `rsync` on your system. _See below how to do it._
+
+## Link with `sync-file-deps-watch`
+
+### About
+
+This is the opposite of the `sync-usages-watch`. It doesn't sync the usaged of this package but it update the dependencies of this package that have "file:" as version.
+
+Yarn by default links only on `yarn upgrade` the file dependencies. Use the `sync-usages-watch`.
+
+The script performs:
+
+- Watched the changes of the dependencies
+- Deletes, recreates and copies all items of the dependency folder (as it defined in the `file:`)
+- It doesn't copy the `node_modules` folder.
+
+### Run
+
+- Call `yarn sync-file-deps-watch`
+
+### Prerequisite
+
+For all except Mac desktops, y>ou have to install the `rsync` on your system. _See below how to do it._
+
+## About the `rsync` prerequisite
 
 You have to install the `rsync` on your system.
 - For Mac you don't need to do anything, it is already there.
