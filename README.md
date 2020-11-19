@@ -146,11 +146,11 @@ You can exclude dependencies from the distributed bundle by declaring them in th
 
 # Features
 
-## Link with `sync-usages-watch`
+## Link with `sync-usages`
 
 ### About
 
-Link your modules easily with the `sync-usages-watch` watcher script.
+Link your modules easily with the `yarn sync-usages --watch` watcher script.
 
 In case that the `yarn link` doesn't work for any reason, this boilerplate offers a "copy" approach to update the packages.
 
@@ -162,40 +162,42 @@ The script performs:
 
 ### Run
 
-- Call `yarn sync-usages-watch`
+- Call `yarn sync-usages` to sync it once
+- Call `yarn sync-usages --watch` for run in watcher mode
 
 ### Prerequisite
 
-For all except Mac desktops, y>ou have to install the `rsync` on your system. _See below how to do it._
+For all except Mac desktops, you have to install the `rsync` on your system. _See below how to do it._
 
-## Link with `sync-file-deps-watch`
+## Link with `sync-file-deps`
 
 ### About
 
-This is the opposite of the `sync-usages-watch`. It doesn't sync the usaged of this package but it update the dependencies of this package that have "file:" as version.
+This is the opposite of the `yarn sync-file-deps --watch`. It doesn't sync the package's usages, but it updates this package's dependencies with "file:" as version.
 
 Yarn by default links only on `yarn upgrade` the file dependencies. Use the `sync-usages-watch`.
 
 The script performs:
 
 - Watched the changes of the dependencies
-- Deletes, recreates and copies all items of the dependency folder (as it defined in the `file:`)
+- Deletes, recreates, and copies all items of the dependency folder (as defined in the `file:`)
 - It doesn't copy the `node_modules` folder.
 
 ### Run
 
-- Call `yarn sync-file-deps-watch`
+- Call `yarn sync-file-deps` to sync it once
+- Call `yarn sync-file-deps --watch` for run in watcher mode
 
 ### Prerequisite
 
-For all except Mac desktops, y>ou have to install the `rsync` on your system. _See below how to do it._
+For all except Mac desktops, you have to install the `rsync` on your system. _See below how to do it._
 
 ## About the `rsync` prerequisite
 
 You have to install the `rsync` on your system.
-- For Mac you don't need to do anything, it is already there.
+- For Mac, you don't need to do anything. It is already there.
 - For Linux [follow this guide](https://www.hostinger.com/tutorials/how-to-use-rsync)
-- For Windows's _not a clear guid ahs been found, feel free to fork this doc._ 
+- For Windows's _not a clear guid has been found, feel free to fork this doc._ 
 
 # Known issues
 

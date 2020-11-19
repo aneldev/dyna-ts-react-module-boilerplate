@@ -1,10 +1,16 @@
 const cp = require('child_process');
 const chokidar = require('chokidar');
 const exec = require('child_process').execSync;
+const {dynaNodeArguments} = require("dyna-node-arguments");
+
+const mode =
+  dynaNodeArguments.args.watch === ''
+    ? 'WATCH'
+    : 'ONCE';
 
 const packageName = process.cwd().split('/').reverse()[0];
 
-console.log('Scanning usages of', packageName, '...');
+console.log(`${packageName}: mode: ${mode} Scanning usages on parent folder...`);
 const consoleText = exec(
   `cd .. && find -L ./ | grep /${packageName}/package.json`,
   {
@@ -30,15 +36,24 @@ if (!packageUsages.length) {
   process.exit(100);
 }
 
-let bounceTimer = null;
-chokidar.watch('.', {ignored: /node_modules|(^|[\/\\])\../}).on('all', (event, path) => {
-  console.log('change', event, path);
-  if (bounceTimer) clearTimeout(bounceTimer);
-  bounceTimer = setTimeout(() => {
-    bounceTimer = null;
+if (mode === 'WATCH') {
+  let bounceTimer = null;
+  chokidar.watch('.', {ignored: /node_modules|(^|[\/\\])\../}).on('all', (event, path) => {
+    console.log('change', event, path);
+    if (bounceTimer) clearTimeout(bounceTimer);
+    bounceTimer = setTimeout(() => {
+      bounceTimer = null;
+      syncFolders();
+    }, 100);
+  });
+}
+
+
+if (mode === 'ONCE') {
+  setTimeout(()=>{
     syncFolders();
-  }, 100);
-});
+  })
+}
 
 // Internal functions
 

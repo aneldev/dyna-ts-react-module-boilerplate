@@ -1,8 +1,14 @@
 const fs = require('fs');
 const cp = require('child_process');
 const chokidar = require('chokidar');
+const {dynaNodeArguments} = require("dyna-node-arguments");
 
-const UPDATE_PACKAGE_DEPENDENCIES = false;
+const mode =
+  dynaNodeArguments.args.watch === ''
+    ? 'WATCH'
+    : 'ONCE';
+
+const UPDATE_PACKAGE_DEPENDENCIES = true;
 const UPDATE_PACKAGE_DEV_DEPENDENCIES = false;
 
 // core utils
@@ -12,7 +18,7 @@ const saveJson = (filename, data) => fs.writeFileSync(filename, JSON.stringify(d
 
 const package_ = loadJson('./package.json');
 
-console.log('Scanning file dependencies ...');
+console.log(`${package_.name}: mode: ${mode} Scanning file dependencies...`);
 
 const syncDeps =
   []
@@ -35,31 +41,39 @@ if (syncDeps.length) {
   process.exit(100);
 }
 
-syncDeps
-  .forEach(dep => {
-    console.log(`Watching changes for ${dep.dependencyName}`, `../${dep.dependencyName}/*`);
-    let bounceTimer = null;
-    chokidar
-      .watch(
-        `../${dep.dependencyName}`,
-        {
-          ignored: path => path.includes('node_modules'),
-        },
-        // {ignored: /node_modules|(^|[\/\\])\../},
-      )
-      .on(
-        'all',
-        (event, path) => {
-          // console.log('Changed dependency', dep.dependencyName, event, path);
-          if (bounceTimer) clearTimeout(bounceTimer);
-          bounceTimer = setTimeout(() => {
-            bounceTimer = null;
-            syncDependency(dep);
-          }, 100);
-        }
-      );
-  });
+if (mode === 'WATCH') {
+  syncDeps
+    .forEach(dep => {
+      console.log(`Watching changes for ${dep.dependencyName}`, `../${dep.dependencyName}/*`);
+      let bounceTimer = null;
+      chokidar
+        .watch(
+          `../${dep.dependencyName}`,
+          {
+            ignored: path => path.includes('node_modules'),
+          },
+          // {ignored: /node_modules|(^|[\/\\])\../},
+        )
+        .on(
+          'all',
+          (event, path) => {
+            // console.log('Changed dependency', dep.dependencyName, event, path);
+            if (bounceTimer) clearTimeout(bounceTimer);
+            bounceTimer = setTimeout(() => {
+              bounceTimer = null;
+              syncDependency(dep);
+            }, 100);
+          }
+        );
+    });
+}
 
+if (mode === 'ONCE') {
+  setTimeout(()=>{
+    syncDeps
+      .forEach(syncDependency);
+  })
+}
 const syncDependency = dep => {
   const updateScript =
     [
