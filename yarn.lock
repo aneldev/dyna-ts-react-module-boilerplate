@@ -5765,6 +5765,11 @@ dyna-interfaces@^4.0.0:
   resolved "https://registry.yarnpkg.com/dyna-interfaces/-/dyna-interfaces-4.2.2.tgz#3d5b7c0eb582d7fdd905c12b33df0fddcaaeaa4a"
   integrity sha512-7r0R8RlpBlEF4fvvHhUuUie+2lkKQH/OHrEP7lwI5AVfUItbOx/oMljinxMKhmF/zk2bhzFhx8ROxLIRCceEPQ==
 
+dyna-node-arguments@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/dyna-node-arguments/-/dyna-node-arguments-2.0.1.tgz#9f028a5466dbfb10fedb057d1d09d94ef529ae71"
+  integrity sha512-03tduvBWijq63T5FnJTECk9moeUb1F9yRQWsDFXu88Gc6Lb6AQKm6sOu04ODw5A/242UvT3SkhNJ9kVG08YUkA==
+
 dyna-node-fs@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/dyna-node-fs/-/dyna-node-fs-1.0.4.tgz#553f43577049c4e8d5fb49c6b80bb6b0269ac4ff"

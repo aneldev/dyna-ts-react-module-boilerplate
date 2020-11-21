@@ -37,8 +37,12 @@ if (syncDeps.length) {
   console.log('Scanning file dependencies');
   syncDeps.forEach(d => console.log(' ', d.dependencyName));
 } else {
-  console.error('No file dependencies found, exit');
-  process.exit(100);
+  if (mode === "WATCH") {
+    console.error('Error: No file dependencies found to watch');
+    process.exit(100);
+  }
+  console.error('Info: No file dependencies found to sync');
+  return;
 }
 
 if (mode === 'WATCH') {

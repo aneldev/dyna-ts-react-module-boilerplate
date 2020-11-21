@@ -12,7 +12,8 @@
   "typings": "./dist/index.d.ts",
   "scripts": {
     "create": "echo Creation started... && rm -rf .git && rm -rf yarn.lock; mv README.md README.boilerplate.md && echo \\# readme > README.md && yarn install && node _boilerplateCreateModule.js && echo --- module created",
-    "check-deps": "yarn install --check-files",
+    "install-deps": "yarn install && yarn sync-file-deps",
+    "install-check-deps": "yarn install --check-files && yarn sync-file-deps",
     "start": "webpack-dev-server --config webpack.dev.config.js --devtool eval --progress --inline --hot --content-base dev/public --open --host localhost --port 3200 ",
     "start-at": "webpack-dev-server --config webpack.dev.config.js --devtool eval --progress --inline --hot --content-base dev/public --open --host localhost --port",
     "lint": "tslint './src/**/*.ts*' --format stylish --force",
@@ -68,6 +69,7 @@
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^1.0.1",
     "dyna-guid": "^1.0.10",
+    "dyna-node-arguments": "^2.0.1",
     "dyna-node-fs": "^1.0.4",
     "dyna-showcase": "^2.0.2",
     "enzyme": "^3.7.0",
