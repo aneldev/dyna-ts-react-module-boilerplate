@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sample UI test with minimal props 1`] = `
+<div
+  onClick={[Function]}
+>
+  Demo empty div
+</div>
+`;
