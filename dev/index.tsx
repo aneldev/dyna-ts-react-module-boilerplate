@@ -2,12 +2,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import {useState} from "react";
 
-import {App} from './app/App';
-
-const appWrapperID: string = 'app-container';
-const appElement: HTMLElement = document.createElement("DIV");
-appElement.id = appWrapperID;
-document.body.appendChild(appElement);
+import {AppShowcase} from './app-showcase/AppShowcase';
 
 declare const module: any;
 let hmrUpdate: undefined | (() => void);
@@ -15,18 +10,14 @@ let hmrUpdate: undefined | (() => void);
 const Start = (): JSX.Element => {
   const [hotRefreshCounter, setHotRefreshCounter] = useState<number>(0);
   hmrUpdate = () => setHotRefreshCounter(hotRefreshCounter + 1);
-  return <App/>;
+  return <AppShowcase/>;
 };
 
-ReactDOM.render(<Start/>, appElement);
+ReactDOM.render(<Start/>, document.getElementById('dyna-module-root'));
 
 // Todo: fixme: callbacks are not called, only page refresh is taking place.
 if (module.hot) {
-  module.hot.accept('./app/App', function () {
-    console.log('Accepting the updated module under dev');
-    hmrUpdate && hmrUpdate();
-  });
-  module.hot.accept('./showcases', function () {
+  module.hot.accept('./app-showcase', function () {
     console.log('Accepting the updated module under dev');
     hmrUpdate && hmrUpdate();
   });
