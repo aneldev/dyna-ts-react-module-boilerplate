@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import {useState} from "react";
 
-import {AppShowcase} from './app-showcase/AppShowcase';
+import {AppShowcase} from './app-showcase';
 
 declare const module: any;
 let hmrUpdate: undefined | (() => void);
