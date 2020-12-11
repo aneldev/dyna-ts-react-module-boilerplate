@@ -12,7 +12,7 @@
   "typings": "./dist/index.d.ts",
   "scripts": {
     "create": "echo Creation started... && rm -rf .git && rm -rf yarn.lock; mv README.md README.boilerplate.md && echo \\# readme > README.md && yarn install && node _boilerplateCreateModule.js && echo --- module created",
-    "install-deps": "yarn install && yarn sync-file-deps",
+    "install-deps": "yarn install && yarn sync-file-deps && yarn install",
     "install-check-deps": "yarn install --check-files && yarn sync-file-deps",
     "start": "webpack-dev-server --config webpack.dev.config.js --devtool eval --progress --inline --hot --content-base dev/public --open --host localhost --port 3200 ",
     "start-at": "webpack-dev-server --config webpack.dev.config.js --devtool eval --progress --inline --hot --content-base dev/public --open --host localhost --port",
@@ -20,7 +20,7 @@
     "build-analyze": "set NODE_ENV=production && webpack --config webpack.dist.analyze.config.js",
     "build": "rm -rf ./dist; yarn run .build-index.d.ts && yarn run .build-dist",
     "build-watch": "webpack --watch --config webpack.dist.config.js",
-    ".build-index.d.ts": "tsc && rm ./dist/index.js && yarn run .build-index.d.ts-clear",
+    ".build-index.d.ts": "tsc && touch ./dist/index.js && rm ./dist/index.js && yarn run .build-index.d.ts-clear",
     ".build-index.d.ts-clear": "cd dist/ && find . -name \\*.js -delete && cd ..",
     ".build-dist": "set NODE_ENV=production && webpack --config webpack.dist.config.js",
     "storybook": "start-storybook -p 9200",
