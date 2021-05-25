@@ -1,7 +1,7 @@
 {
   "name": "dyna-ts-react-module-boilerplate",
-  "version": "16.7.28",
-  "description": "About",
+  "version": "17.0.0",
+  "description": "React Component / Module boilerplate",
   "repository": {
     "type": "git",
     "url": "http://github.com/aneldev/dyna-ts-react-module-boilerplate"
@@ -37,28 +37,32 @@
     "release": "yarn test && yarn run build && git add -u && git add -A && git commit --allow-empty -m \"Build changes\" && yarn version --patch && yarn run publish-push",
     "upgrade-release": "yarn upgrade && yarn run release"
   },
-  "keywords": [],
+  "keywords": [
+    "react",
+    "component",
+    "boilerplate"
+  ],
   "author": "Anel dev",
   "license": "MIT",
   "dependencies": {
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.2",
     "@babel/core": "^7.11.4",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
-    "@storybook/addon-controls": "^6.0.21",
-    "@storybook/addon-essentials": "^6.0.21",
-    "@storybook/addon-knobs": "^6.0.19",
-    "@storybook/react": "^6.0.19",
+    "@storybook/addon-controls": "^6.2.9",
+    "@storybook/addon-essentials": "^6.2.9",
+    "@storybook/addon-knobs": "^6.2.9",
+    "@storybook/react": "^6.2.9",
     "@types/enzyme": "^3.1.15",
     "@types/enzyme-adapter-react-16": "^1.0.3",
     "@types/jest": "^26.0.15",
     "@types/node": "^10.12.2",
-    "@types/react": "^16.7.6",
-    "@types/react-dom": "^16.0.9",
+    "@types/react": "^17.0.6",
+    "@types/react-dom": "^17.0.5",
     "autoprefixer": "^7.2.6",
     "awesome-typescript-loader": "^5.2.1",
     "babel-jest": "^26.6.3",
