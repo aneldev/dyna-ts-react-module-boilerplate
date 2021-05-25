@@ -70,10 +70,10 @@ const config = {
     child_process: "empty",
   },
   plugins: [
-    new CleanWebpackPlugin(),
+    // new CleanWebpackPlugin(),                    // Disabled, since makes the webpack build to hang on "98% after emitting"
     new HtmlWebpackPlugin({title: 'Hot Module Replacement'}),
-    // new webpack.HotModuleReplacementPlugin(),       // enable HMR globally
-    new webpack.NamedModulesPlugin(),               // prints more readable module names in the browser console on HMR updates
+    // new webpack.HotModuleReplacementPlugin(),    // Enable HMR globally
+    new webpack.NamedModulesPlugin(),               // Prints more readable module names in the browser console on HMR updates
   ].concat(plugins.plugins),
 };
 
