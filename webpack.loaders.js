@@ -5,9 +5,16 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        use: [
-          'babel-loader',
-        ],
+        loader: 'babel-loader',
+        options: {
+          sourceType: 'unambiguous',
+          presets: [['@babel/env'], '@babel/react'],
+          plugins: [
+            "@babel/plugin-proposal-optional-chaining",
+            "@babel/plugin-proposal-nullish-coalescing-operator",
+            "@babel/plugin-syntax-nullish-coalescing-operator",
+          ]
+        }
       },
       {
         // typescript loader
