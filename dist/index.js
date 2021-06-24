@@ -726,13 +726,13 @@ module.exports = function (module) {
     if (!module.children) module.children = [];
     Object.defineProperty(module, "loaded", {
       enumerable: true,
-      get: function () {
+      get: function get() {
         return module.l;
       }
     });
     Object.defineProperty(module, "id", {
       enumerable: true,
-      get: function () {
+      get: function get() {
         return module.i;
       }
     });
