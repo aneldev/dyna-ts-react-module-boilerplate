@@ -12,8 +12,6 @@
   "typings": "./dist/index.d.ts",
   "scripts": {
     "create": "echo Creation started... && rm -rf .git && rm -rf yarn.lock; mv README.md README.boilerplate.md && echo \\# readme > README.md && yarn install && node _boilerplateCreateModule.js && echo --- module created",
-    "install-deps": "yarn install && yarn sync-file-deps && yarn install",
-    "install-check-deps": "yarn install --check-files && yarn sync-file-deps",
     "start": "webpack-dev-server --config webpack.dev.config.js --devtool eval --progress --inline --hot --content-base dev/public --open --host localhost --port 3200 ",
     "start-at": "webpack-dev-server --config webpack.dev.config.js --devtool eval --progress --inline --hot --content-base dev/public --open --host localhost --port",
     "lint": "tslint './src/**/*.ts*' --format stylish --force",
@@ -30,8 +28,6 @@
     "publish-push": "yarn publish --non-interactive && git push && git push --tags",
     "test": "jest --coverage --no-cache --runInBand",
     "test-watch": "jest --watch --verbose --runInBand",
-    "sync-file-deps": "node sync-file-deps.js",
-    "sync-file-deps-watch": "node sync-file-deps.js --watch",
     "sync-usages": "node sync-usages.js",
     "sync-usages-watch": "node sync-usages.js --watch",
     "release": "yarn test && yarn run build && git add -u && git add -A && git commit --allow-empty -m \"Build changes\" && yarn version --patch && yarn run publish-push",

@@ -169,29 +169,6 @@ The script performs:
 
 For all except Mac desktops, you have to install the `rsync` on your system. _See below how to do it._
 
-## Link with `sync-file-deps`
-
-### About
-
-This is the opposite of the `yarn sync-file-deps --watch`. It doesn't sync the package's usages, but it updates this package's dependencies with "file:" as version.
-
-Yarn by default links only on `yarn upgrade` the file dependencies. Use the `sync-usages-watch`.
-
-The script performs:
-
-- Watched the changes of the dependencies
-- Deletes, recreates, and copies all items of the dependency folder (as defined in the `file:`)
-- It doesn't copy the `node_modules` folder.
-
-### Run
-
-- Call `yarn sync-file-deps` to sync it once
-- Call `yarn sync-file-deps --watch` for run in watcher mode
-
-### Prerequisite
-
-For all except Mac desktops, you have to install the `rsync` on your system. _See below how to do it._
-
 ## About the `rsync` prerequisite
 
 You have to install the `rsync` on your system.
