@@ -3,7 +3,7 @@ import {DynaShowcase} from "dyna-showcase";
 
 import showcase from './showcases';
 
-const menuStyle = require('dyna-showcase/styles/menu-style-white.module.less');
+import * as menuStyle from 'dyna-showcase/styles/menu-style-white.module.less';
 
 import "./AppShowcase.less";
 

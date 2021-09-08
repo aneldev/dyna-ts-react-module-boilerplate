@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {faIcon} from "dyna-showcase";
 
-const styles = require('./index.module.less');
+import * as styles from './index.module.less';
 
 export const Logo = () => (
   <div className={styles.container}>

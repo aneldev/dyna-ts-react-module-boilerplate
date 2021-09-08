@@ -21,7 +21,7 @@ export const sizes: IShowcaseView = {
         style: EStyle.ROUNDED,
         color: EColor.WHITE_BLACK,
         size: ESize.SMALL,
-      } as IButtonProps
+      } as IButtonProps,
     },
     {
       slug: 'medium',
@@ -30,7 +30,7 @@ export const sizes: IShowcaseView = {
         style: EStyle.ROUNDED,
         color: EColor.WHITE_BLACK,
         size: ESize.MEDIUM,
-      } as IButtonProps
+      } as IButtonProps,
     },
     {
       slug: 'large',
@@ -39,7 +39,7 @@ export const sizes: IShowcaseView = {
         style: EStyle.ROUNDED,
         color: EColor.WHITE_BLACK,
         size: ESize.LARGE,
-      } as IButtonProps
+      } as IButtonProps,
     },
     {
       slug: 'x-large',
@@ -48,7 +48,7 @@ export const sizes: IShowcaseView = {
         style: EStyle.ROUNDED,
         color: EColor.WHITE_BLACK,
         size: ESize.XLARGE,
-      } as IButtonProps
+      } as IButtonProps,
     },
-  ]
+  ],
 };

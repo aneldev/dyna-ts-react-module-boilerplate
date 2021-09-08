@@ -3,9 +3,9 @@ import {IShowcaseView} from "dyna-showcase";
 
 import "./css-loaders.css";
 import "./css-loaders.less";
-const lessStyles = require('./css-loaders.module.less');
+import * as lessStyles from './css-loaders.module.less';
 import "./css-loaders.scss";
-const sassStyles = require('./css-loaders.module.scss');
+import * as sassStyles from './css-loaders.module.scss';
 
 export const cssLoaders: IShowcaseView = {
   slug: 'css-loaders',
@@ -14,7 +14,7 @@ export const cssLoaders: IShowcaseView = {
   description: 'All css loaders together',
   center: true,
   component: (
-    <div style={{ backgroundColor: "white" }}>
+    <div style={{backgroundColor: "white"}}>
       <h1>CSS loaders</h1>
 
       <h3 className="intro-css-loaders__label--css">CSS loader, should be gray</h3>
@@ -25,4 +25,3 @@ export const cssLoaders: IShowcaseView = {
     </div>
   ),
 };
-

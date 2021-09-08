@@ -44,7 +44,7 @@ export const interactive: IShowcaseView =     {
       title: 'medium',
       props: {
         size: ESize.MEDIUM,
-      } as IButtonProps
+      } as IButtonProps,
     },
     {
       slug: 'large',
@@ -53,7 +53,7 @@ export const interactive: IShowcaseView =     {
         style: EStyle.ROUNDED,
         color: EColor.WHITE_BLACK,
         size: ESize.LARGE,
-      } as IButtonProps
+      } as IButtonProps,
     },
   ],
 };

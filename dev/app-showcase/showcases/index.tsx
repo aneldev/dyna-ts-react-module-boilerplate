@@ -20,5 +20,5 @@ export default {
     allTogether,
     cssLoaders,
     theEnd,
-  ]
+  ],
 }as IShowcase;
