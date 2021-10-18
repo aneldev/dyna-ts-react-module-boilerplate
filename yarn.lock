@@ -6746,18 +6746,18 @@ dyna-node-fs@^1.0.4:
   dependencies:
     dyna-interfaces "^4.0.0"
 
-dyna-showcase@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/dyna-showcase/-/dyna-showcase-2.0.2.tgz#553d036d90436c5795cf89183dbe11ba291e611a"
-  integrity sha512-vww10r2SwBdianESzvXvTwp3/uKkbhye9YuC+LfXJa6Y/rCkouGwuSG/x53Hw4pqHVFn3N6eFkbmuoqfzyTV7Q==
+dyna-showcase@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/dyna-showcase/-/dyna-showcase-3.0.1.tgz#aecb9600a01351681b62bcff1c25866b2752df4e"
+  integrity sha512-5KamZyJeaf4WQ2OYkHyIG+7bOsi2jdua1d/DlRKK11HEYtGcPk/chjfXmYTtTHM6CAyewpGjP98wezrRdHUhQQ==
   dependencies:
     dyna-guid "^1.0.10"
     eventemitter3 "^2.0.3"
     font-awesome "^4.7.0"
     history "^4.7.2"
     qs "^6.5.1"
-    react "^16.0.0"
-    react-dom "^16.0.0"
+    react "^17.0.2"
+    react-dom "^17.0.2"
     react-router "^5.2.0"
     react-router-dom "^5.2.0"
 
@@ -13035,16 +13035,6 @@ react-docgen@^5.0.0:
     node-dir "^0.1.10"
     strip-indent "^3.0.0"
 
-react-dom@^16.0.0:
-  version "16.14.0"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.14.0.tgz#7ad838ec29a777fb3c75c3a190f661cf92ab8b89"
-  integrity sha512-1gCeQXDLoIqMgqD3IO2Ah9bnf0w9kzhwN5q4FGnHZ67hBm9yePzB5JJAIQCc8x3pFnNlwFq4RidZggNAAkzWWw==
-  dependencies:
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
-    prop-types "^15.6.2"
-    scheduler "^0.19.1"
-
 react-dom@^17.0.2:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-17.0.2.tgz#ecffb6845e3ad8dbfcdc498f0d0a939736502c23"
@@ -13254,15 +13244,6 @@ react-transition-group@^4.3.0:
     "@babel/runtime" "^7.5.5"
     dom-helpers "^5.0.1"
     loose-envify "^1.4.0"
-    prop-types "^15.6.2"
-
-react@^16.0.0:
-  version "16.14.0"
-  resolved "https://registry.yarnpkg.com/react/-/react-16.14.0.tgz#94d776ddd0aaa37da3eda8fc5b6b18a4c9a3114d"
-  integrity sha512-0X2CImDkJGApiAlcf0ODKIneSwBPhqJawOa5wCtKbu7ZECrmS26NvtSILynQ66cgkT/RJ4LidJOc3bUESwmU8g==
-  dependencies:
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
     prop-types "^15.6.2"
 
 react@^17.0.2:

@@ -72,7 +72,7 @@
     "dyna-guid": "^1.0.10",
     "dyna-node-arguments": "^2.0.1",
     "dyna-node-fs": "^1.0.4",
-    "dyna-showcase": "^2.0.2",
+    "dyna-showcase": "^3.0.1",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.6.0",
     "enzyme-to-json": "^3.3.4",
