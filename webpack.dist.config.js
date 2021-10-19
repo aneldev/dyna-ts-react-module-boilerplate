@@ -12,7 +12,7 @@ const distConfig = {
     //    Exports the /src/index.ts as module
     //    Should import line this: import {<module name>} from "package-name"
 
-  thisPackageBelongToMonorepo: false,
+  thisPackageBelongsToMonorepo: false,
     // True means:
     //    This boilerplate is used as a package of a monorepo
     //    This script will exclude deps of the monorepo as well
@@ -52,7 +52,7 @@ const config = {
         ]
       ),
   externals:
-    distConfig.thisPackageBelongToMonorepo
+    distConfig.thisPackageBelongsToMonorepo
       ? [                  // exclude all dependencies from the bundle
         nodeExternals(),
         nodeExternals({
