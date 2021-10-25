@@ -8,9 +8,11 @@ const distConfig = {
     // True means:
     //    Exports the /src/<module name>/index.ts as module
     //    Should import line this: import {<module name>} from "package-name/dist/<module name>"
+    //    Note: tsconfig.json should not have the `"files"` attribute
     // False means: (the default)
     //    Exports the /src/index.ts as module
     //    Should import line this: import {<module name>} from "package-name"
+    //    Note: tsconfig.json should have the `"files": ["src/index.tsx"]`
 
   thisPackageBelongsToMonorepo: false,
     // True means:
