@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import {Button, EColor} from '../src';
+import {Button, EColor} from '../src/Button';
 
 import {select} from '@storybook/addon-knobs';
 

@@ -31,8 +31,8 @@
       "jest"
     ]
   },
+  "compileOnSave": false,
   "files": [
-    "src/index.tsx"
-  ],
-  "compileOnSave": false
+    "./src/index.tsx"
+  ]
 }

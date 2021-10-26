@@ -6,14 +6,14 @@ Develop, debug, test, Storybook, and distribute React component(s).
 
 # Usage
 
-Replace the `my-component` with the name of your new module. 
+Replace the `my-component` with the name of your new module.
 ```
 git clone http://github.com/aneldev/dyna-ts-react-module-boilerplate my-component
 cd my-component
 yarn run create
 ```
 
-That's all. 
+That's all.
 
 # Why is `create-react-app` different?
 
@@ -46,27 +46,57 @@ The `dyna-ts-react-module-boilerplate` creates React modules (reusable component
 
 # Environment
 
-This boilerplate runs only under Linux.
+This boilerplate runs only under `bash` (Linux, Mac, Windows with git bash).
 
-Scripts of this package are not designed for Windows command line!
+Scripts of this package are not designed for the Windows command line!
 
-For windows users there are multiple ways: 
+For Windows users, there are multiple ways:
 - [Git bash](https://git-scm.com/downloads) (probably you have this already installed on your machine)
 - [Win10 Ubuntu shell](https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/) _recommended for windows users_
 - [Cygwin terminal](http://www.cygwin.com/)
 - Any other bash command line
 
+# Export a single module
+
+Export whatever you want in `/src/index.tsx` line this
+```
+export { Button, IButtonProps} from "./Button.tsx";
+```
+From another package, import the Button line this:
+```
+import {Button} from "my-compoennt";
+```
+
+# Export multiple modules isolated
+
+Each folder would contain components, and each component would be exported as a module. This will help the shaking tree method of webpack since your final App module won't include components that are not used.
+
+Delete the `/src/index.tsx` and under the `/src` folder, each folder will be considered a module.
+
+The Absence of the `/src/index.tsx` will make the boilerplate build each folder as a module. _If the `/src/index.tsx` is exists, then only one module is exported._
+
+The folder structure will be like this:
+```
+/src
+/src/Button/Button.tsx
+/src/Button/index.tsx   // This index exports for the Button only
+/src/Label/Label.tsx
+/src/Label/index.tsx    // This index exports for the Label only
+```
+From another package, import the Button line this:
+```
+import {Button} from "my-compoennt/dist/Button";
+```
+
 # Folder structure
 
-The source code of your project is under the `/src/` folder only. The distributed module is what is exported from the `/src/index.tsc` only.
-
-There are loaders for various files, like: `.less`, `.scss`, `.svg`, `.jpg`, `etc.`. Loaders *are loaded* in `/webpack.loaders.js`, where you can add your own loaders that will be used for all tasks (npm scripts).
+There are loaders for various files, like: `.less`, `.scss`, `.svg`, `.jpg`, `etc.`. Loaders *loaded* in `/webpack.loaders.js`, where you can add your loaders used for all tasks (npm scripts).
 
 # Develop
 
 You can develop using the Storybook or create your app. In any case on `yarn release`, only what is exported by `src/index.tsx` will be released.
 
-If you want to add a dependency that will be used only in a Story or in your custom app install is as `dev` dependency.
+If you want to add a dependency that will be used only in a Story or in your custom app, install it as `dev` dependency.
 
 ## Start the Storybook
 
@@ -74,21 +104,21 @@ Stories are all files with extension `.stories.tsx`. There is already a `stories
 
 `yarn storybook`
 
-Or `yarn storybook-at <custom port>` to open Storybook on custom port. 
+Or `yarn storybook-at <custom port>` to open Storybook on a custom port.
 
 ## Start an app
 
 If you don't want to use the Storybook, you can create your app.
 
-Under the `/dev/app/` folder, a small web application can use your module component in different ways. 
+Under the `/dev/app/` folder, a small web application can use your module component in different ways.
 This way, you can develop, debug, and create a demo of your component.
 
 `yarn start`
 
-or, if you want to start it to a different port `yarn start-to -- 3232` to start in port 3232.
+or, if you want to start it to a different port, `yarn start-to -- 3232` to start in port 3232.
 
-Like an App, this boilerplate uses the `dyna-showcase` where it is a very light StoryBook like solution. 
-One of the benefits is that it is speedy compared with StoraBook, and you can see the actual edges of the components (for high fidelity dev).
+Like an App, this boilerplate uses the `dyna-showcase`, a very light StoryBook like solution.
+One of the benefits is that it is speedy compared with StoryBook, and you can see the actual edges of the components (for high fidelity dev).
 It is ideal for development, but you can easily replace it with yours, `yarn remove dyna-showcase`, and write your app under the `/dev` folder.
 
 _StoryBook is still available!_
@@ -97,11 +127,11 @@ _StoryBook is still available!_
 
 `yarn lint`
 
-Update the `tslint.json` with your own preferences.
+Update the `tslint.json` with your preferences.
 
 ## Analyse dependencies
 
-Run `yarn build-analyze` and check which dependencies will be delivered in your module. 
+Run `yarn build-analyze` and check which dependencies will be delivered in your module.
 
 # Test
 
@@ -112,7 +142,7 @@ For tests, this boilerplate uses the [Jest](https://facebook.github.io/jest/).
 Test files can be anywhere but they should have a name `*.(test|spec).(ts|tsx|js|jsx)`. There is a `tests/` folder if you want to use it but this is not mandatory.
 
 ## Run tests
- 
+
 Call `yarn test` to run your tests and coverage.
 
 Call `yarn test-watch` to run your tests after any change, with no coverage.
@@ -142,7 +172,7 @@ The output is not compressed, while it is intended to be used in other apps wher
 
 # Exclude dependencies from the output bundle
 
-You can exclude dependencies from the distributed bundle by declaring them in the `/webpack.dist.config.js`. By default, all dependencies are declared there. 
+You can exclude dependencies from the distributed bundle by declaring them in the `/webpack.dist.config.js`. By default, all dependencies are declared there.
 
 # Features
 
@@ -174,17 +204,17 @@ For all except Mac desktops, you have to install the `rsync` on your system. _Se
 You have to install the `rsync` on your system.
 - For Mac, you don't need to do anything. It is already there.
 - For Linux [follow this guide](https://www.hostinger.com/tutorials/how-to-use-rsync)
-- For Windows's _not a clear guid has been found, feel free to fork this doc._ 
+- For Windows's _not a clear guid has been found, feel free to fork this doc._
 
 # Known issues
 
 ## HMR performs only full refresh
 
-The callbaks are not called, only the page is refreshed. Forks are welcome.
+The callbacks are not called only the page is refreshed. Forks are welcome.
 
 # Typescript module without React?
 
-If you are interested in a **typescript module**, with other words if you want to implement everything as we do here but without any react components, 
+If you are interested in a **typescript module**, in other words, if you want to implement everything as we do here but without any react components,
 check this out this [dyna-ts-module-boilerplate](https://github.com/aneldev/dyna-ts-module-boilerplate) repo.
 
 # References

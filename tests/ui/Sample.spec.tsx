@@ -1,7 +1,7 @@
 import "jest";
 
 import {configure} from 'enzyme';
-import * as Adapter from 'enzyme-adapter-react-16';
+import Adapter from 'enzyme-adapter-react-16';
 
 configure({adapter: new Adapter()});
 
@@ -14,7 +14,11 @@ describe('Sample UI test', () => {
   test('with minimal props', () => {
     wrapper = enzyme.shallow(
       (
-        <div onClick={() => console.log('I am clicked')}>Demo empty div</div>
+        <div
+          onClick={() => console.log('I am clicked')}
+        >
+          Demo empty div
+        </div>
       ),
       {},
     );

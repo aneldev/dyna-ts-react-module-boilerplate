@@ -96,15 +96,15 @@ return /******/ (function(modules) { // webpackBootstrap
 /************************************************************************/
 /******/ ({
 
-/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?!./node_modules/less-loader/dist/cjs.js!./src/Button.less":
-/*!**************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader!./node_modules/postcss-loader/lib??ref--8-2!./node_modules/less-loader/dist/cjs.js!./src/Button.less ***!
-  \**************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?!./node_modules/less-loader/dist/cjs.js!./src/Button/Button.less":
+/*!*********************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/postcss-loader/lib??ref--8-2!./node_modules/less-loader/dist/cjs.js!./src/Button/Button.less ***!
+  \*********************************************************************************************************************************************/
 /*! no static exports found */
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
 // imports
 
 
@@ -129,78 +129,78 @@ exports.push([module.i, ".my-button {\n  outline: none;\n}\n.my-button--style-RO
 	Author Tobias Koppers @sokra
 */
 // css base code, injected by the css-loader
-module.exports = function (useSourceMap) {
-  var list = []; // return the list of modules as css string
+module.exports = function(useSourceMap) {
+	var list = [];
 
-  list.toString = function toString() {
-    return this.map(function (item) {
-      var content = cssWithMappingToString(item, useSourceMap);
+	// return the list of modules as css string
+	list.toString = function toString() {
+		return this.map(function (item) {
+			var content = cssWithMappingToString(item, useSourceMap);
+			if(item[2]) {
+				return "@media " + item[2] + "{" + content + "}";
+			} else {
+				return content;
+			}
+		}).join("");
+	};
 
-      if (item[2]) {
-        return "@media " + item[2] + "{" + content + "}";
-      } else {
-        return content;
-      }
-    }).join("");
-  }; // import a list of modules into the list
-
-
-  list.i = function (modules, mediaQuery) {
-    if (typeof modules === "string") modules = [[null, modules, ""]];
-    var alreadyImportedModules = {};
-
-    for (var i = 0; i < this.length; i++) {
-      var id = this[i][0];
-      if (typeof id === "number") alreadyImportedModules[id] = true;
-    }
-
-    for (i = 0; i < modules.length; i++) {
-      var item = modules[i]; // skip already imported module
-      // this implementation is not 100% perfect for weird media query combinations
-      //  when a module is imported multiple times with different media queries.
-      //  I hope this will never occur (Hey this way we have smaller bundles)
-
-      if (typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-        if (mediaQuery && !item[2]) {
-          item[2] = mediaQuery;
-        } else if (mediaQuery) {
-          item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-        }
-
-        list.push(item);
-      }
-    }
-  };
-
-  return list;
+	// import a list of modules into the list
+	list.i = function(modules, mediaQuery) {
+		if(typeof modules === "string")
+			modules = [[null, modules, ""]];
+		var alreadyImportedModules = {};
+		for(var i = 0; i < this.length; i++) {
+			var id = this[i][0];
+			if(typeof id === "number")
+				alreadyImportedModules[id] = true;
+		}
+		for(i = 0; i < modules.length; i++) {
+			var item = modules[i];
+			// skip already imported module
+			// this implementation is not 100% perfect for weird media query combinations
+			//  when a module is imported multiple times with different media queries.
+			//  I hope this will never occur (Hey this way we have smaller bundles)
+			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+				if(mediaQuery && !item[2]) {
+					item[2] = mediaQuery;
+				} else if(mediaQuery) {
+					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+				}
+				list.push(item);
+			}
+		}
+	};
+	return list;
 };
 
 function cssWithMappingToString(item, useSourceMap) {
-  var content = item[1] || '';
-  var cssMapping = item[3];
+	var content = item[1] || '';
+	var cssMapping = item[3];
+	if (!cssMapping) {
+		return content;
+	}
 
-  if (!cssMapping) {
-    return content;
-  }
+	if (useSourceMap && typeof btoa === 'function') {
+		var sourceMapping = toComment(cssMapping);
+		var sourceURLs = cssMapping.sources.map(function (source) {
+			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
+		});
 
-  if (useSourceMap && typeof btoa === 'function') {
-    var sourceMapping = toComment(cssMapping);
-    var sourceURLs = cssMapping.sources.map(function (source) {
-      return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */';
-    });
-    return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
-  }
+		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+	}
 
-  return [content].join('\n');
-} // Adapted from convert-source-map (MIT)
-
-
-function toComment(sourceMap) {
-  // eslint-disable-next-line no-undef
-  var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
-  var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
-  return '/*# ' + data + ' */';
+	return [content].join('\n');
 }
+
+// Adapted from convert-source-map (MIT)
+function toComment(sourceMap) {
+	// eslint-disable-next-line no-undef
+	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
+
+	return '/*# ' + data + ' */';
+}
+
 
 /***/ }),
 
@@ -622,6 +622,7 @@ function updateLink (link, options, obj) {
 /*! all exports used */
 /***/ (function(module, exports) {
 
+
 /**
  * When source maps are enabled, `style-loader` uses a link element with a data-uri to
  * embed the css on the page. This breaks all relative urls because now they are relative to a
@@ -634,78 +635,83 @@ function updateLink (link, options, obj) {
  * A rudimentary test suite is located at `test/fixUrls.js` and can be run via the `npm test` command.
  *
  */
+
 module.exports = function (css) {
   // get current location
   var location = typeof window !== "undefined" && window.location;
 
   if (!location) {
     throw new Error("fixUrls requires window.location");
-  } // blank or null?
+  }
 
-
-  if (!css || typeof css !== "string") {
-    return css;
+	// blank or null?
+	if (!css || typeof css !== "string") {
+	  return css;
   }
 
   var baseUrl = location.protocol + "//" + location.host;
-  var currentDir = baseUrl + location.pathname.replace(/\/[^\/]*$/, "/"); // convert each url(...)
+  var currentDir = baseUrl + location.pathname.replace(/\/[^\/]*$/, "/");
 
-  /*
-  This regular expression is just a way to recursively match brackets within
-  a string.
-  	 /url\s*\(  = Match on the word "url" with any whitespace after it and then a parens
-     (  = Start a capturing group
-       (?:  = Start a non-capturing group
-           [^)(]  = Match anything that isn't a parentheses
-           |  = OR
-           \(  = Match a start parentheses
-               (?:  = Start another non-capturing groups
-                   [^)(]+  = Match anything that isn't a parentheses
-                   |  = OR
-                   \(  = Match a start parentheses
-                       [^)(]*  = Match anything that isn't a parentheses
-                   \)  = Match a end parentheses
-               )  = End Group
-               *\) = Match anything and then a close parens
-           )  = Close non-capturing group
-           *  = Match anything
-        )  = Close capturing group
-   \)  = Match a close parens
-  	 /gi  = Get all matches, not the first.  Be case insensitive.
-   */
+	// convert each url(...)
+	/*
+	This regular expression is just a way to recursively match brackets within
+	a string.
 
-  var fixedCss = css.replace(/url\s*\(((?:[^)(]|\((?:[^)(]+|\([^)(]*\))*\))*)\)/gi, function (fullMatch, origUrl) {
-    // strip quotes (if they exist)
-    var unquotedOrigUrl = origUrl.trim().replace(/^"(.*)"$/, function (o, $1) {
-      return $1;
-    }).replace(/^'(.*)'$/, function (o, $1) {
-      return $1;
-    }); // already a full url? no change
+	 /url\s*\(  = Match on the word "url" with any whitespace after it and then a parens
+	   (  = Start a capturing group
+	     (?:  = Start a non-capturing group
+	         [^)(]  = Match anything that isn't a parentheses
+	         |  = OR
+	         \(  = Match a start parentheses
+	             (?:  = Start another non-capturing groups
+	                 [^)(]+  = Match anything that isn't a parentheses
+	                 |  = OR
+	                 \(  = Match a start parentheses
+	                     [^)(]*  = Match anything that isn't a parentheses
+	                 \)  = Match a end parentheses
+	             )  = End Group
+              *\) = Match anything and then a close parens
+          )  = Close non-capturing group
+          *  = Match anything
+       )  = Close capturing group
+	 \)  = Match a close parens
 
-    if (/^(#|data:|http:\/\/|https:\/\/|file:\/\/\/|\s*$)/i.test(unquotedOrigUrl)) {
-      return fullMatch;
-    } // convert the url to a full url
+	 /gi  = Get all matches, not the first.  Be case insensitive.
+	 */
+	var fixedCss = css.replace(/url\s*\(((?:[^)(]|\((?:[^)(]+|\([^)(]*\))*\))*)\)/gi, function(fullMatch, origUrl) {
+		// strip quotes (if they exist)
+		var unquotedOrigUrl = origUrl
+			.trim()
+			.replace(/^"(.*)"$/, function(o, $1){ return $1; })
+			.replace(/^'(.*)'$/, function(o, $1){ return $1; });
 
+		// already a full url? no change
+		if (/^(#|data:|http:\/\/|https:\/\/|file:\/\/\/|\s*$)/i.test(unquotedOrigUrl)) {
+		  return fullMatch;
+		}
 
-    var newUrl;
+		// convert the url to a full url
+		var newUrl;
 
-    if (unquotedOrigUrl.indexOf("//") === 0) {
-      //TODO: should we add protocol?
-      newUrl = unquotedOrigUrl;
-    } else if (unquotedOrigUrl.indexOf("/") === 0) {
-      // path should be relative to the base url
-      newUrl = baseUrl + unquotedOrigUrl; // already starts with '/'
-    } else {
-      // path should be relative to current directory
-      newUrl = currentDir + unquotedOrigUrl.replace(/^\.\//, ""); // Strip leading './'
-    } // send back the fixed url(...)
+		if (unquotedOrigUrl.indexOf("//") === 0) {
+		  	//TODO: should we add protocol?
+			newUrl = unquotedOrigUrl;
+		} else if (unquotedOrigUrl.indexOf("/") === 0) {
+			// path should be relative to the base url
+			newUrl = baseUrl + unquotedOrigUrl; // already starts with '/'
+		} else {
+			// path should be relative to current directory
+			newUrl = currentDir + unquotedOrigUrl.replace(/^\.\//, ""); // Strip leading './'
+		}
 
+		// send back the fixed url(...)
+		return "url(" + JSON.stringify(newUrl) + ")";
+	});
 
-    return "url(" + JSON.stringify(newUrl) + ")";
-  }); // send back the fixed css
-
-  return fixedCss;
+	// send back the fixed css
+	return fixedCss;
 };
+
 
 /***/ }),
 
@@ -717,43 +723,42 @@ module.exports = function (css) {
 /*! all exports used */
 /***/ (function(module, exports) {
 
-module.exports = function (module) {
-  if (!module.webpackPolyfill) {
-    module.deprecate = function () {};
-
-    module.paths = []; // module.parent = undefined by default
-
-    if (!module.children) module.children = [];
-    Object.defineProperty(module, "loaded", {
-      enumerable: true,
-      get: function get() {
-        return module.l;
-      }
-    });
-    Object.defineProperty(module, "id", {
-      enumerable: true,
-      get: function get() {
-        return module.i;
-      }
-    });
-    module.webpackPolyfill = 1;
-  }
-
-  return module;
+module.exports = function(module) {
+	if (!module.webpackPolyfill) {
+		module.deprecate = function() {};
+		module.paths = [];
+		// module.parent = undefined by default
+		if (!module.children) module.children = [];
+		Object.defineProperty(module, "loaded", {
+			enumerable: true,
+			get: function() {
+				return module.l;
+			}
+		});
+		Object.defineProperty(module, "id", {
+			enumerable: true,
+			get: function() {
+				return module.i;
+			}
+		});
+		module.webpackPolyfill = 1;
+	}
+	return module;
 };
+
 
 /***/ }),
 
-/***/ "./src/Button.less":
-/*!*************************!*\
-  !*** ./src/Button.less ***!
-  \*************************/
+/***/ "./src/Button/Button.less":
+/*!********************************!*\
+  !*** ./src/Button/Button.less ***!
+  \********************************/
 /*! no static exports found */
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../node_modules/css-loader!../node_modules/postcss-loader/lib??ref--8-2!../node_modules/less-loader/dist/cjs.js!./Button.less */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?!./node_modules/less-loader/dist/cjs.js!./src/Button.less");
+var content = __webpack_require__(/*! !../../node_modules/css-loader!../../node_modules/postcss-loader/lib??ref--8-2!../../node_modules/less-loader/dist/cjs.js!./Button.less */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?!./node_modules/less-loader/dist/cjs.js!./src/Button/Button.less");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -767,7 +772,7 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(/*! ../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+var update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
 
 if(content.locals) module.exports = content.locals;
 
@@ -775,10 +780,10 @@ if(false) {}
 
 /***/ }),
 
-/***/ "./src/Button.tsx":
-/*!************************!*\
-  !*** ./src/Button.tsx ***!
-  \************************/
+/***/ "./src/Button/Button.tsx":
+/*!*******************************!*\
+  !*** ./src/Button/Button.tsx ***!
+  \*******************************/
 /*! no static exports found */
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
@@ -821,14 +826,48 @@ var __extends = this && this.__extends || function () {
   };
 }();
 
+var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
+  if (k2 === undefined) k2 = k;
+  Object.defineProperty(o, k2, {
+    enumerable: true,
+    get: function get() {
+      return m[k];
+    }
+  });
+} : function (o, m, k, k2) {
+  if (k2 === undefined) k2 = k;
+  o[k2] = m[k];
+});
+
+var __setModuleDefault = this && this.__setModuleDefault || (Object.create ? function (o, v) {
+  Object.defineProperty(o, "default", {
+    enumerable: true,
+    value: v
+  });
+} : function (o, v) {
+  o["default"] = v;
+});
+
+var __importStar = this && this.__importStar || function (mod) {
+  if (mod && mod.__esModule) return mod;
+  var result = {};
+  if (mod != null) for (var k in mod) {
+    if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+  }
+
+  __setModuleDefault(result, mod);
+
+  return result;
+};
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.Button = exports.ESize = exports.EColor = exports.EStyle = void 0;
 
-var React = __webpack_require__(/*! react */ "react");
+var React = __importStar(__webpack_require__(/*! react */ "react"));
 
-__webpack_require__(/*! ./Button.less */ "./src/Button.less");
+__webpack_require__(/*! ./Button.less */ "./src/Button/Button.less");
 
 var EStyle;
 
@@ -904,11 +943,15 @@ exports.Button = Button;
     return;
   }
 
-  reactHotLoader.register(__extends, "__extends", "/Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/Button.tsx");
-  reactHotLoader.register(EStyle, "EStyle", "/Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/Button.tsx");
-  reactHotLoader.register(EColor, "EColor", "/Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/Button.tsx");
-  reactHotLoader.register(ESize, "ESize", "/Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/Button.tsx");
-  reactHotLoader.register(Button, "Button", "/Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/Button.tsx");
+  reactHotLoader.register(__extends, "__extends", "/Users/dennis/dev/dyna/dyna-ts-react-module-boilerplate/src/Button/Button.tsx");
+  reactHotLoader.register(__createBinding, "__createBinding", "/Users/dennis/dev/dyna/dyna-ts-react-module-boilerplate/src/Button/Button.tsx");
+  reactHotLoader.register(__setModuleDefault, "__setModuleDefault", "/Users/dennis/dev/dyna/dyna-ts-react-module-boilerplate/src/Button/Button.tsx");
+  reactHotLoader.register(__importStar, "__importStar", "/Users/dennis/dev/dyna/dyna-ts-react-module-boilerplate/src/Button/Button.tsx");
+  reactHotLoader.register(React, "React", "/Users/dennis/dev/dyna/dyna-ts-react-module-boilerplate/src/Button/Button.tsx");
+  reactHotLoader.register(EStyle, "EStyle", "/Users/dennis/dev/dyna/dyna-ts-react-module-boilerplate/src/Button/Button.tsx");
+  reactHotLoader.register(EColor, "EColor", "/Users/dennis/dev/dyna/dyna-ts-react-module-boilerplate/src/Button/Button.tsx");
+  reactHotLoader.register(ESize, "ESize", "/Users/dennis/dev/dyna/dyna-ts-react-module-boilerplate/src/Button/Button.tsx");
+  reactHotLoader.register(Button, "Button", "/Users/dennis/dev/dyna/dyna-ts-react-module-boilerplate/src/Button/Button.tsx");
 })();
 
 ;
@@ -917,14 +960,14 @@ exports.Button = Button;
   var leaveModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.leaveModule : undefined;
   leaveModule && leaveModule(module);
 })();
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node_modules/webpack/buildin/module.js */ "./node_modules/webpack/buildin/module.js")(module)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/webpack/buildin/module.js */ "./node_modules/webpack/buildin/module.js")(module)))
 
 /***/ }),
 
-/***/ "./src/index.tsx":
-/*!***********************!*\
-  !*** ./src/index.tsx ***!
-  \***********************/
+/***/ "./src/Button/index.tsx":
+/*!******************************!*\
+  !*** ./src/Button/index.tsx ***!
+  \******************************/
 /*! no static exports found */
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
@@ -941,7 +984,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.ESize = exports.EColor = exports.EStyle = exports.Button = void 0;
 
-var Button_1 = __webpack_require__(/*! ./Button */ "./src/Button.tsx");
+var Button_1 = __webpack_require__(/*! ./Button */ "./src/Button/Button.tsx");
 
 Object.defineProperty(exports, "Button", {
   enumerable: true,
@@ -970,6 +1013,189 @@ Object.defineProperty(exports, "ESize", {
 
 /***/ }),
 
+/***/ "./src/Label/Label.tsx":
+/*!*****************************!*\
+  !*** ./src/Label/Label.tsx ***!
+  \*****************************/
+/*! no static exports found */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(module) {
+
+(function () {
+  var enterModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.enterModule : undefined;
+  enterModule && enterModule(module);
+})();
+
+var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal["default"].signature : function (a) {
+  return a;
+};
+
+var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
+  if (k2 === undefined) k2 = k;
+  Object.defineProperty(o, k2, {
+    enumerable: true,
+    get: function get() {
+      return m[k];
+    }
+  });
+} : function (o, m, k, k2) {
+  if (k2 === undefined) k2 = k;
+  o[k2] = m[k];
+});
+
+var __setModuleDefault = this && this.__setModuleDefault || (Object.create ? function (o, v) {
+  Object.defineProperty(o, "default", {
+    enumerable: true,
+    value: v
+  });
+} : function (o, v) {
+  o["default"] = v;
+});
+
+var __importStar = this && this.__importStar || function (mod) {
+  if (mod && mod.__esModule) return mod;
+  var result = {};
+  if (mod != null) for (var k in mod) {
+    if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+  }
+
+  __setModuleDefault(result, mod);
+
+  return result;
+};
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Label = void 0;
+
+var React = __importStar(__webpack_require__(/*! react */ "react"));
+
+exports.Label = function (props) {
+  var className = props.className,
+      children = props.children;
+  return React.createElement("div", {
+    className: className
+  }, children);
+};
+
+;
+
+(function () {
+  var reactHotLoader = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.default : undefined;
+
+  if (!reactHotLoader) {
+    return;
+  }
+
+  reactHotLoader.register(__createBinding, "__createBinding", "/Users/dennis/dev/dyna/dyna-ts-react-module-boilerplate/src/Label/Label.tsx");
+  reactHotLoader.register(__setModuleDefault, "__setModuleDefault", "/Users/dennis/dev/dyna/dyna-ts-react-module-boilerplate/src/Label/Label.tsx");
+  reactHotLoader.register(__importStar, "__importStar", "/Users/dennis/dev/dyna/dyna-ts-react-module-boilerplate/src/Label/Label.tsx");
+  reactHotLoader.register(React, "React", "/Users/dennis/dev/dyna/dyna-ts-react-module-boilerplate/src/Label/Label.tsx");
+})();
+
+;
+
+(function () {
+  var leaveModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.leaveModule : undefined;
+  leaveModule && leaveModule(module);
+})();
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/webpack/buildin/module.js */ "./node_modules/webpack/buildin/module.js")(module)))
+
+/***/ }),
+
+/***/ "./src/Label/index.tsx":
+/*!*****************************!*\
+  !*** ./src/Label/index.tsx ***!
+  \*****************************/
+/*! no static exports found */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal["default"].signature : function (a) {
+  return a;
+};
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Label = void 0;
+
+var Label_1 = __webpack_require__(/*! ./Label */ "./src/Label/Label.tsx");
+
+Object.defineProperty(exports, "Label", {
+  enumerable: true,
+  get: function get() {
+    return Label_1.Label;
+  }
+});
+
+/***/ }),
+
+/***/ "./src/index.tsx":
+/*!***********************!*\
+  !*** ./src/index.tsx ***!
+  \***********************/
+/*! no static exports found */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal["default"].signature : function (a) {
+  return a;
+};
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Label = exports.ESize = exports.EColor = exports.EStyle = exports.Button = void 0;
+
+var Button_1 = __webpack_require__(/*! ./Button */ "./src/Button/index.tsx");
+
+Object.defineProperty(exports, "Button", {
+  enumerable: true,
+  get: function get() {
+    return Button_1.Button;
+  }
+});
+Object.defineProperty(exports, "EStyle", {
+  enumerable: true,
+  get: function get() {
+    return Button_1.EStyle;
+  }
+});
+Object.defineProperty(exports, "EColor", {
+  enumerable: true,
+  get: function get() {
+    return Button_1.EColor;
+  }
+});
+Object.defineProperty(exports, "ESize", {
+  enumerable: true,
+  get: function get() {
+    return Button_1.ESize;
+  }
+});
+
+var Label_1 = __webpack_require__(/*! ./Label */ "./src/Label/index.tsx");
+
+Object.defineProperty(exports, "Label", {
+  enumerable: true,
+  get: function get() {
+    return Label_1.Label;
+  }
+});
+
+/***/ }),
+
 /***/ 0:
 /*!*****************************!*\
   !*** multi ./src/index.tsx ***!
@@ -978,7 +1204,7 @@ Object.defineProperty(exports, "ESize", {
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/index.tsx */"./src/index.tsx");
+module.exports = __webpack_require__(/*! /Users/dennis/dev/dyna/dyna-ts-react-module-boilerplate/src/index.tsx */"./src/index.tsx");
 
 
 /***/ }),

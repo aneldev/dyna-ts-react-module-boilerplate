@@ -3,58 +3,46 @@ const path = require('path');
 const webpack = require('webpack');
 const nodeExternals = require('webpack-node-externals');
 
-const distConfig = {
-  exportSrcFoldersAsModule: false,
-    // True means:
-    //    Exports the /src/<module name>/index.ts as module
-    //    Should import line this: import {<module name>} from "package-name/dist/<module name>"
-    //    Note: tsconfig.json should not have the `"files"` attribute
-    // False means: (the default)
-    //    Exports the /src/index.ts as module
-    //    Should import line this: import {<module name>} from "package-name"
-    //    Note: tsconfig.json should have the `"files": ["src/index.tsx"]`
-
-  thisPackageBelongsToMonorepo: false,
-    // True means:
-    //    This boilerplate is used as a package of a monorepo
-    //    This script will exclude deps of the monorepo as well
-    // False means (the default)
-    //    This boilerplate is used as a stand-alone.
-};
+const isSingleModule =
+  fs.existsSync('./src/index.ts') ||
+  fs.existsSync('./src/index.tsx');
+const thisPackageBelongsToMonorepo =
+  fs.existsSync('../../package.json') &&
+  !!require('../../package.json').workspaces;
 
 const package_ = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
 const loaders = require('./webpack.loaders');
 const plugins = require('./webpack.plugins');
 
-const getDirectories =
+const getModuleNames =
   root =>
     fs.readdirSync(root, {withFileTypes: true})
       .filter(dirent => dirent.isDirectory())
       .map(dirent => dirent.name);
 
-const entries = getDirectories('./src');
+const moduleNames = getModuleNames('./src');
 
 const config = {
   mode: "development",          // distribute it without minification
   target: "web",
   entry:
-    distConfig.exportSrcFoldersAsModule
+    isSingleModule
       ? (
-        // Multiple module exports of the /src/<Module name>/index.ts
-        entries
-          .reduce((acc, entry) => {
-            acc[entry] = `./src/${entry}`;
-            return acc;
-          }, {})
-      )
-      : (
         // Classic export of the /src/index.ts
         [
           path.resolve(__dirname, 'src/index.tsx')
         ]
+      )
+      :(
+        // Multiple module exports of the /src/<Module name>/index.ts
+        moduleNames
+          .reduce((acc, entry) => {
+            acc[entry] = `./src/${entry}`;
+            return acc;
+          }, {})
       ),
   externals:
-    distConfig.thisPackageBelongsToMonorepo
+    thisPackageBelongsToMonorepo
       ? [                  // exclude all dependencies from the bundle
         nodeExternals(),
         nodeExternals({
@@ -69,15 +57,8 @@ const config = {
   // Every folder of ./src is a standalone exported module
   devtool: "source-map",        // help: https://webpack.js.org/configuration/devtool/
   output:
-    distConfig.exportSrcFoldersAsModule
+    isSingleModule
       ? {
-        // Multiple module exports of the /src/<Module name>/index.ts
-        filename: '[name]/index.js',
-        path: __dirname + '/dist',
-        libraryTarget: 'umd',
-        umdNamedDefine: true,
-      }
-      : {
         // Classic export of the /src/index.ts
         path: path.resolve(__dirname, 'dist'),
         filename: 'index.js',
@@ -85,6 +66,13 @@ const config = {
         library: package_.name,
         libraryTarget: 'umd',
         umdNamedDefine: true
+      }
+      : {
+        // Multiple module exports of the /src/<Module name>/index.ts
+        filename: '[name]/index.js',
+        path: __dirname + '/dist',
+        libraryTarget: 'umd',
+        umdNamedDefine: true,
       },
   resolve: {
     alias: {},
