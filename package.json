@@ -142,9 +142,13 @@
     "output": "./coverage/junit.xml"
   },
   "eslintConfig": {
+    "env": {
+      "browser": false,
+      "es2021": true
+    },
     "extends": [
-      "react-app",
-      "react-app/jest"
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended"
     ],
     "overrides": [
       {
@@ -181,6 +185,9 @@
           "brace-style": [
             "warn",
             "stroustrup"
+          ],
+          "no-extra-boolean-cast": [
+            "warn"
           ],
           "comma-dangle": [
             "warn",
