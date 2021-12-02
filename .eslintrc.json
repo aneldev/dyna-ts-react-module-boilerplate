@@ -18,10 +18,10 @@
         "./src/**/*.tsx"
       ],
       "rules": {
-        "modules-newline/import-declaration-newline": "warn",
-        "modules-newline/export-declaration-newline": "warn",
+        "modules-newline/import-declaration-newline": "error",
+        "modules-newline/export-declaration-newline": "error",
         "@typescript-eslint/member-delimiter-style": [
-          "warn",
+          "error",
           {
             "multiline": {
               "delimiter": "semi",
@@ -39,30 +39,30 @@
         "@typescript-eslint/ban-ts-comment": "off",
         "@typescript-eslint/naming-convention": "off",
         "@typescript-eslint/no-inferrable-types": "off",
-        "@typescript-eslint/prefer-namespace-keyword": "warn",
+        "@typescript-eslint/prefer-namespace-keyword": "error",
         "@typescript-eslint/semi": [
-          "warn",
+          "error",
           "always"
         ],
-        "@typescript-eslint/type-annotation-spacing": "warn",
+        "@typescript-eslint/type-annotation-spacing": "error",
         "@typescript-eslint/no-unused-expressions": "off",
         "brace-style": [
-          "warn",
+          "error",
           "stroustrup"
         ],
         "no-extra-boolean-cast": [
-          "warn"
+          "error"
         ],
         "comma-dangle": [
-          "warn",
+          "error",
           "always-multiline"
         ],
         "eqeqeq": [
-          "warn",
+          "error",
           "smart"
         ],
         "id-blacklist": [
-          "warn",
+          "error",
           "any",
           "Number",
           "number",
@@ -84,17 +84,17 @@
         ],
         "no-eval": "error",
         "no-mixed-operators": "error",
-        "no-trailing-spaces": "warn",
+        "no-trailing-spaces": "error",
         "no-underscore-dangle": "off",
         "no-unsafe-finally": "error",
-        "no-var": "warn",
-        "semi": "warn",
+        "no-var": "error",
+        "semi": "error",
         "curly": [
-          "warn",
+          "error",
           "multi-line"
         ],
         "object-curly-newline": [
-          "warn",
+          "error",
           {
             "ImportDeclaration": {
               "minProperties": 2,
@@ -116,37 +116,37 @@
           }
         ],
         "object-curly-spacing": [
-          "warn",
+          "error",
           "always"
         ],
         "object-property-newline": [
-          "warn",
+          "error",
           {
             "allowAllPropertiesOnSameLine": false,
             "allowMultiplePropertiesPerLine": false
           }
         ],
         "keyword-spacing": [
-          "warn",
+          "error",
           {
             "before": true,
             "after": true
           }
         ],
         "space-before-blocks": [
-          "warn",
+          "error",
           "always"
         ],
         "array-bracket-spacing": [
-          "warn",
+          "error",
           "never"
         ],
         "computed-property-spacing": [
-          "warn",
+          "error",
           "never"
         ],
         "spaced-comment": [
-          "warn",
+          "error",
           "always",
           {
             "markers": [
@@ -155,7 +155,7 @@
           }
         ],
         "switch-colon-spacing": [
-          "warn",
+          "error",
           {
             "after": true,
             "before": false
@@ -164,12 +164,12 @@
         "react-hooks/exhaustive-deps": "off",
         "react/jsx-pascal-case": "off",
         "react/jsx-first-prop-new-line": [
-          "warn",
+          "error",
           "always"
         ],
-        "etc/no-commented-out-code": "warn",
+        "etc/no-commented-out-code": "error",
         "capitalized-comments": [
-          "warn",
+          "error",
           "always"
         ]
       }
