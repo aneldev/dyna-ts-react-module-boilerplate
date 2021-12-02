@@ -1,4 +1,4 @@
 export {
   Label,
   ILabelProps,
-}from "./Label";
+} from "./Label";

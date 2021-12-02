@@ -60,7 +60,8 @@ export class Button extends React.Component<IButtonProps> {
     ].filter(Boolean).join(' ');
 
     return (
-      <a className={className} href={href} onClick={onClick}>
+      <a
+        className={className} href={href} onClick={onClick}>
         <button>{children}</button>
       </a>
     );

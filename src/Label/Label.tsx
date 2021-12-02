@@ -12,7 +12,8 @@ export const Label = (props: ILabelProps): JSX.Element => {
   } = props;
 
   return (
-    <div className={className}>
+    <div
+      className={className}>
       {children}
     </div>
   );
