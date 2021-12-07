@@ -1,35 +1,53 @@
-{
-  "env":  {
-    "browser": true
+"use strict";
+module.exports = {
+  env: {
+    browser: true
   },
-  "plugins": [
+  parser: "@typescript-eslint/parser",
+  plugins: [
     "modules-newline",
     "eslint-plugin-react",
     "etc"
   ],
-  "extends": [
+  extends: [
+    "react-app",
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended"
   ],
-  "overrides": [
+  overrides: [
     {
-      "files": [
+      files: [
         "./src/**/*.ts",
         "./src/**/*.tsx"
       ],
-      "rules": {
+      rules: {
+        // Disable this due to eslint version problem https://pretagteam.com/question/react-was-used-before-it-was-defined-eslint-warning
+        "no-use-before-define": "off",
+        "@typescript-eslint/no-use-before-define": "off",
+
+        "space-infix-ops": [
+          "error",
+          {
+            "int32Hint": false,
+          },
+        ],
+
+        "eol-last": [
+          "error",
+          "always",
+        ],
         "modules-newline/import-declaration-newline": "error",
         "modules-newline/export-declaration-newline": "error",
         "@typescript-eslint/member-delimiter-style": [
           "error",
           {
-            "multiline": {
-              "delimiter": "semi",
-              "requireLast": true
+            multiline: {
+              delimiter: "semi",
+              requireLast: true
             },
-            "singleline": {
-              "delimiter": "semi",
-              "requireLast": false
+            singleline: {
+              delimiter: "semi",
+              requireLast: false
             }
           }
         ],
@@ -39,31 +57,35 @@
         "@typescript-eslint/ban-ts-comment": "off",
         "@typescript-eslint/no-inferrable-types": "off",
         "@typescript-eslint/prefer-namespace-keyword": "error",
+        "@typescript-eslint/naming-convention": [
+          "error",
+          {
+            selector: "interface",
+            format: [
+              "PascalCase"
+            ],
+            custom: {
+              regex: "^I[A-Z]",
+              match: true
+            }
+          },
+          {
+            selector: "enum",
+            format: [
+              "PascalCase"
+            ],
+            custom: {
+              regex: "^E[A-Z]",
+              match: true,
+            }
+          }
+        ],
         "@typescript-eslint/semi": [
           "error",
           "always"
         ],
         "@typescript-eslint/type-annotation-spacing": "error",
         "@typescript-eslint/no-unused-expressions": "off",
-        "@typescript-eslint/naming-convention": [
-          "error",
-          {
-            "selector": "interface",
-            "format": ["PascalCase"],
-            "custom": {
-              "regex": "^I[A-Z]",
-              "match": true
-            }
-          },
-          {
-            "selector": "enum",
-            "format": ["PascalCase"],
-            "custom": {
-              "regex": "^E[A-Z]",
-              "match": true
-            }
-          }
-        ],
         "brace-style": [
           "error",
           "stroustrup"
@@ -75,6 +97,7 @@
           "error",
           "always-multiline"
         ],
+        // https://eslint.org/docs/rules/eqeqeq
         "eqeqeq": [
           "error",
           "smart"
@@ -92,12 +115,12 @@
           "undefined"
         ],
         "id-match": "error",
-        "indent": [
+        indent: [
           1,
           2,
           {
-            "ImportDeclaration": 1,
-            "SwitchCase": 1
+            ImportDeclaration: 1,
+            SwitchCase: 1
           }
         ],
         "no-eval": "error",
@@ -106,30 +129,30 @@
         "no-underscore-dangle": "off",
         "no-unsafe-finally": "error",
         "no-var": "error",
-        "semi": "error",
-        "curly": [
+        semi: "error",
+        curly: [
           "error",
           "multi-line"
         ],
         "object-curly-newline": [
           "error",
           {
-            "ImportDeclaration": {
-              "minProperties": 2,
-              "consistent": true,
-              "multiline": true
+            ImportDeclaration: {
+              minProperties: 2,
+              consistent: true,
+              multiline: true
             },
-            "ObjectExpression": {
-              "multiline": true,
-              "minProperties": 2
+            ObjectExpression: {
+              multiline: true,
+              minProperties: 2
             },
-            "ObjectPattern": {
-              "multiline": true,
-              "minProperties": 2
-              },
-            "ExportDeclaration": {
-              "multiline": true,
-              "minProperties": 1
+            ObjectPattern: {
+              multiline: true,
+              minProperties: 2
+            },
+            ExportDeclaration: {
+              multiline: true,
+              minProperties: 1
             }
           }
         ],
@@ -140,15 +163,15 @@
         "object-property-newline": [
           "error",
           {
-            "allowAllPropertiesOnSameLine": false,
-            "allowMultiplePropertiesPerLine": false
+            allowAllPropertiesOnSameLine: false,
+            allowMultiplePropertiesPerLine: false,
           }
         ],
         "keyword-spacing": [
           "error",
           {
-            "before": true,
-            "after": true
+            before: true,
+            after: true,
           }
         ],
         "space-before-blocks": [
@@ -167,7 +190,7 @@
           "error",
           "always",
           {
-            "markers": [
+            markers: [
               "/"
             ]
           }
@@ -175,30 +198,48 @@
         "switch-colon-spacing": [
           "error",
           {
-            "after": true,
-            "before": false
+            after: true,
+            before: false
           }
         ],
+        "function-call-argument-newline": "off",
+        "function-paren-newline": "off",
+        "newline-per-chained-call": "error",
         "react-hooks/exhaustive-deps": "off",
-        "react/jsx-pascal-case": "off",
+        "react/jsx-pascal-case": [
+          "error",
+          {}
+        ],
         "react/jsx-first-prop-new-line": [
           "error",
-          "always"
+          "multiline-multiprop"
         ],
+        "react/jsx-max-props-per-line": [
+          "error",
+          {
+            maximum: 1
+          }
+        ],
+        "react/jsx-indent-props": [
+          "error",
+          2,
+        ],
+        "react/jsx-closing-bracket-location": "error",
+        "react/self-closing-comp": "error",
         "etc/no-commented-out-code": "error",
         "capitalized-comments": [
           "error",
-          "always"
-        ]
+          "always",
+        ],
       }
     },
     {
       "files": [
-        "**/*.stories.*"
+        "**/*.stories.*",
       ],
       "rules": {
         "import/no-anonymous-default-export": "off"
       }
     }
   ]
-}
+};

@@ -61,7 +61,10 @@ export class Button extends React.Component<IButtonProps> {
 
     return (
       <a
-        className={className} href={href} onClick={onClick}>
+        className={className}
+        href={href}
+        onClick={onClick}
+      >
         <button>{children}</button>
       </a>
     );
