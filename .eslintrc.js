@@ -1,24 +1,29 @@
 "use strict";
 module.exports = {
+  root: true,
   env: {
-    browser: true
+    "browser": false,
+    "es2021": true,
+    "jest/globals": true,
   },
   parser: "@typescript-eslint/parser",
   plugins: [
     "modules-newline",
     "eslint-plugin-react",
-    "etc"
+    "etc",
+    "jest",
   ],
   extends: [
     "react-app",
     "eslint:recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:jest/recommended",
   ],
   overrides: [
     {
       files: [
-        "./src/**/*.ts",
-        "./src/**/*.tsx"
+        "*.ts",
+        "*.tsx",
       ],
       rules: {
         // Disable this due to eslint version problem https://pretagteam.com/question/react-was-used-before-it-was-defined-eslint-warning
@@ -97,8 +102,8 @@ module.exports = {
           "error",
           "always-multiline"
         ],
-        // https://eslint.org/docs/rules/eqeqeq
         "eqeqeq": [
+          // https://eslint.org/docs/rules/eqeqeq
           "error",
           "smart"
         ],
@@ -158,7 +163,7 @@ module.exports = {
         ],
         "object-curly-spacing": [
           "error",
-          "always"
+          "never"
         ],
         "object-property-newline": [
           "error",
