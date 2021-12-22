@@ -24,7 +24,6 @@
     "storybook-at": "start-storybook -p",
     "commit": "git add -u && git add -A && git commit --allow-empty -m",
     "commit-amend": "git add -u && git add -A && git commit --amend --allow-empty --no-edit",
-    "publish-push": "yarn publish --non-interactive && git push && git push --tags",
     "lint": "eslint -c .eslintrc.js ./src ./tests",
     "lint-fix": "eslint -c .eslintrc.js --fix ./src ./tests",
     "test": "jest --coverage --no-cache --runInBand",
@@ -32,7 +31,8 @@
     "test-watch": "jest --watch --verbose --runInBand",
     "sync-usages": "node sync-usages.js",
     "sync-usages-watch": "node sync-usages.js --watch",
-    "release": "yarn lint && yarn build && yarn test && git add -u && git add -A && git commit --allow-empty -m \"Build changes\" && yarn version --patch && yarn publish-push",
+    "publish-push": "yarn version --patch && yarn publish --non-interactive && git push && git push --tags",
+    "release": "yarn lint && yarn build && yarn test && git add -u && git add -A && git commit --allow-empty -m \"Build changes\" && yarn publish-push",
     "upgrade-release": "yarn upgrade && yarn release"
   },
   "keywords": [
