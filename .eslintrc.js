@@ -30,6 +30,23 @@ module.exports = {
         "no-use-before-define": "off",
         "@typescript-eslint/no-use-before-define": "off",
 
+        "no-console": [
+          "error",
+          {
+            allow: [
+              "log",
+              "warn",
+              "error",
+              "time",
+              // But not "debug"
+            ],
+          },
+        ],
+
+        "no-case-declarations": "off",
+
+        "@typescript-eslint/no-non-null-assertion": "off",
+
         "space-infix-ops": [
           "error",
           {
@@ -67,7 +84,6 @@ module.exports = {
           {
             selector: "interface",
             format: [
-              "PascalCase"
             ],
             custom: {
               regex: "^I[A-Z]",
@@ -77,7 +93,8 @@ module.exports = {
           {
             selector: "enum",
             format: [
-              "PascalCase"
+              "PascalCase",
+              "UPPER_CASE",
             ],
             custom: {
               regex: "^E[A-Z]",
@@ -222,7 +239,7 @@ module.exports = {
         "react/jsx-max-props-per-line": [
           "error",
           {
-            maximum: 1
+            maximum: 3
           }
         ],
         "react/jsx-indent-props": [
