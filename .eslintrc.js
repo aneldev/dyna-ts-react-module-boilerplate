@@ -236,6 +236,7 @@ module.exports = {
           "error",
           "always",
         ],
+        "jest/no-conditional-expect": "off",
       }
     },
     {
