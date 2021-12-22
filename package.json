@@ -32,7 +32,7 @@
     "test-watch": "jest --watch --verbose --runInBand",
     "sync-usages": "node sync-usages.js",
     "sync-usages-watch": "node sync-usages.js --watch",
-    "release": "yarn test && yarn lint && yarn build && git add -u && git add -A && git commit --allow-empty -m \"Build changes\" && yarn version --patch && yarn publish-push",
+    "release": "yarn lint && yarn build && yarn test && git add -u && git add -A && git commit --allow-empty -m \"Build changes\" && yarn version --patch && yarn publish-push",
     "upgrade-release": "yarn upgrade && yarn release"
   },
   "keywords": [
