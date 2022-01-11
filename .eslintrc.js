@@ -38,6 +38,7 @@ module.exports = {
               "warn",
               "error",
               "time",
+              "timeEnd",
               // But not "debug"
             ],
           },
