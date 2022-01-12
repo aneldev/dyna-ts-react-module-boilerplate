@@ -943,15 +943,15 @@ exports.Button = Button;
     return;
   }
 
-  reactHotLoader.register(__extends, "__extends", "/Users/dennis/dev/dyna/dyna-ts-react-module-boilerplate/src/Button/Button.tsx");
-  reactHotLoader.register(__createBinding, "__createBinding", "/Users/dennis/dev/dyna/dyna-ts-react-module-boilerplate/src/Button/Button.tsx");
-  reactHotLoader.register(__setModuleDefault, "__setModuleDefault", "/Users/dennis/dev/dyna/dyna-ts-react-module-boilerplate/src/Button/Button.tsx");
-  reactHotLoader.register(__importStar, "__importStar", "/Users/dennis/dev/dyna/dyna-ts-react-module-boilerplate/src/Button/Button.tsx");
-  reactHotLoader.register(React, "React", "/Users/dennis/dev/dyna/dyna-ts-react-module-boilerplate/src/Button/Button.tsx");
-  reactHotLoader.register(EStyle, "EStyle", "/Users/dennis/dev/dyna/dyna-ts-react-module-boilerplate/src/Button/Button.tsx");
-  reactHotLoader.register(EColor, "EColor", "/Users/dennis/dev/dyna/dyna-ts-react-module-boilerplate/src/Button/Button.tsx");
-  reactHotLoader.register(ESize, "ESize", "/Users/dennis/dev/dyna/dyna-ts-react-module-boilerplate/src/Button/Button.tsx");
-  reactHotLoader.register(Button, "Button", "/Users/dennis/dev/dyna/dyna-ts-react-module-boilerplate/src/Button/Button.tsx");
+  reactHotLoader.register(__extends, "__extends", "/Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/Button/Button.tsx");
+  reactHotLoader.register(__createBinding, "__createBinding", "/Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/Button/Button.tsx");
+  reactHotLoader.register(__setModuleDefault, "__setModuleDefault", "/Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/Button/Button.tsx");
+  reactHotLoader.register(__importStar, "__importStar", "/Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/Button/Button.tsx");
+  reactHotLoader.register(React, "React", "/Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/Button/Button.tsx");
+  reactHotLoader.register(EStyle, "EStyle", "/Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/Button/Button.tsx");
+  reactHotLoader.register(EColor, "EColor", "/Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/Button/Button.tsx");
+  reactHotLoader.register(ESize, "ESize", "/Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/Button/Button.tsx");
+  reactHotLoader.register(Button, "Button", "/Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/Button/Button.tsx");
 })();
 
 ;
@@ -1091,10 +1091,10 @@ exports.Label = function (props) {
     return;
   }
 
-  reactHotLoader.register(__createBinding, "__createBinding", "/Users/dennis/dev/dyna/dyna-ts-react-module-boilerplate/src/Label/Label.tsx");
-  reactHotLoader.register(__setModuleDefault, "__setModuleDefault", "/Users/dennis/dev/dyna/dyna-ts-react-module-boilerplate/src/Label/Label.tsx");
-  reactHotLoader.register(__importStar, "__importStar", "/Users/dennis/dev/dyna/dyna-ts-react-module-boilerplate/src/Label/Label.tsx");
-  reactHotLoader.register(React, "React", "/Users/dennis/dev/dyna/dyna-ts-react-module-boilerplate/src/Label/Label.tsx");
+  reactHotLoader.register(__createBinding, "__createBinding", "/Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/Label/Label.tsx");
+  reactHotLoader.register(__setModuleDefault, "__setModuleDefault", "/Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/Label/Label.tsx");
+  reactHotLoader.register(__importStar, "__importStar", "/Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/Label/Label.tsx");
+  reactHotLoader.register(React, "React", "/Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/Label/Label.tsx");
 })();
 
 ;
@@ -1204,7 +1204,7 @@ Object.defineProperty(exports, "Label", {
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/dennis/dev/dyna/dyna-ts-react-module-boilerplate/src/index.tsx */"./src/index.tsx");
+module.exports = __webpack_require__(/*! /Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/index.tsx */"./src/index.tsx");
 
 
 /***/ }),
