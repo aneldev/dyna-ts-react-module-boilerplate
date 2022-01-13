@@ -17,7 +17,7 @@
     "start": "webpack-dev-server --config webpack.dev.config.js --devtool eval --progress --inline --hot --content-base dev/public --open --host localhost --port 3200 ",
     "start-at": "webpack-dev-server --config webpack.dev.config.js --devtool eval --progress --inline --hot --content-base dev/public --open --host localhost --port",
     "build-analyze": "set NODE_ENV=production && webpack --config webpack.dist.analyze.config.js",
-    "build": "set NODE_ENV=production && rm -rf ./dist; yarn build-ts-declarations && webpack --config webpack.dist.config.js",
+    "build": "yarn lint && set NODE_ENV=production && rm -rf ./dist; yarn build-ts-declarations && webpack --config webpack.dist.config.js",
     "build-watch": "rm -rf ./dist; yarn build-ts-declarations && webpack --watch --config webpack.dist.config.js",
     "build-ts-declarations": "node tsconfig.update.js && tsc && cd dist/ && find . -name \\*.js -delete && cd ..",
     "storybook": "start-storybook -p 9200",
@@ -32,7 +32,7 @@
     "sync-usages": "node sync-usages.js",
     "sync-usages-watch": "node sync-usages.js --watch",
     "publish-push": "yarn version --patch && yarn publish --non-interactive && git push && git push --tags",
-    "release": "yarn lint && yarn build && yarn test && git add -u && git add -A && git commit --allow-empty -m \"Build changes\" && yarn publish-push",
+    "release": "yarn build && yarn test && git add -u && git add -A && git commit --allow-empty -m \"Build changes\" && yarn publish-push",
     "upgrade-release": "yarn upgrade && yarn release"
   },
   "keywords": [
