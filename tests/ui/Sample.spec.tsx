@@ -3,10 +3,10 @@ import "jest";
 import {configure} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
-configure({adapter: new Adapter()});
-
 import * as React from 'react';
 import * as enzyme from 'enzyme';
+
+configure({adapter: new Adapter()});
 
 describe('Sample UI test', () => {
   let wrapper;
