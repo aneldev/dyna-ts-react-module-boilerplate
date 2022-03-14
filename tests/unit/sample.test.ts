@@ -1,8 +1,6 @@
-import "jest";
+jest.setTimeout(5000);
 
-if (typeof jasmine !== 'undefined') jasmine.DEFAULT_TIMEOUT_INTERVAL = 5000;
-
-// help: https://facebook.github.io/jest/docs/expect.html
+// Help: https://facebook.github.io/jest/docs/expect.html
 
 describe('Sample unit test', () => {
   it('should import the component', () => {
