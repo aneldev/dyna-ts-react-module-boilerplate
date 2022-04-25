@@ -25,9 +25,15 @@ module.exports = {
         "*.tsx",
       ],
       rules: {
+        "no-debugger": [
+          "warn",
+        ],
+
         // Disable this due to eslint version problem https://pretagteam.com/question/react-was-used-before-it-was-defined-eslint-warning
         "no-use-before-define": "off",
         "@typescript-eslint/no-use-before-define": "off",
+
+        "no-template-curly-in-string": "off",
 
         "no-console": [
           "warn",
@@ -126,7 +132,6 @@ module.exports = {
           "warn",
           "any",
           "Number",
-          "number",
           "String",
           "string",
           "Boolean",
