@@ -816,6 +816,8 @@ var __extends = this && this.__extends || function () {
   };
 
   return function (d, b) {
+    if (typeof b !== "function" && b !== null) throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+
     _extendStatics(d, b);
 
     function __() {
@@ -828,12 +830,18 @@ var __extends = this && this.__extends || function () {
 
 var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
-  Object.defineProperty(o, k2, {
-    enumerable: true,
-    get: function get() {
-      return m[k];
-    }
-  });
+  var desc = Object.getOwnPropertyDescriptor(m, k);
+
+  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+    desc = {
+      enumerable: true,
+      get: function get() {
+        return m[k];
+      }
+    };
+  }
+
+  Object.defineProperty(o, k2, desc);
 } : function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
   o[k2] = m[k];
@@ -912,7 +920,7 @@ function (_super) {
         _b = _a.children,
         children = _b === void 0 ? null : _b,
         onClick = _a.onClick;
-    var className = [userClassName, "my-button my-button--style-" + style + " ", "my-button--color-" + color, "my-button--size-" + size].filter(Boolean).join(' ');
+    var className = [userClassName, "my-button my-button--style-".concat(style, " "), "my-button--color-".concat(color), "my-button--size-".concat(size)].filter(Boolean).join(' ');
     return React.createElement("a", {
       className: className,
       href: href,
@@ -1035,12 +1043,18 @@ var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoader
 
 var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
-  Object.defineProperty(o, k2, {
-    enumerable: true,
-    get: function get() {
-      return m[k];
-    }
-  });
+  var desc = Object.getOwnPropertyDescriptor(m, k);
+
+  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+    desc = {
+      enumerable: true,
+      get: function get() {
+        return m[k];
+      }
+    };
+  }
+
+  Object.defineProperty(o, k2, desc);
 } : function (o, m, k, k2) {
   if (k2 === undefined) k2 = k;
   o[k2] = m[k];
@@ -1074,7 +1088,7 @@ exports.Label = void 0;
 
 var React = __importStar(__webpack_require__(/*! react */ "react"));
 
-exports.Label = function (props) {
+var Label = function Label(props) {
   var className = props.className,
       children = props.children;
   return React.createElement("div", {
@@ -1082,6 +1096,7 @@ exports.Label = function (props) {
   }, children);
 };
 
+exports.Label = Label;
 ;
 
 (function () {
@@ -1095,6 +1110,7 @@ exports.Label = function (props) {
   reactHotLoader.register(__setModuleDefault, "__setModuleDefault", "/Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/Label/Label.tsx");
   reactHotLoader.register(__importStar, "__importStar", "/Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/Label/Label.tsx");
   reactHotLoader.register(React, "React", "/Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/Label/Label.tsx");
+  reactHotLoader.register(Label, "Label", "/Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/Label/Label.tsx");
 })();
 
 ;
