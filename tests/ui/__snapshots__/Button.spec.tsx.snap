@@ -1,5 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Button mount with minimal props 1`] = `
+<Button
+  color="WHITE_BLACK"
+  onClick={[Function]}
+  size="MEDIUM"
+  style="ROUNDED"
+>
+  <a
+    className="my-button my-button--style-ROUNDED  my-button--color-WHITE_BLACK my-button--size-MEDIUM"
+    onClick={[Function]}
+  >
+    <button>
+      My button
+    </button>
+  </a>
+</Button>
+`;
+
+exports[`Button swallow with minimal props 1`] = `
+<a
+  className="my-button my-button--style-ROUNDED  my-button--color-WHITE_BLACK my-button--size-MEDIUM"
+  onClick={[Function]}
+>
+  <button>
+    My button
+  </button>
+</a>
+`;
+
 exports[`Button with minimal props 1`] = `
 <a
   className="my-button my-button--style-ROUNDED  my-button--color-WHITE_BLACK my-button--size-MEDIUM"
