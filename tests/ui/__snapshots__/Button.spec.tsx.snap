@@ -28,14 +28,3 @@ exports[`Button swallow with minimal props 1`] = `
   </button>
 </a>
 `;
-
-exports[`Button with minimal props 1`] = `
-<a
-  className="my-button my-button--style-ROUNDED  my-button--color-WHITE_BLACK my-button--size-MEDIUM"
-  onClick={[Function]}
->
-  <button>
-    My button
-  </button>
-</a>
-`;

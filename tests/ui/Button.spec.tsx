@@ -4,9 +4,9 @@ import * as enzyme from "enzyme";
 // @ts-ignore
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 
-enzyme.configure({ adapter: new Adapter() });
-
 import {Button} from '../../src/Button';
+
+enzyme.configure({adapter: new Adapter()});
 
 describe('Button', () => {
   let wrapper;
