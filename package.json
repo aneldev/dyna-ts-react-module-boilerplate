@@ -29,7 +29,7 @@
     "test": "jest --coverage --no-cache --runInBand",
     "test-debug": "node --inspect-brk node_modules/.bin/jest --runInBand",
     "test-watch": "jest --watch --verbose --runInBand",
-    "test-no-coverage": "jest --no-cache --runInBand",
+    "test-no-coverage": "jest --collectCoverage=false --no-cache --runInBand",
     "test-update-snapshots": "jest --updateSnapshot --runInBand",
     "sync-usages": "node sync-usages.js",
     "sync-usages-watch": "node sync-usages.js --watch",
