@@ -166,6 +166,11 @@ module.exports = {
       {
         test: /\.svg$/, loader: 'svg-inline-loader',
       },
+      {
+        test: /\.json$/,
+        loader: 'json-loader',
+        type: 'javascript/auto',
+      },
     ],
   },
 };
