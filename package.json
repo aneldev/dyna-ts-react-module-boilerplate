@@ -73,7 +73,6 @@
     "babel-preset-react-app": "^10.0.0",
     "chokidar": "^3.4.0",
     "circular-dependency-plugin": "^4.0.0",
-    "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^1.0.1",
     "dyna-guid": "^2.1.2",
     "dyna-node-arguments": "^2.0.1",
