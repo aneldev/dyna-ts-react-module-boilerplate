@@ -10,7 +10,7 @@ Replace the `my-component` with the name of your new module.
 ```
 git clone http://github.com/aneldev/dyna-ts-react-module-boilerplate my-component
 cd my-component
-yarn run create
+yarn run bootstrap
 ```
 
 That's all.
@@ -37,7 +37,7 @@ The `dyna-ts-react-module-boilerplate` creates React modules (reusable component
 - Configured font loader
 - Lint
 - Supports CSS, SCSS & LESS at the same time
-- CSS modules (with `*.module.less/scss` filename pattern)
+- CSS modules (with `*.module.less` filename pattern)
 - Test with Jest, snapshots
 - Analyse dependencies with Webpack Analyser
 - Distribute as a module with TypeScript Definitions (ready to import)
@@ -90,11 +90,11 @@ import {Button} from "my-compoennt/dist/Button";
 
 # Folder structure
 
-There are loaders for various files, like: `.less`, `.scss`, `.svg`, `.jpg`, `etc.`. Loaders *loaded* in `/webpack.loaders.js`, where you can add your loaders used for all tasks (npm scripts).
+There are loaders for various files, like: `.less`, `.svg`, `.jpg`, `etc.`. Loaders *loaded* in `/webpack.loaders.js`, where you can add your loaders used for all tasks (npm scripts).
 
 # Develop
 
-You can develop using the Storybook or create your app. In any case on `yarn release`, only what is exported by `src/index.tsx` will be released.
+You can develop using the Storybook. In any case on `yarn release`, only what is exported by `src/index.tsx` will be released.
 
 If you want to add a dependency that will be used only in a Story or in your custom app, install it as `dev` dependency.
 
@@ -105,23 +105,6 @@ Stories are all files with extension `.stories.tsx`. There is already a `stories
 `yarn storybook`
 
 Or `yarn storybook-at <custom port>` to open Storybook on a custom port.
-
-## Start an app
-
-If you don't want to use the Storybook, you can create your app.
-
-Under the `/dev/app/` folder, a small web application can use your module component in different ways.
-This way, you can develop, debug, and create a demo of your component.
-
-`yarn start`
-
-or, if you want to start it to a different port, `yarn start-to -- 3232` to start in port 3232.
-
-Like an App, this boilerplate uses the `dyna-showcase`, a very light StoryBook like solution.
-One of the benefits is that it is speedy compared with StoryBook, and you can see the actual edges of the components (for high fidelity dev).
-It is ideal for development, but you can easily replace it with yours, `yarn remove dyna-showcase`, and write your app under the `/dev` folder.
-
-_StoryBook is still available!_
 
 ## Lint
 

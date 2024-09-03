@@ -1,4 +1,3 @@
-import * as React from "react";
 import {IShowcaseView} from "dyna-showcase";
 
 import "./css-loaders.css";
