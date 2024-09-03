@@ -1,8 +1,16 @@
 import * as React from "react";
-import {IShowcaseView} from "dyna-showcase";
-import {Button, EColor, ESize, EStyle, IButtonProps} from "../../../../src/Button";
 
-export const interactive: IShowcaseView =     {
+import {IShowcaseView} from "dyna-showcase";
+
+import {
+  Button,
+  EColor,
+  ESize,
+  EStyle,
+  IButtonProps,
+} from "../../../../src/Button";
+
+export const interactive: IShowcaseView = {
   slug: 'interactive',
   faIconName: 'flask',
   title: 'interactive test',
@@ -19,12 +27,10 @@ export const interactive: IShowcaseView =     {
     class MyApp extends React.Component<IMyAppProps, IMyAppState> {
       constructor(props: IMyAppProps) {
         super(props);
-        this.state = {
-          clickCounter: 0,
-        };
+        this.state = {clickCounter: 0};
       }
 
-      public render(): JSX.Element {
+      public render(): React.JSX.Element {
         const {size} = this.props;
         const {clickCounter} = this.state;
         return (
@@ -42,9 +48,7 @@ export const interactive: IShowcaseView =     {
     {
       slug: 'medium',
       title: 'medium',
-      props: {
-        size: ESize.MEDIUM,
-      } as IButtonProps,
+      props: {size: ESize.MEDIUM} as IButtonProps,
     },
     {
       slug: 'large',

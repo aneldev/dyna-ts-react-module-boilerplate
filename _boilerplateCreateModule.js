@@ -4,7 +4,7 @@ const moduleName = process.cwd().replace(/\\/g, '/').split('/').pop();
 
 let package_ = JSON.parse(fs.readFileSync('./package.json').toString());
 delete package_.scripts['preinstall'];
-delete package_.scripts['create'];
+delete package_.scripts['bootstrap'];
 package_.name = moduleName;
 package_.version = '0.0.1';
 package_.author = '';

@@ -1,11 +1,11 @@
-import * as React from "react";
+import React from "react";
 
 export interface ILabelProps {
   className?: string;
   children: any;
 }
 
-export const Label = (props: ILabelProps): JSX.Element => {
+export const Label = (props: ILabelProps): React.JSX.Element => {
   const {
     className,
     children,

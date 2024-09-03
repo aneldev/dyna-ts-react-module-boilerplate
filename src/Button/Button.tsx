@@ -40,8 +40,9 @@ export class Button extends React.Component<IButtonProps> {
     onClick: () => undefined,
   };
 
+  static __docgenInfo?: object;
 
-  public render(): JSX.Element {
+  public render(): React.JSX.Element {
     const {
       className: userClassName,
       style,
