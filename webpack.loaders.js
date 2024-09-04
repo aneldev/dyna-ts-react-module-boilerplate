@@ -13,9 +13,7 @@ module.exports = {
         test: /\.(tsx|ts)$/,
         exclude: /node_modules/,
         use: [
-          {
-            loader: 'babel-loader',
-          },
+          'babel-loader',
           {
             loader: 'ts-loader',
             options: {
@@ -28,8 +26,8 @@ module.exports = {
       {	// css loader
         test: /\.css$/,
         use: [
-          {loader: 'style-loader'},
-          {loader: 'css-loader'},
+          "style-loader",
+          "css-loader"
         ],
         exclude: /node_modules/,
       },
@@ -38,7 +36,7 @@ module.exports = {
         test: /\.module.less$/,
         exclude: /node_modules/,
         use: [
-          {loader: "style-loader"},
+          "style-loader",
           {
             loader: 'typings-for-css-modules-loader',
             options: {
@@ -68,7 +66,7 @@ module.exports = {
               },
             },
           },
-          {loader: 'less-loader'},
+          'less-loader',
         ],
       },
       {
@@ -76,8 +74,8 @@ module.exports = {
         test: /^((?!\.module).)*less$/,
         exclude: /node_modules/,
         use: [
-          {loader: 'style-loader'},
-          {loader: 'css-loader'},
+          'style-loader',
+          'css-loader',
           {
             loader: 'postcss-loader',
             options: {
@@ -98,7 +96,7 @@ module.exports = {
               },
             },
           },
-          {loader: 'less-loader'},
+          'less-loader',
         ],
       },
       {
@@ -106,7 +104,7 @@ module.exports = {
         test: /\.module.scss$/,
         exclude: /node_modules/,
         use: [
-          {loader: 'style-loader'},
+          'style-loader',
           {
             loader: 'typings-for-css-modules-loader',
             options: {
@@ -146,8 +144,8 @@ module.exports = {
         test: /^((?!\.module).)*scss$/,
         exclude: /node_modules/,
         use: [
-          {loader: 'style-loader'},
-          {loader: 'css-loader'},
+          'style-loader',
+          'css-loader',
           {
             loader: 'postcss-loader',
             options: {
