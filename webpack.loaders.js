@@ -102,6 +102,7 @@ module.exports = {
         ],
       },
       {
+        // Rule for SCSS modules
         test: /\.module.scss$/,
         exclude: /node_modules/,
         use: [
@@ -141,6 +142,7 @@ module.exports = {
         ],
       },
       {
+        // Rule for regular SCSS (non-modular)
         test: /^((?!\.module).)*scss$/,
         exclude: /node_modules/,
         use: [
@@ -166,7 +168,7 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'url-loader',
         options: {
-          limit: 100000
+          limit: 100000,
         },
       },
       {
