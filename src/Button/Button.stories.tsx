@@ -22,7 +22,7 @@ export default meta;
 
 let index = 0;
 
-export const variations = () => (
+export const Variations = () => (
   <div>
     {mapEnumValues(EStyle, style =>
       mapEnumValues(ESize, size =>
