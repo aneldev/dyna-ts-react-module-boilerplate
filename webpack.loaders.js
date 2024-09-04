@@ -28,8 +28,8 @@ module.exports = {
       {	// css loader
         test: /\.css$/,
         use: [
-          'style-loader',
-          'css-loader'
+          {loader: 'style-loader'},
+          {loader: 'css-loader'},
         ],
         exclude: /node_modules/,
       },
@@ -38,7 +38,7 @@ module.exports = {
         test: /\.module\.less$/,
         exclude: /node_modules/,
         use: [
-          'style-loader',
+          {loader: "style-loader"},
           {
             loader: 'typings-for-css-modules-loader',
             options: {
@@ -76,8 +76,8 @@ module.exports = {
         test: /^((?!\.module).)*\.less$/,
         exclude: /node_modules/,
         use: [
-          'style-loader',
-          'css-loader', // No 'modules: true' here
+          {loader: 'style-loader'},
+          {loader: 'css-loader'},
           {
             loader: 'postcss-loader',
             options: {
@@ -106,7 +106,7 @@ module.exports = {
         test: /\.module.scss$/,
         exclude: /node_modules/,
         use: [
-          'style-loader',
+          {loader: 'style-loader'},
           {
             loader: 'typings-for-css-modules-loader',
             options: {
@@ -146,8 +146,8 @@ module.exports = {
         test: /^((?!\.module).)*scss$/,
         exclude: /node_modules/,
         use: [
-          'style-loader',
-          'css-loader',
+          {loader: 'style-loader'},
+          {loader: 'css-loader'},
           {
             loader: 'postcss-loader',
             options: {
