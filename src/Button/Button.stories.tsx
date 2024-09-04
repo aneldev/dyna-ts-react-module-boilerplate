@@ -23,18 +23,22 @@ export default meta;
 let index = 0;
 
 export const Variations = () => (
-  <div>
+  <div style={{backgroundColor: 'gray'}}>
     {mapEnumValues(EStyle, style =>
       mapEnumValues(ESize, size =>
         mapEnumValues(EColor, color => (
-          <Button
+          <div
             key={index++}
-            style={style}
-            size={size}
-            color={color}
+            style={{marginBottom: '8px'}}
           >
-            Click me
-          </Button>
+            <Button
+              style={style}
+              size={size}
+              color={color}
+            >
+              Click me
+            </Button>
+          </div>
         )),
       ),
     )}
