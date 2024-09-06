@@ -8,7 +8,7 @@ import {
   ESize,
   EStyle,
   IButtonProps,
-} from "../../../../src/Button";
+} from "../../../src/Button";
 
 export const interactive: IShowcaseView = {
   slug: 'interactive',

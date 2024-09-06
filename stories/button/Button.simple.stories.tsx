@@ -5,7 +5,7 @@ import {
   EStyle,
   ESize,
   EColor,
-} from "./";
+} from "../../src/Button";
 
 const meta: Meta = {
   title: 'Button',

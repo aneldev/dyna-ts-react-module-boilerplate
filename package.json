@@ -111,6 +111,7 @@
     "react-dom": "^18.3.1",
     "react-refresh": "^0.14.2",
     "react-test-renderer": "^18.3.1",
+    "sass": "^1.78.0",
     "sass-loader": "^16.0.1",
     "source-map-loader": "5.0.0",
     "storybook": "^8.2.9",

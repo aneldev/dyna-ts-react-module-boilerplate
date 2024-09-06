@@ -1,6 +1,6 @@
 import * as React from "react";
 import {IShowcaseView} from "dyna-showcase";
-import {Button, EColor, ESize, EStyle, IButtonProps} from "../../../../src/Button";
+import {Button, EColor, ESize, EStyle, IButtonProps} from "../../../src/Button";
 
 export const sizes: IShowcaseView = {
   slug: 'sizes',
