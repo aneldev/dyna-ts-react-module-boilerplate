@@ -35,17 +35,21 @@ module.exports = {
       },
       {
         // Rule for LESS modules
-        test: /\.module\.less$/,
+        test: /\.less$/,
         exclude: /node_modules/,
         use: [
           'style-loader',
           {
-            loader: 'typings-for-css-modules-loader',
+            loader: 'css-loader',
             options: {
-              importLoaders: 1,
-              modules: true,
-              localIdentName: "[name]-[local]--[hash:base64:12]",
-              namedExport: true,
+              modules: true,  // Enable CSS Modules for .module.less files
+            },
+          },
+          {
+            loader: 'typed-css-modules-loader',
+            options: {
+              camelCase: true,    // Convert hyphenated class names to camelCase
+              namedExports: true, // Export individual class names
             },
           },
           {
@@ -73,11 +77,11 @@ module.exports = {
       },
       {
         // Rule for regular LESS (non-modular)
-        test: /^((?!\.module).)*\.less$/,
+        test: /^((?!\.module).)*\.less.XXXX$/,
         exclude: /node_modules/,
         use: [
           'style-loader',
-          'css-loader', // No 'modules: true' here
+          'css-loader',
           {
             loader: 'postcss-loader',
             options: {
