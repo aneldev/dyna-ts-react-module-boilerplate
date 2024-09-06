@@ -20,8 +20,8 @@ module.exports = {
           {
             loader: 'ts-loader',
             options: {
-              transpileOnly: false, // Ensure this is set to false or omitted to enable type checking
-              configFile: 'tsconfig.json',
+              transpileOnly: false,         // Ensure this is set to false or omitted to enable type checking
+              configFile: 'tsconfig.json',  // Note: This is removed in Storybook! Code point: 20240906173131
             }
           },
         ]
@@ -29,12 +29,33 @@ module.exports = {
 
       {
         // CSS loader
+        // Note: This loader is removed in Storybook! Code point: 20240906173110
         test: /\.css$/,
+        exclude: /node_modules/,
         use: [
           'style-loader',
-          'css-loader'
+          "css-loader",
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                ident: 'postcss',
+                plugins: [
+                  require('postcss-flexbugs-fixes'),
+                  autoprefixer({
+                    overrideBrowserslist: [
+                      '>1%',
+                      'last 4 versions',
+                      'Firefox ESR',
+                      'not ie < 9', // React doesn't support IE8 anyway
+                    ],
+                    flexbox: 'no-2009',
+                  }),
+                ],
+              },
+            },
+          },
         ],
-        exclude: /node_modules/,
       },
 
       {

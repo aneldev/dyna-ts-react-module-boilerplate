@@ -1,6 +1,6 @@
 import type {StorybookConfig} from "@storybook/react-webpack5";
 
-const {module: {rules}} = require('../webpack.loaders.js');
+let {module: {rules}} = require('../webpack.loaders.js');
 const {plugins} = require('../webpack.plugins.js');
 
 const config: StorybookConfig = {
@@ -23,6 +23,7 @@ const config: StorybookConfig = {
   webpackFinal: async (config: any) => {
     // Remove the reference of the ./tsconfig.jsom from storybook
     // Otherwise, the Storybook will write on dist folder!
+    // Code point: 20240906173131
     for (const rule of rules) {
       if (Array.isArray(rule.use)) {
         for (const use of rule.use) {
@@ -35,9 +36,19 @@ const config: StorybookConfig = {
         }
       }
     }
+
+    // Remove the css-loader for css files, is not compatible with Storybook's
+    // Storybook supports css
+    // Code point: 20240906173110
+    rules = rules.filter((rule: any) => {
+      if (rule.test.toString()==='/\\.css$/') return false;
+      return true;
+    });
+
     // Add the rules and plugins to storybook's webpack config
     config.module.rules = config.module.rules.concat(rules);
     config.plugins = config.plugins.concat(plugins);
+
     return config;
   },
 

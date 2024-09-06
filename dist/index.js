@@ -146,10 +146,10 @@ var Label = function Label(props) {
 
 /***/ }),
 
-/***/ "./src/Label/index.tsx":
-/*!*****************************!*\
-  !*** ./src/Label/index.tsx ***!
-  \*****************************/
+/***/ "./src/Label/index.ts":
+/*!****************************!*\
+  !*** ./src/Label/index.ts ***!
+  \****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -836,7 +836,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   Label: () => (/* reexport safe */ _Label__WEBPACK_IMPORTED_MODULE_1__.Label)
 /* harmony export */ });
 /* harmony import */ var _Button__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Button */ "./src/Button/index.tsx");
-/* harmony import */ var _Label__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Label */ "./src/Label/index.tsx");
+/* harmony import */ var _Label__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Label */ "./src/Label/index.ts");
 
 
 /******/ 	return __webpack_exports__;

@@ -1,1 +1,1 @@
-export { Label, ILabelProps, } from "./Label";
+export * from "./Label";
