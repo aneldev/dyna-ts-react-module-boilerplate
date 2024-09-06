@@ -1,7 +1,8 @@
 import * as React from "react";
 
 import "./Button.less";
-import * as styles from "./Button.module.less";
+import * as lessStyles from "./Button.module.less";
+import * as scssStyles from "./Button.module.scss";
 
 export enum EStyle {
   ROUNDED = "ROUNDED",
@@ -56,7 +57,8 @@ export class Button extends React.Component<IButtonProps> {
 
     const className: string = [
       userClassName,
-      styles.demoColor2,
+      lessStyles.demoColor2,
+      scssStyles.grayColor,
       `my-button my-button--style-${style} `,
       `my-button--color-${color}`,
       `my-button--size-${size}`,
