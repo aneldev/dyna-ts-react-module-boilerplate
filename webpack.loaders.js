@@ -200,7 +200,7 @@ module.exports = {
         // help: https://christianalfoni.github.io/react-webpack-cookbook/Inlining-images.html
         test: /\.(png|jpg|gif)$/,
         exclude: /node_modules/,
-        loader: 'url-loader',
+        loader: "url-loader",
         options: {
           limit: 100000
         },
