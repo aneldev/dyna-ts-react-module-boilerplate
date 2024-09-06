@@ -35,8 +35,15 @@ module.exports = {
       },
       {
         // Rule for LESS modules
+        // test: /\.module\.less$/,
         test: /\.less$/,
-        exclude: /node_modules/,
+        exclude: [
+          /node_modules/,
+          /^((?!\.module).)*\.less$/,
+        ],
+        // resolve: {
+        //   extensions: ['.module.less']
+        // },
         use: [
           'style-loader',
           {
@@ -77,8 +84,11 @@ module.exports = {
       },
       {
         // Rule for regular LESS (non-modular)
-        test: /^((?!\.module).)*\.less.XXXX$/,
-        exclude: /node_modules/,
+        test: /\.less$/,
+        exclude: [
+          /node_modules/,
+          /\.module\.less$/,
+        ],
         use: [
           'style-loader',
           'css-loader',
