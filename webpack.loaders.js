@@ -13,7 +13,9 @@ module.exports = {
         test: /\.(tsx|ts)$/,
         exclude: /node_modules/,
         use: [
-          'babel-loader',
+          {
+            loader: 'babel-loader',
+          },
           {
             loader: 'ts-loader',
             options: {
@@ -26,24 +28,28 @@ module.exports = {
       {	// css loader
         test: /\.css$/,
         use: [
-          "style-loader",
-          "css-loader"
+          'style-loader',
+          'css-loader'
         ],
         exclude: /node_modules/,
       },
       {
         // Rule for LESS modules
-        test: /\.module.less$/,
+        test: /\.less$/,
         exclude: /node_modules/,
         use: [
-          "style-loader",
+          'style-loader',
           {
-            loader: 'typings-for-css-modules-loader',
+            loader: 'css-loader',
             options: {
-              importLoaders: 1,
-              modules: true,
-              localIdentName: "[name]-[local]--[hash:base64:12]",
-              namedExport: true,
+              modules: true,  // Enable CSS Modules for .module.less files
+            },
+          },
+          {
+            loader: 'typed-css-modules-loader',
+            options: {
+              camelCase: true,    // Convert hyphenated class names to camelCase
+              namedExports: true, // Export individual class names
             },
           },
           {
@@ -71,7 +77,7 @@ module.exports = {
       },
       {
         // Rule for regular LESS (non-modular)
-        test: /^((?!\.module).)*less$/,
+        test: /^((?!\.module).)*\.less.XXXX$/,
         exclude: /node_modules/,
         use: [
           'style-loader',
@@ -100,7 +106,6 @@ module.exports = {
         ],
       },
       {
-        // Rule for SCSS modules
         test: /\.module.scss$/,
         exclude: /node_modules/,
         use: [
@@ -140,7 +145,6 @@ module.exports = {
         ],
       },
       {
-        // Rule for regular SCSS (non-modular)
         test: /^((?!\.module).)*scss$/,
         exclude: /node_modules/,
         use: [
@@ -166,7 +170,7 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'url-loader',
         options: {
-          limit: 100000,
+          limit: 100000
         },
       },
       {
