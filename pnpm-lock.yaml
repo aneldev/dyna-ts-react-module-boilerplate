@@ -200,9 +200,12 @@ importers:
       react-test-renderer:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
+      sass:
+        specifier: ^1.78.0
+        version: 1.78.0
       sass-loader:
         specifier: ^16.0.1
-        version: 16.0.1(webpack@5.94.0(@swc/core@1.7.14)(esbuild@0.21.5)(webpack-cli@5.1.4))
+        version: 16.0.1(sass@1.78.0)(webpack@5.94.0(@swc/core@1.7.14)(esbuild@0.21.5)(webpack-cli@5.1.4))
       source-map-loader:
         specifier: 5.0.0
         version: 5.0.0(webpack@5.94.0(@swc/core@1.7.14)(esbuild@0.21.5)(webpack-cli@5.1.4))
@@ -4606,6 +4609,9 @@ packages:
     resolution: {integrity: sha512-33AmZ+xjZhg2JMCe+vDf6a9mzWukE7l+wAtesjE7KyteqqKjzxv7aVQeWnul1Ve26mWvEQqyPwl0OctNBfSR9w==}
     engines: {node: '>=8'}
 
+  immutable@4.3.7:
+    resolution: {integrity: sha512-1hqclzwYwjRDFLjcFxOM5AYkkG0rpFPpr1RLPMEuGczoS7YA8gLhy8SWXYRAA/XwfEHpfo3cw5JGioS32fnMRw==}
+
   import-fresh@3.3.0:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==}
     engines: {node: '>=6'}
@@ -6783,6 +6789,11 @@ packages:
         optional: true
       webpack:
         optional: true
+
+  sass@1.78.0:
+    resolution: {integrity: sha512-AaIqGSrjo5lA2Yg7RvFZrlXDBCp3nV4XP73GrLGvdRWWwk+8H3l0SDvq/5bA4eF+0RFPLuWUk3E+P1U/YqnpsQ==}
+    engines: {node: '>=14.0.0'}
+    hasBin: true
 
   sax@1.4.1:
     resolution: {integrity: sha512-+aWOz7yVScEGoKNd4PA10LZ8sk0A/z5+nXQG5giUO5rprX9jgYsTdov9qCchZiPIZezbZH+jRut8nPodFAX4Jg==}
@@ -13705,6 +13716,8 @@ snapshots:
       p-pipe: 3.1.0
       replace-ext: 1.0.1
 
+  immutable@4.3.7: {}
+
   import-fresh@3.3.0:
     dependencies:
       parent-module: 1.0.1
@@ -16361,11 +16374,18 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  sass-loader@16.0.1(webpack@5.94.0(@swc/core@1.7.14)(esbuild@0.21.5)(webpack-cli@5.1.4)):
+  sass-loader@16.0.1(sass@1.78.0)(webpack@5.94.0(@swc/core@1.7.14)(esbuild@0.21.5)(webpack-cli@5.1.4)):
     dependencies:
       neo-async: 2.6.2
     optionalDependencies:
+      sass: 1.78.0
       webpack: 5.94.0(@swc/core@1.7.14)(esbuild@0.21.5)(webpack-cli@5.1.4)
+
+  sass@1.78.0:
+    dependencies:
+      chokidar: 3.6.0
+      immutable: 4.3.7
+      source-map-js: 1.2.0
 
   sax@1.4.1: {}
 

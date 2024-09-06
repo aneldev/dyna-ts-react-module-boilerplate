@@ -117,24 +117,30 @@ module.exports = {
       },
 
       {
-        test: /\.module.scss$/,
-        exclude: /node_modules/,
+        // Rule for SCSS modules
+        test: /\.scss$/,
+        exclude: [
+          /node_modules/,
+          /^((?!\.module).)*\.scss$/,
+        ],
         use: [
           'style-loader',
           {
-            loader: 'typings-for-css-modules-loader',
+            loader: 'css-loader',
             options: {
-              importLoaders: 1,
-              modules: true,
-              localIdentName: "[name]-[local]--[hash:base64:12]",
-              namedExport: true,
+              modules: true,  // Enable CSS Modules for .module.scss files
+            },
+          },
+          {
+            loader: 'typed-css-modules-loader',
+            options: {
+              camelCase: true,    // Convert hyphenated class names to camelCase
+              namedExports: true, // Export individual class names
             },
           },
           {
             loader: 'postcss-loader',
             options: {
-              // Necessary for external CSS imports to work
-              // https://github.com/facebookincubator/create-react-app/issues/2677
               postcssOptions: {
                 ident: 'postcss',
                 plugins: [
@@ -156,8 +162,12 @@ module.exports = {
         ],
       },
       {
-        test: /^((?!\.module).)*scss$/,
-        exclude: /node_modules/,
+        // Rule for regular SCSS (non-modular)
+        test: /\.scss$/,
+        exclude: [
+          /node_modules/,
+          /\.module\.scss$/,
+        ],
         use: [
           'style-loader',
           'css-loader',
@@ -165,8 +175,18 @@ module.exports = {
             loader: 'postcss-loader',
             options: {
               postcssOptions: {
+                ident: 'postcss',
                 plugins: [
-                  require('autoprefixer'),
+                  require('postcss-flexbugs-fixes'),
+                  autoprefixer({
+                    overrideBrowserslist: [
+                      '>1%',
+                      'last 4 versions',
+                      'Firefox ESR',
+                      'not ie < 9', // React doesn't support IE8 anyway
+                    ],
+                    flexbox: 'no-2009',
+                  }),
                 ],
               },
             },
