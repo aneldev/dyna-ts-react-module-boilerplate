@@ -17,9 +17,7 @@ module.exports = {
 
     new CircularDependencyPlugin({
       // `onStart` is called before the cycle detection starts
-      onStart({compilation}) {
-        console.log('Circular Dependency: Start detecting webpack modules cycles');
-      },
+      onStart({compilation}) {},
       // `onDetected` is called for each module that is cyclical
       onDetected({module: webpackModuleRecord, paths, compilation}) {
         // `paths` will be an Array of the relative module paths that make up the cycle
@@ -34,9 +32,7 @@ module.exports = {
         ))
       },
       // `onEnd` is called before the cycle detection ends
-      onEnd({compilation}) {
-        console.log('Circular Dependency: End detecting webpack modules cycles');
-      },
+      onEnd({compilation}) {},
     }),
   ]
 };
