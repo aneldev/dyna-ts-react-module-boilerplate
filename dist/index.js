@@ -9,6 +9,7 @@
 		root["dyna-ts-react-module-boilerplate"] = factory();
 })(self, () => {
 return /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/Button/Button.tsx":
@@ -17,7 +18,6 @@ return /******/ (() => { // webpackBootstrap
   \*******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Button: () => (/* binding */ Button),
 /* harmony export */   EColor: () => (/* binding */ EColor),
@@ -28,8 +28,7 @@ return /******/ (() => { // webpackBootstrap
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Button_less__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Button.less */ "./src/Button/Button.less");
-/* harmony import */ var _Button_less__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Button_less__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _Button_module_less__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Button.module.less */ "./node_modules/.pnpm/css-loader@7.1.2_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/typed-css-modules-loader@0.0.18/node_modules/typed-css-modules-loader/index.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.41_typescript@5.5.4_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./node_modules/.pnpm/less-loader@12.2.0_less@4.2.0_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/less-loader/dist/cjs.js!./src/Button/Button.module.less");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
 function _defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = r[t]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o); } }
@@ -43,6 +42,7 @@ function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.
 function _getPrototypeOf(t) { return _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function (t) { return t.__proto__ || Object.getPrototypeOf(t); }, _getPrototypeOf(t); }
 function _inherits(t, e) { if ("function" != typeof e && null !== e) throw new TypeError("Super expression must either be null or a function"); t.prototype = Object.create(e && e.prototype, { constructor: { value: t, writable: !0, configurable: !0 } }), Object.defineProperty(t, "prototype", { writable: !1 }), e && _setPrototypeOf(t, e); }
 function _setPrototypeOf(t, e) { return _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function (t, e) { return t.__proto__ = e, t; }, _setPrototypeOf(t, e); }
+
 
 
 
@@ -82,7 +82,7 @@ var Button = /*#__PURE__*/function (_React$Component) {
         _this$props$children = _this$props.children,
         children = _this$props$children === void 0 ? null : _this$props$children,
         onClick = _this$props.onClick;
-      var className = [userClassName, "my-button my-button--style-".concat(style, " "), "my-button--color-".concat(color), "my-button--size-".concat(size)].filter(Boolean).join(' ');
+      var className = [userClassName, _Button_module_less__WEBPACK_IMPORTED_MODULE_2__.demoColor2, "my-button my-button--style-".concat(style, " "), "my-button--color-".concat(color), "my-button--size-".concat(size)].filter(Boolean).join(' ');
       return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
         className: className,
         href: href,
@@ -107,31 +107,12 @@ Button.defaultProps = {
 
 /***/ }),
 
-/***/ "./src/Button/index.tsx":
-/*!******************************!*\
-  !*** ./src/Button/index.tsx ***!
-  \******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   Button: () => (/* reexport safe */ _Button__WEBPACK_IMPORTED_MODULE_0__.Button),
-/* harmony export */   EColor: () => (/* reexport safe */ _Button__WEBPACK_IMPORTED_MODULE_0__.EColor),
-/* harmony export */   ESize: () => (/* reexport safe */ _Button__WEBPACK_IMPORTED_MODULE_0__.ESize),
-/* harmony export */   EStyle: () => (/* reexport safe */ _Button__WEBPACK_IMPORTED_MODULE_0__.EStyle)
-/* harmony export */ });
-/* harmony import */ var _Button__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Button */ "./src/Button/Button.tsx");
-
-
-/***/ }),
-
 /***/ "./src/Label/Label.tsx":
 /*!*****************************!*\
   !*** ./src/Label/Label.tsx ***!
   \*****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Label: () => (/* binding */ Label)
 /* harmony export */ });
@@ -149,28 +130,156 @@ var Label = function Label(props) {
 
 /***/ }),
 
-/***/ "./src/Label/index.tsx":
-/*!*****************************!*\
-  !*** ./src/Label/index.tsx ***!
-  \*****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ "./node_modules/.pnpm/css-loader@7.1.2_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/typed-css-modules-loader@0.0.18/node_modules/typed-css-modules-loader/index.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.41_typescript@5.5.4_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./node_modules/.pnpm/less-loader@12.2.0_less@4.2.0_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/less-loader/dist/cjs.js!./src/Button/Button.module.less":
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/.pnpm/css-loader@7.1.2_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/typed-css-modules-loader@0.0.18/node_modules/typed-css-modules-loader/index.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.41_typescript@5.5.4_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./node_modules/.pnpm/less-loader@12.2.0_less@4.2.0_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/less-loader/dist/cjs.js!./src/Button/Button.module.less ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   Label: () => (/* reexport safe */ _Label__WEBPACK_IMPORTED_MODULE_0__.Label)
+/* harmony export */   demoColor2: () => (/* binding */ demoColor2)
 /* harmony export */ });
-/* harmony import */ var _Label__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Label */ "./src/Label/Label.tsx");
+/* unused harmony export redColor */
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/.pnpm/css-loader@7.1.2_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/css-loader/dist/runtime/sourceMaps.js */ "./node_modules/.pnpm/css-loader@7.1.2_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/css-loader/dist/runtime/sourceMaps.js");
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/.pnpm/css-loader@7.1.2_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/css-loader/dist/runtime/api.js */ "./node_modules/.pnpm/css-loader@7.1.2_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_7_1_2_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_7_1_2_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, `.c6cBpWK1AK2iUn6zPq2w {
+  color: red;
+}
+.pyrR0pM4adpv_lskssVl {
+  color: pink;
+}
+`, "",{"version":3,"sources":["webpack://./src/Button/Button.module.less"],"names":[],"mappings":"AAAA;EACE,UAAA;AACF;AAEA;EACE,WAAA;AAAF","sourcesContent":[".redColor{\n  color: red;\n}\n\n.demoColor2{\n  color: pink;\n}\n"],"sourceRoot":""}]);
+// Exports
+var redColor = `c6cBpWK1AK2iUn6zPq2w`;
+var demoColor2 = `pyrR0pM4adpv_lskssVl`;
+/* unused harmony default export */ var __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
 
 /***/ }),
 
-/***/ "./src/Button/Button.less":
-/*!********************************!*\
-  !*** ./src/Button/Button.less ***!
-  \********************************/
-/***/ (() => {
+/***/ "./node_modules/.pnpm/css-loader@7.1.2_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/css-loader/dist/runtime/api.js":
+/*!***********************************************************************************************************************************************************!*\
+  !*** ./node_modules/.pnpm/css-loader@7.1.2_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/css-loader/dist/runtime/api.js ***!
+  \***********************************************************************************************************************************************************/
+/***/ ((module) => {
 
-throw new Error("Module parse failed: Unexpected token (1:0)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n> .my-button {\n|   outline: none;\n| ");
+
+
+/*
+  MIT License http://www.opensource.org/licenses/mit-license.php
+  Author Tobias Koppers @sokra
+*/
+module.exports = function (cssWithMappingToString) {
+  var list = [];
+
+  // return the list of modules as css string
+  list.toString = function toString() {
+    return this.map(function (item) {
+      var content = "";
+      var needLayer = typeof item[5] !== "undefined";
+      if (item[4]) {
+        content += "@supports (".concat(item[4], ") {");
+      }
+      if (item[2]) {
+        content += "@media ".concat(item[2], " {");
+      }
+      if (needLayer) {
+        content += "@layer".concat(item[5].length > 0 ? " ".concat(item[5]) : "", " {");
+      }
+      content += cssWithMappingToString(item);
+      if (needLayer) {
+        content += "}";
+      }
+      if (item[2]) {
+        content += "}";
+      }
+      if (item[4]) {
+        content += "}";
+      }
+      return content;
+    }).join("");
+  };
+
+  // import a list of modules into the list
+  list.i = function i(modules, media, dedupe, supports, layer) {
+    if (typeof modules === "string") {
+      modules = [[null, modules, undefined]];
+    }
+    var alreadyImportedModules = {};
+    if (dedupe) {
+      for (var k = 0; k < this.length; k++) {
+        var id = this[k][0];
+        if (id != null) {
+          alreadyImportedModules[id] = true;
+        }
+      }
+    }
+    for (var _k = 0; _k < modules.length; _k++) {
+      var item = [].concat(modules[_k]);
+      if (dedupe && alreadyImportedModules[item[0]]) {
+        continue;
+      }
+      if (typeof layer !== "undefined") {
+        if (typeof item[5] === "undefined") {
+          item[5] = layer;
+        } else {
+          item[1] = "@layer".concat(item[5].length > 0 ? " ".concat(item[5]) : "", " {").concat(item[1], "}");
+          item[5] = layer;
+        }
+      }
+      if (media) {
+        if (!item[2]) {
+          item[2] = media;
+        } else {
+          item[1] = "@media ".concat(item[2], " {").concat(item[1], "}");
+          item[2] = media;
+        }
+      }
+      if (supports) {
+        if (!item[4]) {
+          item[4] = "".concat(supports);
+        } else {
+          item[1] = "@supports (".concat(item[4], ") {").concat(item[1], "}");
+          item[4] = supports;
+        }
+      }
+      list.push(item);
+    }
+  };
+  return list;
+};
+
+/***/ }),
+
+/***/ "./node_modules/.pnpm/css-loader@7.1.2_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/css-loader/dist/runtime/sourceMaps.js":
+/*!******************************************************************************************************************************************************************!*\
+  !*** ./node_modules/.pnpm/css-loader@7.1.2_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/css-loader/dist/runtime/sourceMaps.js ***!
+  \******************************************************************************************************************************************************************/
+/***/ ((module) => {
+
+
+
+module.exports = function (item) {
+  var content = item[1];
+  var cssMapping = item[3];
+  if (!cssMapping) {
+    return content;
+  }
+  if (typeof btoa === "function") {
+    var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(cssMapping))));
+    var data = "sourceMappingURL=data:application/json;charset=utf-8;base64,".concat(base64);
+    var sourceMapping = "/*# ".concat(data, " */");
+    return [content].concat([sourceMapping]).join("\n");
+  }
+  return [content].join("\n");
+};
 
 /***/ }),
 
@@ -180,7 +289,6 @@ throw new Error("Module parse failed: Unexpected token (1:0)\nYou may need an ap
   \************************/
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("react");
 
 /***/ }),
@@ -191,7 +299,6 @@ module.exports = require("react");
   \************************************/
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("react/jsx-runtime");
 
 /***/ })
@@ -210,7 +317,7 @@ module.exports = require("react/jsx-runtime");
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
-/******/ 			// no module.id needed
+/******/ 			id: moduleId,
 /******/ 			// no module.loaded needed
 /******/ 			exports: {}
 /******/ 		};
@@ -265,9 +372,6 @@ module.exports = require("react/jsx-runtime");
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be in strict mode.
-(() => {
-"use strict";
 /*!***********************!*\
   !*** ./src/index.tsx ***!
   \***********************/
@@ -279,11 +383,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   EStyle: () => (/* reexport safe */ _Button__WEBPACK_IMPORTED_MODULE_0__.EStyle),
 /* harmony export */   Label: () => (/* reexport safe */ _Label__WEBPACK_IMPORTED_MODULE_1__.Label)
 /* harmony export */ });
-/* harmony import */ var _Button__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Button */ "./src/Button/index.tsx");
-/* harmony import */ var _Label__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Label */ "./src/Label/index.tsx");
+/* harmony import */ var _Button__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Button */ "./src/Button/Button.tsx");
+/* harmony import */ var _Label__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Label */ "./src/Label/Label.tsx");
 
-
-})();
 
 /******/ 	return __webpack_exports__;
 /******/ })()
