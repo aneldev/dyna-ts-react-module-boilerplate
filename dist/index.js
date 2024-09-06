@@ -29,6 +29,7 @@ return /******/ (() => { // webpackBootstrap
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _Button_module_less__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Button.module.less */ "./node_modules/.pnpm/css-loader@7.1.2_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/.pnpm/typed-css-modules-loader@0.0.18/node_modules/typed-css-modules-loader/index.js??ruleSet[1].rules[3].use[2]!./node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.41_typescript@5.5.4_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./node_modules/.pnpm/less-loader@12.2.0_less@4.2.0_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/less-loader/dist/cjs.js!./src/Button/Button.module.less");
+/* harmony import */ var _Button_module_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Button.module.scss */ "./node_modules/.pnpm/css-loader@7.1.2_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[5].use[1]!./node_modules/.pnpm/typed-css-modules-loader@0.0.18/node_modules/typed-css-modules-loader/index.js??ruleSet[1].rules[5].use[2]!./node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.41_typescript@5.5.4_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[5].use[3]!./node_modules/.pnpm/sass-loader@16.0.1_sass@1.78.0_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/sass-loader/dist/cjs.js!./src/Button/Button.module.scss");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
 function _defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = r[t]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o); } }
@@ -42,6 +43,7 @@ function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.
 function _getPrototypeOf(t) { return _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function (t) { return t.__proto__ || Object.getPrototypeOf(t); }, _getPrototypeOf(t); }
 function _inherits(t, e) { if ("function" != typeof e && null !== e) throw new TypeError("Super expression must either be null or a function"); t.prototype = Object.create(e && e.prototype, { constructor: { value: t, writable: !0, configurable: !0 } }), Object.defineProperty(t, "prototype", { writable: !1 }), e && _setPrototypeOf(t, e); }
 function _setPrototypeOf(t, e) { return _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function (t, e) { return t.__proto__ = e, t; }, _setPrototypeOf(t, e); }
+
 
 
 
@@ -82,7 +84,7 @@ var Button = /*#__PURE__*/function (_React$Component) {
         _this$props$children = _this$props.children,
         children = _this$props$children === void 0 ? null : _this$props$children,
         onClick = _this$props.onClick;
-      var className = [userClassName, _Button_module_less__WEBPACK_IMPORTED_MODULE_2__.demoColor2, "my-button my-button--style-".concat(style, " "), "my-button--color-".concat(color), "my-button--size-".concat(size)].filter(Boolean).join(' ');
+      var className = [userClassName, _Button_module_less__WEBPACK_IMPORTED_MODULE_2__.demoColor2, _Button_module_scss__WEBPACK_IMPORTED_MODULE_3__.grayColor, "my-button my-button--style-".concat(style, " "), "my-button--color-".concat(color), "my-button--size-".concat(size)].filter(Boolean).join(' ');
       return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
         className: className,
         href: href,
@@ -159,6 +161,34 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.c6cBpWK1AK2iUn6zPq2w {
 // Exports
 var redColor = `c6cBpWK1AK2iUn6zPq2w`;
 var demoColor2 = `pyrR0pM4adpv_lskssVl`;
+/* unused harmony default export */ var __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/.pnpm/css-loader@7.1.2_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[5].use[1]!./node_modules/.pnpm/typed-css-modules-loader@0.0.18/node_modules/typed-css-modules-loader/index.js??ruleSet[1].rules[5].use[2]!./node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.41_typescript@5.5.4_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[5].use[3]!./node_modules/.pnpm/sass-loader@16.0.1_sass@1.78.0_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/sass-loader/dist/cjs.js!./src/Button/Button.module.scss":
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/.pnpm/css-loader@7.1.2_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[5].use[1]!./node_modules/.pnpm/typed-css-modules-loader@0.0.18/node_modules/typed-css-modules-loader/index.js??ruleSet[1].rules[5].use[2]!./node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.41_typescript@5.5.4_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[5].use[3]!./node_modules/.pnpm/sass-loader@16.0.1_sass@1.78.0_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/sass-loader/dist/cjs.js!./src/Button/Button.module.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   grayColor: () => (/* binding */ grayColor)
+/* harmony export */ });
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/.pnpm/css-loader@7.1.2_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/css-loader/dist/runtime/sourceMaps.js */ "./node_modules/.pnpm/css-loader@7.1.2_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/css-loader/dist/runtime/sourceMaps.js");
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/.pnpm/css-loader@7.1.2_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/css-loader/dist/runtime/api.js */ "./node_modules/.pnpm/css-loader@7.1.2_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_7_1_2_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_7_1_2_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, `.Wi2h7SJ3c93TlC43vy5L {
+  color: gray;
+}`, "",{"version":3,"sources":["webpack://./src/Button/Button.module.scss"],"names":[],"mappings":"AAAA;EACE,WAAA;AACF","sourceRoot":""}]);
+// Exports
+var grayColor = `Wi2h7SJ3c93TlC43vy5L`;
 /* unused harmony default export */ var __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
 
