@@ -8,6 +8,7 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_modules/,
       },
+
       {
         // TypeScript loader
         test: /\.(tsx|ts)$/,
@@ -25,7 +26,9 @@ module.exports = {
           },
         ]
       },
-      {	// css loader
+
+      {
+        // CSS loader
         test: /\.css$/,
         use: [
           'style-loader',
@@ -33,17 +36,14 @@ module.exports = {
         ],
         exclude: /node_modules/,
       },
+
       {
         // Rule for LESS modules
-        // test: /\.module\.less$/,
         test: /\.less$/,
         exclude: [
           /node_modules/,
           /^((?!\.module).)*\.less$/,
         ],
-        // resolve: {
-        //   extensions: ['.module.less']
-        // },
         use: [
           'style-loader',
           {
@@ -115,6 +115,7 @@ module.exports = {
           'less-loader',
         ],
       },
+
       {
         test: /\.module.scss$/,
         exclude: /node_modules/,
@@ -173,6 +174,7 @@ module.exports = {
           'sass-loader',
         ],
       },
+
       {
         // inline images load (loads the url() defined in the css)
         // help: https://christianalfoni.github.io/react-webpack-cookbook/Inlining-images.html
@@ -183,6 +185,7 @@ module.exports = {
           limit: 100000
         },
       },
+
       {
         test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
         exclude: /node_modules/,
@@ -202,6 +205,7 @@ module.exports = {
           outputPath: '/static/',
         },
       },
+
       // Alternative way to load fonts, always as links
       // {
       //   test: /\.(ttf|eot|woff|woff2)$/,
