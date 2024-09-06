@@ -6,6 +6,7 @@ const {plugins} = require('../webpack.plugins.js');
 const config: StorybookConfig = {
   stories: [
     "../src/**/*.stories.@(mjs|ts|tsx)",
+    "../stories/**/*.stories.@(mjs|ts|tsx)",
   ],
   addons: [
     "@storybook/addon-webpack5-compiler-swc",
