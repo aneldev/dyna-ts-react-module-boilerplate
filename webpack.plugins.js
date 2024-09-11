@@ -26,9 +26,10 @@ module.exports = {
         compilation.errors.push(new Error(
           [
             'Circular Dependency detected:',
-            webpackModuleRecord,
-            paths.join(' -> '),
-          ].join(' '),
+            `Module record: ${webpackModuleRecord}`,
+            'Paths: ',
+            ...paths.map(path=> `--> ${path}`),
+          ].join('\n'),
         ))
       },
       // `onEnd` is called before the cycle detection ends
