@@ -25,9 +25,9 @@ module.exports = {
         if (paths[0].indexOf('node_modules/') > -1) return; // ignore node_modules
         compilation.errors.push(new Error(
           [
-            'Circular Dependency detected:',
-            `Module record: ${webpackModuleRecord}`,
-            'Paths: ',
+            'CDD: Circular Dependency Detected:',
+            `CDD: Module record: ${webpackModuleRecord}`,
+            'CDD: Paths: ',
             ...paths.map(path=> `--> ${path}`),
           ].join('\n'),
         ))
