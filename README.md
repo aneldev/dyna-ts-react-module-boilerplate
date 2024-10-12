@@ -1,19 +1,26 @@
-# About
+# About dyna-ts-module-boilerplate
 
-Webpack boilerplate for Typescript React Components to use as a module in other apps or other modules.
+**Boilerplate with Webpack setup for ES6/ESNEXT for React TypeScript Component Libraries/Packages.**
 
-Develop, debug, test, Storybook, and distribute React component(s).
+- Develop in TypeScript
+- Debug with Chrome Dev Tools
+- Write tests with Jest
+- Lint
+- Build
+- Deploy on Git and npm
 
-# Usage
+This boilerplate includes minimal configuration and dependencies for creating one or multiple modules written in TypeScript.
 
-Replace the `my-component` with the name of your new module.
-```
-git clone http://github.com/aneldev/dyna-ts-react-module-boilerplate my-component
-cd my-component
-yarn run bootstrap
-```
+It can export one module or multiple for explicit imports.
 
-That's all.
+**Happy coding!**
+
+# Not react, just Web or Node library?
+
+This boilerplate is designed for developing React components. However, if you need a lighter boilerplate for node utils, or web utils without react, you can use the 
+the [dyna-ts-module-boilerplate](https://www.npmjs.com/package/dyna-ts-module-boilerplate), which is a similar boilerplate but lighter. 
+
+_Again this supports React and JSX but hasn't StoryBook, react ESList etc._
 
 # Why is `create-react-app` different?
 
@@ -21,184 +28,166 @@ It is different because `create-react-app` creates React applications and includ
 
 The `dyna-ts-react-module-boilerplate` creates React modules (reusable components). It creates React components that will be used in React applications or other modules.
 
-# Supported React versions
+# Usage
 
-|React version|Git entity|Name|
-|:---:|---|---|
-|15|tag|v4.1.5|
-|16|branch|master|
-|17|branch|react-v17|
+```
+git clone https://github.com/aneldev/dyna-ts-module-boilerplate.git my-ts-module
+cd my-ts-module
+pnpm bootstrap
+```
+
+> Running `bootstrap` is mandatory to remove the bootstrap scripts and files and start with a clean module. It converts the boilerplate package into a module ready for development.
+
+Then
+
+`git init` for versioning
 
 # Features
 
-- Write in Typescript, .tsx, .ts, but also .jsx & .js are supported`
-- Ready for react-router, dev server serves deep links and multiple ports
-- Load inline images
-- Configured font loader
-- Lint
+- Uses the powerful `pnpm` as a packager, but you can easily replace it with another one
+- Written in TypeScript, .tsx, .ts
 - Supports CSS, SCSS & LESS at the same time
-- CSS modules (with `*.module.less` filename pattern)
-- Test with Jest, snapshots
-- Analyse dependencies with Webpack Analyser
-- Distribute as a module with TypeScript Definitions (ready to import)
-- Distributed versions work in Javascript and Typescript projects
-- Detect circular dependencies (where leads to import `undefined` or `null` values)
+- Advanced ESLint
+- Tested with Jest
+- Debugged with Chrome Dev Tools
+- Distributes with TypeScript definitions
+- Supports distribution of one or multiple modules for explicit import
+- Supports distribution of modules for Web and Node
+- Analyzes the distribution
+- Exports ESNext modules
+- Exports Typescript declarations
+- Detects circular dependencies (which can lead to `undefined` or `null` imports)
+- Monorepo friendly
 
-# Environment
+# Specs
 
-This boilerplate runs only under `bash` (Linux, Mac, Windows with git bash).
+- Webpack 5
+- TypeScript v5 with higher restrictions
+- Supports ES2019 lib
+- React JSX syntax
+- Less/Scss module CSS or other loaders
+- Image loaders
+- ESLint configuration for React and rules
+- Webpack analyzer for package content with the [webpack-bundle-analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer)
 
-Scripts of this package are not designed for the Windows command line!
+# Configuration
 
-For Windows users, there are multiple ways:
-- [Git bash](https://git-scm.com/downloads) (probably you have this already installed on your machine)
-- [Win10 Ubuntu shell](https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/) _recommended for windows users_
-- [Cygwin terminal](http://www.cygwin.com/)
-- Any other bash command line
+This is a **Zero-Configuration** boilerplate!
 
-# Export a single module
+However, if needed, you should only edit the following:
 
-Export whatever you want in `/src/index.tsx` line this
+## Webpack Loaders/Rules
+
+Add them in `/webpack.loaders.js`.
+
+## Webpack Plugins
+
+Add them in `/webpack.plugins.js`.
+
+# Distributions
+
+This boilerplate can export one or multiple independent modules.
+
+## Single module
+
+If the boilerplate finds the `src/index.ts` file, it considers the module *Single*.
+
+**For example:**
+
+Content of `src/index.ts`:
 ```
-export { Button, IButtonProps} from "./Button.tsx";
+export class Invoice {...}
 ```
-From another package, import the Button line this:
+From another package, you can import this module like this:
 ```
-import {Button} from "my-compoennt";
-```
-
-# Export multiple modules isolated
-
-Each folder would contain components, and each component would be exported as a module. This will help the shaking tree method of webpack since your final App module won't include components that are not used.
-
-Delete the `/src/index.tsx` and under the `/src` folder, each folder will be considered a module.
-
-The Absence of the `/src/index.tsx` will make the boilerplate build each folder as a module. _If the `/src/index.tsx` is exists, then only one module is exported._
-
-The folder structure will be like this:
-```
-/src
-/src/Button/Button.tsx
-/src/Button/index.tsx   // This index exports for the Button only
-/src/Label/Label.tsx
-/src/Label/index.tsx    // This index exports for the Label only
-```
-From another package, import the Button line this:
-```
-import {Button} from "my-compoennt/dist/Button";
+import { Invoice } from "my-ts-module";
 ```
 
-# Folder structure
+## Multi modules
 
-There are loaders for various files, like: `.less`, `.svg`, `.jpg`, `etc.`. Loaders *loaded* in `/webpack.loaders.js`, where you can add your loaders used for all tasks (npm scripts).
+If the boilerplate cannot find the `src/index.ts` file, it considers the module *Multi*. In this case, the `/src` folder should contain folders, each representing a module with its own `index.ts` file.
+
+This allows making **explicit imports** from other packages or apps improving the tree shaking.
+
+**For example:**
+
+Folder structure:
+```
+src/Invoice/index.ts   // content: export class Invoice {...}
+src/Person/index.ts    // content: export class Person {...}
+```
+From another package, you can explicit import these modules like this:
+```
+import { Invoice } from "my-ts-module/dist/Invoice";
+import { Person } from "my-ts-module/dist/Person";
+```
+Similarly, you can distribute modules for specific environments, such as Web or Node, ensuring you import dependencies compatible with the target environment.
+
+The `dist` folder contains only JavaScript code (ES5), without Webpack module loaders, so the code works everywhere as ES5.
+
+## Switching from Single to Multi
+
+1. The `/src` folder should contain only subfolders.
+2. Each subfolder is considered an independent module.
+3. Each subfolder should have an `/index.ts` that exports what’s needed.
+4. Delete the `src/index.ts`.
+
+## Switching from Multi to Single
+
+1. Create the `src/index.ts`.
+2. Export what’s needed.
+3. The folder structure can be anything.
 
 # Develop
 
-You can develop using the Storybook. In any case on `yarn release`, only what is exported by `src/index.tsx` will be released.
+Development is based on [Jest](https://facebook.github.io/jest) tests. After creating something in the `src`, create a Jest test like the [main.test.ts](tests/scripts/main.test.ts) and run or debug it.
 
-If you want to add a dependency that will be used only in a Story or in your custom app, install it as `dev` dependency.
+**Steps:**
 
-## Start the Storybook
+1. Write your Jest tests under the `/test` folder or elsewhere.
+2. **Important** Place a `debugger;` statement somewhere; otherwise, the debug runtime won’t stop.
+3. Run `pnpm test-debug <name of the test file>`.
+4. Open [chrome://inspect/#devices](chrome://inspect/#devices).
+5. Select the remote target instance and click `inspect`.
+6. Ready for debugging.
 
-Stories are all files with extension `.stories.tsx`. There is already a `stories` folder, but story files would be anywhere.
+**Note:** You might need to press `Resume script` (the `Play` button) to skip some internal Node lib points.
 
-`yarn storybook`
+For more information about the tests, read below.
 
-Or `yarn storybook-at <custom port>` to open Storybook on a custom port.
+# Analyze
 
-## Lint
-
-`yarn lint`
-
-Update the `tslint.json` with your preferences.
-
-## Analyse dependencies
-
-Run `yarn build-analyze` and check which dependencies will be delivered in your module.
+1. Run `pnpm analyse`.
 
 # Test
 
 ## Write tests
 
-For tests, this boilerplate uses the [Jest](https://facebook.github.io/jest/).
+For testing, [Jest](https://facebook.github.io/jest) is used. Check the documentation for details.
 
-Test files can be anywhere but they should have a name `*.(test|spec).(ts|tsx|js|jsx)`. There is a `tests/` folder if you want to use it but this is not mandatory.
+Test files can be located anywhere but should have names in the format `*.(test|spec).(ts|js)`. You can use the `tests/` folder, but it’s not required.
 
 ## Run tests
 
-Call `yarn test` to run your tests and coverage.
+Run `pnpm test` to execute your tests and coverage.
 
-Call `yarn test-watch` to run your tests after any change, with no coverage.
+Run `pnpm test-watch` to execute tests on changes.
 
-# Build
+Run `pnpm test-no-coverage` to run tests without coverage.
 
-`yarn build`
+Run `pnpm test-update-snapshots` to update the snapshots.
 
-Build creates your distributable version of your component under `./dist`. Typescript's declaration will be there too.
+Run `pnpm test-debug` to debug with Chrome Dev Tools.
 
-You don't need to use the `build`, since the `release` script calls the `build`.
+# Dist / Release
 
-You will need this is if you have linked this package with another local package (like `yarn link` or so).
+## General
 
-# Release
+Run `pnpm build` to create a distributable version of your project in the `dist/` folder.
 
-`yarn release`
+The package configuration exports the `dist/` folder, so you need to run `pnpm build` each time you want to publish this package. TypeScript declarations are included out of the box.
 
-- builds the component
-- bumps the patch version
-- publishes to npm _and_
-- it pushes the changes to your repo
-
-The output is not compressed, while it is intended to be used in other apps where it will be bundled and compressed. This also makes your component debuggable.
-
-**For private packages**, where you don't want to expose them to `yarn`, remove the `yarn pulish` call from the `publish-push` script.
-
-# Exclude dependencies from the output bundle
-
-You can exclude dependencies from the distributed bundle by declaring them in the `/webpack.dist.config.js`. By default, all dependencies are declared there.
-
-# Features
-
-## Link with `sync-usages`
-
-### About
-
-Link your modules easily with the `yarn sync-usages --watch` watcher script.
-
-In case that the `yarn link` doesn't work for any reason, this boilerplate offers a "copy" approach to update the packages.
-
-The script performs:
-
-- Scans deeply for usages of this package in all siblings folders
-- Updates all usages with the content of this package, excluding the `node_modules` of this package
-- Before the copy clears the target `src` && `dist` folders
-
-### Run
-
-- Call `yarn sync-usages` to sync it once
-- Call `yarn sync-usages --watch` for run in watcher mode
-
-### Prerequisite
-
-For all except Mac desktops, you have to install the `rsync` on your system. _See below how to do it._
-
-## About the `rsync` prerequisite
-
-You have to install the `rsync` on your system.
-- For Mac, you don't need to do anything. It is already there.
-- For Linux [follow this guide](https://www.hostinger.com/tutorials/how-to-use-rsync)
-- For Windows's _not a clear guid has been found, feel free to fork this doc._
-
-# Known issues
-
-## HMR performs only full refresh
-
-The callbacks are not called only the page is refreshed. Forks are welcome.
-
-# Typescript module without React?
-
-If you are interested in a **typescript module**, in other words, if you want to implement everything as we do here but without any react components,
-check this out this [dyna-ts-module-boilerplate](https://github.com/aneldev/dyna-ts-module-boilerplate) repo.
+Run `pnpm release` to build, publish to npm, and push to your repo.
 
 # References
 

@@ -5,15 +5,15 @@
       "DOM",
       "DOM.Iterable"
     ],
-    "strict": true,
-    "outDir": "./dist/",
-    "declaration": true,
-    "declarationDir": "./dist/",
-    "sourceMap": true,
     "module": "esnext",
     "target": "es6",
     "moduleResolution": "node",
     "jsx": "react-jsx",
+    "strict": true,
+    "rootDir": "./src/",
+    "outDir": "./dist/",
+    "sourceMap": false,
+    "declaration": false,
     "allowJs": false,
     "esModuleInterop": true,
     "skipLibCheck": true,
@@ -26,19 +26,23 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "resolveJsonModule": true,
-    "emitDeclarationOnly": false,
     "types": [
       "node",
       "jest"
     ]
   },
   "compileOnSave": false,
-  "files": [
-    "./src/index.tsx"
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.json",
   ],
   "exclude": [
     "node_modules",
-    "**/*.test.ts",
-    "**/*.test.tsx"
+    "src/**/*.test.ts",
+    "src/**/*.test.tsx",
+    "src/**/*.spec.ts",
+    "src/**/*.spec.tsx",
+    "src/**/*.stories.tsx"
   ]
 }

@@ -17,7 +17,6 @@
     "install-clean": "rm -rf node_modules; pnpm install",
     "storybook-start": "storybook dev -p 6006",
     "storybook-deploy": "storybook build && gh-pages -d storybook-static",
-    "prebuild": "node tsconfig.update.js",
     "build": "pnpm lint && rm -rf ./dist && webpack --config webpack.dist.config.js",
     "build-watch": "rm -rf ./dist; pnpm webpack --watch --config webpack.dist.config.js",
     "build-analyze": "webpack --config webpack.dist.analyze.config.js",
@@ -33,8 +32,8 @@
     "test-no-coverage": "jest --collectCoverage=false --no-cache --runInBand",
     "test-update-snapshots": "jest --updateSnapshot --runInBand",
     "update-deps": "rm rf pnpm-lock.yaml; pnpm update --latest",
-    "publish-push": "pnpm version patch && pnpm publish --non-interactive && git push && git push --tags",
-    "release": "pnpm build && pnpm test && pnpm storybook-build git && add -u && git add -A && git commit --allow-empty -m \"Build changes\" && pnpm publish-push && pnpm storybook-deploy"
+    "publish-push": "pnpm version patch && pnpm publish --no-git-checks && git push && git push --tags",
+    "release": "pnpm build && pnpm test && git add -u && git add -A && git commit --allow-empty -m \"Build changes\" && pnpm publish-push && pnpm storybook-deploy"
   },
   "keywords": [
     "react",
@@ -104,7 +103,7 @@
     "jsdom": "^24.1.1",
     "less": "^4.2.0",
     "less-loader": "^12.2.0",
-    "nodemon": "^3.1.4",
+    "nodemon": "^3.1.7",
     "postcss-cli": "^11.0.0",
     "postcss-flexbugs-fixes": "5.0.2",
     "postcss-loader": "^8.1.1",

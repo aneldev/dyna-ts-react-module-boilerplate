@@ -1,20 +1,30 @@
-const path = require('path');
-
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const CircularDependencyPlugin = require('circular-dependency-plugin')
+const {execSync} = require("child_process");
+
+/**
+ * Build `.d.ts` TypeScript declaration files using a different file, the `tsconfig.d.ts.json`.
+ *
+ * This is necessary because, with a single `tsconfig` file in Webpack watch mode,
+ * the `.d.ts` files from other chunks (when there isn't a single root `index.ts` file) disappear.
+ *
+ * This seems to be a bug in Webpack.
+ * A workaround is to build the `.d.ts` files using a custom plugin.
+ */
+class BuildDTSAndMapFiles {
+  apply(compiler) {
+    compiler.hooks.done.tap('BuildDTSAndMapFiles', () => {
+      try {
+        execSync('npx tsc --project tsconfig.d.ts.json', {stdio: 'inherit'});
+      } catch (_e) {
+        // Swallow the error since it is already printed
+        // Otherwise it will break the builder!
+      }
+    });
+  }
+}
 
 module.exports = {
   plugins: [
-    // new webpack.IgnorePlugin(/\/something$/),            // Ignore something
-    // new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/), // Ignore Moment's locale
-
-    new ForkTsCheckerWebpackPlugin({
-      async: false,
-      typescript: {
-        configFile: path.resolve(__dirname, 'tsconfig.json')
-      }
-    }),
-
     new CircularDependencyPlugin({
       // `onStart` is called before the cycle detection starts
       onStart({compilation}) {},
@@ -28,12 +38,15 @@ module.exports = {
             'CDD: Circular Dependency Detected:',
             `CDD: Module record: ${webpackModuleRecord}`,
             'CDD: Paths: ',
-            ...paths.map(path=> `--> ${path}`),
+            ...paths.map(path => `--> ${path}`),
           ].join('\n'),
         ))
       },
       // `onEnd` is called before the cycle detection ends
-      onEnd({compilation}) {},
+      onEnd({compilation}) {
+      },
     }),
+
+    new BuildDTSAndMapFiles(),
   ]
 };
