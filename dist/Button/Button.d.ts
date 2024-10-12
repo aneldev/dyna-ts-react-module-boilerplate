@@ -29,3 +29,4 @@ export declare class Button extends React.Component<IButtonProps> {
     static __docgenInfo?: object;
     render(): React.JSX.Element;
 }
+//# sourceMappingURL=Button.d.ts.map
