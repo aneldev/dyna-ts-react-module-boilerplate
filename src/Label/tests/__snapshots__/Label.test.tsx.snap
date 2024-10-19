@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Home has expected content with deep render 1`] = `
+exports[`Label renders with minimal props 1`] = `
 <DocumentFragment>
-  <div />
+  <div>
+    Customers
+  </div>
 </DocumentFragment>
 `;
