@@ -141,10 +141,9 @@
     "transform": {
       "^.+\\.(ts|tsx)$": "ts-jest"
     },
-    "transformIgnorePatterns": [
-      "node_modules/(?!(react-native|\\@mui)/)"
-    ],
+    "transformIgnorePatterns": ["/node_modules/", "\\.pnp\\.[^\\/]+$"],
     "testRegex": "(src|tests)/.*\\.(test|spec)\\.(ts|tsx|js|jsx)$",
+    "moduleDirectories": ["node_modules", "src"],
     "moduleFileExtensions": [
       "ts",
       "tsx",
@@ -157,6 +156,7 @@
     "coverageDirectory": "coverage",
     "collectCoverageFrom": [
       "src/**/*.{ts,tsx,js,jsx}",
+      "!src/@types",
       "!src/**/*.d.ts"
     ]
   },
