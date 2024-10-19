@@ -13,10 +13,20 @@ const package_ = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
 const loaders = require('./webpack.loaders.js');
 const plugins = require('./webpack.plugins.js');
 
+/**
+ * Exclude src/? folders when not in single mode
+ * @type {string[]}
+ */
+const EXCLUDE_SRC_FOLDERS = [
+  "@types",
+  // Other folders that won't by built by Webpack might be listed here
+]
+
 const getModuleNames =
   root =>
     fs.readdirSync(root, {withFileTypes: true})
       .filter(dirent => dirent.isDirectory())
+      .filter(dirent => !EXCLUDE_SRC_FOLDERS.includes(dirent.name))
       .map(dirent => dirent.name);
 
 const moduleNames = getModuleNames('./src');
@@ -81,7 +91,10 @@ module.exports = {
       },
   resolve: {
     alias: {},
-    extensions: [".webpack.js", ".web.js", ".ts", ".tsx", ".js", ".jsx"]
+    extensions: [".webpack.js", ".web.js", ".ts", ".tsx", ".js", ".jsx"],
+    fallback: {
+      stream: require.resolve("buffer/"),
+    }
   },
   module: {
     rules: loaders.module.rules,
