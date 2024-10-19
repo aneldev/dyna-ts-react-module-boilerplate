@@ -131,35 +131,6 @@
     "webpack-dev-server": "^5.0.4",
     "webpack-node-externals": "^3.0.0"
   },
-  "jest": {
-    "setupFilesAfterEnv": [
-      "./tests/setup/testSetup.ts"
-    ],
-    "automock": false,
-    "collectCoverage": false,
-    "testEnvironment": "jsdom",
-    "transform": {
-      "^.+\\.(ts|tsx)$": "ts-jest"
-    },
-    "transformIgnorePatterns": ["/node_modules/", "\\.pnp\\.[^\\/]+$"],
-    "testRegex": "(src|tests)/.*\\.(test|spec)\\.(ts|tsx|js|jsx)$",
-    "moduleDirectories": ["node_modules", "src"],
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx"
-    ],
-    "moduleNameMapper": {
-      "\\.(css|less|scss|jpg|png|svg|gif)$": "identity-obj-proxy"
-    },
-    "coverageDirectory": "coverage",
-    "collectCoverageFrom": [
-      "src/**/*.{ts,tsx,js,jsx}",
-      "!src/@types",
-      "!src/**/*.d.ts"
-    ]
-  },
   "engines": {
     "npm": ">=10.0.0 <11.0.0",
     "node": ">=20.0.0 <21.0.0"
