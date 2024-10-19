@@ -144,7 +144,7 @@ Development is based on [Jest](https://facebook.github.io/jest) tests. After cre
 
 **Steps:**
 
-1. Write your Jest tests under the `/test` folder or elsewhere.
+1. Write your Jest tests anywhere under the `./src`.
 2. **Important** Place a `debugger;` statement somewhere; otherwise, the debug runtime won’t stop.
 3. Run `pnpm test-debug <name of the test file>`.
 4. Open [chrome://inspect/#devices](chrome://inspect/#devices).
@@ -165,7 +165,7 @@ For more information about the tests, read below.
 
 For testing, [Jest](https://facebook.github.io/jest) is used. Check the documentation for details.
 
-Test files can be located anywhere but should have names in the format `*.(test|spec).(ts|js)`. You can use the `tests/` folder, but it’s not required.
+Test files can be located anywhere but should have names in the format `*.(test|spec).(ts|js)`.
 
 ## Run tests
 

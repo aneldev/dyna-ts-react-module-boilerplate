@@ -7,7 +7,7 @@ module.exports = {
     "^.+\\.(ts|tsx)$": "ts-jest",
   },
   transformIgnorePatterns: ["/node_modules/", "\\.pnp\\.[^\\/]+$"],
-  testRegex: "(src|tests)/.*\\.(test|spec)\\.(ts|tsx)$",
+  testRegex: "(src)/.*\\.(test|spec)\\.(ts|tsx)$",
   moduleFileExtensions: ["ts", "tsx", "js", "jsx"],
   moduleNameMapper: {
     "\\.(css|less|scss|jpg|png|svg|gif)$": "identity-obj-proxy",
