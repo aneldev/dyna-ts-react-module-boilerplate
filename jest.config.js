@@ -2,7 +2,7 @@ module.exports = {
   setupFilesAfterEnv: ["./jest.setup.ts"],
   automock: false,
   collectCoverage: false,
-  testEnvironment: "jsdom",
+  testEnvironment: "jest-fixed-jsdom",
   transform: {
     "^.+\\.(ts|tsx)$": [
       "ts-jest",
