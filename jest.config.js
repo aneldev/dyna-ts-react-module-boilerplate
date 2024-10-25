@@ -25,6 +25,7 @@ module.exports = {
     "src/**/*.{ts,tsx}",
     "!src/@types",
     "!src/**/*.d.ts",
+    "!src/**/*.stories.tsx",
     "!src/index.ts",
     "!src/index.tsx",
     "!src/*/index.ts",
