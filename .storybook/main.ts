@@ -21,13 +21,13 @@ const config: StorybookConfig = {
     options: {},
   },
   webpackFinal: async (config: any) => {
-    // Remove the reference of the ./tsconfig.jsom from storybook
+    // Remove the reference of the ./tsconfig.json from storybook
     // Otherwise, the Storybook will write on dist folder!
     // Code point: 20240906173131
     for (const rule of rules) {
       if (Array.isArray(rule.use)) {
         for (const use of rule.use) {
-          if (use.loader==="ts-loader") {
+          if (use.loader === "ts-loader") {
             if (use.options) {
               use.options.transpileOnly = true;
               delete use.options.configFile;
@@ -41,7 +41,7 @@ const config: StorybookConfig = {
     // Storybook supports css
     // Code point: 20240906173110
     rules = rules.filter((rule: any) => {
-      if (rule.test.toString()==='/\\.css$/') return false;
+      if (rule.test.toString() === '/\\.css$/') return false;
       return true;
     });
 
