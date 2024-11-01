@@ -1,4 +1,4 @@
-import * as fs from 'fs';
+const fs = require("fs");
 
 const moduleName = process.cwd().replace(/\\/g, '/').split('/').pop();
 
