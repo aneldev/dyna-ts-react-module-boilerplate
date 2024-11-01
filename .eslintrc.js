@@ -2,10 +2,13 @@
 module.exports = {
   root: true,
   env: {
-    "browser": false,
-    "es2021": true,
+    browser: false,
+    es2021: true,
     "jest/globals": true,
   },
+  ignorePatterns: [
+    "under-construction/",
+  ],
   parser: "@typescript-eslint/parser",
   plugins: [
     "eslint-plugin-react",
@@ -14,6 +17,9 @@ module.exports = {
   ],
   extends: [
     "react-app",
+    "react-app/jest",
+    "plugin:storybook/recommended",
+    "plugin:@typescript-eslint/recommended",
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:jest/recommended",
@@ -29,17 +35,12 @@ module.exports = {
           "warn",
         ],
 
-        // Disable this due to eslint version problem https://pretagteam.com/question/react-was-used-before-it-was-defined-eslint-warning
-        "no-use-before-define": "off",
-        "@typescript-eslint/no-use-before-define": "off",
-
-        "no-template-curly-in-string": "off",
-
         "no-console": [
           "warn",
           {
             allow: [
               "log",
+              "info",
               "warn",
               "error",
               "time",
@@ -48,10 +49,6 @@ module.exports = {
             ],
           },
         ],
-
-        "no-case-declarations": "off",
-
-        "@typescript-eslint/no-non-null-assertion": "off",
 
         "space-infix-ops": [
           "warn",
@@ -77,18 +74,15 @@ module.exports = {
             }
           }
         ],
-        "@typescript-eslint/no-explicit-any": "off",
-        "@typescript-eslint/explicit-module-boundary-types": "off",
         "@typescript-eslint/no-empty-interface": "off",
+        "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/ban-ts-comment": "off",
-        "@typescript-eslint/no-inferrable-types": "off",
         "@typescript-eslint/prefer-namespace-keyword": "warn",
         "@typescript-eslint/naming-convention": [
           "warn",
           {
             selector: "interface",
-            format: [
-            ],
+            format: [],
             custom: {
               regex: "^I[A-Z]",
               match: true,
@@ -111,7 +105,6 @@ module.exports = {
           "always"
         ],
         "@typescript-eslint/type-annotation-spacing": "warn",
-        "@typescript-eslint/no-unused-expressions": "off",
         "brace-style": [
           "warn",
           "stroustrup"
@@ -216,7 +209,9 @@ module.exports = {
           "always",
           {
             markers: [
-              "/"
+              "/",
+              "#region",
+              "#endregion",
             ]
           }
         ],
@@ -227,13 +222,18 @@ module.exports = {
             before: false
           }
         ],
-        "function-call-argument-newline": "off",
-        "function-paren-newline": "off",
         "newline-per-chained-call": "warn",
         "react-hooks/exhaustive-deps": "off",
         "react/jsx-pascal-case": [
           "warn",
           {}
+        ],
+        "no-restricted-syntax": [
+          "error",
+          {
+            selector: 'JSXAttribute[name.name="dangerouslySetInnerHTML"]',
+            message: 'Using dangerouslySetInnerHTML is not allowed! Use the HTMLContent instead!'
+          }
         ],
         "react/jsx-first-prop-new-line": [
           "warn",
@@ -256,7 +256,6 @@ module.exports = {
           "warn",
           "always",
         ],
-        "jest/no-conditional-expect": "off",
       }
     },
     {

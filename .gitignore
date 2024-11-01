@@ -1,8 +1,12 @@
 .git/
 .idea/
+.vscode/
+.DS_Store
+dev/public/static
+storybook-static
 coverage/
 node_modules/
 temp/
 npm-debug.log
 bash.exe.stackdump
-/yarn-error.log
+*storybook.log

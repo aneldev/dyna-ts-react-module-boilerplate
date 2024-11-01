@@ -1,19 +1,19 @@
 {
   "compilerOptions": {
     "lib": [
-      "es2015",
-      "es2015.promise",
-      "es2016",
-      "es6",
-      "dom"
+      "ES2019",
+      "DOM",
+      "DOM.Iterable"
     ],
-    "outDir": "./dist/",
-    "declaration": true,
-    "declarationDir": "./dist/",
-    "sourceMap": true,
-    "module": "commonjs",
-    "target": "es5",
-    "jsx": "react",
+    "module": "esnext",
+    "target": "es6",
+    "moduleResolution": "node",
+    "jsx": "react-jsx",
+    "strict": true,
+    "rootDir": "src",
+    "outDir": "dist",
+    "sourceMap": false,
+    "declaration": false,
     "allowJs": false,
     "esModuleInterop": true,
     "skipLibCheck": true,
@@ -23,7 +23,6 @@
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "strictNullChecks": true,
-    "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "resolveJsonModule": true,
@@ -33,7 +32,17 @@
     ]
   },
   "compileOnSave": false,
-  "files": [
-    "./src/index.tsx"
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.json",
+  ],
+  "exclude": [
+    "node_modules",
+    "src/**/*.test.ts",
+    "src/**/*.test.tsx",
+    "src/**/*.spec.ts",
+    "src/**/*.spec.tsx",
+    "src/**/*.stories.tsx"
   ]
 }

@@ -26,5 +26,7 @@ export interface IButtonProps {
 }
 export declare class Button extends React.Component<IButtonProps> {
     static defaultProps: IButtonProps;
-    render(): JSX.Element;
+    static __docgenInfo?: object;
+    render(): React.JSX.Element;
 }
+//# sourceMappingURL=Button.d.ts.map

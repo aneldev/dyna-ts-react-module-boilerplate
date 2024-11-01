@@ -2,6 +2,8 @@
 
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
+process.traceDeprecation = true;
+
 const config = require('./webpack.dist.config.js');
 
 config.externals = undefined;

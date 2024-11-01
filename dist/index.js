@@ -7,968 +7,102 @@
 		exports["dyna-ts-react-module-boilerplate"] = factory();
 	else
 		root["dyna-ts-react-module-boilerplate"] = factory();
-})(window, function() {
-return /******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-/******/
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId]) {
-/******/ 			return installedModules[moduleId].exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			i: moduleId,
-/******/ 			l: false,
-/******/ 			exports: {}
-/******/ 		};
-/******/
-/******/ 		// Execute the module function
-/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/
-/******/ 		// Flag the module as loaded
-/******/ 		module.l = true;
-/******/
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/
-/******/
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
-/******/
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
-/******/
-/******/ 	// define getter function for harmony exports
-/******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
-/******/ 		}
-/******/ 	};
-/******/
-/******/ 	// define __esModule on exports
-/******/ 	__webpack_require__.r = function(exports) {
-/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 		}
-/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 	};
-/******/
-/******/ 	// create a fake namespace object
-/******/ 	// mode & 1: value is a module id, require it
-/******/ 	// mode & 2: merge all properties of value into the ns
-/******/ 	// mode & 4: return value when already ns object
-/******/ 	// mode & 8|1: behave like require
-/******/ 	__webpack_require__.t = function(value, mode) {
-/******/ 		if(mode & 1) value = __webpack_require__(value);
-/******/ 		if(mode & 8) return value;
-/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
-/******/ 		var ns = Object.create(null);
-/******/ 		__webpack_require__.r(ns);
-/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
-/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
-/******/ 		return ns;
-/******/ 	};
-/******/
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
-/******/ 	__webpack_require__.n = function(module) {
-/******/ 		var getter = module && module.__esModule ?
-/******/ 			function getDefault() { return module['default']; } :
-/******/ 			function getModuleExports() { return module; };
-/******/ 		__webpack_require__.d(getter, 'a', getter);
-/******/ 		return getter;
-/******/ 	};
-/******/
-/******/ 	// Object.prototype.hasOwnProperty.call
-/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-/******/
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/dist/";
-/******/
-/******/
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
-/******/ })
-/************************************************************************/
-/******/ ({
-
-/***/ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?!./node_modules/less-loader/dist/cjs.js!./src/Button/Button.less":
-/*!*********************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader!./node_modules/postcss-loader/lib??ref--8-2!./node_modules/less-loader/dist/cjs.js!./src/Button/Button.less ***!
-  \*********************************************************************************************************************************************/
-/*! no static exports found */
-/*! all exports used */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".my-button {\n  outline: none;\n}\n.my-button--style-ROUNDED {\n  font-size: 0;\n}\n.my-button--style-ROUNDED button {\n  outline: none;\n  border-style: solid;\n  cursor: pointer;\n  -webkit-transition: background-color 200ms ease-out;\n  transition: background-color 200ms ease-out;\n}\n.my-button--style-ROUNDED.my-button--size-SMALL button {\n  padding: 2px 8px;\n  font-size: 8px;\n  line-height: 10px;\n  border-width: 1px;\n  border-radius: 8px;\n  font-weight: bold;\n}\n.my-button--style-ROUNDED.my-button--size-SMALL button:active {\n  position: relative;\n  top: 1px;\n  left: 1px;\n}\n.my-button--style-ROUNDED.my-button--size-MEDIUM button {\n  padding: 4px 16px;\n  font-size: 14px;\n  line-height: 22px;\n  border-width: 1px;\n  border-radius: 16px;\n  font-weight: bold;\n}\n.my-button--style-ROUNDED.my-button--size-MEDIUM button:active {\n  position: relative;\n  top: 1px;\n  left: 1px;\n}\n.my-button--style-ROUNDED.my-button--size-LARGE button {\n  padding: 8px 32px;\n  font-size: 26px;\n  line-height: 46px;\n  border-width: 1px;\n  border-radius: 32px;\n  font-weight: bold;\n}\n.my-button--style-ROUNDED.my-button--size-LARGE button:active {\n  position: relative;\n  top: 2px;\n  left: 2px;\n}\n.my-button--style-ROUNDED.my-button--size-XLARGE button {\n  padding: 16px 64px;\n  font-size: 40px;\n  line-height: 92px;\n  border-width: 2px;\n  border-radius: 64px;\n  font-weight: bold;\n}\n.my-button--style-ROUNDED.my-button--size-XLARGE button:active {\n  position: relative;\n  top: 2px;\n  left: 2px;\n}\n.my-button--color-WHITE_BLACK button {\n  border-color: black;\n  background: white;\n  color: black;\n}\n.my-button--color-WHITE_BLACK button:hover {\n  background-color: #e6e6e6;\n}\n.my-button--color-WHITE_BLACK button:active {\n  background-color: #d1d1d1;\n}\n.my-button--color-WHITE_RED button {\n  border-color: red;\n  background: white;\n  color: red;\n}\n.my-button--color-WHITE_RED button:hover {\n  background-color: #e6e6e6;\n}\n.my-button--color-WHITE_RED button:active {\n  background-color: #d1d1d1;\n}\n.my-button--color-BLACK_WHITE button {\n  border-color: black;\n  background: black;\n  color: white;\n}\n.my-button--color-BLACK_WHITE button:hover {\n  background-color: #333333;\n}\n.my-button--color-BLACK_WHITE button:active {\n  background-color: #525252;\n}\n.my-button--color-TRANSPARENT_WHITE button {\n  border-color: white;\n  background: transparent;\n  color: white;\n}\n.my-button--color-TRANSPARENT_WHITE button:hover {\n  border-color: #e6e6e6;\n  color: #e6e6e6;\n}\n.my-button--color-TRANSPARENT_WHITE button:active {\n  border-color: #d1d1d1;\n  color: #d1d1d1;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/lib/css-base.js":
-/*!*************************************************!*\
-  !*** ./node_modules/css-loader/lib/css-base.js ***!
-  \*************************************************/
-/*! no static exports found */
-/*! all exports used */
-/***/ (function(module, exports) {
-
-/*
-	MIT License http://www.opensource.org/licenses/mit-license.php
-	Author Tobias Koppers @sokra
-*/
-// css base code, injected by the css-loader
-module.exports = function(useSourceMap) {
-	var list = [];
-
-	// return the list of modules as css string
-	list.toString = function toString() {
-		return this.map(function (item) {
-			var content = cssWithMappingToString(item, useSourceMap);
-			if(item[2]) {
-				return "@media " + item[2] + "{" + content + "}";
-			} else {
-				return content;
-			}
-		}).join("");
-	};
-
-	// import a list of modules into the list
-	list.i = function(modules, mediaQuery) {
-		if(typeof modules === "string")
-			modules = [[null, modules, ""]];
-		var alreadyImportedModules = {};
-		for(var i = 0; i < this.length; i++) {
-			var id = this[i][0];
-			if(typeof id === "number")
-				alreadyImportedModules[id] = true;
-		}
-		for(i = 0; i < modules.length; i++) {
-			var item = modules[i];
-			// skip already imported module
-			// this implementation is not 100% perfect for weird media query combinations
-			//  when a module is imported multiple times with different media queries.
-			//  I hope this will never occur (Hey this way we have smaller bundles)
-			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-				if(mediaQuery && !item[2]) {
-					item[2] = mediaQuery;
-				} else if(mediaQuery) {
-					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-				}
-				list.push(item);
-			}
-		}
-	};
-	return list;
-};
-
-function cssWithMappingToString(item, useSourceMap) {
-	var content = item[1] || '';
-	var cssMapping = item[3];
-	if (!cssMapping) {
-		return content;
-	}
-
-	if (useSourceMap && typeof btoa === 'function') {
-		var sourceMapping = toComment(cssMapping);
-		var sourceURLs = cssMapping.sources.map(function (source) {
-			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
-		});
-
-		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
-	}
-
-	return [content].join('\n');
-}
-
-// Adapted from convert-source-map (MIT)
-function toComment(sourceMap) {
-	// eslint-disable-next-line no-undef
-	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
-	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
-
-	return '/*# ' + data + ' */';
-}
-
-
-/***/ }),
-
-/***/ "./node_modules/style-loader/lib/addStyles.js":
-/*!****************************************************!*\
-  !*** ./node_modules/style-loader/lib/addStyles.js ***!
-  \****************************************************/
-/*! no static exports found */
-/*! all exports used */
-/***/ (function(module, exports, __webpack_require__) {
-
-/*
-	MIT License http://www.opensource.org/licenses/mit-license.php
-	Author Tobias Koppers @sokra
-*/
-
-var stylesInDom = {};
-
-var	memoize = function (fn) {
-	var memo;
-
-	return function () {
-		if (typeof memo === "undefined") memo = fn.apply(this, arguments);
-		return memo;
-	};
-};
-
-var isOldIE = memoize(function () {
-	// Test for IE <= 9 as proposed by Browserhacks
-	// @see http://browserhacks.com/#hack-e71d8692f65334173fee715c222cb805
-	// Tests for existence of standard globals is to allow style-loader
-	// to operate correctly into non-standard environments
-	// @see https://github.com/webpack-contrib/style-loader/issues/177
-	return window && document && document.all && !window.atob;
-});
-
-var getTarget = function (target, parent) {
-  if (parent){
-    return parent.querySelector(target);
-  }
-  return document.querySelector(target);
-};
-
-var getElement = (function (fn) {
-	var memo = {};
-
-	return function(target, parent) {
-                // If passing function in options, then use it for resolve "head" element.
-                // Useful for Shadow Root style i.e
-                // {
-                //   insertInto: function () { return document.querySelector("#foo").shadowRoot }
-                // }
-                if (typeof target === 'function') {
-                        return target();
-                }
-                if (typeof memo[target] === "undefined") {
-			var styleTarget = getTarget.call(this, target, parent);
-			// Special case to return head of iframe instead of iframe itself
-			if (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {
-				try {
-					// This will throw an exception if access to iframe is blocked
-					// due to cross-origin restrictions
-					styleTarget = styleTarget.contentDocument.head;
-				} catch(e) {
-					styleTarget = null;
-				}
-			}
-			memo[target] = styleTarget;
-		}
-		return memo[target]
-	};
-})();
-
-var singleton = null;
-var	singletonCounter = 0;
-var	stylesInsertedAtTop = [];
-
-var	fixUrls = __webpack_require__(/*! ./urls */ "./node_modules/style-loader/lib/urls.js");
-
-module.exports = function(list, options) {
-	if (typeof DEBUG !== "undefined" && DEBUG) {
-		if (typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
-	}
-
-	options = options || {};
-
-	options.attrs = typeof options.attrs === "object" ? options.attrs : {};
-
-	// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
-	// tags it will allow on a page
-	if (!options.singleton && typeof options.singleton !== "boolean") options.singleton = isOldIE();
-
-	// By default, add <style> tags to the <head> element
-        if (!options.insertInto) options.insertInto = "head";
-
-	// By default, add <style> tags to the bottom of the target
-	if (!options.insertAt) options.insertAt = "bottom";
-
-	var styles = listToStyles(list, options);
-
-	addStylesToDom(styles, options);
-
-	return function update (newList) {
-		var mayRemove = [];
-
-		for (var i = 0; i < styles.length; i++) {
-			var item = styles[i];
-			var domStyle = stylesInDom[item.id];
-
-			domStyle.refs--;
-			mayRemove.push(domStyle);
-		}
-
-		if(newList) {
-			var newStyles = listToStyles(newList, options);
-			addStylesToDom(newStyles, options);
-		}
-
-		for (var i = 0; i < mayRemove.length; i++) {
-			var domStyle = mayRemove[i];
-
-			if(domStyle.refs === 0) {
-				for (var j = 0; j < domStyle.parts.length; j++) domStyle.parts[j]();
-
-				delete stylesInDom[domStyle.id];
-			}
-		}
-	};
-};
-
-function addStylesToDom (styles, options) {
-	for (var i = 0; i < styles.length; i++) {
-		var item = styles[i];
-		var domStyle = stylesInDom[item.id];
-
-		if(domStyle) {
-			domStyle.refs++;
-
-			for(var j = 0; j < domStyle.parts.length; j++) {
-				domStyle.parts[j](item.parts[j]);
-			}
-
-			for(; j < item.parts.length; j++) {
-				domStyle.parts.push(addStyle(item.parts[j], options));
-			}
-		} else {
-			var parts = [];
-
-			for(var j = 0; j < item.parts.length; j++) {
-				parts.push(addStyle(item.parts[j], options));
-			}
-
-			stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
-		}
-	}
-}
-
-function listToStyles (list, options) {
-	var styles = [];
-	var newStyles = {};
-
-	for (var i = 0; i < list.length; i++) {
-		var item = list[i];
-		var id = options.base ? item[0] + options.base : item[0];
-		var css = item[1];
-		var media = item[2];
-		var sourceMap = item[3];
-		var part = {css: css, media: media, sourceMap: sourceMap};
-
-		if(!newStyles[id]) styles.push(newStyles[id] = {id: id, parts: [part]});
-		else newStyles[id].parts.push(part);
-	}
-
-	return styles;
-}
-
-function insertStyleElement (options, style) {
-	var target = getElement(options.insertInto)
-
-	if (!target) {
-		throw new Error("Couldn't find a style target. This probably means that the value for the 'insertInto' parameter is invalid.");
-	}
-
-	var lastStyleElementInsertedAtTop = stylesInsertedAtTop[stylesInsertedAtTop.length - 1];
-
-	if (options.insertAt === "top") {
-		if (!lastStyleElementInsertedAtTop) {
-			target.insertBefore(style, target.firstChild);
-		} else if (lastStyleElementInsertedAtTop.nextSibling) {
-			target.insertBefore(style, lastStyleElementInsertedAtTop.nextSibling);
-		} else {
-			target.appendChild(style);
-		}
-		stylesInsertedAtTop.push(style);
-	} else if (options.insertAt === "bottom") {
-		target.appendChild(style);
-	} else if (typeof options.insertAt === "object" && options.insertAt.before) {
-		var nextSibling = getElement(options.insertAt.before, target);
-		target.insertBefore(style, nextSibling);
-	} else {
-		throw new Error("[Style Loader]\n\n Invalid value for parameter 'insertAt' ('options.insertAt') found.\n Must be 'top', 'bottom', or Object.\n (https://github.com/webpack-contrib/style-loader#insertat)\n");
-	}
-}
-
-function removeStyleElement (style) {
-	if (style.parentNode === null) return false;
-	style.parentNode.removeChild(style);
-
-	var idx = stylesInsertedAtTop.indexOf(style);
-	if(idx >= 0) {
-		stylesInsertedAtTop.splice(idx, 1);
-	}
-}
-
-function createStyleElement (options) {
-	var style = document.createElement("style");
-
-	if(options.attrs.type === undefined) {
-		options.attrs.type = "text/css";
-	}
-
-	if(options.attrs.nonce === undefined) {
-		var nonce = getNonce();
-		if (nonce) {
-			options.attrs.nonce = nonce;
-		}
-	}
-
-	addAttrs(style, options.attrs);
-	insertStyleElement(options, style);
-
-	return style;
-}
-
-function createLinkElement (options) {
-	var link = document.createElement("link");
-
-	if(options.attrs.type === undefined) {
-		options.attrs.type = "text/css";
-	}
-	options.attrs.rel = "stylesheet";
-
-	addAttrs(link, options.attrs);
-	insertStyleElement(options, link);
-
-	return link;
-}
-
-function addAttrs (el, attrs) {
-	Object.keys(attrs).forEach(function (key) {
-		el.setAttribute(key, attrs[key]);
-	});
-}
-
-function getNonce() {
-	if (false) {}
-
-	return __webpack_require__.nc;
-}
-
-function addStyle (obj, options) {
-	var style, update, remove, result;
-
-	// If a transform function was defined, run it on the css
-	if (options.transform && obj.css) {
-	    result = typeof options.transform === 'function'
-		 ? options.transform(obj.css) 
-		 : options.transform.default(obj.css);
-
-	    if (result) {
-	    	// If transform returns a value, use that instead of the original css.
-	    	// This allows running runtime transformations on the css.
-	    	obj.css = result;
-	    } else {
-	    	// If the transform function returns a falsy value, don't add this css.
-	    	// This allows conditional loading of css
-	    	return function() {
-	    		// noop
-	    	};
-	    }
-	}
-
-	if (options.singleton) {
-		var styleIndex = singletonCounter++;
-
-		style = singleton || (singleton = createStyleElement(options));
-
-		update = applyToSingletonTag.bind(null, style, styleIndex, false);
-		remove = applyToSingletonTag.bind(null, style, styleIndex, true);
-
-	} else if (
-		obj.sourceMap &&
-		typeof URL === "function" &&
-		typeof URL.createObjectURL === "function" &&
-		typeof URL.revokeObjectURL === "function" &&
-		typeof Blob === "function" &&
-		typeof btoa === "function"
-	) {
-		style = createLinkElement(options);
-		update = updateLink.bind(null, style, options);
-		remove = function () {
-			removeStyleElement(style);
-
-			if(style.href) URL.revokeObjectURL(style.href);
-		};
-	} else {
-		style = createStyleElement(options);
-		update = applyToTag.bind(null, style);
-		remove = function () {
-			removeStyleElement(style);
-		};
-	}
-
-	update(obj);
-
-	return function updateStyle (newObj) {
-		if (newObj) {
-			if (
-				newObj.css === obj.css &&
-				newObj.media === obj.media &&
-				newObj.sourceMap === obj.sourceMap
-			) {
-				return;
-			}
-
-			update(obj = newObj);
-		} else {
-			remove();
-		}
-	};
-}
-
-var replaceText = (function () {
-	var textStore = [];
-
-	return function (index, replacement) {
-		textStore[index] = replacement;
-
-		return textStore.filter(Boolean).join('\n');
-	};
-})();
-
-function applyToSingletonTag (style, index, remove, obj) {
-	var css = remove ? "" : obj.css;
-
-	if (style.styleSheet) {
-		style.styleSheet.cssText = replaceText(index, css);
-	} else {
-		var cssNode = document.createTextNode(css);
-		var childNodes = style.childNodes;
-
-		if (childNodes[index]) style.removeChild(childNodes[index]);
-
-		if (childNodes.length) {
-			style.insertBefore(cssNode, childNodes[index]);
-		} else {
-			style.appendChild(cssNode);
-		}
-	}
-}
-
-function applyToTag (style, obj) {
-	var css = obj.css;
-	var media = obj.media;
-
-	if(media) {
-		style.setAttribute("media", media)
-	}
-
-	if(style.styleSheet) {
-		style.styleSheet.cssText = css;
-	} else {
-		while(style.firstChild) {
-			style.removeChild(style.firstChild);
-		}
-
-		style.appendChild(document.createTextNode(css));
-	}
-}
-
-function updateLink (link, options, obj) {
-	var css = obj.css;
-	var sourceMap = obj.sourceMap;
-
-	/*
-		If convertToAbsoluteUrls isn't defined, but sourcemaps are enabled
-		and there is no publicPath defined then lets turn convertToAbsoluteUrls
-		on by default.  Otherwise default to the convertToAbsoluteUrls option
-		directly
-	*/
-	var autoFixUrls = options.convertToAbsoluteUrls === undefined && sourceMap;
-
-	if (options.convertToAbsoluteUrls || autoFixUrls) {
-		css = fixUrls(css);
-	}
-
-	if (sourceMap) {
-		// http://stackoverflow.com/a/26603875
-		css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
-	}
-
-	var blob = new Blob([css], { type: "text/css" });
-
-	var oldSrc = link.href;
-
-	link.href = URL.createObjectURL(blob);
-
-	if(oldSrc) URL.revokeObjectURL(oldSrc);
-}
-
-
-/***/ }),
-
-/***/ "./node_modules/style-loader/lib/urls.js":
-/*!***********************************************!*\
-  !*** ./node_modules/style-loader/lib/urls.js ***!
-  \***********************************************/
-/*! no static exports found */
-/*! all exports used */
-/***/ (function(module, exports) {
-
-
-/**
- * When source maps are enabled, `style-loader` uses a link element with a data-uri to
- * embed the css on the page. This breaks all relative urls because now they are relative to a
- * bundle instead of the current page.
- *
- * One solution is to only use full urls, but that may be impossible.
- *
- * Instead, this function "fixes" the relative urls to be absolute according to the current page location.
- *
- * A rudimentary test suite is located at `test/fixUrls.js` and can be run via the `npm test` command.
- *
- */
-
-module.exports = function (css) {
-  // get current location
-  var location = typeof window !== "undefined" && window.location;
-
-  if (!location) {
-    throw new Error("fixUrls requires window.location");
-  }
-
-	// blank or null?
-	if (!css || typeof css !== "string") {
-	  return css;
-  }
-
-  var baseUrl = location.protocol + "//" + location.host;
-  var currentDir = baseUrl + location.pathname.replace(/\/[^\/]*$/, "/");
-
-	// convert each url(...)
-	/*
-	This regular expression is just a way to recursively match brackets within
-	a string.
-
-	 /url\s*\(  = Match on the word "url" with any whitespace after it and then a parens
-	   (  = Start a capturing group
-	     (?:  = Start a non-capturing group
-	         [^)(]  = Match anything that isn't a parentheses
-	         |  = OR
-	         \(  = Match a start parentheses
-	             (?:  = Start another non-capturing groups
-	                 [^)(]+  = Match anything that isn't a parentheses
-	                 |  = OR
-	                 \(  = Match a start parentheses
-	                     [^)(]*  = Match anything that isn't a parentheses
-	                 \)  = Match a end parentheses
-	             )  = End Group
-              *\) = Match anything and then a close parens
-          )  = Close non-capturing group
-          *  = Match anything
-       )  = Close capturing group
-	 \)  = Match a close parens
-
-	 /gi  = Get all matches, not the first.  Be case insensitive.
-	 */
-	var fixedCss = css.replace(/url\s*\(((?:[^)(]|\((?:[^)(]+|\([^)(]*\))*\))*)\)/gi, function(fullMatch, origUrl) {
-		// strip quotes (if they exist)
-		var unquotedOrigUrl = origUrl
-			.trim()
-			.replace(/^"(.*)"$/, function(o, $1){ return $1; })
-			.replace(/^'(.*)'$/, function(o, $1){ return $1; });
-
-		// already a full url? no change
-		if (/^(#|data:|http:\/\/|https:\/\/|file:\/\/\/|\s*$)/i.test(unquotedOrigUrl)) {
-		  return fullMatch;
-		}
-
-		// convert the url to a full url
-		var newUrl;
-
-		if (unquotedOrigUrl.indexOf("//") === 0) {
-		  	//TODO: should we add protocol?
-			newUrl = unquotedOrigUrl;
-		} else if (unquotedOrigUrl.indexOf("/") === 0) {
-			// path should be relative to the base url
-			newUrl = baseUrl + unquotedOrigUrl; // already starts with '/'
-		} else {
-			// path should be relative to current directory
-			newUrl = currentDir + unquotedOrigUrl.replace(/^\.\//, ""); // Strip leading './'
-		}
-
-		// send back the fixed url(...)
-		return "url(" + JSON.stringify(newUrl) + ")";
-	});
-
-	// send back the fixed css
-	return fixedCss;
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/webpack/buildin/module.js":
-/*!***********************************!*\
-  !*** (webpack)/buildin/module.js ***!
-  \***********************************/
-/*! no static exports found */
-/*! all exports used */
-/***/ (function(module, exports) {
-
-module.exports = function(module) {
-	if (!module.webpackPolyfill) {
-		module.deprecate = function() {};
-		module.paths = [];
-		// module.parent = undefined by default
-		if (!module.children) module.children = [];
-		Object.defineProperty(module, "loaded", {
-			enumerable: true,
-			get: function() {
-				return module.l;
-			}
-		});
-		Object.defineProperty(module, "id", {
-			enumerable: true,
-			get: function() {
-				return module.i;
-			}
-		});
-		module.webpackPolyfill = 1;
-	}
-	return module;
-};
-
-
-/***/ }),
-
-/***/ "./src/Button/Button.less":
-/*!********************************!*\
-  !*** ./src/Button/Button.less ***!
-  \********************************/
-/*! no static exports found */
-/*! all exports used */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(/*! !../../node_modules/css-loader!../../node_modules/postcss-loader/lib??ref--8-2!../../node_modules/less-loader/dist/cjs.js!./Button.less */ "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?!./node_modules/less-loader/dist/cjs.js!./src/Button/Button.less");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {}
-
-/***/ }),
+})(self, () => {
+return /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/Button/Button.tsx":
 /*!*******************************!*\
   !*** ./src/Button/Button.tsx ***!
   \*******************************/
-/*! no static exports found */
-/*! all exports used */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
-/* WEBPACK VAR INJECTION */(function(module) {
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Button: () => (/* binding */ Button),
+/* harmony export */   EColor: () => (/* binding */ EColor),
+/* harmony export */   ESize: () => (/* binding */ ESize),
+/* harmony export */   EStyle: () => (/* binding */ EStyle)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Button_less__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Button.less */ "./src/Button/Button.less");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
+function _defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = r[t]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o); } }
+function _createClass(e, r, t) { return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+function _callSuper(t, o, e) { return o = _getPrototypeOf(o), _possibleConstructorReturn(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], _getPrototypeOf(t).constructor) : o.apply(t, e)); }
+function _possibleConstructorReturn(t, e) { if (e && ("object" == _typeof(e) || "function" == typeof e)) return e; if (void 0 !== e) throw new TypeError("Derived constructors may only return object or undefined"); return _assertThisInitialized(t); }
+function _assertThisInitialized(e) { if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); return e; }
+function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); } catch (t) {} return (_isNativeReflectConstruct = function _isNativeReflectConstruct() { return !!t; })(); }
+function _getPrototypeOf(t) { return _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function (t) { return t.__proto__ || Object.getPrototypeOf(t); }, _getPrototypeOf(t); }
+function _inherits(t, e) { if ("function" != typeof e && null !== e) throw new TypeError("Super expression must either be null or a function"); t.prototype = Object.create(e && e.prototype, { constructor: { value: t, writable: !0, configurable: !0 } }), Object.defineProperty(t, "prototype", { writable: !1 }), e && _setPrototypeOf(t, e); }
+function _setPrototypeOf(t, e) { return _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function (t, e) { return t.__proto__ = e, t; }, _setPrototypeOf(t, e); }
 
-(function () {
-  var enterModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.enterModule : undefined;
-  enterModule && enterModule(module);
-})();
 
-var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal["default"].signature : function (a) {
-  return a;
-};
-
-var __extends = this && this.__extends || function () {
-  var _extendStatics = function extendStatics(d, b) {
-    _extendStatics = Object.setPrototypeOf || {
-      __proto__: []
-    } instanceof Array && function (d, b) {
-      d.__proto__ = b;
-    } || function (d, b) {
-      for (var p in b) {
-        if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p];
-      }
-    };
-
-    return _extendStatics(d, b);
-  };
-
-  return function (d, b) {
-    if (typeof b !== "function" && b !== null) throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-
-    _extendStatics(d, b);
-
-    function __() {
-      this.constructor = d;
-    }
-
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-  };
-}();
-
-var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
-  if (k2 === undefined) k2 = k;
-  var desc = Object.getOwnPropertyDescriptor(m, k);
-
-  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-    desc = {
-      enumerable: true,
-      get: function get() {
-        return m[k];
-      }
-    };
-  }
-
-  Object.defineProperty(o, k2, desc);
-} : function (o, m, k, k2) {
-  if (k2 === undefined) k2 = k;
-  o[k2] = m[k];
-});
-
-var __setModuleDefault = this && this.__setModuleDefault || (Object.create ? function (o, v) {
-  Object.defineProperty(o, "default", {
-    enumerable: true,
-    value: v
-  });
-} : function (o, v) {
-  o["default"] = v;
-});
-
-var __importStar = this && this.__importStar || function (mod) {
-  if (mod && mod.__esModule) return mod;
-  var result = {};
-  if (mod != null) for (var k in mod) {
-    if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-  }
-
-  __setModuleDefault(result, mod);
-
-  return result;
-};
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.Button = exports.ESize = exports.EColor = exports.EStyle = void 0;
-
-var React = __importStar(__webpack_require__(/*! react */ "react"));
-
-__webpack_require__(/*! ./Button.less */ "./src/Button/Button.less");
 
 var EStyle;
-
 (function (EStyle) {
   EStyle["ROUNDED"] = "ROUNDED";
-})(EStyle = exports.EStyle || (exports.EStyle = {}));
-
+})(EStyle || (EStyle = {}));
 var EColor;
-
 (function (EColor) {
   EColor["WHITE_BLACK"] = "WHITE_BLACK";
   EColor["WHITE_RED"] = "WHITE_RED";
   EColor["BLACK_WHITE"] = "BLACK_WHITE";
   EColor["TRANSPARENT_WHITE"] = "TRANSPARENT_WHITE";
-})(EColor = exports.EColor || (exports.EColor = {}));
-
+})(EColor || (EColor = {}));
 var ESize;
-
 (function (ESize) {
   ESize["SMALL"] = "SMALL";
   ESize["MEDIUM"] = "MEDIUM";
   ESize["LARGE"] = "LARGE";
   ESize["XLARGE"] = "XLARGE";
-})(ESize = exports.ESize || (exports.ESize = {}));
-
-var Button =
-/** @class */
-function (_super) {
-  __extends(Button, _super);
-
+})(ESize || (ESize = {}));
+var Button = /*#__PURE__*/function (_React$Component) {
   function Button() {
-    return _super !== null && _super.apply(this, arguments) || this;
+    _classCallCheck(this, Button);
+    return _callSuper(this, Button, arguments);
   }
-
-  Button.prototype.render = function () {
-    var _a = this.props,
-        userClassName = _a.className,
-        style = _a.style,
-        color = _a.color,
-        size = _a.size,
-        href = _a.href,
-        _b = _a.children,
-        children = _b === void 0 ? null : _b,
-        onClick = _a.onClick;
-    var className = [userClassName, "my-button my-button--style-".concat(style, " "), "my-button--color-".concat(color), "my-button--size-".concat(size)].filter(Boolean).join(' ');
-    return React.createElement("a", {
-      className: className,
-      href: href,
-      onClick: onClick
-    }, React.createElement("button", null, children));
-  };
-
-  Button.defaultProps = {
-    children: null,
-    style: EStyle.ROUNDED,
-    color: EColor.WHITE_BLACK,
-    size: ESize.MEDIUM,
-    href: undefined,
-    onClick: function onClick() {
-      return undefined;
+  _inherits(Button, _React$Component);
+  return _createClass(Button, [{
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+        userClassName = _this$props.className,
+        style = _this$props.style,
+        color = _this$props.color,
+        size = _this$props.size,
+        href = _this$props.href,
+        _this$props$children = _this$props.children,
+        children = _this$props$children === void 0 ? null : _this$props$children,
+        onClick = _this$props.onClick;
+      var className = [userClassName, "my-button my-button--style-".concat(style, " "), "my-button--color-".concat(color), "my-button--size-".concat(size)].filter(Boolean).join(' ');
+      return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
+        className: className,
+        href: href,
+        onClick: onClick,
+        children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("button", {
+          children: children
+        })
+      });
     }
-  };
-  return Button;
-}(React.Component);
-
-exports.Button = Button;
-;
-
-(function () {
-  var reactHotLoader = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.default : undefined;
-
-  if (!reactHotLoader) {
-    return;
+  }]);
+}(react__WEBPACK_IMPORTED_MODULE_1__.Component);
+Button.defaultProps = {
+  children: null,
+  style: EStyle.ROUNDED,
+  color: EColor.WHITE_BLACK,
+  size: ESize.MEDIUM,
+  href: undefined,
+  onClick: function onClick() {
+    return undefined;
   }
-
-  reactHotLoader.register(__extends, "__extends", "/Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/Button/Button.tsx");
-  reactHotLoader.register(__createBinding, "__createBinding", "/Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/Button/Button.tsx");
-  reactHotLoader.register(__setModuleDefault, "__setModuleDefault", "/Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/Button/Button.tsx");
-  reactHotLoader.register(__importStar, "__importStar", "/Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/Button/Button.tsx");
-  reactHotLoader.register(React, "React", "/Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/Button/Button.tsx");
-  reactHotLoader.register(EStyle, "EStyle", "/Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/Button/Button.tsx");
-  reactHotLoader.register(EColor, "EColor", "/Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/Button/Button.tsx");
-  reactHotLoader.register(ESize, "ESize", "/Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/Button/Button.tsx");
-  reactHotLoader.register(Button, "Button", "/Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/Button/Button.tsx");
-})();
-
-;
-
-(function () {
-  var leaveModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.leaveModule : undefined;
-  leaveModule && leaveModule(module);
-})();
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/webpack/buildin/module.js */ "./node_modules/webpack/buildin/module.js")(module)))
+};
 
 /***/ }),
 
@@ -976,48 +110,16 @@ exports.Button = Button;
 /*!******************************!*\
   !*** ./src/Button/index.tsx ***!
   \******************************/
-/*! no static exports found */
-/*! all exports used */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Button: () => (/* reexport safe */ _Button__WEBPACK_IMPORTED_MODULE_0__.Button),
+/* harmony export */   EColor: () => (/* reexport safe */ _Button__WEBPACK_IMPORTED_MODULE_0__.EColor),
+/* harmony export */   ESize: () => (/* reexport safe */ _Button__WEBPACK_IMPORTED_MODULE_0__.ESize),
+/* harmony export */   EStyle: () => (/* reexport safe */ _Button__WEBPACK_IMPORTED_MODULE_0__.EStyle)
+/* harmony export */ });
+/* harmony import */ var _Button__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Button */ "./src/Button/Button.tsx");
 
-
-var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal["default"].signature : function (a) {
-  return a;
-};
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.ESize = exports.EColor = exports.EStyle = exports.Button = void 0;
-
-var Button_1 = __webpack_require__(/*! ./Button */ "./src/Button/Button.tsx");
-
-Object.defineProperty(exports, "Button", {
-  enumerable: true,
-  get: function get() {
-    return Button_1.Button;
-  }
-});
-Object.defineProperty(exports, "EStyle", {
-  enumerable: true,
-  get: function get() {
-    return Button_1.EStyle;
-  }
-});
-Object.defineProperty(exports, "EColor", {
-  enumerable: true,
-  get: function get() {
-    return Button_1.EColor;
-  }
-});
-Object.defineProperty(exports, "ESize", {
-  enumerable: true,
-  get: function get() {
-    return Button_1.ESize;
-  }
-});
 
 /***/ }),
 
@@ -1025,203 +127,606 @@ Object.defineProperty(exports, "ESize", {
 /*!*****************************!*\
   !*** ./src/Label/Label.tsx ***!
   \*****************************/
-/*! no static exports found */
-/*! all exports used */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
-/* WEBPACK VAR INJECTION */(function(module) {
-
-(function () {
-  var enterModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.enterModule : undefined;
-  enterModule && enterModule(module);
-})();
-
-var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal["default"].signature : function (a) {
-  return a;
-};
-
-var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
-  if (k2 === undefined) k2 = k;
-  var desc = Object.getOwnPropertyDescriptor(m, k);
-
-  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-    desc = {
-      enumerable: true,
-      get: function get() {
-        return m[k];
-      }
-    };
-  }
-
-  Object.defineProperty(o, k2, desc);
-} : function (o, m, k, k2) {
-  if (k2 === undefined) k2 = k;
-  o[k2] = m[k];
-});
-
-var __setModuleDefault = this && this.__setModuleDefault || (Object.create ? function (o, v) {
-  Object.defineProperty(o, "default", {
-    enumerable: true,
-    value: v
-  });
-} : function (o, v) {
-  o["default"] = v;
-});
-
-var __importStar = this && this.__importStar || function (mod) {
-  if (mod && mod.__esModule) return mod;
-  var result = {};
-  if (mod != null) for (var k in mod) {
-    if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-  }
-
-  __setModuleDefault(result, mod);
-
-  return result;
-};
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.Label = void 0;
-
-var React = __importStar(__webpack_require__(/*! react */ "react"));
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Label: () => (/* binding */ Label)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
 
 var Label = function Label(props) {
   var className = props.className,
-      children = props.children;
-  return React.createElement("div", {
-    className: className
-  }, children);
+    children = props.children;
+  return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+    className: className,
+    children: children
+  });
 };
-
-exports.Label = Label;
-;
-
-(function () {
-  var reactHotLoader = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.default : undefined;
-
-  if (!reactHotLoader) {
-    return;
-  }
-
-  reactHotLoader.register(__createBinding, "__createBinding", "/Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/Label/Label.tsx");
-  reactHotLoader.register(__setModuleDefault, "__setModuleDefault", "/Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/Label/Label.tsx");
-  reactHotLoader.register(__importStar, "__importStar", "/Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/Label/Label.tsx");
-  reactHotLoader.register(React, "React", "/Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/Label/Label.tsx");
-  reactHotLoader.register(Label, "Label", "/Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/Label/Label.tsx");
-})();
-
-;
-
-(function () {
-  var leaveModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.leaveModule : undefined;
-  leaveModule && leaveModule(module);
-})();
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/webpack/buildin/module.js */ "./node_modules/webpack/buildin/module.js")(module)))
 
 /***/ }),
 
-/***/ "./src/Label/index.tsx":
-/*!*****************************!*\
-  !*** ./src/Label/index.tsx ***!
-  \*****************************/
-/*! no static exports found */
-/*! all exports used */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ "./src/Label/index.ts":
+/*!****************************!*\
+  !*** ./src/Label/index.ts ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Label: () => (/* reexport safe */ _Label__WEBPACK_IMPORTED_MODULE_0__.Label)
+/* harmony export */ });
+/* harmony import */ var _Label__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Label */ "./src/Label/Label.tsx");
 
-
-var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal["default"].signature : function (a) {
-  return a;
-};
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.Label = void 0;
-
-var Label_1 = __webpack_require__(/*! ./Label */ "./src/Label/Label.tsx");
-
-Object.defineProperty(exports, "Label", {
-  enumerable: true,
-  get: function get() {
-    return Label_1.Label;
-  }
-});
 
 /***/ }),
 
-/***/ "./src/index.tsx":
-/*!***********************!*\
-  !*** ./src/index.tsx ***!
-  \***********************/
-/*! no static exports found */
-/*! all exports used */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ "./node_modules/.pnpm/css-loader@7.1.2_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/css-loader/dist/cjs.js!./node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.41_typescript@5.5.4_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/.pnpm/less-loader@12.2.0_less@4.2.0_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/less-loader/dist/cjs.js!./src/Button/Button.less":
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/.pnpm/css-loader@7.1.2_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/css-loader/dist/cjs.js!./node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.41_typescript@5.5.4_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/.pnpm/less-loader@12.2.0_less@4.2.0_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/less-loader/dist/cjs.js!./src/Button/Button.less ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/.pnpm/css-loader@7.1.2_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/css-loader/dist/runtime/sourceMaps.js */ "./node_modules/.pnpm/css-loader@7.1.2_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/css-loader/dist/runtime/sourceMaps.js");
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/.pnpm/css-loader@7.1.2_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/css-loader/dist/runtime/api.js */ "./node_modules/.pnpm/css-loader@7.1.2_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_css_loader_7_1_2_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
 
 
-var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal["default"].signature : function (a) {
-  return a;
-};
+var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_7_1_2_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_7_1_2_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, `.my-button {
+  outline: none;
+}
+.my-button--style-ROUNDED {
+  font-size: 0;
+}
+.my-button--style-ROUNDED button {
+  outline: none;
+  border-style: solid;
+  cursor: pointer;
+  -webkit-transition: background-color 200ms ease-out;
+  transition: background-color 200ms ease-out;
+}
+.my-button--style-ROUNDED.my-button--size-SMALL button {
+  padding: 2px 8px;
+  font-size: 8px;
+  line-height: 10px;
+  border-width: 1px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+.my-button--style-ROUNDED.my-button--size-SMALL button:active {
+  position: relative;
+  top: 1px;
+  left: 1px;
+}
+.my-button--style-ROUNDED.my-button--size-MEDIUM button {
+  padding: 4px 16px;
+  font-size: 14px;
+  line-height: 22px;
+  border-width: 1px;
+  border-radius: 16px;
+  font-weight: bold;
+}
+.my-button--style-ROUNDED.my-button--size-MEDIUM button:active {
+  position: relative;
+  top: 1px;
+  left: 1px;
+}
+.my-button--style-ROUNDED.my-button--size-LARGE button {
+  padding: 8px 32px;
+  font-size: 26px;
+  line-height: 46px;
+  border-width: 1px;
+  border-radius: 32px;
+  font-weight: bold;
+}
+.my-button--style-ROUNDED.my-button--size-LARGE button:active {
+  position: relative;
+  top: 2px;
+  left: 2px;
+}
+.my-button--style-ROUNDED.my-button--size-XLARGE button {
+  padding: 16px 64px;
+  font-size: 40px;
+  line-height: 92px;
+  border-width: 2px;
+  border-radius: 64px;
+  font-weight: bold;
+}
+.my-button--style-ROUNDED.my-button--size-XLARGE button:active {
+  position: relative;
+  top: 2px;
+  left: 2px;
+}
+.my-button--color-WHITE_BLACK button {
+  border-color: black;
+  background: white;
+  color: black;
+}
+.my-button--color-WHITE_BLACK button:hover {
+  background-color: #e6e6e6;
+}
+.my-button--color-WHITE_BLACK button:active {
+  background-color: #d1d1d1;
+}
+.my-button--color-WHITE_RED button {
+  border-color: red;
+  background: white;
+  color: red;
+}
+.my-button--color-WHITE_RED button:hover {
+  background-color: #e6e6e6;
+}
+.my-button--color-WHITE_RED button:active {
+  background-color: #d1d1d1;
+}
+.my-button--color-BLACK_WHITE button {
+  border-color: black;
+  background: black;
+  color: white;
+}
+.my-button--color-BLACK_WHITE button:hover {
+  background-color: #333333;
+}
+.my-button--color-BLACK_WHITE button:active {
+  background-color: #525252;
+}
+.my-button--color-TRANSPARENT_WHITE button {
+  border-color: white;
+  background: transparent;
+  color: white;
+}
+.my-button--color-TRANSPARENT_WHITE button:hover {
+  border-color: #e6e6e6;
+  color: #e6e6e6;
+}
+.my-button--color-TRANSPARENT_WHITE button:active {
+  border-color: #d1d1d1;
+  color: #d1d1d1;
+}
+`, "",{"version":3,"sources":["webpack://./src/Button/Button.less"],"names":[],"mappings":"AAAA;EACE,aAAA;AACF;AAGI;EACE,YAAA;AADN;AAAI;EAII,aAAA;EACA,mBAAA;EACA,eAAA;EACA,mDAAA;EAAA,2CAAA;AADR;AAKQ;EAEI,gBAAA;EACA,cAAA;EACA,iBAAA;EACA,iBAAA;EACA,kBAAA;EACA,iBAAA;AAJZ;AAKY;EACE,kBAAA;EACA,QAAA;EACA,SAAA;AAHd;AAOQ;EAGI,iBAAA;EACA,eAAA;EACA,iBAAA;EACA,iBAAA;EACA,mBAAA;EACA,iBAAA;AAPZ;AAQY;EACE,kBAAA;EACA,QAAA;EACA,SAAA;AANd;AAUQ;EAEI,iBAAA;EACA,eAAA;EACA,iBAAA;EACA,iBAAA;EACA,mBAAA;EACA,iBAAA;AATZ;AAUY;EACE,kBAAA;EACA,QAAA;EACA,SAAA;AARd;AAYQ;EAEI,kBAAA;EACA,eAAA;EACA,iBAAA;EACA,iBAAA;EACA,mBAAA;EACA,iBAAA;AAXZ;AAYY;EACE,kBAAA;EACA,QAAA;EACA,SAAA;AAVd;AAoBI;EAEI,mBAAA;EACA,iBAAA;EACA,YAAA;AAnBR;AAoBQ;EACE,yBAAA;AAlBV;AAoBQ;EACE,yBAAA;AAlBV;AAsBI;EAEI,iBAAA;EACA,iBAAA;EACA,UAAA;AArBR;AAsBQ;EACE,yBAAA;AApBV;AAsBQ;EACE,yBAAA;AApBV;AAwBI;EAEI,mBAAA;EACA,iBAAA;EACA,YAAA;AAvBR;AAwBQ;EACE,yBAAA;AAtBV;AAwBQ;EACE,yBAAA;AAtBV;AA0BI;EAEI,mBAAA;EACA,uBAAA;EACA,YAAA;AAzBR;AA0BQ;EACE,qBAAA;EACA,cAAA;AAxBV;AA0BQ;EACE,qBAAA;EACA,cAAA;AAxBV","sourcesContent":[".my-button {\n  outline: none;\n\n  &--style- {\n\n    &ROUNDED {\n      font-size: 0;\n\n      button {\n        outline: none;\n        border-style: solid;\n        cursor: pointer;\n        transition: background-color 200ms ease-out;\n      }\n\n      &.my-button--size- {\n        &SMALL {\n          button {\n            padding: 2px 8px;\n            font-size: 8px;\n            line-height: 10px;\n            border-width: 1px;\n            border-radius: 8px;\n            font-weight: bold;\n            &:active {\n              position: relative;\n              top: 1px;\n              left: 1px;\n            }\n          }\n        }\n        &MEDIUM {\n          // line-height: 8px;\n          button {\n            padding: 4px 16px;\n            font-size: 14px;\n            line-height: 22px;\n            border-width: 1px;\n            border-radius: 16px;\n            font-weight: bold;\n            &:active {\n              position: relative;\n              top: 1px;\n              left: 1px;\n            }\n          }\n        }\n        &LARGE {\n          button {\n            padding: 8px 32px;\n            font-size: 26px;\n            line-height: 46px;\n            border-width: 1px;\n            border-radius: 32px;\n            font-weight: bold;\n            &:active {\n              position: relative;\n              top: 2px;\n              left: 2px;\n            }\n          }\n        }\n        &XLARGE {\n          button {\n            padding: 16px 64px;\n            font-size: 40px;\n            line-height: 92px;\n            border-width: 2px;\n            border-radius: 64px;\n            font-weight: bold;\n            &:active {\n              position: relative;\n              top: 2px;\n              left: 2px;\n            }\n          }\n        }\n      }\n    }\n\n  }\n\n  &--color- {\n    &WHITE_BLACK {\n      button {\n        border-color: black;\n        background: white;\n        color: black;\n        &:hover {\n          background-color: #e6e6e6;\n        }\n        &:active {\n          background-color: #d1d1d1;\n        }\n      }\n    }\n    &WHITE_RED {\n      button {\n        border-color: red;\n        background: white;\n        color: red;\n        &:hover {\n          background-color: #e6e6e6;\n        }\n        &:active {\n          background-color: #d1d1d1;\n        }\n      }\n    }\n    &BLACK_WHITE {\n      button {\n        border-color: black;\n        background: black;\n        color: white;\n        &:hover {\n          background-color: #333333;\n        }\n        &:active {\n          background-color: #525252;\n        }\n      }\n    }\n    &TRANSPARENT_WHITE {\n      button {\n        border-color: white;\n        background: transparent;\n        color: white;\n        &:hover {\n          border-color: #e6e6e6;\n          color: #e6e6e6;\n        }\n        &:active {\n          border-color: #d1d1d1;\n          color: #d1d1d1;\n        }\n      }\n    }\n\n  }\n}\n"],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.Label = exports.ESize = exports.EColor = exports.EStyle = exports.Button = void 0;
-
-var Button_1 = __webpack_require__(/*! ./Button */ "./src/Button/index.tsx");
-
-Object.defineProperty(exports, "Button", {
-  enumerable: true,
-  get: function get() {
-    return Button_1.Button;
-  }
-});
-Object.defineProperty(exports, "EStyle", {
-  enumerable: true,
-  get: function get() {
-    return Button_1.EStyle;
-  }
-});
-Object.defineProperty(exports, "EColor", {
-  enumerable: true,
-  get: function get() {
-    return Button_1.EColor;
-  }
-});
-Object.defineProperty(exports, "ESize", {
-  enumerable: true,
-  get: function get() {
-    return Button_1.ESize;
-  }
-});
-
-var Label_1 = __webpack_require__(/*! ./Label */ "./src/Label/index.tsx");
-
-Object.defineProperty(exports, "Label", {
-  enumerable: true,
-  get: function get() {
-    return Label_1.Label;
-  }
-});
 
 /***/ }),
 
-/***/ 0:
-/*!*****************************!*\
-  !*** multi ./src/index.tsx ***!
-  \*****************************/
-/*! no static exports found */
-/*! all exports used */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ "./node_modules/.pnpm/css-loader@7.1.2_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/css-loader/dist/runtime/api.js":
+/*!***********************************************************************************************************************************************************!*\
+  !*** ./node_modules/.pnpm/css-loader@7.1.2_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/css-loader/dist/runtime/api.js ***!
+  \***********************************************************************************************************************************************************/
+/***/ ((module) => {
 
-module.exports = __webpack_require__(/*! /Users/dennisat/dev/dyna/dyna-ts-react-module-boilerplate/src/index.tsx */"./src/index.tsx");
 
+
+/*
+  MIT License http://www.opensource.org/licenses/mit-license.php
+  Author Tobias Koppers @sokra
+*/
+module.exports = function (cssWithMappingToString) {
+  var list = [];
+
+  // return the list of modules as css string
+  list.toString = function toString() {
+    return this.map(function (item) {
+      var content = "";
+      var needLayer = typeof item[5] !== "undefined";
+      if (item[4]) {
+        content += "@supports (".concat(item[4], ") {");
+      }
+      if (item[2]) {
+        content += "@media ".concat(item[2], " {");
+      }
+      if (needLayer) {
+        content += "@layer".concat(item[5].length > 0 ? " ".concat(item[5]) : "", " {");
+      }
+      content += cssWithMappingToString(item);
+      if (needLayer) {
+        content += "}";
+      }
+      if (item[2]) {
+        content += "}";
+      }
+      if (item[4]) {
+        content += "}";
+      }
+      return content;
+    }).join("");
+  };
+
+  // import a list of modules into the list
+  list.i = function i(modules, media, dedupe, supports, layer) {
+    if (typeof modules === "string") {
+      modules = [[null, modules, undefined]];
+    }
+    var alreadyImportedModules = {};
+    if (dedupe) {
+      for (var k = 0; k < this.length; k++) {
+        var id = this[k][0];
+        if (id != null) {
+          alreadyImportedModules[id] = true;
+        }
+      }
+    }
+    for (var _k = 0; _k < modules.length; _k++) {
+      var item = [].concat(modules[_k]);
+      if (dedupe && alreadyImportedModules[item[0]]) {
+        continue;
+      }
+      if (typeof layer !== "undefined") {
+        if (typeof item[5] === "undefined") {
+          item[5] = layer;
+        } else {
+          item[1] = "@layer".concat(item[5].length > 0 ? " ".concat(item[5]) : "", " {").concat(item[1], "}");
+          item[5] = layer;
+        }
+      }
+      if (media) {
+        if (!item[2]) {
+          item[2] = media;
+        } else {
+          item[1] = "@media ".concat(item[2], " {").concat(item[1], "}");
+          item[2] = media;
+        }
+      }
+      if (supports) {
+        if (!item[4]) {
+          item[4] = "".concat(supports);
+        } else {
+          item[1] = "@supports (".concat(item[4], ") {").concat(item[1], "}");
+          item[4] = supports;
+        }
+      }
+      list.push(item);
+    }
+  };
+  return list;
+};
+
+/***/ }),
+
+/***/ "./node_modules/.pnpm/css-loader@7.1.2_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/css-loader/dist/runtime/sourceMaps.js":
+/*!******************************************************************************************************************************************************************!*\
+  !*** ./node_modules/.pnpm/css-loader@7.1.2_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/css-loader/dist/runtime/sourceMaps.js ***!
+  \******************************************************************************************************************************************************************/
+/***/ ((module) => {
+
+
+
+module.exports = function (item) {
+  var content = item[1];
+  var cssMapping = item[3];
+  if (!cssMapping) {
+    return content;
+  }
+  if (typeof btoa === "function") {
+    var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(cssMapping))));
+    var data = "sourceMappingURL=data:application/json;charset=utf-8;base64,".concat(base64);
+    var sourceMapping = "/*# ".concat(data, " */");
+    return [content].concat([sourceMapping]).join("\n");
+  }
+  return [content].join("\n");
+};
+
+/***/ }),
+
+/***/ "./src/Button/Button.less":
+/*!********************************!*\
+  !*** ./src/Button/Button.less ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) => {
+
+/* harmony import */ var _node_modules_pnpm_style_loader_4_0_0_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../node_modules/.pnpm/style-loader@4.0.0_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/.pnpm/style-loader@4.0.0_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_pnpm_style_loader_4_0_0_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_style_loader_4_0_0_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_pnpm_style_loader_4_0_0_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../node_modules/.pnpm/style-loader@4.0.0_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/style-loader/dist/runtime/styleDomAPI.js */ "./node_modules/.pnpm/style-loader@4.0.0_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/style-loader/dist/runtime/styleDomAPI.js");
+/* harmony import */ var _node_modules_pnpm_style_loader_4_0_0_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_style_loader_4_0_0_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_pnpm_style_loader_4_0_0_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../node_modules/.pnpm/style-loader@4.0.0_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/style-loader/dist/runtime/insertBySelector.js */ "./node_modules/.pnpm/style-loader@4.0.0_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/style-loader/dist/runtime/insertBySelector.js");
+/* harmony import */ var _node_modules_pnpm_style_loader_4_0_0_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_style_loader_4_0_0_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _node_modules_pnpm_style_loader_4_0_0_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../node_modules/.pnpm/style-loader@4.0.0_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */ "./node_modules/.pnpm/style-loader@4.0.0_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js");
+/* harmony import */ var _node_modules_pnpm_style_loader_4_0_0_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_style_loader_4_0_0_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _node_modules_pnpm_style_loader_4_0_0_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! !../../node_modules/.pnpm/style-loader@4.0.0_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/style-loader/dist/runtime/insertStyleElement.js */ "./node_modules/.pnpm/style-loader@4.0.0_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/style-loader/dist/runtime/insertStyleElement.js");
+/* harmony import */ var _node_modules_pnpm_style_loader_4_0_0_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_style_loader_4_0_0_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _node_modules_pnpm_style_loader_4_0_0_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../../node_modules/.pnpm/style-loader@4.0.0_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/style-loader/dist/runtime/styleTagTransform.js */ "./node_modules/.pnpm/style-loader@4.0.0_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/style-loader/dist/runtime/styleTagTransform.js");
+/* harmony import */ var _node_modules_pnpm_style_loader_4_0_0_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_style_loader_4_0_0_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _node_modules_pnpm_css_loader_7_1_2_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_css_loader_dist_cjs_js_node_modules_pnpm_postcss_loader_8_1_1_postcss_8_4_41_typescript_5_5_4_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_4_use_2_node_modules_pnpm_less_loader_12_2_0_less_4_2_0_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_less_loader_dist_cjs_js_Button_less__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../node_modules/.pnpm/css-loader@7.1.2_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/css-loader/dist/cjs.js!../../node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.41_typescript@5.5.4_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!../../node_modules/.pnpm/less-loader@12.2.0_less@4.2.0_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/less-loader/dist/cjs.js!./Button.less */ "./node_modules/.pnpm/css-loader@7.1.2_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/css-loader/dist/cjs.js!./node_modules/.pnpm/postcss-loader@8.1.1_postcss@8.4.41_typescript@5.5.4_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/.pnpm/less-loader@12.2.0_less@4.2.0_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/less-loader/dist/cjs.js!./src/Button/Button.less");
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+var options = {};
+
+options.styleTagTransform = (_node_modules_pnpm_style_loader_4_0_0_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());
+options.setAttributes = (_node_modules_pnpm_style_loader_4_0_0_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());
+options.insert = _node_modules_pnpm_style_loader_4_0_0_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, "head");
+options.domAPI = (_node_modules_pnpm_style_loader_4_0_0_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
+options.insertStyleElement = (_node_modules_pnpm_style_loader_4_0_0_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
+
+var update = _node_modules_pnpm_style_loader_4_0_0_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_pnpm_css_loader_7_1_2_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_css_loader_dist_cjs_js_node_modules_pnpm_postcss_loader_8_1_1_postcss_8_4_41_typescript_5_5_4_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_4_use_2_node_modules_pnpm_less_loader_12_2_0_less_4_2_0_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_less_loader_dist_cjs_js_Button_less__WEBPACK_IMPORTED_MODULE_6__["default"], options);
+
+
+
+
+       /* unused harmony default export */ var __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_pnpm_css_loader_7_1_2_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_css_loader_dist_cjs_js_node_modules_pnpm_postcss_loader_8_1_1_postcss_8_4_41_typescript_5_5_4_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_4_use_2_node_modules_pnpm_less_loader_12_2_0_less_4_2_0_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_less_loader_dist_cjs_js_Button_less__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_pnpm_css_loader_7_1_2_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_css_loader_dist_cjs_js_node_modules_pnpm_postcss_loader_8_1_1_postcss_8_4_41_typescript_5_5_4_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_4_use_2_node_modules_pnpm_less_loader_12_2_0_less_4_2_0_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_less_loader_dist_cjs_js_Button_less__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_pnpm_css_loader_7_1_2_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_css_loader_dist_cjs_js_node_modules_pnpm_postcss_loader_8_1_1_postcss_8_4_41_typescript_5_5_4_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_4_use_2_node_modules_pnpm_less_loader_12_2_0_less_4_2_0_webpack_5_94_0_swc_core_1_7_14_esbuild_0_21_5_webpack_cli_5_1_4_node_modules_less_loader_dist_cjs_js_Button_less__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
+
+
+/***/ }),
+
+/***/ "./node_modules/.pnpm/style-loader@4.0.0_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js":
+/*!************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/.pnpm/style-loader@4.0.0_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
+  \************************************************************************************************************************************************************************************/
+/***/ ((module) => {
+
+
+
+var stylesInDOM = [];
+function getIndexByIdentifier(identifier) {
+  var result = -1;
+  for (var i = 0; i < stylesInDOM.length; i++) {
+    if (stylesInDOM[i].identifier === identifier) {
+      result = i;
+      break;
+    }
+  }
+  return result;
+}
+function modulesToDom(list, options) {
+  var idCountMap = {};
+  var identifiers = [];
+  for (var i = 0; i < list.length; i++) {
+    var item = list[i];
+    var id = options.base ? item[0] + options.base : item[0];
+    var count = idCountMap[id] || 0;
+    var identifier = "".concat(id, " ").concat(count);
+    idCountMap[id] = count + 1;
+    var indexByIdentifier = getIndexByIdentifier(identifier);
+    var obj = {
+      css: item[1],
+      media: item[2],
+      sourceMap: item[3],
+      supports: item[4],
+      layer: item[5]
+    };
+    if (indexByIdentifier !== -1) {
+      stylesInDOM[indexByIdentifier].references++;
+      stylesInDOM[indexByIdentifier].updater(obj);
+    } else {
+      var updater = addElementStyle(obj, options);
+      options.byIndex = i;
+      stylesInDOM.splice(i, 0, {
+        identifier: identifier,
+        updater: updater,
+        references: 1
+      });
+    }
+    identifiers.push(identifier);
+  }
+  return identifiers;
+}
+function addElementStyle(obj, options) {
+  var api = options.domAPI(options);
+  api.update(obj);
+  var updater = function updater(newObj) {
+    if (newObj) {
+      if (newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap && newObj.supports === obj.supports && newObj.layer === obj.layer) {
+        return;
+      }
+      api.update(obj = newObj);
+    } else {
+      api.remove();
+    }
+  };
+  return updater;
+}
+module.exports = function (list, options) {
+  options = options || {};
+  list = list || [];
+  var lastIdentifiers = modulesToDom(list, options);
+  return function update(newList) {
+    newList = newList || [];
+    for (var i = 0; i < lastIdentifiers.length; i++) {
+      var identifier = lastIdentifiers[i];
+      var index = getIndexByIdentifier(identifier);
+      stylesInDOM[index].references--;
+    }
+    var newLastIdentifiers = modulesToDom(newList, options);
+    for (var _i = 0; _i < lastIdentifiers.length; _i++) {
+      var _identifier = lastIdentifiers[_i];
+      var _index = getIndexByIdentifier(_identifier);
+      if (stylesInDOM[_index].references === 0) {
+        stylesInDOM[_index].updater();
+        stylesInDOM.splice(_index, 1);
+      }
+    }
+    lastIdentifiers = newLastIdentifiers;
+  };
+};
+
+/***/ }),
+
+/***/ "./node_modules/.pnpm/style-loader@4.0.0_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/style-loader/dist/runtime/insertBySelector.js":
+/*!****************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/.pnpm/style-loader@4.0.0_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/style-loader/dist/runtime/insertBySelector.js ***!
+  \****************************************************************************************************************************************************************************/
+/***/ ((module) => {
+
+
+
+var memo = {};
+
+/* istanbul ignore next  */
+function getTarget(target) {
+  if (typeof memo[target] === "undefined") {
+    var styleTarget = document.querySelector(target);
+
+    // Special case to return head of iframe instead of iframe itself
+    if (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {
+      try {
+        // This will throw an exception if access to iframe is blocked
+        // due to cross-origin restrictions
+        styleTarget = styleTarget.contentDocument.head;
+      } catch (e) {
+        // istanbul ignore next
+        styleTarget = null;
+      }
+    }
+    memo[target] = styleTarget;
+  }
+  return memo[target];
+}
+
+/* istanbul ignore next  */
+function insertBySelector(insert, style) {
+  var target = getTarget(insert);
+  if (!target) {
+    throw new Error("Couldn't find a style target. This probably means that the value for the 'insert' parameter is invalid.");
+  }
+  target.appendChild(style);
+}
+module.exports = insertBySelector;
+
+/***/ }),
+
+/***/ "./node_modules/.pnpm/style-loader@4.0.0_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/style-loader/dist/runtime/insertStyleElement.js":
+/*!******************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/.pnpm/style-loader@4.0.0_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/style-loader/dist/runtime/insertStyleElement.js ***!
+  \******************************************************************************************************************************************************************************/
+/***/ ((module) => {
+
+
+
+/* istanbul ignore next  */
+function insertStyleElement(options) {
+  var element = document.createElement("style");
+  options.setAttributes(element, options.attributes);
+  options.insert(element, options.options);
+  return element;
+}
+module.exports = insertStyleElement;
+
+/***/ }),
+
+/***/ "./node_modules/.pnpm/style-loader@4.0.0_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js":
+/*!******************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/.pnpm/style-loader@4.0.0_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js ***!
+  \******************************************************************************************************************************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+
+
+/* istanbul ignore next  */
+function setAttributesWithoutAttributes(styleElement) {
+  var nonce =  true ? __webpack_require__.nc : 0;
+  if (nonce) {
+    styleElement.setAttribute("nonce", nonce);
+  }
+}
+module.exports = setAttributesWithoutAttributes;
+
+/***/ }),
+
+/***/ "./node_modules/.pnpm/style-loader@4.0.0_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/style-loader/dist/runtime/styleDomAPI.js":
+/*!***********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/.pnpm/style-loader@4.0.0_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/style-loader/dist/runtime/styleDomAPI.js ***!
+  \***********************************************************************************************************************************************************************/
+/***/ ((module) => {
+
+
+
+/* istanbul ignore next  */
+function apply(styleElement, options, obj) {
+  var css = "";
+  if (obj.supports) {
+    css += "@supports (".concat(obj.supports, ") {");
+  }
+  if (obj.media) {
+    css += "@media ".concat(obj.media, " {");
+  }
+  var needLayer = typeof obj.layer !== "undefined";
+  if (needLayer) {
+    css += "@layer".concat(obj.layer.length > 0 ? " ".concat(obj.layer) : "", " {");
+  }
+  css += obj.css;
+  if (needLayer) {
+    css += "}";
+  }
+  if (obj.media) {
+    css += "}";
+  }
+  if (obj.supports) {
+    css += "}";
+  }
+  var sourceMap = obj.sourceMap;
+  if (sourceMap && typeof btoa !== "undefined") {
+    css += "\n/*# sourceMappingURL=data:application/json;base64,".concat(btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))), " */");
+  }
+
+  // For old IE
+  /* istanbul ignore if  */
+  options.styleTagTransform(css, styleElement, options.options);
+}
+function removeStyleElement(styleElement) {
+  // istanbul ignore if
+  if (styleElement.parentNode === null) {
+    return false;
+  }
+  styleElement.parentNode.removeChild(styleElement);
+}
+
+/* istanbul ignore next  */
+function domAPI(options) {
+  if (typeof document === "undefined") {
+    return {
+      update: function update() {},
+      remove: function remove() {}
+    };
+  }
+  var styleElement = options.insertStyleElement(options);
+  return {
+    update: function update(obj) {
+      apply(styleElement, options, obj);
+    },
+    remove: function remove() {
+      removeStyleElement(styleElement);
+    }
+  };
+}
+module.exports = domAPI;
+
+/***/ }),
+
+/***/ "./node_modules/.pnpm/style-loader@4.0.0_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/style-loader/dist/runtime/styleTagTransform.js":
+/*!*****************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/.pnpm/style-loader@4.0.0_webpack@5.94.0_@swc+core@1.7.14_esbuild@0.21.5_webpack-cli@5.1.4_/node_modules/style-loader/dist/runtime/styleTagTransform.js ***!
+  \*****************************************************************************************************************************************************************************/
+/***/ ((module) => {
+
+
+
+/* istanbul ignore next  */
+function styleTagTransform(css, styleElement) {
+  if (styleElement.styleSheet) {
+    styleElement.styleSheet.cssText = css;
+  } else {
+    while (styleElement.firstChild) {
+      styleElement.removeChild(styleElement.firstChild);
+    }
+    styleElement.appendChild(document.createTextNode(css));
+  }
+}
+module.exports = styleTagTransform;
 
 /***/ }),
 
@@ -1229,14 +734,113 @@ module.exports = __webpack_require__(/*! /Users/dennisat/dev/dyna/dyna-ts-react-
 /*!************************!*\
   !*** external "react" ***!
   \************************/
-/*! no static exports found */
-/*! all exports used */
-/***/ (function(module, exports) {
+/***/ ((module) => {
 
 module.exports = require("react");
 
+/***/ }),
+
+/***/ "react/jsx-runtime":
+/*!************************************!*\
+  !*** external "react/jsx-runtime" ***!
+  \************************************/
+/***/ ((module) => {
+
+module.exports = require("react/jsx-runtime");
+
 /***/ })
 
-/******/ });
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			id: moduleId,
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/nonce */
+/******/ 	(() => {
+/******/ 		__webpack_require__.nc = undefined;
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+var __webpack_exports__ = {};
+/*!***********************!*\
+  !*** ./src/index.tsx ***!
+  \***********************/
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Button: () => (/* reexport safe */ _Button__WEBPACK_IMPORTED_MODULE_0__.Button),
+/* harmony export */   EColor: () => (/* reexport safe */ _Button__WEBPACK_IMPORTED_MODULE_0__.EColor),
+/* harmony export */   ESize: () => (/* reexport safe */ _Button__WEBPACK_IMPORTED_MODULE_0__.ESize),
+/* harmony export */   EStyle: () => (/* reexport safe */ _Button__WEBPACK_IMPORTED_MODULE_0__.EStyle),
+/* harmony export */   Label: () => (/* reexport safe */ _Label__WEBPACK_IMPORTED_MODULE_1__.Label)
+/* harmony export */ });
+/* harmony import */ var _Button__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Button */ "./src/Button/index.tsx");
+/* harmony import */ var _Label__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Label */ "./src/Label/index.ts");
+
+
+/******/ 	return __webpack_exports__;
+/******/ })()
+;
 });
 //# sourceMappingURL=index.js.map

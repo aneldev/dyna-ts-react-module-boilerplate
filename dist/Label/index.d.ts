@@ -1,1 +1,2 @@
-export { Label, ILabelProps, } from "./Label";
+export * from "./Label";
+//# sourceMappingURL=index.d.ts.map

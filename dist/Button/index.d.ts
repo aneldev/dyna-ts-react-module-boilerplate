@@ -1,1 +1,2 @@
-export { Button, IButtonProps, EStyle, EColor, ESize, } from "./Button";
+export * from "./Button";
+//# sourceMappingURL=index.d.ts.map
