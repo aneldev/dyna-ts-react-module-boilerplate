@@ -22,25 +22,28 @@ the [dyna-ts-module-boilerplate](https://www.npmjs.com/package/dyna-ts-module-bo
 
 _Again this supports React and JSX but hasn't StoryBook, react ESList etc._
 
+# How to use this boilerplate
+
+To use it and create your own module:
+
+- Clone it into a folder named after your module, like `my-module`.
+- Run `pnpm bootstrap` to unlink it from this git repo.
+
+Example:
+
+```bash
+git clone https://github.com/aneldev/dyna-ts-react-module-boilerplate.git my-module
+cd my-module
+pnpm bootstrap
+```
+
+Your repo will now be ready, and you can `git init` under your own account.
+
 # Why is `create-react-app` different?
 
 It is different because `create-react-app` creates React applications and includes everything an application needs.
 
 The `dyna-ts-react-module-boilerplate` creates React modules (reusable components). It creates React components that will be used in React applications or other modules.
-
-# Usage
-
-```
-git clone https://github.com/aneldev/dyna-ts-module-boilerplate.git my-ts-module
-cd my-ts-module
-pnpm bootstrap
-```
-
-> Running `bootstrap` is mandatory to remove the bootstrap scripts and files and start with a clean module. It converts the boilerplate package into a module ready for development.
-
-Then
-
-`git init` for versioning
 
 # Features
 
@@ -100,7 +103,7 @@ export class Invoice {...}
 ```
 From another package, you can import this module like this:
 ```
-import { Invoice } from "my-ts-module";
+import { Invoice } from "my-module";
 ```
 
 ## Multi modules
@@ -118,8 +121,8 @@ src/Person/index.ts    // content: export class Person {...}
 ```
 From another package, you can explicit import these modules like this:
 ```
-import { Invoice } from "my-ts-module/dist/Invoice";
-import { Person } from "my-ts-module/dist/Person";
+import { Invoice } from "my-module/dist/Invoice";
+import { Person } from "my-module/dist/Person";
 ```
 Similarly, you can distribute modules for specific environments, such as Web or Node, ensuring you import dependencies compatible with the target environment.
 
