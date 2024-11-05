@@ -73,6 +73,37 @@ The `dyna-ts-react-module-boilerplate` creates React modules (reusable component
 - ESLint configuration for React and rules
 - Webpack analyzer for package content with the [webpack-bundle-analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer)
 
+# Scripts
+
+| Script                  | Description                                                                                                  | Notes                                                             |
+|:------------------------|:-------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------|
+| `install-clean`         | Clears all `node_modules` and runs `pnpm install`                                                            |                                                                   |
+| `storybook-start`       | Starts Storybook                                                                                             |                                                                   |
+| `storybook-deploy`      | Builds Storybook for publishing to Git                                                                       |                                                                   |
+| `build`                 | Builds `.src/index` into the `dist` folder                                                                   |                                                                   |
+| `build-watch`           | Runs `build` in watch mode                                                                                   |                                                                   |
+| `build-analyze`         | Shows the Webpack dependencies analyzer                                                                      |                                                                   |
+| `commit`                | Easily commit, including unstaged files                                                                      |                                                                   |
+| `commit-amend`          | Easily amend the previous commit with unstaged files                                                         |                                                                   |
+| `lint`                  | Runs ESLint on your source code                                                                              |                                                                   |
+| `lint-watch`            | Runs ESLint in watch mode                                                                                    |                                                                   |
+| `lint-fix`              | Autofixes issues with ESLint                                                                                 |                                                                   |
+| `lint-fix-watch`        | Autofixes issues with ESLint in watch mode                                                                   |                                                                   |
+| `test`                  | Runs all or filtered tests                                                                                   | Arguments `<filter>`. Example: `test MyService`                   |
+| `test-debug`            | Debugs tests with Dev Tools                                                                                  | Arguments `<filter>`. Example: `test-debug MyService`             |
+| `test-watch`            | Runs all or filtered tests in watch mode                                                                     | Arguments `<filter>`. Example: `test-watch MyService`             |
+| `test-no-coverage`      | Runs all or filtered tests without coverage                                                                  | Arguments `<filter>`. Example: `test-no-coverage MyService`       |
+| `test-update-snapshots` | Updates test snapshots                                                                                       | Arguments `<filter>`. Example: `test-update-snapshots MyService`  |
+| `update-deps`           | Bumps all dependencies to their latest versions based on version definition                                  |                                                                   |
+| `publish-push`          | Bumps the patch version, publishes to npm, and pushes to Git                                                 |                                                                   |
+| `release`               | Runs `build` & `publish-push`                                                                                |                                                                   |
+| `bootstrap`             | Initialization script that prepares the boilerplate and disconnects it from the Anel Dev organization’s Git. | You shouldn't see this script; it's only run right after cloning. |
+
+If you see the `bootstrap` script and you've already run `git init` on your versioning system, you can delete:
+
+- The `bootstrap` script
+- The `bootstrap.js` file
+
 # Configuration
 
 This is a **Zero-Configuration** boilerplate!
