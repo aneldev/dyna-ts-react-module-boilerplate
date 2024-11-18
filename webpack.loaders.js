@@ -260,6 +260,10 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'svg-inline-loader',
       },
+      {
+        test: /\.md$/,
+        use: 'raw-loader',
+      },
     ],
   },
 };
