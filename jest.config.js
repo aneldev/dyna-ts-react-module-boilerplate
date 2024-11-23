@@ -15,7 +15,7 @@ module.exports = {
     ],
   },
   transformIgnorePatterns: ["/node_modules/", "\\.pnp\\.[^\\/]+$"],
-  testRegex: "(src)/.*\\.(test|spec)\\.(ts|tsx)$",
+  testRegex: ".*\\.(test|spec)\\.(ts|tsx)$",
   moduleFileExtensions: ["ts", "tsx", "js", "jsx"],
   moduleNameMapper: {
     "\\.(css|less|scss|jpg|png|svg|gif)$": "identity-obj-proxy",
