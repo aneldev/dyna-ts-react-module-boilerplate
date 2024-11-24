@@ -1,13 +1,10 @@
-﻿const fs = require('fs');
-const path = require('path');
-const nodeExternals = require('webpack-node-externals');
+﻿const fs = require("fs");
+const path = require("path");
+const nodeExternals = require("webpack-node-externals");
 
 const isSingleModule =
   fs.existsSync('./src/index.ts') ||
   fs.existsSync('./src/index.tsx');
-const thisPackageBelongsToMonorepo =
-  fs.existsSync('../../package.json') &&
-  !!require('../../package.json').workspaces;
 
 const package_ = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
 const loaders = require('./webpack.loaders.js');
@@ -52,15 +49,7 @@ module.exports = {
             return acc;
           }, {})
       ),
-  externals:
-    thisPackageBelongsToMonorepo
-      ? [                  // exclude all dependencies from the bundle
-        nodeExternals(),
-        nodeExternals({
-          modulesDir: path.resolve(__dirname, '../../node_modules')
-        })
-      ]
-      : nodeExternals(),
+  externals: nodeExternals(),
   optimization: {
     // help: https://webpack.js.org/guides/tree-shaking/
     usedExports: true,  // true to remove the dead code,
