@@ -16,8 +16,8 @@ const plugins = require('./webpack.plugins.js');
  */
 const EXCLUDE_SRC_FOLDERS = [
   "@types",
-  // Other folders that won't by built by Webpack might be listed here
-]
+  // Other folders that won't be built by Webpack might be listed here
+];
 
 const getModuleNames =
   root =>
