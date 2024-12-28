@@ -1,6 +1,7 @@
 ﻿const fs = require("fs");
 const path = require("path");
 const nodeExternals = require("webpack-node-externals");
+const buffer = require.resolve("buffer");
 
 const isSingleModule =
   fs.existsSync('./src/index.ts') ||
@@ -82,7 +83,7 @@ module.exports = {
     alias: {},
     extensions: [".webpack.js", ".web.js", ".ts", ".tsx", ".js", ".jsx"],
     fallback: {
-      stream: require.resolve("buffer/"),
+      stream: buffer,
     }
   },
   module: {
