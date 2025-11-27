@@ -108,6 +108,7 @@ module.exports = {
           "warn",
           "always"
         ],
+        "@typescript-eslint/no-inferrable-types": "off",
         "@typescript-eslint/type-annotation-spacing": "warn",
         "brace-style": [
           "warn",
@@ -151,6 +152,13 @@ module.exports = {
         "no-underscore-dangle": "off",
         "no-unsafe-finally": "warn",
         "no-var": "warn",
+        '@typescript-eslint/no-unused-vars': [
+          'warn', // or "error"
+          {
+            varsIgnorePattern: '^_',
+            argsIgnorePattern: '^_',
+          },
+        ],
         semi: "warn",
         curly: [
           "warn",
@@ -227,6 +235,10 @@ module.exports = {
           }
         ],
         "newline-per-chained-call": "warn",
+        "react/react-in-jsx-scope": "off",
+        "react/no-children-prop": "off",
+        "react/no-unescaped-entities": "off",
+        "react/prop-types": "off",
         "react-hooks/exhaustive-deps": "off",
         "react/jsx-pascal-case": [
           "warn",
