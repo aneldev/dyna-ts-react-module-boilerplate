@@ -6,6 +6,9 @@ module.exports = {
     es2021: true,
     "jest/globals": true,
   },
+  settings: {
+    react: {version: "detect"},
+  },
   ignorePatterns: [
     "under-construction/",
   ],
@@ -22,6 +25,7 @@ module.exports = {
     "plugin:@typescript-eslint/recommended",
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
     "plugin:jest/recommended",
   ],
   overrides: [
