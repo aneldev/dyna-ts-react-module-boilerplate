@@ -16,8 +16,8 @@ const plugins = require('./webpack.plugins.js');
  */
 const EXCLUDE_SRC_FOLDERS = [
   "@types",
-  // Other folders that won't be built by Webpack might be listed here
-];
+  // Other folders that won't by built by Webpack might be listed here
+]
 
 const getModuleNames =
   root =>
@@ -32,7 +32,7 @@ process.traceDeprecation = true;
 
 module.exports = {
   mode: "development",          // Distribute it without minification
-  target: "web",
+  target: "node",               // Note: Not "web", to allow the components to be used from the server package!
   entry:
     isSingleModule
       ? (
