@@ -77,7 +77,7 @@ The `dyna-ts-react-module-boilerplate` creates React modules (reusable component
 
 | Script                  | Description                                                                                                  | Notes                                                             |
 |:------------------------|:-------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------|
-| `install-clean`         | Clears all `node_modules` and runs `pnpm install`                                                            |                                                                   |
+| `install-clean`         | Clears all `node_modules` and runs `pnpm install`                                                            | You have to call this with `run`, e.g.: `pnpm run install.clean`  |
 | `storybook-start`       | Starts Storybook                                                                                             |                                                                   |
 | `storybook-deploy`      | Builds Storybook for publishing to Git                                                                       |                                                                   |
 | `build`                 | Builds `.src/index` into the `dist` folder                                                                   |                                                                   |
