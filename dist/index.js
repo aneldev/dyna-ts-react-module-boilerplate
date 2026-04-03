@@ -7,7 +7,7 @@
 		exports["dyna-ts-react-module-boilerplate"] = factory();
 	else
 		root["dyna-ts-react-module-boilerplate"] = factory();
-})(self, () => {
+})(window, () => {
 return /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
