@@ -1,7 +1,6 @@
 const fs = require("fs");
 const path = require("path");
 const nodeExternals = require("webpack-node-externals");
-const buffer = require.resolve("buffer");
 
 const isSingleModule =
   fs.existsSync('./src/index.ts') ||
@@ -99,7 +98,15 @@ const createConfig = format => ({
     alias: {},
     extensions: [".webpack.js", ".web.js", ".ts", ".tsx", ".js", ".jsx"],
     fallback: {
-      stream: buffer,
+      // Remove Node.js modules, use browser alternatives or undefined
+      "fs": false,
+      "path": false,
+      "buffer": false,  // Remove - conflicts in browser
+      "stream": false,
+      "crypto": false,
+      "util": false,
+      // Add if needed:
+      // "buffer": require.resolve("buffer/"),
     }
   },
   module: {
