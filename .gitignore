@@ -5,6 +5,7 @@
 dev/public/static
 storybook-static
 coverage/
+dist/
 node_modules/
 temp/
 npm-debug.log

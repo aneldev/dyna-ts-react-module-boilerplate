@@ -7,6 +7,9 @@
     "url": "http://github.com/aneldev/dyna-ts-react-module-boilerplate"
   },
   "private": false,
+  "files": [
+    "dist"
+  ],
   "sideEffects": true,
   "source": "src/index.tsx",
   "types": "dist/index.d.ts",
@@ -31,6 +34,7 @@
     "install-clean": "rimraf node_modules && pnpm install",
     "storybook-start": "storybook dev -p 6006",
     "storybook-deploy": "storybook build && gh-pages -d storybook-static",
+    "prepublishOnly": "pnpm build",
     "build": "pnpm lint && rimraf ./dist && webpack --config webpack.dist.config.js",
     "build-watch": "rimraf ./dist && pnpm webpack --watch --config webpack.dist.config.js",
     "build-analyze": "webpack --config webpack.dist.analyze.config.js",
