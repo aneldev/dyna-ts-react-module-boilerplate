@@ -1,0 +1,11 @@
+diff --git a/index.js b/index.js
+index 32c7be94cdd532857ac91f204a0acec33a385a45..c86a0d4e0ea91e9668211575c6c1aea1a6f71d1e 100644
+--- a/index.js
++++ b/index.js
+@@ -1,5 +1,5 @@
+ let path = require('path')
+-let extend = require('util')._extend
++let extend = Object.assign
+ let BASE_ERROR = 'Circular dependency detected:\r\n'
+ let PluginTitle = 'CircularDependencyPlugin'
+ 

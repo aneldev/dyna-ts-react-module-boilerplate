@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  circular-dependency-plugin@5.2.2:
+    hash: 0834af31aa70c287c31fb900233aafdec55296550b64d0e2d74926cbb602d21a
+    path: patches/circular-dependency-plugin@5.2.2.patch
+
 importers:
 
   .:
@@ -91,7 +96,7 @@ importers:
         version: 10.0.1
       circular-dependency-plugin:
         specifier: ^5.2.2
-        version: 5.2.2(webpack@5.94.0)
+        version: 5.2.2(patch_hash=0834af31aa70c287c31fb900233aafdec55296550b64d0e2d74926cbb602d21a)(webpack@5.94.0)
       css-loader:
         specifier: ^7.1.2
         version: 7.1.2(webpack@5.94.0)
@@ -6334,6 +6339,7 @@ packages:
   whatwg-encoding@2.0.0:
     resolution: {integrity: sha512-p41ogyeMUrw3jWclHWTQg1k05DSVXPLcVxRTYsXUk+ZooOCZLcoYgPZ/HL/D/N+uQPOtcp1me1WhBEaX02mhWg==}
     engines: {node: '>=12'}
+    deprecated: Use @exodus/bytes instead for a more spec-conformant and faster implementation
 
   whatwg-mimetype@3.0.0:
     resolution: {integrity: sha512-nt+N2dzIutVRxARx1nghPKGv1xHikU7HKdfafKkLNLindmPU/ch3U31NOCGGA/dmPcmb1VlofO0vnKAcsm0o/Q==}
@@ -9431,7 +9437,7 @@ snapshots:
 
   ci-info@3.9.0: {}
 
-  circular-dependency-plugin@5.2.2(webpack@5.94.0):
+  circular-dependency-plugin@5.2.2(patch_hash=0834af31aa70c287c31fb900233aafdec55296550b64d0e2d74926cbb602d21a)(webpack@5.94.0):
     dependencies:
       webpack: 5.94.0(@swc/core@1.7.14)(esbuild@0.21.5)(webpack-cli@5.1.4)
 

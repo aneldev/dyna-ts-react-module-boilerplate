@@ -147,7 +147,12 @@
   },
   "engines": {
     "npm": ">=10.0.0 <11.0.0",
-    "node": ">=20.0.0 <21.0.0"
+    "node": ">=24.0.0 <25.0.0"
   },
-  "packageManager": "pnpm@10.19.0"
+  "packageManager": "pnpm@10.19.0",
+  "pnpm": {
+    "patchedDependencies": {
+      "circular-dependency-plugin@5.2.2": "patches/circular-dependency-plugin@5.2.2.patch"
+    }
+  }
 }
